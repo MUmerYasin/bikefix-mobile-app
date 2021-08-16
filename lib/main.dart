@@ -5,6 +5,7 @@ import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/mybooking_screen.dart';
 import 'package:two_wheel_vehicle/screens/otp_verify_screen.dart';
+import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
 import 'package:two_wheel_vehicle/screens/register_screen.dart';
 import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      // home: LoginScreen(),
+      home: PaymentMethodScreen(),
       // home: RegisterScreen(),
       // home: OTPScreen(),
       // home: MyProfileScreen(),
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
       // home: MyBookingScreen(),
       // home: ServiceStatusScreen(),
       // home: AddVehicleScreen(),
+
     );
   }
 }

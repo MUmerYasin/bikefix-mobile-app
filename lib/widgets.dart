@@ -42,7 +42,7 @@ class RoundedCornerButton extends StatelessWidget {
 class CustomTextField extends StatelessWidget {
   String? text;
 
-  CustomTextField({this.text});
+    CustomTextField({this.text});
 
   @override
   Widget build(BuildContext context) {
