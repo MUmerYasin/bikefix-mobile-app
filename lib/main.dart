@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
@@ -11,8 +13,14 @@ import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 
 import 'screens/login_screen.dart';
 
-void main() {
-  runApp(MyApp());
+void main(){
+  runApp(
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) =>
+            MyApp(),
+      )
+  );
 }
 
 class MyApp extends StatelessWidget {
