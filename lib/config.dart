@@ -8,14 +8,18 @@ import 'dart:ui';
 Color backgroundColor = Color(0xffc4c4c4);
 Color buttonColor = Color(0xffE34D3D);
 
-/// Screen Title of Choose Bike Brand.
+/// Screen Title of All Screen
 const String screenTitleChooseBikeBrand = "Choose Bike Brand";
+const String screenTitlePaymentMethod = "Payment Method";
 
 ///Text Field Titles of Choose Bike Brand.
 const String textFieldNameFind = "Find";
+const String textFieldPhoneNumber = "Phone Number";
 
-///Buttons Name of Choose Bike Brand.
-const String buttonNameChooseBikeBrand = "Proceed";
+///Buttons Name
+const String buttonNameProceed = "Proceed";
+const String buttonNameLogIn = "Log In";
+const String buttonNameSignUp = "Sign Up";
 
 ///All Texts in GridView of Choose Bike Brand.
 const String gridViewChooseBikeBrandText1 = "KTM";
@@ -24,10 +28,29 @@ const String gridViewChooseBikeBrandText3 = "Bajaj";
 const String gridViewChooseBikeBrandText4 = "Royal enfield";
 
 ///All Images Path in GridView of Choose Bike Brand.
-const String gridViewChooseBikeBrandImagePath1 = "assets/icons/ktm_logo.png";
-const String gridViewChooseBikeBrandImagePath2 = "assets/icons/tvs_logo.png";
-const String gridViewChooseBikeBrandImagePath3 = "assets/icons/bajaj_logo.png";
-const String gridViewChooseBikeBrandImagePath4 = "assets/icons/royal_enfield_logo.png";
 
+const String ImagePathStart = "assets/icons/";
 
+const String bikeFixUpLogoImagePath = ImagePathStart+"logo.png";
+const String ktmLogoImagePath = ImagePathStart+"ktm_logo.png";
+const String tvsLogoImagePath = ImagePathStart+"tvs_logo.png";
+const String bajajLogoImagePath = ImagePathStart+"bajaj_logo.png";
+const String royalEnfieldLogoImagePath = ImagePathStart+"royal_enfield_logo.png";
+const String paytmLogoImagePath = ImagePathStart+"paytm_logo.png";
+const String phonePeLogoImagePath = ImagePathStart+"phonepe_logo.png";
 
+/// Simple Text That use in all Screens
+
+const String signUpDescriptionText = "Don’t Have account? ";
+
+///Payment Method Text
+const String creditDebitCardText = "Credit / Debit Card";
+const String UPIText = "UPI";
+const String AmazonUPIText = "Amazon "+ UPIText;
+const String PhonePeText = "PhonePe";
+const String WalletsText = "Wallets";
+const String PaytmText = "Paytm";
+const String PayLaterText = "Pay later";
+
+/// Text Font Family
+const String textFontFamily = "Roboto";

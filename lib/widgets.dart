@@ -15,9 +15,9 @@ class RoundedCornerButton extends StatelessWidget {
       height: 40,
       child: Neumorphic(
         style: NeumorphicStyle(
-            depth: 10,
+            depth: 8,
             shape: NeumorphicShape.flat,
-            shadowDarkColor: Colors.black,
+            shadowDarkColor: Colors.red,
             shadowLightColor: Colors.white,
             shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 
@@ -47,19 +47,19 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 55,
+      height: 65,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Neumorphic(
           style: NeumorphicStyle(
-            depth: -10,
+            depth: -8,
             shape: NeumorphicShape.flat,
 
            shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
             //  boxShape: NeumorphicBoxShape.circle(),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(17.0),
             child: TextField(
               decoration: InputDecoration(
                 // border: OutlineInputBorder(),
@@ -155,3 +155,36 @@ class SmallRoundedCornerButton extends StatelessWidget {
     );
   }
 }
+
+class DividerCustom extends StatefulWidget {
+  const DividerCustom({Key? key}) : super(key: key);
+
+  @override
+  _DividerCustomState createState() => _DividerCustomState();
+}
+
+class _DividerCustomState extends State<DividerCustom> {
+  @override
+  Widget build(BuildContext context) {
+    return Neumorphic(
+      style: NeumorphicStyle(
+        // shadowLightColorEmboss: Colors.white,
+        // shadowDarkColorEmboss: Colors.black,
+        // shadowDarkColor: Colors.black,
+
+        shadowLightColorEmboss: Colors.white,
+        shadowDarkColorEmboss: Colors.black,
+        shadowDarkColor: Colors.black54,
+        shape: NeumorphicShape.flat,
+        depth: -1,
+
+      ),
+      child: Container(
+        width: 240,
+        height: 4,
+        color: Colors.white,
+      ),
+    );
+  }
+}
+

@@ -16,60 +16,69 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Container(
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(16),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(child: Image.asset('assets/icons/logo.png',width: 200,height: 200,)),
-           Expanded(child: Column(
-             mainAxisAlignment: MainAxisAlignment.center,
-             crossAxisAlignment: CrossAxisAlignment.center,
-             children: [
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: CustomTextField(text: 'Phone Number',),
-             ),
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: RoundedCornerButton(
-                 onPressed: () {
-                   gotoScreen(context: context,screen:RegisterScreen());
-                 },
-                 child: 'Log In',
-               ),
-             ),
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: Text.rich(
-                 TextSpan(
-                   style: TextStyle(
-                     fontFamily: 'Roboto',
-                     fontSize: 14,
-                     color: const Color(0xff000000),
-                   ),
-                   children: [
-                     TextSpan(
-                       text: 'Don’t Have account? ',
-                     ),
-                     TextSpan(
-                       text: 'Sign Up',
-                       style: TextStyle(
-                         color: const Color(0xffd33937),
-                         fontWeight: FontWeight.w500,
-                       ),
-                     ),
-                   ],
-                 ),
-                 textHeightBehavior:
-                 TextHeightBehavior(applyHeightToFirstAscent: false),
-                 textAlign: TextAlign.left,
-               ),
-             ),
-           ],),),
-
+            Expanded(
+                child: Image.asset(
+              bikeFixUpLogoImagePath,
+              width: 200,
+              height: 200,
+            )),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CustomTextField(
+                      text: textFieldPhoneNumber,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RoundedCornerButton(
+                      onPressed: () {
+                        gotoScreen(context: context, screen: RegisterScreen());
+                      },
+                      child: buttonNameLogIn,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text.rich(
+                      TextSpan(
+                        style: TextStyle(
+                          fontFamily: textFontFamily,
+                          fontSize: 14,
+                          color: Colors.black,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: signUpDescriptionText,
+                          ),
+                          TextSpan(
+                            text: buttonNameSignUp,
+                            style: TextStyle(
+                              color: buttonColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      textHeightBehavior:
+                          TextHeightBehavior(applyHeightToFirstAscent: false),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

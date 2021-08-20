@@ -4,8 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:two_wheel_vehicle/config.dart';
 // import 'package:two_wheel_vehicle/widgets.dart';
 
-
-
 class ChooseBikeBrand extends StatefulWidget {
   const ChooseBikeBrand({Key? key}) : super(key: key);
 
@@ -21,27 +19,32 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        automaticallyImplyLeading : true,
-        elevation:0.0,
+        automaticallyImplyLeading: true,
+        elevation: 0.0,
         backgroundColor: backgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
         leading: IconButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
-          },icon: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,),
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_outlined,
+            color: Colors.black,
+          ),
         ),
         title: Text(
           screenTitleChooseBikeBrand,
           style: TextStyle(
-            fontFamily: 'Roboto',
+            fontFamily: textFontFamily,
             fontSize: 18,
-            color: const Color(0xff000000),
+            color: Colors.black,
           ),
           textAlign: TextAlign.left,
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Container(
           padding: EdgeInsets.all(15),
           height: MediaQuery.of(context).size.height,
@@ -50,6 +53,7 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              /// Find TextField
               SizedBox(
                 height: 65,
                 child: Padding(
@@ -64,20 +68,23 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(15.0, 0, 0, 0),
                       child: TextField(
-
-                        textAlign : TextAlign.start,
+                        textAlign: TextAlign.start,
                         decoration: InputDecoration(
                           // border: OutlineInputBorder(),
-                          isDense: true,                      // Added this
+                          isDense: true,
+                          // Added this
                           // contentPadding: EdgeInsets.symmetric(vertical:20.0, horizontal: 0.0),
                           border: InputBorder.none,
                           labelText: textFieldNameFind,
                           labelStyle: TextStyle(
-                            fontFamily: 'Roboto',
+                            fontFamily: textFontFamily,
                             fontSize: 20,
                             color: const Color(0xff828284),
                           ),
-                          icon: FaIcon(FontAwesomeIcons.search,size:15.0,),
+                          icon: FaIcon(
+                            FontAwesomeIcons.search,
+                            size: 15.0,
+                          ),
                         ),
                       ),
                     ),
@@ -85,45 +92,81 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
                 ),
               ),
 
+              /// GridView of Choose Bike Brand.
               SizedBox(
-                height:MediaQuery.of(context).size.height/1.8,
-                  child: GridView.count(
-                    // primary: false,
-                    scrollDirection : Axis.vertical,
-                    shrinkWrap : true,
-                    padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    crossAxisCount: 3,
-                    children: <Widget>[
+                height: MediaQuery.of(context).size.height / 1.8,
+                child: GridView.count(
+                  // primary: false,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
 
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText1, imagePaths: gridViewChooseBikeBrandImagePath1),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText2, imagePaths: gridViewChooseBikeBrandImagePath2),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText3, imagePaths: gridViewChooseBikeBrandImagePath3),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText4, imagePaths: gridViewChooseBikeBrandImagePath4),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText1, imagePaths: gridViewChooseBikeBrandImagePath1),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText2, imagePaths: gridViewChooseBikeBrandImagePath2),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText2, imagePaths: gridViewChooseBikeBrandImagePath2),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText3, imagePaths: gridViewChooseBikeBrandImagePath3),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText4, imagePaths: gridViewChooseBikeBrandImagePath4),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText1, imagePaths: gridViewChooseBikeBrandImagePath1),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText2, imagePaths: gridViewChooseBikeBrandImagePath2),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText3, imagePaths: gridViewChooseBikeBrandImagePath3),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText4, imagePaths: gridViewChooseBikeBrandImagePath4),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText1, imagePaths: gridViewChooseBikeBrandImagePath1),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText2, imagePaths: gridViewChooseBikeBrandImagePath2),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText2, imagePaths: gridViewChooseBikeBrandImagePath2),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText3, imagePaths: gridViewChooseBikeBrandImagePath3),
-                      GridViewOfChooseBikeBrandSingleItems(textShowData: gridViewChooseBikeBrandText4, imagePaths: gridViewChooseBikeBrandImagePath4),
-
-
-
-                    ],
-                  ),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  crossAxisCount: 3,
+                  children: <Widget>[
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText1,
+                        imagePaths: ktmLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText2,
+                        imagePaths: tvsLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText3,
+                        imagePaths: bajajLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText4,
+                        imagePaths: royalEnfieldLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText1,
+                        imagePaths: ktmLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText2,
+                        imagePaths: tvsLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText2,
+                        imagePaths: tvsLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText3,
+                        imagePaths: bajajLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText4,
+                        imagePaths: royalEnfieldLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText1,
+                        imagePaths: ktmLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText2,
+                        imagePaths: tvsLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText3,
+                        imagePaths: bajajLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText4,
+                        imagePaths: royalEnfieldLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText1,
+                        imagePaths: ktmLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText2,
+                        imagePaths: tvsLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText2,
+                        imagePaths: tvsLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText3,
+                        imagePaths: bajajLogoImagePath),
+                    GridViewOfChooseBikeBrandSingleItems(
+                        textShowData: gridViewChooseBikeBrandText4,
+                        imagePaths: royalEnfieldLogoImagePath),
+                  ],
+                ),
               ),
 
+              /// Proceed Button
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 16),
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                 child: SizedBox(
                   height: 50,
                   child: Neumorphic(
@@ -134,19 +177,21 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
                         shadowLightColor: Colors.white,
                         shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 
-                      //  boxShape: NeumorphicBoxShape.circle(),
-                    ),
+                        //  boxShape: NeumorphicBoxShape.circle(),
+                        ),
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             primary: buttonColor,
                             textStyle: TextStyle(
-                              fontFamily: 'Roboto',
+                              fontFamily: textFontFamily,
                               fontSize: 17,
-                              color: const Color(0xffffffff),
+                              color: Colors.white,
                               fontWeight: FontWeight.w500,
                             )),
-                        onPressed: (){},
-                        child: SizedBox(width: 130, child: Center(child: Text(buttonNameChooseBikeBrand)))),
+                        onPressed: () {},
+                        child: SizedBox(
+                            width: 130,
+                            child: Center(child: Text(buttonNameProceed)))),
                   ),
                 ),
               ),
@@ -159,34 +204,41 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
   }
 }
 
-
+/// Class that handle (Create) every single items GridView of Choose Bike Brand.
 
 class GridViewOfChooseBikeBrandSingleItems extends StatefulWidget {
   final String imagePaths;
   final String textShowData;
 
-  const GridViewOfChooseBikeBrandSingleItems({Key? key, required this.textShowData, required this.imagePaths}) : super(key: key);
+  const GridViewOfChooseBikeBrandSingleItems(
+      {Key? key, required this.textShowData, required this.imagePaths})
+      : super(key: key);
+
   @override
-  _GridViewOfChooseBikeBrandSingleItemsState createState() => _GridViewOfChooseBikeBrandSingleItemsState();
+  _GridViewOfChooseBikeBrandSingleItemsState createState() =>
+      _GridViewOfChooseBikeBrandSingleItemsState();
 }
 
-class _GridViewOfChooseBikeBrandSingleItemsState extends State<GridViewOfChooseBikeBrandSingleItems> {
+class _GridViewOfChooseBikeBrandSingleItemsState
+    extends State<GridViewOfChooseBikeBrandSingleItems> {
   @override
   Widget build(BuildContext context) {
-    return  Neumorphic(
-
+    return Neumorphic(
       padding: const EdgeInsets.all(8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(child: Image(image: AssetImage(widget.imagePaths),)),
-           Text(widget.textShowData, style: TextStyle(fontSize: 11.0),),
-
+          Expanded(
+              child: Image(
+            image: AssetImage(widget.imagePaths),
+          )),
+          Text(
+            widget.textShowData,
+            style: TextStyle(fontSize: 11.0),
+          ),
         ],
       ),
-
     );
   }
 }
-
