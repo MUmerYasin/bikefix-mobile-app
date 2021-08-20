@@ -207,9 +207,7 @@ class _CheckOutState extends State<CheckOut> {
                         child: Container(
                           margin: EdgeInsets.only(bottom: 10),
                           decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(color: Colors.black, spreadRadius:3, blurRadius: 7)
-                              ],
+                              
                               borderRadius: BorderRadius.circular(14)
                           ),
 
