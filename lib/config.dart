@@ -8,18 +8,29 @@ import 'dart:ui';
 Color backgroundColor = Color(0xffc4c4c4);
 Color buttonColor = Color(0xffE34D3D);
 
+//backgroundColor: NeumorphicColors.background,
+
 /// Screen Title of All Screen
 const String screenTitleChooseBikeBrand = "Choose Bike Brand";
 const String screenTitlePaymentMethod = "Payment Method";
+const String screenTitleMyProfile = "My Profile";
+
 
 ///Text Field Titles of Choose Bike Brand.
+const String textFieldName = "Name";
+const String textFieldDOB = "DOB";
+const String textFieldGender = "Gender";
+const String textFieldPhone = "Phone";
 const String textFieldNameFind = "Find";
 const String textFieldPhoneNumber = "Phone Number";
+const String textFieldEmail = "Email";
 
 ///Buttons Name
 const String buttonNameProceed = "Proceed";
 const String buttonNameLogIn = "Log In";
 const String buttonNameSignUp = "Sign Up";
+const String buttonNameConfirm = "Confirm";
+const String buttonNameResend = "Resend";
 
 ///All Texts in GridView of Choose Bike Brand.
 const String gridViewChooseBikeBrandText1 = "KTM";
@@ -38,10 +49,13 @@ const String bajajLogoImagePath = ImagePathStart+"bajaj_logo.png";
 const String royalEnfieldLogoImagePath = ImagePathStart+"royal_enfield_logo.png";
 const String paytmLogoImagePath = ImagePathStart+"paytm_logo.png";
 const String phonePeLogoImagePath = ImagePathStart+"phonepe_logo.png";
+const String otpIconImagePath = ImagePathStart+"otp_icon.png";
 
 /// Simple Text That use in all Screens
 
 const String signUpDescriptionText = "Don’t Have account? ";
+const String logInDescriptionText = "If already user, ";
+const String pleaseEnterOTPDescriptionText = "Please enter OTP";
 
 ///Payment Method Text
 const String creditDebitCardText = "Credit / Debit Card";

@@ -7,7 +7,6 @@ import 'navigator_helper.dart';
 
 class MyProfileScreen extends StatefulWidget {
 
-
   @override
   _MyProfileScreenState createState() => _MyProfileScreenState();
 }
@@ -20,11 +19,12 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
         appBar: AppBar(
           backgroundColor: backgroundColor,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-          leading: Icon(Icons.arrow_back_ios),
+          leading: Icon(Icons.arrow_back_ios_outlined,
+            color: Colors.black,),
           title: Text(
-          'My Profile',
+            screenTitleMyProfile,
           style: TextStyle(
-            fontFamily: 'Roboto',
+            fontFamily: textFontFamily,
             fontSize: 18,
             color: const Color(0xff000000),
           ),
@@ -105,8 +105,8 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                   ),
                                 ),
                                 SizedBox(
-                                    width: MediaQuery.of(context).size.width * .40,
-                                    child: CustomTextField(text: '01/01/1990',))
+                                    width: MediaQuery.of(context).size.width * .42,
+                                    child: CustomTextField(text: '01/01/1990',),),
                               ],
                             ),
                             Column(
@@ -128,8 +128,8 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                   ),
                                 ),
                                 SizedBox(
-                                    width: MediaQuery.of(context).size.width *.40,
-                                    child: CustomTextField(text: 'Male',))
+                                    width: MediaQuery.of(context).size.width *.43,
+                                    child: CustomTextField(text: 'Male',),),
                               ],
                             ),
 

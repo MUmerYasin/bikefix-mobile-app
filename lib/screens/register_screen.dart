@@ -14,52 +14,107 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
-        body: Container(
-            padding: EdgeInsets.all(15),
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+      backgroundColor: backgroundColor,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          // padding: EdgeInsets.all(16),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(child: Image.asset('assets/icons/logo.png',width: 200,height: 200,)),
-                  Expanded(child: Column(children: [
-                    CustomTextField(text: 'Name',),
-                    Row(
+              // mainAxisSize : MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      bikeFixUpLogoImagePath,
+                      width: 140,
+                      height: 140,
+                    ),
+                  ],
+                ),
 
+                Column(
+                  mainAxisSize : MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    /// Text Field Name
+                    CustomTextField(
+                      text: textFieldName,
+                    ),
+                    CustomTextField(
+                      text: textFieldEmail,
+                    ),
+                    Row(
                       children: [
                         SizedBox(
-                            width: MediaQuery.of(context).size.width / 3,
-                            child: CustomTextField(text: 'DOB',)),
-                        Spacer(),
-                        SizedBox(
-                            width: MediaQuery.of(context).size.width / 3,
-                            child: CustomTextField(text: 'Gender',)),
-                      ],),
-                    CustomTextField(text: 'Phone',),
-                    RoundedCornerButton(
-                      onPressed: () {
-                        gotoScreen(context: context,screen:OTPScreen());
+                            width: MediaQuery.of(context).size.width * 0.44,
 
-                      },
-                      child: 'Sign Up',
+                            /// Text Field DOB
+                            child: CustomTextField(
+                              text: textFieldDOB,
+                            )),
+
+                        /// Spacer(),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.01,
+                        ),
+
+                        /// Text Field Gender
+                        SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.44,
+                            child: CustomTextField(
+                              text: textFieldGender,
+                            )),
+                      ],
                     ),
+
+                    ///Text Field Phone
+                    CustomTextField(
+                      text: textFieldPhoneNumber,
+                    ),
+
+                    // SizedBox(height: 8.0,),
+
+                  ],
+                ),
+                Column(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ///Button Name Sign Up
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: RoundedCornerButton(
+                        onPressed: () {
+                          gotoScreen(context: context, screen: OTPScreen());
+                        },
+                        child: buttonNameSignUp,
+                      ),
+                    ),
+
+                    /// logIn Description Text (If already user, Login)
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text.rich(
                         TextSpan(
                           style: TextStyle(
-                            fontFamily: 'Roboto',
+                            fontFamily: textFontFamily,
                             fontSize: 14,
                             color: const Color(0xff000000),
                           ),
                           children: [
                             TextSpan(
-                              text: 'If already user,',
+                              text: logInDescriptionText,
                             ),
                             TextSpan(
-                              text: ' Log In',
+                              text: buttonNameLogIn,
                               style: TextStyle(
                                 color: const Color(0xffd33937),
                                 fontWeight: FontWeight.w500,
@@ -68,15 +123,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ],
                         ),
                         textHeightBehavior:
-                        TextHeightBehavior(applyHeightToFirstAscent: false),
+                            TextHeightBehavior(applyHeightToFirstAscent: false),
                         textAlign: TextAlign.left,
                       ),
                     ),
-                  ],)),
-
-
-
-
-                ])));
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

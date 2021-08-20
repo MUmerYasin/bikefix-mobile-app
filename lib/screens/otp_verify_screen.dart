@@ -15,90 +15,99 @@ class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
-        body: Container(
-            padding: EdgeInsets.all(15),
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+      backgroundColor: backgroundColor,
+      body: Container(
+        padding: EdgeInsets.all(16),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Image.asset(
+                otpIconImagePath,
+                width: 200,
+                height: 200,
+              ),
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Expanded(
-                      child: Image.asset(
-                    'assets/icons/otp_icon.png',
-                    width: 200,
-                    height: 200,
-                  )),
-                  Expanded(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  Text(
+                    pleaseEnterOTPDescriptionText,
+                    style: TextStyle(
+                      fontFamily: textFontFamily,
+                      fontSize: 18,
+                      color: const Color(0xff000000),
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Please enter OTP',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 18,
-                          color: const Color(0xff000000),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        child: CustomTextField(
+                          text: '',
                         ),
-                        textAlign: TextAlign.left,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                        ],
-                      ),
-                      RoundedCornerButton(
-                        onPressed: () {
-                          gotoScreen(context: context,screen:MyProfileScreen());
-
-                        },
-                        child: 'Confirm',
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 14,
-                            color: const Color(0xff000000),
-                          ),
-                          children: [
-                            TextSpan(
-                              text: 'Resend',
-                            ),
-                          ],
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        child: CustomTextField(
+                          text: '',
                         ),
-                        textHeightBehavior:
-                            TextHeightBehavior(applyHeightToFirstAscent: false),
-                        textAlign: TextAlign.left,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        child: CustomTextField(
+                          text: '',
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        child: CustomTextField(
+                          text: '',
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 6,
+                        child: CustomTextField(
+                          text: '',
+                        ),
                       ),
                     ],
-                  )),
-                ])));
+                  ),
+                  RoundedCornerButton(
+                    onPressed: () {
+                      gotoScreen(context: context, screen: MyProfileScreen());
+                    },
+                    child: buttonNameConfirm,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      style: TextStyle(
+                        fontFamily: textFontFamily,
+                        fontSize: 14,
+                        color: const Color(0xff000000),
+                      ),
+                      children: [
+                        TextSpan(
+                          text: buttonNameResend,
+                        ),
+                      ],
+                    ),
+                    textHeightBehavior:
+                        TextHeightBehavior(applyHeightToFirstAscent: false),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -13,7 +13,7 @@ class PaymentMethodScreen extends StatefulWidget {
 }
 
 class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
-  String Radiobutton = '';
+  String radioButton = '';
   int id = 1;
 
   @override
@@ -21,6 +21,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     return Scaffold(
       backgroundColor: NeumorphicColors.background,
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         elevation: 0,
         title: Text(
           screenTitlePaymentMethod,
@@ -39,13 +40,14 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+        // physics: NeverScrollableScrollPhysics(),
         child: SafeArea(
           child: Center(
             child: Column(
               children: [
                 /// Credit / Debit Card Radio Button
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(22.0,38.0,22.0,0.0),
+                  padding: const EdgeInsets.fromLTRB(22.0, 38.0, 22.0, 0.0),
                   child: Neumorphic(
                     style: NeumorphicStyle(
                       shadowLightColorEmboss: Colors.white,
@@ -82,6 +84,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                   ),
                 ),
+
                 /// UPI Text
                 Row(
                   children: [
@@ -95,21 +98,26 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   ],
                 ),
 
+                ///Amazon UPI Radio Button + Divider + PhonePe Radio Button
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(22.0,10.0,22.0,0.0),
+                  padding: const EdgeInsets.fromLTRB(22.0, 10.0, 22.0, 0.0),
                   child: Neumorphic(
                     style: NeumorphicStyle(
-                        shadowLightColorEmboss: Colors.white,
-                        shadowDarkColorEmboss: Colors.black,
-                        shadowDarkColor: Colors.black,
+                      shadowLightColorEmboss: Colors.white,
+                      shadowDarkColorEmboss: Colors.grey,
+                      shadowDarkColor: Colors.black87,
+                      shape: NeumorphicShape.flat,
+                      depth: 9,
                     ),
                     child: Container(
                       width: 300,
-                      height: 115,
+                      height: 120,
                       child: Column(
                         children: [
                           /// Amazon UPI Radio Button
                           ListTile(
+                            horizontalTitleGap: 0.0,
+                            contentPadding: EdgeInsets.fromLTRB(25, 0, 5.0, 0),
                             leading: Icon(
                               FontAwesomeIcons.amazon,
                               color: Colors.black,
@@ -120,7 +128,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 onChanged: (val) {
                                   setState(() {
                                     id = 1;
-                                    Radiobutton = '';
+                                    radioButton = '';
                                   });
                                 }),
                             title: Text(
@@ -151,20 +159,23 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           // ),
 
                           DividerCustom(),
-                          ///PhonePe
+
+                          ///PhonePe Radio Button
                           ListTile(
+                            horizontalTitleGap: 0.0,
+                            contentPadding: EdgeInsets.fromLTRB(25, 0, 5.0, 0),
                             leading: ImageIcon(
                               AssetImage(phonePeLogoImagePath),
                               color: Colors.deepPurple,
                             ),
-                            // leading: Icon(FontAwesomeIcons.phonepe,color: Colors.purpleAccent,),
+
                             trailing: Radio<int>(
                                 value: 1,
                                 groupValue: null,
                                 onChanged: (val) {
                                   setState(() {
                                     id = 1;
-                                    Radiobutton = '';
+                                    radioButton = '';
                                   });
                                 }),
                             title: Text(
@@ -177,6 +188,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                   ),
                 ),
+
+                /// Wallets Text
                 Row(
                   children: [
                     Padding(
@@ -188,19 +201,26 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     )
                   ],
                 ),
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
+                  padding: const EdgeInsets.fromLTRB(22.0, 10.0, 22.0, 0.0),
                   child: Neumorphic(
                     style: NeumorphicStyle(
-                        shadowLightColorEmboss: Colors.white,
-                        shadowDarkColorEmboss: Colors.black,
-                        shadowDarkColor: Colors.black),
+                      shadowLightColorEmboss: Colors.white,
+                      shadowDarkColorEmboss: Colors.grey,
+                      shadowDarkColor: Colors.black87,
+                      shape: NeumorphicShape.flat,
+                      depth: 9,
+                    ),
                     child: Container(
                       width: 300,
-                      height: 175,
+                      height: 180,
                       child: Column(
                         children: [
+                          /// Paytm
                           ListTile(
+                            horizontalTitleGap: 0.0,
+                            contentPadding: EdgeInsets.fromLTRB(25, 0, 5.0, 0),
                             leading: Image(
                               image: AssetImage(paytmLogoImagePath),
                               // fit: BoxFit.fitWidth,
@@ -213,7 +233,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 onChanged: (val) {
                                   setState(() {
                                     id = 1;
-                                    Radiobutton = '';
+                                    radioButton = '';
                                   });
                                 }),
                             title: Text(
@@ -221,18 +241,25 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ),
-                          Neumorphic(
-                            style: NeumorphicStyle(
-                                shadowLightColorEmboss: Colors.white,
-                                shadowDarkColorEmboss: Colors.black,
-                                shadowDarkColor: Colors.black),
-                            child: Container(
-                              width: 220,
-                              height: 3,
-                              color: Colors.white,
-                            ),
-                          ),
+
+                          // Neumorphic(
+                          //   style: NeumorphicStyle(
+                          //       shadowLightColorEmboss: Colors.white,
+                          //       shadowDarkColorEmboss: Colors.black,
+                          //       shadowDarkColor: Colors.black),
+                          //   child: Container(
+                          //     width: 220,
+                          //     height: 3,
+                          //     color: Colors.white,
+                          //   ),
+                          // ),
+                          ///Divider
+                          DividerCustom(),
+
+                          ///Amazon UPI
                           ListTile(
+                            horizontalTitleGap: 0.0,
+                            contentPadding: EdgeInsets.fromLTRB(25, 0, 5.0, 0),
                             leading: Icon(
                               FontAwesomeIcons.amazon,
                               color: Colors.black,
@@ -243,7 +270,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 onChanged: (val) {
                                   setState(() {
                                     id = 1;
-                                    Radiobutton = '';
+                                    radioButton = '';
                                   });
                                 }),
                             title: Text(
@@ -251,18 +278,25 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ),
-                          Neumorphic(
-                            style: NeumorphicStyle(
-                                shadowLightColorEmboss: Colors.white,
-                                shadowDarkColorEmboss: Colors.black,
-                                shadowDarkColor: Colors.black),
-                            child: Container(
-                              width: 220,
-                              height: 3,
-                              color: Colors.white,
-                            ),
-                          ),
+
+                          // Neumorphic(
+                          //   style: NeumorphicStyle(
+                          //       shadowLightColorEmboss: Colors.white,
+                          //       shadowDarkColorEmboss: Colors.black,
+                          //       shadowDarkColor: Colors.black),
+                          //   child: Container(
+                          //     width: 220,
+                          //     height: 3,
+                          //     color: Colors.white,
+                          //   ),
+                          // ),
+                          ///Divider
+                          DividerCustom(),
+
+                          ///PhonePe
                           ListTile(
+                            horizontalTitleGap: 0.0,
+                            contentPadding: EdgeInsets.fromLTRB(25, 0, 5.0, 0),
                             leading: ImageIcon(
                               AssetImage(phonePeLogoImagePath),
                               color: Colors.deepPurple,
@@ -274,7 +308,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 onChanged: (val) {
                                   setState(() {
                                     id = 1;
-                                    Radiobutton = '';
+                                    radioButton = '';
                                   });
                                 }),
                             title: Text(
@@ -287,13 +321,18 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                   ),
                 ),
+
+                /// Pay Later
                 Padding(
-                  padding: const EdgeInsets.only(top: 28.0),
+                  padding: const EdgeInsets.fromLTRB(22.0, 28.0, 22.0, 0.0),
                   child: Neumorphic(
                     style: NeumorphicStyle(
-                        shadowLightColorEmboss: Colors.white,
-                        shadowDarkColorEmboss: Colors.black,
-                        shadowDarkColor: Colors.black),
+                      shadowLightColorEmboss: Colors.white,
+                      shadowDarkColorEmboss: Colors.grey,
+                      shadowDarkColor: Colors.black87,
+                      shape: NeumorphicShape.flat,
+                      depth: 9,
+                    ),
                     child: Container(
                       width: 300,
                       height: 50,
@@ -310,7 +349,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 155.0),
+                            padding: const EdgeInsets.only(left: 147.0),
                             child: Radio(
                                 value: 1,
                                 hoverColor: Colors.red,
@@ -319,7 +358,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 onChanged: (val) {
                                   setState(() {
                                     id = 1;
-                                    Radiobutton = 'one';
+                                    radioButton = 'one';
                                   });
                                 }),
                           ),
@@ -328,16 +367,58 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                   ),
                 ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 18.0),
-                    child: Card(
-                      elevation: 20,
-                      shadowColor: Color(0xfff93527),
-                      child: SizedBox(
-                        width: 140,
-                        height: 55,
-                        child: ElevatedButton(
+
+                /// Proceed button
+                // Center(
+                //   child: Padding(
+                //     padding: const EdgeInsets.only(top: 18.0),
+                //     child: Card(
+                //       elevation: 20,
+                //       shadowColor: Color(0xfff93527),
+                //       child: SizedBox(
+                //         width: 140,
+                //         height: 55,
+                //         child: ElevatedButton(
+                //           onPressed: () {
+                //             Navigator.push(
+                //                 context,
+                //                 MaterialPageRoute(
+                //                     builder: (context) =>
+                //                         Payment_Unseccussfull_Screen()));
+                //           },
+                //           style: ElevatedButton.styleFrom(
+                //               shadowColor: Color(0xfff93527),
+                //               primary: Colors.red),
+                //           child: Text(buttonNameProceed),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  child: SizedBox(
+                    height: 50,
+                    child: Neumorphic(
+                      style: NeumorphicStyle(
+                          depth: 6,
+                          shape: NeumorphicShape.flat,
+                          shadowDarkColor: Colors.red,
+                          shadowLightColor: Colors.white,
+                          shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
+
+                          //  boxShape: NeumorphicBoxShape.circle(),
+                          ),
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: buttonColor,
+                              textStyle: TextStyle(
+                                fontFamily: textFontFamily,
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              )),
                           onPressed: () {
                             Navigator.push(
                                 context,
@@ -345,12 +426,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                     builder: (context) =>
                                         Payment_Unseccussfull_Screen()));
                           },
-                          style: ElevatedButton.styleFrom(
-                              shadowColor: Color(0xfff93527),
-                              primary: Colors.red),
-                          child: Text(buttonNameProceed),
-                        ),
-                      ),
+                          child: SizedBox(
+                              width: 130,
+                              child: Center(child: Text(buttonNameProceed)))),
                     ),
                   ),
                 ),
