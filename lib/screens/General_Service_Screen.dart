@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Body_Work_Screen.dart';
-
+import 'Track_Screen.dart';
 
 class General_Service extends StatefulWidget {
   const General_Service({Key? key}) : super(key: key);
@@ -67,7 +67,7 @@ class CustomContainer extends StatefulWidget {
                               padding: const EdgeInsets.only(left: 13.0),
                               child: ListTile(
                                 leading: Icon(FontAwesomeIcons.car,color: Colors.redAccent,),
-                                title: Text('Genereal Service',style: TextStyle(fontSize: 21,fontWeight: FontWeight.w500),),
+                                title: Text('General Service',style: TextStyle(fontSize: 21,fontWeight: FontWeight.w500),),
                               ),
                             ),
                             Padding(
@@ -411,9 +411,6 @@ class CustomContainer extends StatefulWidget {
 
                         ),
                       ),
-
-
-
                 ],
               ),
             )

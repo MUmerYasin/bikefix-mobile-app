@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import 'Become_Partner.dart';
+import 'Track_Screen.dart';
+
 class Time extends StatefulWidget {
   const Time({Key? key}) : super(key: key);
 
@@ -389,7 +392,8 @@ class _CalenderState extends State<Calender> {
                   height: 55,
                   child: ElevatedButton(
                     onPressed: (){
-                    },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child: Text('Track Order',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Become_Partner()));
+                    },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child: Text('Book Now',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                   ),
                 ),
               ),

@@ -98,7 +98,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             ),
                             Neumorphic(
                               style: NeumorphicStyle(
-                                  shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
+                                  depth: NeumorphicTheme.embossDepth(context), shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,),
                               child: Container(
                                 width: 240,
                                 height: 3,
