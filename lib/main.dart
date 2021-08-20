@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:two_wheel_vehicle/screens/Home.dart';
 import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: LoginScreen(),
       home: PaymentMethodScreen(),
+      // home: Homee(),
       // home: RegisterScreen(),
       // home: OTPScreen(),
       // home: MyProfileScreen(),
