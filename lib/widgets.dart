@@ -99,7 +99,7 @@ class SmallRoundedCornerButton extends StatelessWidget {
       height: 40,
       child: Neumorphic(
         style: NeumorphicStyle(
-            depth: -10,
+            depth: 10,
             shape: NeumorphicShape.flat,
             shadowDarkColor: Colors.black12,
             shadowLightColor: Colors.white,

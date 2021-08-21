@@ -46,14 +46,15 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
 
                     children: [
+                      /// Name Text Field
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Name',
+                            textFieldName,
                             style: TextStyle(
-                              fontFamily: 'Roboto',
+                              fontFamily: textFontFamily,
                               fontSize: 18,
                               color: const Color(0xff000000),
                               height: 1,
@@ -63,15 +64,16 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           ),
                         ),
                       ),
-                      CustomTextField(text: 'Name',),
+                      CustomTextField(text: textFieldName,),
+                      /// E-Mail Text Field
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Email',
+                            textFieldEmail,
                             style: TextStyle(
-                              fontFamily: 'Roboto',
+                              fontFamily: textFontFamily,
                               fontSize: 18,
                               color: const Color(0xff000000),
                               height: 1,
@@ -81,11 +83,13 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           ),
                         ),
                       ),
-                      CustomTextField(text: 'mail@mail.com',),
+                      CustomTextField(text: mailDescriptionText,),
+
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
+                            ///Date of Birth Text Field
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,9 +97,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'DOB',
+                                    textFieldDOB,
                                     style: TextStyle(
-                                      fontFamily: 'Roboto',
+                                      fontFamily: textFontFamily,
                                       fontSize: 18,
                                       color: const Color(0xff000000),
                                       height: 1,
@@ -106,9 +110,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                 ),
                                 SizedBox(
                                     width: MediaQuery.of(context).size.width * .42,
-                                    child: CustomTextField(text: '01/01/1990',),),
+                                    child: CustomTextField(text: dateDescriptionText,),),
                               ],
                             ),
+                            /// text Field Gender
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,9 +121,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'Gender',
+                                    textFieldGender,
                                     style: TextStyle(
-                                      fontFamily: 'Roboto',
+                                      fontFamily: textFontFamily,
                                       fontSize: 18,
                                       color: const Color(0xff000000),
                                       height: 1,
@@ -129,11 +134,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                 ),
                                 SizedBox(
                                     width: MediaQuery.of(context).size.width *.43,
-                                    child: CustomTextField(text: 'Male',),),
+                                    child: CustomTextField(text: maleDescriptionText,),),
                               ],
                             ),
-
-
 
                           ],
                         ),
@@ -141,14 +144,12 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                       RoundedCornerButton(
                         onPressed: () {
                           gotoScreen(context: context,screen:LocationScreen());
-
                         },
-                        child: 'Save',
+                        child: buttonNameSave,
                       ),
+                    ],),),
 
-                    ],))
-
-                  ])),
-        ));
+                  ],),),
+        ),);
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:two_wheel_vehicle/screens/location_screen.dart';
 // import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 // import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 // import 'package:two_wheel_vehicle/screens/location_screen.dart';
@@ -11,6 +12,7 @@ import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
 // import 'package:two_wheel_vehicle/screens/register_screen.dart';
 // import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
 // import 'package:two_wheel_vehicle/screens/login_screen.dart';
 // import 'screens/login_screen.dart';
 
@@ -36,9 +38,9 @@ class MyApp extends StatelessWidget {
       // home: PaymentMethodScreen(), // Front End Final
       // home: RegisterScreen(), // Front End Final
       // home: OTPScreen(),  // Front End Final
-      home: MyProfileScreen(),
-      // home: LocationScreen(),
-      // home: MyVehicles(),
+      // home: MyProfileScreen(), // Front End Final
+      // home: LocationScreen(), // Front End Final
+      home: MyVehicles(),
       // home: MyBookingScreen(),
       // home: ServiceStatusScreen(),
       // home: AddVehicleScreen(),
