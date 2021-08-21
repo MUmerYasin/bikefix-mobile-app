@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/register_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
@@ -14,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: NeumorphicColors.background,
       body: Container(
         padding: EdgeInsets.all(15),
         height: MediaQuery.of(context).size.height,
@@ -28,12 +29,21 @@ class _LoginScreenState extends State<LoginScreen> {
              mainAxisAlignment: MainAxisAlignment.center,
              crossAxisAlignment: CrossAxisAlignment.center,
              children: [
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: CustomTextField(text: 'Phone Number',),
+             Neumorphic(
+               style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+               child: Container(
+                 height: 50,
+                 child: TextField(
+                   decoration: InputDecoration(
+                     contentPadding: EdgeInsets.only(left: 14,right: 14),
+                     border: InputBorder.none,
+                     hintText: "Phone Number"
+                   ),
+                 ),
+               ),
              ),
              Padding(
-               padding: const EdgeInsets.all(8.0),
+               padding: const EdgeInsets.only(top: 18.0),
                child: RoundedCornerButton(
                  onPressed: () {
                    gotoScreen(context: context,screen:RegisterScreen());
@@ -42,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                ),
              ),
              Padding(
-               padding: const EdgeInsets.all(8.0),
+               padding: const EdgeInsets.only(top: 13.0),
                child: Text.rich(
                  TextSpan(
                    style: TextStyle(

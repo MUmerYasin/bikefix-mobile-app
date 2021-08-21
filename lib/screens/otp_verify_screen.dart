@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
 
 import '../config.dart';
@@ -15,7 +16,7 @@ class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: NeumorphicColors.background,
         body: Container(
             padding: EdgeInsets.all(15),
             height: MediaQuery.of(context).size.height,
@@ -46,31 +47,76 @@ class _OTPScreenState extends State<OTPScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
+                          Neumorphic(
+                            style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+                            child: Container(
+                              height: 50,
                               width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(left: 14,right: 14),
+                                    border: InputBorder.none,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Neumorphic(
+                            style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+                            child: Container(
+                              height: 50,
                               width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(left: 14,right: 14),
+                                    border: InputBorder.none,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Neumorphic(
+                            style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+                            child: Container(
+                              height: 50,
                               width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(left: 14,right: 14),
+                                    border: InputBorder.none,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Neumorphic(
+                            style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+                            child: Container(
+                              height: 50,
                               width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
-                          SizedBox(
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(left: 14,right: 14),
+                                    border: InputBorder.none,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Neumorphic(
+                            style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+                            child: Container(
+                              height: 50,
                               width: MediaQuery.of(context).size.width / 6,
-                              child: CustomTextField(
-                                text: '',
-                              )),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(left: 14,right: 14),
+                                    border: InputBorder.none,
+
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                       RoundedCornerButton(

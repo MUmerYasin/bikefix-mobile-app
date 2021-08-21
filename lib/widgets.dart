@@ -155,3 +155,35 @@ class SmallRoundedCornerButton extends StatelessWidget {
     );
   }
 }
+
+class myTextField extends StatefulWidget {
+  const myTextField({Key? key, required this.text}) : super(key: key);
+   final String? text;
+
+  @override
+  _myTextFieldState createState() => _myTextFieldState();
+}
+
+class _myTextFieldState extends State<myTextField> {
+  @override
+  Widget build(BuildContext context) {
+    return Neumorphic(
+      style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+      child: Container(
+        height: 50,
+        child: TextField(
+          decoration: InputDecoration(
+              contentPadding: EdgeInsets.only(left: 14,right: 14),
+              border: InputBorder.none,
+
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+

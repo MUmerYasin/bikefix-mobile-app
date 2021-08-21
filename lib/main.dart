@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
+import 'package:two_wheel_vehicle/screens/homee.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
@@ -34,8 +35,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: LoginScreen(),
-      home: PaymentMethodScreen(),
-      // home: Homee(),
+      // home: PaymentMethodScreen(),
+      home: Homee(),
       // home: RegisterScreen(),
       // home: OTPScreen(),
       // home: MyProfileScreen(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
 
 import '../config.dart';
@@ -16,9 +17,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
-          backgroundColor: backgroundColor,
+          backgroundColor: NeumorphicColors.background,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
           leading: Icon(Icons.arrow_back_ios),
           title: Text(
@@ -63,7 +64,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           ),
                         ),
                       ),
-                      CustomTextField(text: 'Name',),
+                      myTextField(text: 'Name'),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
@@ -81,7 +82,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           ),
                         ),
                       ),
-                      CustomTextField(text: 'mail@mail.com',),
+                      myTextField(text: 'Name'),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -105,8 +106,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                   ),
                                 ),
                                 SizedBox(
-                                    width: MediaQuery.of(context).size.width * .40,
-                                    child: CustomTextField(text: '01/01/1990',))
+                                    width: MediaQuery.of(context).size.width /3,
+                                    child: myTextField(text: '01/01/1990'),
+                                  )
                               ],
                             ),
                             Column(
@@ -127,9 +129,14 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     textAlign: TextAlign.left,
                                   ),
                                 ),
-                                SizedBox(
-                                    width: MediaQuery.of(context).size.width *.40,
-                                    child: CustomTextField(text: 'Male',))
+
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: SizedBox(
+                                      width: MediaQuery.of(context).size.width /3,
+                                      child: myTextField(text: 'Male'),
+                                    ),
+                                )
                               ],
                             ),
 
