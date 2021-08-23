@@ -18,6 +18,7 @@ const String screenTitleLocation = "Location";
 const String screenTitleMyVehicle = "My Vehicle";
 const String screenTitleMyBookings = "My Bookings";
 const String screenTitleStatusService = "Status Service";
+const String screenTitleAddVehicle = "Add Vehicle";
 
 /// Text Font Family
 const String textFontFamily = "Roboto";
@@ -33,22 +34,27 @@ const String textFieldEmail = "Email";
 const String textFieldStreet = "Street";
 const String textFieldCity = "City";
 const String textFieldZipCode = "Zip Code";
+const String textFieldYear = "Year";
+
+///Drop Down Menu
+const String dropDownMenuChooseBrand = "Choose Brand";
+const String dropDownMenuChooseModel = "Choose Model";
 
 ///Buttons Name
-const String buttonNameProceed = "Proceed";
+const String buttonNameHome = "Home";
 const String buttonNameLogIn = "Log In";
 const String buttonNameSignUp = "Sign Up";
 const String buttonNameConfirm = "Confirm";
+const String buttonNameCancel = "Cancel";
 const String buttonNameResend = "Resend";
 const String buttonNameSave = "Save";
-const String buttonNameHome = "Home";
 const String buttonNameOffice = "Office";
-const String buttonNameOther = "Other";
 const String buttonNameSaveAddr = "Save Addr.";
 const String buttonNameNeedHelp = "Need Help ?";
 const String buttonNameConnect = "Connect";
-const String buttonNameCancel = "Cancel";
+const String buttonNameProceed = "Proceed";
 const String buttonNameFeedback = "Feedback";
+const String buttonNameOther = "Other";
 
 /// Company names
 const String companyNameKTM = "KTM";
@@ -70,7 +76,7 @@ const String gridViewChooseBikeBrandText3 = companyNameBajaj;
 const String gridViewChooseBikeBrandText4 = companyNameRoyalEnfield;
 
 ///All Images Path in GridView of Choose Bike Brand.
-
+// Main icon path
 const String ImagePathStart = "assets/icons/";
 
 const String bikeFixUpLogoImagePath = ImagePathStart+"logo.png";
@@ -109,6 +115,7 @@ const String maleDescriptionText = "Male";
 const String currentLocationDescriptionText = " Use Current Location";
 const String addVehicleDescriptionText = " Add Vehicle";
 const String naDescriptionText = " NA";
+const String fuelTypeText = "Fuel Type";
 
 const String bookingDateTimeText = "Booking date & time";
 const String pickupDateTimeText = "Pickup date & time";

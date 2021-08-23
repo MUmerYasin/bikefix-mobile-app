@@ -1,11 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:two_wheel_vehicle/screens/location_screen.dart';
-import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
+import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
-import 'package:two_wheel_vehicle/screens/mybooking_screen.dart';
 import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
+
 
 
 void main() => runApp(
@@ -34,8 +32,8 @@ class MyApp extends StatelessWidget {
       // home: LocationScreen(), // Front End Final
       // home: MyVehicles(),  // Front End Final
       // home: MyBookingScreen(),// Front End Final // Develop by Umer
-      home: ServiceStatusScreen(),
-      // home: AddVehicleScreen(),
+      // home: ServiceStatusScreen(),// Front End Final // Develop by Umer
+      home: AddVehicleScreen(),
       // home: ChooseBikeBrand(), // Front End Final // Develop by Umer
 
     );
