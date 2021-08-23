@@ -119,10 +119,10 @@ class _MyVehiclesState extends State<MyVehicles> {
                           ),
                           children: [
                             TextSpan(
-                              text: 'KTM\n',
+                              text: companyNameKTM + '\n',
                             ),
                             TextSpan(
-                              text: '200 Duke',
+                              text: bikeDetailsHundredDuke,
                               style: TextStyle(
                                 color: const Color(0xffd33937),
                               ),
@@ -184,10 +184,10 @@ class _MyVehiclesState extends State<MyVehicles> {
                           ),
                           children: [
                             TextSpan(
-                              text: 'KTM\n',
+                              text: companyNameKTM + '\n',
                             ),
                             TextSpan(
-                              text: '200 Duke',
+                              text: bikeDetailsHundredDuke,
                               style: TextStyle(
                                 color: const Color(0xffd33937),
                               ),
@@ -249,10 +249,10 @@ class _MyVehiclesState extends State<MyVehicles> {
                           ),
                           children: [
                             TextSpan(
-                              text: 'KTM\n',
+                              text: companyNameKTM + '\n',
                             ),
                             TextSpan(
-                              text: '200 Duke',
+                              text: bikeDetailsHundredDuke,
                               style: TextStyle(
                                 color: const Color(0xffd33937),
                               ),

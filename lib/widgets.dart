@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget {
           Text(
             title ?? '',
             style: TextStyle(
-              fontFamily: 'Roboto',
+              fontFamily: textFontFamily,
               fontSize: 18,
               color: const Color(0xff000000),
             ),
@@ -32,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
           Text(
             action ?? '',
             style: TextStyle(
-              fontFamily: 'Roboto',
+              fontFamily: textFontFamily,
               fontSize: 18,
               color: const Color(0xff000000),
             ),
@@ -72,7 +72,7 @@ class CustomTextField extends StatelessWidget {
                 border: InputBorder.none,
                 labelText: text,
                 labelStyle: TextStyle(
-                  fontFamily: 'Roboto',
+                  fontFamily: textFontFamily,
                   fontSize: 14,
                   color: const Color(0xff828284),
                 ),
@@ -111,7 +111,7 @@ class SmallRoundedCornerButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 primary: color! ? buttonColor : Colors.black,
                 textStyle: TextStyle(
-                  fontFamily: 'Roboto',
+                  fontFamily: textFontFamily,
                   fontSize: 18,
                   color: const Color(0xffffffff),
                   fontWeight: FontWeight.w500,
@@ -184,8 +184,8 @@ class _DividerCustomState extends State<DividerCustom> {
 
       ),
       child: Container(
-        width: 240,
-        height: 4,
+        width: MediaQuery.of(context).size.width * .8,
+        height: 5,
         color: Colors.white,
       ),
     );
