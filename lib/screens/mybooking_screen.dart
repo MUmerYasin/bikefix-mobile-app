@@ -1098,7 +1098,8 @@ class _SingleItemOfServiceCompleteInMyBookingState
           shape: NeumorphicShape.flat,
           // shadowDarkColor: Colors.black12,
           shadowLightColor: Colors.white,
-          shadowDarkColorEmboss: Colors.black.withOpacity(0.8)),
+          shadowDarkColorEmboss: Colors.black.withOpacity(0.8),
+      ),
       child: Container(
         height: 200,
         padding: EdgeInsets.all(15),

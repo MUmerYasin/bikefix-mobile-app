@@ -17,6 +17,7 @@ const String screenTitleMyProfile = "My Profile";
 const String screenTitleLocation = "Location";
 const String screenTitleMyVehicle = "My Vehicle";
 const String screenTitleMyBookings = "My Bookings";
+const String screenTitleStatusService = "Status Service";
 
 /// Text Font Family
 const String textFontFamily = "Roboto";
@@ -47,6 +48,7 @@ const String buttonNameSaveAddr = "Save Addr.";
 const String buttonNameNeedHelp = "Need Help ?";
 const String buttonNameConnect = "Connect";
 const String buttonNameCancel = "Cancel";
+const String buttonNameFeedback = "Feedback";
 
 /// Company names
 const String companyNameKTM = "KTM";
@@ -81,7 +83,7 @@ const String paytmLogoImagePath = ImagePathStart+"paytm_logo.png";
 const String phonePeLogoImagePath = ImagePathStart+"phonepe_logo.png";
 const String otpIconImagePath = ImagePathStart+"otp_icon.png";
 const String mapImagePath = ImagePathStart+"map.png";
-const String bikeimageImagePath = ImagePathStart+"bike_image.png";
+const String bikeImageImagePath = ImagePathStart+"bike_image.png";
 
 
 ///Payment Method Text
@@ -100,9 +102,15 @@ const String signUpDescriptionText = "Don’t Have account? ";
 const String logInDescriptionText = "If already user, ";
 const String pleaseEnterOTPDescriptionText = "Please enter OTP";
 const String mailDescriptionText = "mail@mail.com";
-const String dateDescriptionText = "01/01/1990";
+const String dateDescriptionText = "01/01/2022";
 const String timeDescriptionText = "03:45 pm";
+const String timeDateDescriptionText = dateDescriptionText +"   "+ timeDescriptionText;
 const String maleDescriptionText = "Male";
 const String currentLocationDescriptionText = " Use Current Location";
 const String addVehicleDescriptionText = " Add Vehicle";
 const String naDescriptionText = " NA";
+
+const String bookingDateTimeText = "Booking date & time";
+const String pickupDateTimeText = "Pickup date & time";
+const String DeliveryDateTimeText = "Delivery date & time";
+const String PriceWithTitleAndValueText = "Price: ₹ 2,500";

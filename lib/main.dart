@@ -5,6 +5,7 @@ import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/mybooking_screen.dart';
+import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 
 
 void main() => runApp(
@@ -32,8 +33,8 @@ class MyApp extends StatelessWidget {
       // home: MyProfileScreen(), // Front End Final
       // home: LocationScreen(), // Front End Final
       // home: MyVehicles(),  // Front End Final
-      home: MyBookingScreen(),
-      // home: ServiceStatusScreen(),
+      // home: MyBookingScreen(),// Front End Final // Develop by Umer
+      home: ServiceStatusScreen(),
       // home: AddVehicleScreen(),
       // home: ChooseBikeBrand(), // Front End Final // Develop by Umer
 

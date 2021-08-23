@@ -109,7 +109,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                       Icon(Icons.circle, color: buttonColor),
 
                       ///bike image
-                      Image.asset(bikeimageImagePath),
+                      Image.asset(bikeImageImagePath),
                       Text.rich(
                         TextSpan(
                           style: TextStyle(
@@ -174,7 +174,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.radio_button_unchecked, color: Colors.black),
-                      Image.asset(bikeimageImagePath),
+                      Image.asset(bikeImageImagePath),
                       Text.rich(
                         TextSpan(
                           style: TextStyle(
@@ -239,7 +239,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.radio_button_unchecked, color: Colors.black),
-                      Image.asset(bikeimageImagePath),
+                      Image.asset(bikeImageImagePath),
                       Text.rich(
                         TextSpan(
                           style: TextStyle(
