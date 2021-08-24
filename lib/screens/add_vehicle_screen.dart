@@ -154,6 +154,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
               ),
             ),
 
+
             // Padding(
             //   padding: const EdgeInsets.only(top: 8.0, bottom: 10),
             //   child: Neumorphic(
@@ -214,6 +215,12 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
             //     ),
             //   ),
             // ),
+
+            CustomDropDownMenu(
+                customDropDownValue: dropDownMenuChooseBrand,
+                bikeDetailsData: chooseBrandListDropDownMenu,
+            ),
+
 
             CustomTextField(
               text: textFieldYear,

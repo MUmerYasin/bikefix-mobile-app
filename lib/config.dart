@@ -36,9 +36,34 @@ const String textFieldCity = "City";
 const String textFieldZipCode = "Zip Code";
 const String textFieldYear = "Year";
 
-///Drop Down Menu
+///----Drop Down Menu----
+
+///First option In Drop Down Menu
 const String dropDownMenuChooseBrand = "Choose Brand";
 const String dropDownMenuChooseModel = "Choose Model";
+const String dropDownMenuSelect = "Select";
+const String dropDownMenuSelectBudget = "Select Budget";
+const String dropDownMenuSelectLocation = "Select Location";
+const String dropDownMenuBrand = "Brand";
+const String dropDownMenuModel = "Model";
+const String dropDownMenuYear = "Year";
+const String dropDownMenuColor = "Color";
+
+/// All option in Drop Down Menu // List show in Drop Down Menu
+
+var chooseBrandListDropDownMenu = <String>[
+  dropDownMenuChooseBrand,
+  companyNameKTM,
+  companyNameTVS,
+  companyNameBajaj,
+  companyNameRoyalEnfield,
+  companyNameHero,
+  companyNameMahindra,
+  companyNameJawaMoto,
+  companyNameHonda,
+  companyNameSuzuki,
+  companyNameYamahaMotors
+];
 
 ///Buttons Name
 const String buttonNameHome = "Home";
@@ -61,6 +86,12 @@ const String companyNameKTM = "KTM";
 const String companyNameTVS = "TVS";
 const String companyNameBajaj = "Bajaj";
 const String companyNameRoyalEnfield = "Royal enfield";
+const String companyNameHero = "Hero";
+const String companyNameMahindra = "Mahindra";
+const String companyNameJawaMoto = "Jawa Moto";
+const String companyNameHonda = "Honda";
+const String companyNameSuzuki = "Suzuki";
+const String companyNameYamahaMotors = "Yamaha Motors";
 
 /// Bike Details
 const String bikeDetailsHundredDuke = " 200 Duke";
