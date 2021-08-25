@@ -35,7 +35,7 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
         child: Center(
           child: Column(
             children: [
-              /// Payment Unsuccessful Image and Text
+              /// Payment successful Image and Text
               Padding(
                 padding: const EdgeInsets.only(top: 48.0),
                 child: Neumorphic(

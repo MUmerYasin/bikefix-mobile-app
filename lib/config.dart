@@ -47,6 +47,7 @@ const String mainPicCarouselSliderOneImagePath = imagePathStart + "main_pic_caro
 
 //Logos
 const String bikeFixUpLogoImagePath = imagePathStart + "logo.png";
+const String instagramLogoImagePath = imagePathStart + "instagram_logo.png";
 const String ktmLogoImagePath = imagePathStart + "ktm_logo.png";
 const String ktmiconImagePath = imagePathStart + "ktm_icon.png";// Small Resolution Pixels KTM Icon
 const String ktmSmallIconImagePath = imagePathStart + "ktm_icon.png";
@@ -297,6 +298,7 @@ const String signUpDescriptionText = "Don’t Have account? ";
 const String logInDescriptionText = "If already user, ";
 const String pleaseEnterOTPDescriptionText = "Please enter OTP";
 const String mailDescriptionText = "mail@mail.com";
+const String phoneNumberDescriptionText = "966 325 4568";
 const String dateDescriptionText = "01/01/2022";
 const String timeDescriptionText = "03:45 pm";
 const String timeDateDescriptionText =
@@ -312,6 +314,20 @@ const String bookingDateTimeText = "Booking date & time";
 const String pickupDateTimeText = "Pickup date & time";
 const String deliveryDateTimeText = "Delivery date & time";
 const String PriceWithTitleAndValueText = "Price: ₹ 2,500";
+
+///Help & Support Screen
+const String HelpSupportText = "Help & Support";
+const String phoneNumberHelpSupportText = phoneNumberDescriptionText;
+const String emailHelpSupportText = mailDescriptionText;
+//Custom Time
+const String timeInAMText = "10am";
+const String timeInPMText = "7pm";
+const String TimingSupportText = "Timing "+timeInAMText+" - "+timeInPMText;
+
+const String termsConditionsHelpSupportText = "Terms & Conditions | Privacy Policy";
+//App version
+const String appVersion = "1.0.1";
+const String appVersionHelpSupportText = "App version : "+appVersion;
 
 ///SUBSCRIPTION Screen
 const String subscriptionText = "SUBSCRIPTION";

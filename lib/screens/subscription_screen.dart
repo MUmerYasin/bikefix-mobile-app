@@ -35,7 +35,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         child: Center(
           child: Column(
             children: [
-              /// Payment Unsuccessful Image and Text
+
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Neumorphic(
