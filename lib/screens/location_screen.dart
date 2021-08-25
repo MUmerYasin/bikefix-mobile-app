@@ -37,7 +37,6 @@ class _LocationScreenState extends State<LocationScreen> {
       ),
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
-
         child: Container(
           padding: EdgeInsets.all(15),
           height: MediaQuery.of(context).size.height,

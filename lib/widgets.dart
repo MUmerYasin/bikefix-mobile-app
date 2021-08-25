@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget {
 class CustomTextField extends StatelessWidget {
   String? text;
 
-    CustomTextField({this.text});
+  CustomTextField({this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +58,11 @@ class CustomTextField extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Neumorphic(
           style: NeumorphicStyle(
-            depth: -8,
-            shape: NeumorphicShape.flat,
-
-           shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
-            //  boxShape: NeumorphicBoxShape.circle(),
-          ),
+              depth: -8,
+              shape: NeumorphicShape.flat,
+              shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
+              //  boxShape: NeumorphicBoxShape.circle(),
+              ),
           child: Padding(
             padding: const EdgeInsets.all(17.0),
             child: TextField(
@@ -105,8 +104,8 @@ class SmallRoundedCornerButton extends StatelessWidget {
             shadowLightColor: Colors.white,
             shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 
-          //  boxShape: NeumorphicBoxShape.circle(),
-        ),
+            //  boxShape: NeumorphicBoxShape.circle(),
+            ),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 primary: color! ? buttonColor : Colors.black,
@@ -141,8 +140,8 @@ class RoundedCornerButton extends StatelessWidget {
             shadowLightColor: Colors.white,
             shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 
-          //  boxShape: NeumorphicBoxShape.circle(),
-        ),
+            //  boxShape: NeumorphicBoxShape.circle(),
+            ),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 primary: buttonColor,
@@ -153,7 +152,8 @@ class RoundedCornerButton extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 )),
             onPressed: onPressed,
-            child: SizedBox(width: 100, child: Center(child: Text(child ?? '')))),
+            child:
+                SizedBox(width: 100, child: Center(child: Text(child ?? '')))),
       ),
     );
   }
@@ -181,7 +181,6 @@ class _DividerCustomState extends State<DividerCustom> {
         shadowDarkColor: Colors.black54,
         shape: NeumorphicShape.flat,
         depth: -1,
-
       ),
       child: Container(
         width: MediaQuery.of(context).size.width * .8,
@@ -229,9 +228,6 @@ class _DividerCustomState extends State<DividerCustom> {
 //     );
 //   }
 // }
-
-
-
 
 /// Custom Drop Down Menu
 // class CustomDropDownMenu extends StatelessWidget {
@@ -324,15 +320,15 @@ class _DividerCustomState extends State<DividerCustom> {
 //   }
 // }
 
-
 class CustomDropDownMenu extends StatefulWidget {
+  CustomDropDownMenu(
+      {Key? key,
+      required this.customDropDownValue,
+      required this.bikeDetailsData})
+      : super(key: key);
 
-   CustomDropDownMenu({Key? key,
-    required this.customDropDownValue,
-    required this.bikeDetailsData}) : super(key: key);
-
-   String customDropDownValue;
-   var bikeDetailsData  = <String>[];
+  String customDropDownValue;
+  var bikeDetailsData = <String>[];
 
   // var countryList = [
   //   "Albania",
@@ -345,9 +341,9 @@ class CustomDropDownMenu extends StatefulWidget {
   //   "Zambia",
   //   "Zimbabwe"
   // ];
-   String getCustomDropDownValue(){
-     return customDropDownValue;
-   }
+  String getCustomDropDownValue() {
+    return customDropDownValue;
+  }
 
   @override
   _CustomDropDownMenuState createState() => _CustomDropDownMenuState();
@@ -359,95 +355,59 @@ class _CustomDropDownMenuState extends State<CustomDropDownMenu> {
     return
 
 
-      // child: DropdownButton(
-      //   isExpanded: true,
-      //   value: widget.customDropDownValue,
-      //   icon: const Icon(
-      //     Icons.arrow_drop_down,
-      //     color: Colors.black,
-      //   ),
-      //   iconSize: 30,
-      //   elevation: 24,
-      //   // dropdownColor: Colors.deepPurple,
-      //   style: const TextStyle(
-      //     color: Colors.black,
-      //     fontSize: 20.0,
-      //     // backgroundColor: Colors.deepPurple,
-      //   ),
-      //   // underline: Container(
-      //   //   height: 2,
-      //   //   //color: Colors.white,
-      //   // ),
-      //   items: widget.bikeDetailsData.map(( bikeData) {
-      //     return DropdownMenuItem(
-      //       value: bikeData,
-      //       child: Text(bikeData),
-      //     );
-      //   }).toList(),
-      //   onChanged: (String? newValue) {
-      //     setState(() {
-      //       widget.customDropDownValue = newValue!;
-      //     });
-      //   },
-      // ),
-      SizedBox(
-        height: 65,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Neumorphic(
-            style: NeumorphicStyle(
-                depth: 8,
-                shape: NeumorphicShape.flat,
-                shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-               // boxShape: NeumorphicBoxShape.circle(),
+        SizedBox(
+      height: 65,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Neumorphic(
+          style: NeumorphicStyle(
+            depth: 8,
+            shape: NeumorphicShape.flat,
+            shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+            // boxShape: NeumorphicBoxShape.circle(),
 
-              shadowDarkColor: Colors.black.withOpacity(0.7),
-              shadowLightColor: Colors.white,
-
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(17.0),
-              child: DropdownButton(
-                isExpanded: true,
-                value: widget.customDropDownValue,
-                icon: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.black,
-                ),
-                iconSize: 30,
-                elevation: 24,
-                // dropdownColor: Colors.deepPurple,
-                style: const TextStyle(
-                  fontFamily: textFontFamily,
-                  fontSize: 14,
-                  color: Colors.black,
-                  // backgroundColor: Colors.deepPurple,
-                ),
-
-                underline: Container(
-                  height: 1,
-                  color: Colors.transparent,
-                ),
-                items: widget.bikeDetailsData.map(( bikeData) {
-                  return DropdownMenuItem(
-                    value: bikeData,
-                    child: Text(bikeData),
-                  );
-                }).toList(),
-                onChanged: (String? newValue) {
-                  setState(() {
-                    widget.customDropDownValue = newValue!;
-                  });
-                },
+            shadowDarkColor: Colors.black.withOpacity(0.7),
+            shadowLightColor: Colors.white,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(17.0),
+            child: DropdownButton(
+              isExpanded: true,
+              value: widget.customDropDownValue,
+              icon: const Icon(
+                Icons.arrow_drop_down,
+                color: Colors.black,
               ),
+              iconSize: 30,
+              elevation: 24,
+              // dropdownColor: Colors.deepPurple,
+              style: const TextStyle(
+                fontFamily: textFontFamily,
+                fontSize: 14,
+                color: Colors.black,
+                // backgroundColor: Colors.deepPurple,
+              ),
+
+              underline: Container(
+                height: 1,
+                color: Colors.transparent,
+              ),
+              items: widget.bikeDetailsData.map((bikeData) {
+                return DropdownMenuItem(
+                  value: bikeData,
+                  child: Text(bikeData),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  widget.customDropDownValue = newValue!;
+                });
+              },
             ),
           ),
         ),
-      );
+      ),
+    );
   }
-  // String
+// String
 }
-
-
-
-

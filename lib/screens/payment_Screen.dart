@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:two_wheel_vehicle/config.dart';
 
-class Payment_Unseccussfull_Screen extends StatefulWidget {
-  const Payment_Unseccussfull_Screen({Key? key}) : super(key: key);
+class PaymentUnsuccessfulScreen extends StatefulWidget {
+  const PaymentUnsuccessfulScreen({Key? key}) : super(key: key);
 
   @override
-  _Payment_Unseccussfull_ScreenState createState() => _Payment_Unseccussfull_ScreenState();
+  _PaymentUnsuccessfulScreenState createState() =>
+      _PaymentUnsuccessfulScreenState();
 }
 
-class _Payment_Unseccussfull_ScreenState extends State<Payment_Unseccussfull_Screen> {
+class _PaymentUnsuccessfulScreenState extends State<PaymentUnsuccessfulScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,10 +19,14 @@ class _Payment_Unseccussfull_ScreenState extends State<Payment_Unseccussfull_Scr
         elevation: 0,
         backgroundColor: NeumorphicColors.background,
         title: Text(''),
-        leading: GestureDetector( onTap: (){
-          Navigator.pop(context);
-        },
-            child: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,)),
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios_outlined,
+              color: Colors.black,
+            )),
       ),
       body: SafeArea(
         child: Center(
@@ -29,28 +35,40 @@ class _Payment_Unseccussfull_ScreenState extends State<Payment_Unseccussfull_Scr
               Padding(
                 padding: const EdgeInsets.only(top: 48.0),
                 child: Neumorphic(
-                  style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                  child:  Container(
-                      width: 280,
-                      height: 230,
-                      child: Center(
-                        child: Column(
-                          children: [
-                            
-
-                          ],
-                        ),
+                  style: NeumorphicStyle(
+                    depth: 8,
+                    shape: NeumorphicShape.flat,
+                    shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                    // boxShape: NeumorphicBoxShape.circle(),
+                    shadowDarkColor: Colors.black.withOpacity(0.7),
+                    shadowLightColor: Colors.white,
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width*0.8,
+                    height: 230,
+                    child: Center(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(paymentUnsuccessfulImagePath),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text("Payment Unsuccessful", ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
+                ),
               )
-
-
             ],
           ),
         ),
       ),
-
     );
   }
 }

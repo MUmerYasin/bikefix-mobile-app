@@ -424,7 +424,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        Payment_Unseccussfull_Screen()));
+                                        PaymentUnsuccessfulScreen()));
                           },
                           child: SizedBox(
                               width: 130,
