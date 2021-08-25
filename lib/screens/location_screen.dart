@@ -57,11 +57,10 @@ class _LocationScreenState extends State<LocationScreen> {
                         //  boxShape: NeumorphicBoxShape.circle(),
                         ),
                     child: Container(
-                        // height: 200,
                         // color: Colors.blue,
                         width: MediaQuery.of(context).size.width,
                         child: Image.asset(
-                          'assets/icons/map.png',
+                          'image/map.png',
                           fit: BoxFit.fill,
                         )),
                   ),
@@ -71,7 +70,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       children: [
                         Icon(Icons.my_location, color: Color(0xff2DAC00)),
                         Text(
-                          ' Use Current Loctaion',
+                          ' Use Current Location',
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontSize: 12,

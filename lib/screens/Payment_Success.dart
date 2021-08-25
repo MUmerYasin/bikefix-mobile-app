@@ -41,7 +41,7 @@ class _Payment_Unseccussfull_ScreenState extends State<Payment_Seccussfull_Scree
                     height: 160,
                     child: Column(
                       children: [
-                        Icon(FontAwesomeIcons.check,size: 110,color: Color(0xff07a728),),
+                         Image.asset('assets/icons/bike_image.png'),
                         Padding(
                           padding: const EdgeInsets.only(top: 15.0),
                           child: Text("Payment Successful",style: GoogleFonts.roboto(fontSize: 19, fontWeight: FontWeight.w500),),

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/widgets.dart';
 
 import 'Become_Partner.dart';
 import 'Track_Screen.dart';
@@ -13,6 +15,7 @@ class Time extends StatefulWidget {
 }
 
 class _TimeState extends State<Time> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +49,8 @@ class Calender extends StatefulWidget {
 class _CalenderState extends State<Calender> {
 
   var _switch = false;
+  int selected = 1;
+  int selectedd = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +62,7 @@ class _CalenderState extends State<Calender> {
               padding: const EdgeInsets.only(top: 28.0),
               child: Neumorphic(
                 style: NeumorphicStyle(
-                    shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white
+                    shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black54 , shadowDarkColor: Colors.black54,shadowLightColor: Colors.white
                 ),
                 child: Container(
                   width: 290,
@@ -141,218 +146,56 @@ class _CalenderState extends State<Calender> {
                 )
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 33.0),
+              child: Row(
+                children: [
 
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 40.0,top: 10),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(CupertinoIcons.sun_min,size: 33,),
-                          ),
-                          Text('AM',style: TextStyle(fontSize: 20),)
-                        ],
-                      ),
-                      width: 80,
-                      height: 45,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,top: 10),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child:  Container(
-                        color: Colors.redAccent,
-                        width: 80,
-                        height: 45,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Icon(CupertinoIcons.moon,size: 33,color: Colors.white,),
-                            ),
-                            Text('PM',style: TextStyle(fontSize: 20,color: Colors.white),)
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
+                ],
+              ),
             ),
 
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 40.0,top: 20),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      child: Row(
-                        children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('12 - 01',style: TextStyle(fontSize: 20),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,top: 20),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      child: Row(
-                        children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('01 - 02',style: TextStyle(fontSize: 20),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,top: 20),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      child: Row(
-                        children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('02 - 03',style: TextStyle(fontSize: 20),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,top: 20),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      child: Row(
-                        children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('03 - 04',style: TextStyle(fontSize: 20),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(left: 28.0),
+              child: Row(
+                children: [
 
 
-              ],
+
+
+                ],
+              ),
             ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 28.0),
+              child: Row(
+                children: [
+
+
+
+                ],
+              ),
+            ),
+
 
 
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 40.0,top: 20),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      color: Colors.redAccent,
-                      child: Row(
-                        children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('12 - 01',style: TextStyle(fontSize: 20,color: Colors.white),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,top: 20),
+                  padding: const EdgeInsets.only(left: 30.0,top: 10),
                   child: Neumorphic(
                     style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
                     child: Container(
                       child: Row(
                         children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('01 - 02',style: TextStyle(fontSize: 20),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,top: 20),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      child: Row(
-                        children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('02 - 03',style: TextStyle(fontSize: 20),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,top: 20),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      child: Row(
-                        children: [
-
-                          Center(child: Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('03 - 04',style: TextStyle(fontSize: 20),),
-                          ))
-                        ],
-                      ),
-                      width: 70,
-                      height: 40,
-                    ),
-                  ),
-                ),
-
 
               ],
             ),
+
+                        )
+                  )
+                    ),
 
             Column(
               children: [
@@ -360,7 +203,7 @@ class _CalenderState extends State<Calender> {
                   padding: const EdgeInsets.only(top: 28.0,left: 10),
                   child: Neumorphic(
                     style: NeumorphicStyle(
-                        shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white
+                        shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black54 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.white
 
                     ),
                     child: Container(
@@ -382,7 +225,11 @@ class _CalenderState extends State<Calender> {
                 )
               ],
             ),
+                
 
+          ],
+
+        ),
             Padding(
               padding: const EdgeInsets.only(top: 28.0),
               child: Card(
@@ -393,17 +240,16 @@ class _CalenderState extends State<Calender> {
                   child: ElevatedButton(
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Become_Partner()));
-                    },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child: Text('Book Now',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                    },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text('Book Now',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                   ),
                 ),
               ),
             ),
 
+      ]
+    )
+            )
 
-
-          ],
-        ),
-      ),
     );
   }
 }

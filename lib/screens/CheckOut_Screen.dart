@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:two_wheel_vehicle/config.dart';
 
 class CheckOut extends StatefulWidget {
   const CheckOut({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class CheckOut extends StatefulWidget {
 }
 
 class _CheckOutState extends State<CheckOut> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +43,15 @@ class _CheckOutState extends State<CheckOut> {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
+                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
                     child: Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.white, blurRadius: 220
+                          )
+                        ]
+                      ),
                       width: 320,
                       height: 100,
                       child: Row(
@@ -92,46 +101,54 @@ class _CheckOutState extends State<CheckOut> {
                                 SizedBox(
                                   height: 29,
                                   child: ListTile(
-                                    title: Text('Service Cost'),
+                                    title: Text('Service Cost',style: TextStyle(fontWeight: FontWeight.w300),),
                                     trailing: Text(' ₹ 199',style: TextStyle(fontWeight: FontWeight.w700),),
                                   ),
                                 ),
                                 SizedBox(
                                   height: 29,
                                   child: ListTile(
-                                    title: Text('Additional Charges'),
+                                    title: Text('Additional Charges',style: TextStyle(fontWeight: FontWeight.w300),),
                                     trailing: Text(' ₹ 0',style: TextStyle(fontWeight: FontWeight.w700),),
                                   ),
                                 ),
                                 ListTile(
-                                  title: Text('Discount Applied'),
+                                  title: Text('Discount Applied',style: TextStyle(fontWeight: FontWeight.w300),),
                                   trailing: Text(' ₹ 0',style: TextStyle(fontWeight: FontWeight.w700),),
                                 ),
                                 Neumorphic(
                                   style: NeumorphicStyle(
                                     depth: NeumorphicTheme.embossDepth(context), shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.white,spreadRadius: 20,
+                                          )
+                                        ]
+                                    ),
                                     width: 280,
                                     height: 3,
-                                    color: Colors.white,
+
                                   ),
                                 ),
                                 SizedBox(
                                   height: 29,
                                   child: ListTile(
-                                    title: Text('Sub Total '),
+                                    title: Text('Sub Total ',style: TextStyle(fontWeight: FontWeight.w300),),
                                     trailing: Text(' ₹ 199',style: TextStyle(fontWeight: FontWeight.w700),),
                                   ),
                                 ),
                                 SizedBox(
                                   height: 29,
                                   child: ListTile(
-                                    title: Text('GST ? Tax'),
+                                    title: Text('GST ? Tax',style: TextStyle(fontWeight: FontWeight.w300),),
                                     trailing: Text(' ₹ 0',style: TextStyle(fontWeight: FontWeight.w700),),
                                   ),
                                 ),
                                 ListTile(
-                                  title: Text('Total'),
+                                  title: Text('Total',style: TextStyle(fontWeight: FontWeight.w300),),
                                   trailing: Text(' ₹ 199',style: TextStyle(fontWeight: FontWeight.w700),),
                                 ),
 
@@ -183,7 +200,7 @@ class _CheckOutState extends State<CheckOut> {
                           margin: EdgeInsets.only(bottom: 10),
                           decoration: BoxDecoration(
                               boxShadow: [
-                                BoxShadow(color: Colors.redAccent, spreadRadius:3, blurRadius: 7)
+                                BoxShadow(color: small, spreadRadius:3, blurRadius: 7)
                               ],
                               borderRadius: BorderRadius.circular(14)
                           ),
@@ -193,7 +210,7 @@ class _CheckOutState extends State<CheckOut> {
                             child:  ElevatedButton(
                               onPressed: (){
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckOut()));
-                              },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child: Text(' Pay Now',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                              },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text(' Pay Now',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                             ),
                           ),
                         ),

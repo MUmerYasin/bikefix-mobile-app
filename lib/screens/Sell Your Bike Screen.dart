@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:two_wheel_vehicle/config.dart';
 
 import 'CheckOut_Screen.dart';
 
@@ -209,7 +210,7 @@ class _Sell_Your_BikeState extends State<Sell_Your_Bike> {
                             child:  ElevatedButton(
                               onPressed: (){
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckOut()));
-                              },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child: Text(' Value My Bike ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                              },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary:small),child: Text(' Value My Bike ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                             ),
                           ),
                         ),

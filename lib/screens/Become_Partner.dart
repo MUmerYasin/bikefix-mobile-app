@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:two_wheel_vehicle/config.dart';
 
 import 'Sell Your Bike Screen.dart';
 import 'Time_Screen.dart';
@@ -189,7 +190,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                                 child:  ElevatedButton(
                                   onPressed: (){
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Sell_Your_Bike()));
-                                  },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child: Text(' Submit ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                                  },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text(' Submit ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                                 ),
                               ),
                             ),

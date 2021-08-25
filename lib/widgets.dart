@@ -175,6 +175,7 @@ class _myTextFieldState extends State<myTextField> {
           decoration: InputDecoration(
               contentPadding: EdgeInsets.only(left: 14,right: 14),
               border: InputBorder.none,
+            hintText: widget.text
 
           ),
         ),
@@ -182,6 +183,39 @@ class _myTextFieldState extends State<myTextField> {
     );
   }
 }
+
+class CustomConatiner extends StatelessWidget {
+  Function()? onPressed;
+  String? child;
+  bool? color;
+
+  CustomConatiner({this.color,this.child,this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 40,
+      child: Neumorphic(
+        style: NeumorphicStyle(
+          //  boxShape: NeumorphicBoxShape.circle(),
+        ),
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: color! ? buttonColor : custom,
+                textStyle: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 18,
+                  color: const Color(0xffffffff),
+                  fontWeight: FontWeight.w500,
+                )),
+            onPressed: onPressed,
+            child: Center(child: Text(child ?? ''))),
+      ),
+    );
+  }
+}
+
+
 
 
 

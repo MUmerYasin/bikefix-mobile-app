@@ -82,7 +82,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           ),
                         ),
                       ),
-                      myTextField(text: 'Name'),
+                      myTextField(text: 'Example@gmail.com'),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(

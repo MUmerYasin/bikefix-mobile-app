@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/screens/mybooking_screen.dart';
@@ -5,6 +6,7 @@ import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 
 import '../config.dart';
 import '../widgets.dart';
+import 'Sell Your Bike Screen.dart';
 
 class AddVehicleScreen extends StatefulWidget {
   @override
@@ -12,12 +14,14 @@ class AddVehicleScreen extends StatefulWidget {
 }
 
 class _AddVehicleScreenState extends State<AddVehicleScreen> {
+
+  String selected = 'Choose Brand';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
-          backgroundColor: backgroundColor,
+          backgroundColor: NeumorphicColors.background,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
           leading: Icon(Icons.arrow_back_ios),
           title: Text(
@@ -31,273 +35,161 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
           ),
           centerTitle: true,
         ),
-        body: Container(
-            padding: EdgeInsets.all(15),
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Center(
+              child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 10),
+                    padding: const EdgeInsets.only(top: 18.0),
                     child: Neumorphic(
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          gradient: LinearGradient(
-                            begin: Alignment(-1.0, -1.0),
-                            end: Alignment(1.01, 1.0),
-                            colors: [
-                              const Color(0xffeef0f5),
-                              const Color(0xffe6e9ef)
-                            ],
-                            stops: [0.0, 1.0],
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xb2a6b4c8),
-                              offset: Offset(10, 10),
-                              blurRadius: 48,
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Choose Brand',
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 18,
-                                  color: const Color(0xff000000),
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                              Icon(Icons.arrow_forward_ios),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-                    child: Neumorphic(
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          gradient: LinearGradient(
-                            begin: Alignment(-1.0, -1.0),
-                            end: Alignment(1.01, 1.0),
-                            colors: [
-                              const Color(0xffeef0f5),
-                              const Color(0xffe6e9ef)
-                            ],
-                            stops: [0.0, 1.0],
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xb2a6b4c8),
-                              offset: Offset(10, 10),
-                              blurRadius: 48,
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Choose Model',
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 18,
-                                  color: const Color(0xff000000),
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                              Icon(
-                                Icons.arrow_drop_down_outlined,
-                                size: 30,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-                    child: Neumorphic(
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          gradient: LinearGradient(
-                            begin: Alignment(-1.0, -1.0),
-                            end: Alignment(1.01, 1.0),
-                            colors: [
-                              const Color(0xffeef0f5),
-                              const Color(0xffe6e9ef)
-                            ],
-                            stops: [0.0, 1.0],
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xb2a6b4c8),
-                              offset: Offset(10, 10),
-                              blurRadius: 48,
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Year',
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 18,
-                                  color: const Color(0xff000000),
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                              Text(
-                                '',
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 18,
-                                  color: const Color(0xff000000),
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Fuel Type',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 18,
-                          color: const Color(0xff000000),
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
 
-                         Neumorphic(
-                          style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),        child: Container(
-                            width: 150.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.0),
-                              gradient: LinearGradient(
-                                begin: Alignment(-1.0, -1.0),
-                                end: Alignment(1.01, 1.0),
-                                colors: [
-                                  const Color(0xffeef0f5),
-                                  const Color(0xffe6e9ef)
-                                ],
-                                stops: [0.0, 1.0],
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(0xb2a6b4c8),
-                                  offset: Offset(10, 10),
-                                  blurRadius: 48,
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset('assets/icons/petrol_icon.png'),
-                                Text(
-                                  'Petrol',
-                                  style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 18,
-                                    color: const Color(0xff000000),
+                      style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
+                      child: Container(
+                        width: 300,
+                        height: 60,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: DropdownButton<String>(
+                            underline: SizedBox(),
+                            dropdownColor: NeumorphicColors.background,
+                            icon: Icon(CupertinoIcons.forward),
+                            isExpanded: true,
+                            hint: Text(selected),
+                            items: <String>[ '   Honda', '  Suzuki', '  Yamaha', '  Kawasaki', ].map((String value) {
+                              return DropdownMenuItem<String>(
+                                onTap: (){
+                                  setState(() {
+                                    selected = value;
+                                  });
+                                },
+                                value: value,
+                                child: new Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (_) {},
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 22.0),
+                    child: Neumorphic(
+                      style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
+                      child: Container(
+                        width: 300,
+                        height: 60,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: DropdownButton<String>(
+                            underline: SizedBox(),
+                            dropdownColor: NeumorphicColors.background,
+                            icon: Icon(CupertinoIcons.arrowtriangle_down_fill),
+                            isExpanded: true,
+                            hint: Text(selected),
+                            items: <String>[ '   Honda', '  Suzuki', '  Yamaha', '  Kawasaki', ].map((String value) {
+                              return DropdownMenuItem<String>(
+                                onTap: (){
+                                  setState(() {
+                                    selected = value;
+                                  });
+                                },
+                                value: value,
+                                child: new Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (_) {},
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 28.0),
+                    child: Container( width: 300,
+                        child: myTextField(text: 'Year')),
+                  ),
+                  
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 28.0, left: 38),
+                        child: Text('Fuel Type',style: TextStyle(
+                          fontSize: 18,fontWeight: FontWeight.bold
+                        ),),
+                      )
+                    ],
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Neumorphic(
+                            style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
+                            child: Container(
+                              width: 130,
+                              height: 100,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset('image/petrol.png'),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text('Petrol',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600),),
                                   ),
-                                  textAlign: TextAlign.left,
-                                )
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                         Neumorphic(
-                          style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),    child: Container(
-                            width: 150.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.0),
-                              gradient: LinearGradient(
-                                begin: Alignment(-1.0, -1.0),
-                                end: Alignment(1.01, 1.0),
-                                colors: [
-                                  const Color(0xffeef0f5),
-                                  const Color(0xffe6e9ef)
-                                ],
-                                stops: [0.0, 1.0],
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(0xb2a6b4c8),
-                                  offset: Offset(10, 10),
-                                  blurRadius: 48,
-                                ),
-                              ],
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Neumorphic(
+                            style: NeumorphicStyle(
+                              shadowLightColor: Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset('assets/icons/battery_icon.png'),
-                                Text(
-                                  'Diesel',
-                                  style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 18,
-                                    color: const Color(0xff000000),
+                            child: Container(
+                              width: 130,
+                              height: 100,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset('image/battery.png'),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text('Electric',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600),),
                                   ),
-                                  textAlign: TextAlign.left,
-                                )
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
+                        )
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-                    child: RoundedCornerButton(
-                      onPressed: () {
-                        gotoScreen(context: context,screen: MyBookingScreen());
-                      },
-                      child: 'Proceed',
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 50,
+                      child:  ElevatedButton(
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Sell_Your_Bike()));
+                        },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text(' Proceed ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                      ),
                     ),
                   ),
-                ])));
+
+                ],
+              ),
+            ),
+          ),
+        )
+    );
   }
 }
