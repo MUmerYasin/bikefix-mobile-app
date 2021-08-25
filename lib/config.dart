@@ -40,6 +40,7 @@ const String drawerOneImagePath = imagePathStart + "drawer_one.png";
 const String drawerProfileImagePath = imagePathStart + "drawer_profile.png";
 const String drawerRealTimeUpdateImagePath = imagePathStart + "drawer_real_time_update.png";
 const String drawerShareImagePath = imagePathStart + "drawer_share.png";
+const String subscriptionImagePath = imagePathStart + "subscription.png";
 
 //All Pictures Carousel Slider
 const String mainPicCarouselSliderOneImagePath = imagePathStart + "main_pic_carousel_slider_one.png";
@@ -94,6 +95,7 @@ const String buttonNameProceed = "Proceed";
 const String buttonNameFeedback = "Feedback";
 const String buttonNameOther = "Other";
 const String buttonNameTryAgain = "Try Again";
+const String buttonNameBuyNow = "Buy Now";
 
 /// Company names
 const String companyNameKTM = "KTM";
@@ -287,6 +289,7 @@ const String paytmText = "Paytm";
 const String payLaterText = "Pay later";
 const String paymentConfirmedText = "Payment Confirmed";
 const String paymentUnsuccessfulText = "Payment Unsuccessful";
+const String priceInIndianCurrency = "₹499";
 
 /// Simple Text That use in all Screens
 
@@ -302,7 +305,7 @@ const String maleDescriptionText = "Male";
 const String currentLocationDescriptionText = " Use Current Location";
 const String addVehicleDescriptionText = " Add Vehicle";
 const String naDescriptionText = " NA";
-const String fuelTypeText = "Fuel Type";
+
 
 ///
 const String bookingDateTimeText = "Booking date & time";
@@ -310,7 +313,17 @@ const String pickupDateTimeText = "Pickup date & time";
 const String deliveryDateTimeText = "Delivery date & time";
 const String PriceWithTitleAndValueText = "Price: ₹ 2,500";
 
+///SUBSCRIPTION Screen
+const String subscriptionText = "SUBSCRIPTION";
+const String subscriptionFeatureOneText = "3 Pickup and drop free";
+const String subscriptionFeatureTwoText = "10% discount (upto ₹200 on each invoice)";
+const String subscriptionFeatureThreeText = "Free consultation";
+const String subscriptionFeatureFourText = "7 Days after service warranty";
+const String subscriptionFeatureFiveText = "Priority customer support";
+const String subscriptionTimeText = " / 6 MONTH";
+
 ///Fuel Type (Electric, Diesel, Petrol)
+const String fuelTypeText = "Fuel Type";
 const String fuelTypeElectric = "Electric";
 const String fuelTypeDiesel = "Diesel";
 const String fuelTypePetrol = "Petrol";

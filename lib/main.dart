@@ -5,6 +5,7 @@ import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/payment_successful_screen.dart';
 import 'package:two_wheel_vehicle/screens/payment_unsuccessful_screen.dart';
+import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -37,8 +38,9 @@ class MyApp extends StatelessWidget {
       // home: ServiceStatusScreen(),// Front End Final // Develop by Umer
       // home: AddVehicleScreen(),// Front End Final // Develop by Umer
       // home: ChooseBikeBrand(), // Front End Final // Develop by Umer
-      home: PaymentUnsuccessfulScreen(), // Front End Final // Develop by Umer
+      // home: PaymentUnsuccessfulScreen(), // Front End Final // Develop by Umer
       // home: PaymentSuccessfulScreen(), // Front End Final // Develop by Umer
+      home: SubscriptionScreen(), // Front End Final // Develop by Umer
     );
   }
 }
