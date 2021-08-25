@@ -205,7 +205,7 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
                             timeAndDate: timeDateDescriptionText),
                         DividerCustom(),
                         SingleOrderDetailsProcess(
-                            titleDetails: DeliveryDateTimeText,
+                            titleDetails: deliveryDateTimeText,
                             timeAndDate: timeDateDescriptionText),
                         DividerCustom(),
 

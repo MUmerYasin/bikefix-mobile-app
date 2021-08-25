@@ -47,7 +47,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
             //   customDropDownValue: dropDownMenuChooseBrand,
             //   bikeDetailsData: chooseBrandListDropDownMenu,
             // ),
-
+            ///drop Down Menu Choose Brand
             Padding(
               padding: const EdgeInsets.only(
                   top: 8.0, bottom: 10, left: 8.0, right: 8.0),
@@ -89,7 +89,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Choose Brand',
+                          dropDownMenuChooseBrand,
                           style: TextStyle(
                             fontFamily: textFontFamily,
                             fontSize: 18,
@@ -221,7 +221,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
             //     ),
             //   ),
             // ),
-
+            /// Choose Model Custom Drop Down Menu
             CustomDropDownMenu(
               customDropDownValue: dropDownMenuChooseModel,
               bikeDetailsData: chooseModelListDropDownMenu,
@@ -290,7 +290,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                         children: [
                           Image.asset(petrolIconImagePath),
                           Text(
-                            FuelTypePetrol,
+                            fuelTypePetrol,
                             style: TextStyle(
                               fontFamily: textFontFamily,
                               fontSize: 18,
@@ -337,7 +337,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                         children: [
                           Image.asset(BatteryIconImagePath),
                           Text(
-                            FuelTypeElectric,
+                            fuelTypeElectric,
                             style: TextStyle(
                               fontFamily: textFontFamily,
                               fontSize: 18,

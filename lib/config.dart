@@ -22,47 +22,47 @@ const String textFontFamily = "Roboto";
 
 ///All Images Path in GridView of Choose Bike Brand.
 // Main icon path
-const String ImagePathStart = "assets/icons/";
+const String imagePathStart = "assets/icons/";
 
-const String BackIconImagePath = ImagePathStart + "back_icon.png";
-const String bajajLogoImagePath = ImagePathStart + "bajaj_logo.png";
-const String BatteryIconImagePath = ImagePathStart + "battery_icon.png";
-const String bikeImageImagePath = ImagePathStart + "bike_image.png";
+const String BackIconImagePath = imagePathStart + "back_icon.png";
+const String bajajLogoImagePath = imagePathStart + "bajaj_logo.png";
+const String BatteryIconImagePath = imagePathStart + "battery_icon.png";
+const String bikeImageImagePath = imagePathStart + "bike_image.png";
 
 //Drawer Or Menu Appear From Left Side Images Path
-const String DrawerAboutImagePath = ImagePathStart + "drawer_about.png";
-const String DrawerBecomeAPartnerImagePath = ImagePathStart + "drawer_become_a_partner.png";
-const String DrawerHelpImagePath = ImagePathStart + "drawer_help.png";
-const String DrawerLogoutImagePath = ImagePathStart + "drawer_logout.png";
-const String DrawerMyVehicleImagePath = ImagePathStart + "drawer_my_vehicle.png";
-const String DrawerMyBookingImagePath = ImagePathStart + "drawer_mybooking.png";
-const String DrawerOneImagePath = ImagePathStart + "drawer_one.png";
-const String DrawerProfileImagePath = ImagePathStart + "drawer_profile.png";
-const String DrawerRealTimeUpdateImagePath = ImagePathStart + "drawer_real_time_update.png";
-const String DrawerShareImagePath = ImagePathStart + "drawer_share.png";
+const String drawerAboutImagePath = imagePathStart + "drawer_about.png";
+const String drawerBecomeAPartnerImagePath = imagePathStart + "drawer_become_a_partner.png";
+const String drawerHelpImagePath = imagePathStart + "drawer_help.png";
+const String drawerLogoutImagePath = imagePathStart + "drawer_logout.png";
+const String drawerMyVehicleImagePath = imagePathStart + "drawer_my_vehicle.png";
+const String drawerMyBookingImagePath = imagePathStart + "drawer_mybooking.png";
+const String drawerOneImagePath = imagePathStart + "drawer_one.png";
+const String drawerProfileImagePath = imagePathStart + "drawer_profile.png";
+const String drawerRealTimeUpdateImagePath = imagePathStart + "drawer_real_time_update.png";
+const String drawerShareImagePath = imagePathStart + "drawer_share.png";
 
 //All Pictures Carousel Slider
-const String mainPicCarouselSliderOneImagePath = ImagePathStart + "main_pic_carousel_slider_one.png";
+const String mainPicCarouselSliderOneImagePath = imagePathStart + "main_pic_carousel_slider_one.png";
 
 //Logos
-const String bikeFixUpLogoImagePath = ImagePathStart + "logo.png";
-const String ktmLogoImagePath = ImagePathStart + "ktm_logo.png";
-const String ktmiconImagePath = ImagePathStart + "ktm_icon.png";// Small Resolution Pixels KTM Icon
-const String ktmSmallIconImagePath = ImagePathStart + "ktm_icon.png";
-const String tvsLogoImagePath = ImagePathStart + "tvs_logo.png";
+const String bikeFixUpLogoImagePath = imagePathStart + "logo.png";
+const String ktmLogoImagePath = imagePathStart + "ktm_logo.png";
+const String ktmiconImagePath = imagePathStart + "ktm_icon.png";// Small Resolution Pixels KTM Icon
+const String ktmSmallIconImagePath = imagePathStart + "ktm_icon.png";
+const String tvsLogoImagePath = imagePathStart + "tvs_logo.png";
 const String royalEnfieldLogoImagePath =
-    ImagePathStart + "royal_enfield_logo.png";
+    imagePathStart + "royal_enfield_logo.png";
 
 
-const String paytmLogoImagePath = ImagePathStart + "paytm_logo.png";
-const String partnerIconsImagePath = ImagePathStart + "partner_icons.png";
-const String paymentUnsuccessfulImagePath = ImagePathStart + "payment unsuccessful.png";
-const String paymentSuccessfulImagePath = ImagePathStart + "payment_successful.png";
-const String phonePeLogoImagePath = ImagePathStart + "phonepe_logo.png";
-const String otpIconImagePath = ImagePathStart + "otp_icon.png";
-const String mapImagePath = ImagePathStart + "map.png";
-const String petrolIconImagePath = ImagePathStart + "petrol_icon.png";
-const String smallProfileVectorImagePath = ImagePathStart + "small_profile_vector.png";
+const String paytmLogoImagePath = imagePathStart + "paytm_logo.png";
+const String partnerIconsImagePath = imagePathStart + "partner_icons.png";
+const String paymentUnsuccessfulImagePath = imagePathStart + "payment_unsuccessful.png";
+const String paymentSuccessfulImagePath = imagePathStart + "payment_successful.png";
+const String phonePeLogoImagePath = imagePathStart + "phonepe_logo.png";
+const String otpIconImagePath = imagePathStart + "otp_icon.png";
+const String mapImagePath = imagePathStart + "map.png";
+const String petrolIconImagePath = imagePathStart + "petrol_icon.png";
+const String smallProfileVectorImagePath = imagePathStart + "small_profile_vector.png";
 
 
 ///Text Field Titles of Choose Bike Brand.
@@ -93,6 +93,7 @@ const String buttonNameConnect = "Connect";
 const String buttonNameProceed = "Proceed";
 const String buttonNameFeedback = "Feedback";
 const String buttonNameOther = "Other";
+const String buttonNameTryAgain = "Try Again";
 
 /// Company names
 const String companyNameKTM = "KTM";
@@ -278,13 +279,14 @@ const String bikeDetailsAwaitingConfirmation = "Awaiting Confirmation";
 
 ///Payment Method Text
 const String creditDebitCardText = "Credit / Debit Card";
-const String UPIText = "UPI";
-const String AmazonUPIText = "Amazon " + UPIText;
-const String PhonePeText = "PhonePe";
-const String WalletsText = "Wallets";
-const String PaytmText = "Paytm";
-const String PayLaterText = "Pay later";
+const String upiText = "UPI";
+const String amazonUPIText = "Amazon " + upiText;
+const String phonePeText = "PhonePe";
+const String walletsText = "Wallets";
+const String paytmText = "Paytm";
+const String payLaterText = "Pay later";
 const String paymentConfirmedText = "Payment Confirmed";
+const String paymentUnsuccessfulText = "Payment Unsuccessful";
 
 /// Simple Text That use in all Screens
 
@@ -305,10 +307,10 @@ const String fuelTypeText = "Fuel Type";
 ///
 const String bookingDateTimeText = "Booking date & time";
 const String pickupDateTimeText = "Pickup date & time";
-const String DeliveryDateTimeText = "Delivery date & time";
+const String deliveryDateTimeText = "Delivery date & time";
 const String PriceWithTitleAndValueText = "Price: ₹ 2,500";
 
 ///Fuel Type (Electric, Diesel, Petrol)
-const String FuelTypeElectric = "Electric";
-const String FuelTypeDiesel = "Diesel";
-const String FuelTypePetrol = "Petrol";
+const String fuelTypeElectric = "Electric";
+const String fuelTypeDiesel = "Diesel";
+const String fuelTypePetrol = "Petrol";

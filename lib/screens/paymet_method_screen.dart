@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:two_wheel_vehicle/config.dart';
-import 'package:two_wheel_vehicle/screens/payment_Screen.dart';
+import 'package:two_wheel_vehicle/screens/payment_unsuccessful_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
 class PaymentMethodScreen extends StatefulWidget {
@@ -91,7 +91,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     Padding(
                       padding: const EdgeInsets.only(left: 60.0, top: 10),
                       child: Text(
-                        UPIText,
+                        upiText,
                         style: TextStyle(fontSize: 16),
                       ),
                     )
@@ -132,7 +132,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                   });
                                 }),
                             title: Text(
-                              AmazonUPIText,
+                              amazonUPIText,
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ),
@@ -168,7 +168,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               AssetImage(phonePeLogoImagePath),
                               color: Colors.deepPurple,
                             ),
-
                             trailing: Radio<int>(
                                 value: 1,
                                 groupValue: null,
@@ -179,7 +178,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                   });
                                 }),
                             title: Text(
-                              PhonePeText,
+                              phonePeText,
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ),
@@ -195,7 +194,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     Padding(
                       padding: const EdgeInsets.only(left: 60.0, top: 10),
                       child: Text(
-                        WalletsText,
+                        walletsText,
                         style: TextStyle(fontSize: 16),
                       ),
                     )
@@ -237,7 +236,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                   });
                                 }),
                             title: Text(
-                              PaytmText,
+                              paytmText,
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ),
@@ -274,7 +273,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                   });
                                 }),
                             title: Text(
-                              AmazonUPIText,
+                              amazonUPIText,
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ),
@@ -312,7 +311,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                   });
                                 }),
                             title: Text(
-                              PhonePeText,
+                              phonePeText,
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ),
@@ -342,7 +341,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           Padding(
                             padding: const EdgeInsets.only(left: 28.0),
                             child: Text(
-                              PayLaterText,
+                              payLaterText,
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w500),

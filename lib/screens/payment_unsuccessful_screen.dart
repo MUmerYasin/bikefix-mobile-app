@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/widgets.dart';
 
 class PaymentUnsuccessfulScreen extends StatefulWidget {
   const PaymentUnsuccessfulScreen({Key? key}) : super(key: key);
@@ -32,6 +35,7 @@ class _PaymentUnsuccessfulScreenState extends State<PaymentUnsuccessfulScreen> {
         child: Center(
           child: Column(
             children: [
+              /// Payment Unsuccessful Image and Text
               Padding(
                 padding: const EdgeInsets.only(top: 48.0),
                 child: Neumorphic(
@@ -45,18 +49,33 @@ class _PaymentUnsuccessfulScreenState extends State<PaymentUnsuccessfulScreen> {
                   ),
                   child: Container(
                     width: MediaQuery.of(context).size.width*0.8,
-                    height: 230,
+                    height: 200,
                     child: Center(
                       child: Column(
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Image.asset(paymentUnsuccessfulImagePath),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 16.0,),
+                                child: Image.asset(paymentUnsuccessfulImagePath, height:120.0,fit:BoxFit.cover ,),
+                              ),
                             ],
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text("Payment Unsuccessful", ),
+                              Padding(
+                                padding: const EdgeInsets.all(18.0),
+                                child: Text(paymentUnsuccessfulText, style: TextStyle(
+                                  fontFamily: textFontFamily,
+                                  fontSize: 18,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                              ),
                             ],
                           ),
                         ],
@@ -64,7 +83,22 @@ class _PaymentUnsuccessfulScreenState extends State<PaymentUnsuccessfulScreen> {
                     ),
                   ),
                 ),
-              )
+              ),
+
+              // RoundedCornerButton(
+              //     child: buttonNameTryAgain,
+              // ),
+
+              ///Button Try Again
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0, ),
+                child: RoundedCornerButton(
+                  onPressed: () {
+                    gotoScreen(context: context, screen: PaymentUnsuccessfulScreen());
+                  },
+                  child: buttonNameTryAgain,
+                ),
+              ),
             ],
           ),
         ),
