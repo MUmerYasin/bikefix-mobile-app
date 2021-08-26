@@ -36,6 +36,8 @@ class _CheckoutStatusScreenState extends State<CheckoutStatusScreen> {
         ),
         centerTitle: true,
       ),
+
+
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Container(

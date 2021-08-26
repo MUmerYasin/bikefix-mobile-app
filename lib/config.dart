@@ -316,6 +316,7 @@ const String applyCouponCodeText = "%Apply Coupon Code";
 
 /// Simple Text That use in all Screens
 
+const String bikeFixUpText = "Bike Fix Up";
 const String signUpDescriptionText = "Don’t Have account? ";
 const String logInDescriptionText = "If already user, ";
 const String pleaseEnterOTPDescriptionText = "Please enter OTP";

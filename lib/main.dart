@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/checkout_screen.dart';
+import 'package:two_wheel_vehicle/screens/home_screen.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       // Add the locale here
       builder: DevicePreview.appBuilder,
       // Add the builder here
-      title: 'Flutter Demo',
+      title: bikeFixUpText,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -38,7 +40,8 @@ class MyApp extends StatelessWidget {
       // home: PaymentSuccessfulScreen(), // Front End Final // Develop by Umer
       // home: SubscriptionScreen(), // Front End Final // Develop by Umer
       // home: HelpAndSupportScreen(), // Front End Final // Develop by Umer
-      home: CheckoutStatusScreen(), // Front End Final // Develop by Umer
+      // home: CheckoutStatusScreen(), // Front End Final // Develop by Umer
+      home: HomeScreen(), // Front End Final // Develop by Umer
     );
   }
 }
