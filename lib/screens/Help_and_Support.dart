@@ -91,12 +91,22 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                                       // IconButton(
                                       // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
                                       // icon:
-                                      FaIcon(FontAwesomeIcons.phoneSquareAlt,
-                                          color: Colors.red.shade800),
+                                      // FaIcon(FontAwesomeIcons.phoneSquareAlt,
+                                      //     color: Colors.red.shade800),
                                   // onPressed: () {
                                   //   // print("Pressed");
                                   // }),
                                 // ),
+
+                                IconButton(
+
+                                  // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                                  icon:
+                                  new Image.asset(phoneLogoImagePath, fit:BoxFit.cover),
+                                  onPressed: () {
+                                    // print("Pressed");
+                                  },
+                                ),
 
                                 Padding(
                                   padding: const EdgeInsets.all(14.0),
@@ -123,35 +133,14 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                // Neumorphic(
-                                //   margin: const EdgeInsets.all(0),
-                                //   padding: const EdgeInsets.all(0),
-                                //   style: NeumorphicStyle(
-                                //     depth: 7,
-                                //     shape: NeumorphicShape.flat,
-                                //     shadowDarkColorEmboss:
-                                //         Colors.black.withOpacity(0.7),
-                                //     // boxShape: NeumorphicBoxShape.circle(),
-                                //     shadowDarkColor:
-                                //         Colors.black.withOpacity(0.5),
-                                //     shadowLightColor: Colors.grey,
-                                //     boxShape: NeumorphicBoxShape.roundRect(
-                                //       BorderRadius.circular(8),
-                                //     ),
-                                //     lightSource: LightSource.topLeft,
-                                //     color: Colors.white,
-                                //   ),
-
-                                // child:
-                                // IconButton(
-                                // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-                                // icon:
-                                FaIcon(FontAwesomeIcons.envelopeSquare,
-                                    color: Colors.red.shade800),
-                                // onPressed: () {
-                                //   // print("Pressed");
-                                // }),
-                                // ),
+                                IconButton(
+                                  // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                                  icon:
+                                  new Image.asset(emailLogoImagePath,fit:BoxFit.cover,),
+                                  onPressed: () {
+                                    // print("Pressed");
+                                  },
+                                ),
 
                                 Padding(
                                   padding: const EdgeInsets.all(14.0),
@@ -197,15 +186,27 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                                     color: Colors.white,
                                   ),
 
-                                child:
-                                IconButton(
-                                // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-                                icon:
-                                FaIcon(FontAwesomeIcons.whatsappSquare,
-                                    color: Colors.green.shade700),
-                                onPressed: () {
-                                  // print("Pressed");
-                                },),
+                                // child:
+                                // IconButton(
+                                // // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                                // icon:
+                                // FaIcon(FontAwesomeIcons.whatsappSquare,
+                                //     color: Colors.green.shade700),
+                                // onPressed: () {
+                                //   // print("Pressed");
+                                // },
+                                // ),
+                                  child:
+                                  IconButton(
+                                    // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                                    icon:
+                                    new Image.asset(whatsappLogoImagePath),
+                                    onPressed: () {
+                                      // print("Pressed");
+                                    },
+                                  ),
+
+
                                 ),
 
                                 Neumorphic(
@@ -227,15 +228,26 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                                     color: Colors.white,
                                   ),
 
+                                  // child:
+                                  // IconButton(
+                                  //   // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                                  //   icon:
+                                  //   FaIcon(FontAwesomeIcons.facebookSquare,
+                                  //       color: Colors.blue.shade900),
+                                  //   onPressed: () {
+                                  //     // print("Pressed");
+                                  //   },),
+
                                   child:
                                   IconButton(
                                     // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
                                     icon:
-                                    FaIcon(FontAwesomeIcons.facebookSquare,
-                                        color: Colors.blue.shade900),
+                                    new Image.asset(facebookLogoImagePath),
                                     onPressed: () {
                                       // print("Pressed");
                                     },),
+
+
                                 ),
 
                                 Neumorphic(

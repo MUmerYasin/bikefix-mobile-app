@@ -47,7 +47,7 @@ const String mainPicCarouselSliderOneImagePath = imagePathStart + "main_pic_caro
 
 //Logos
 const String bikeFixUpLogoImagePath = imagePathStart + "logo.png";
-const String instagramLogoImagePath = imagePathStart + "instagram_logo.png";
+
 const String ktmLogoImagePath = imagePathStart + "ktm_logo.png";
 const String ktmiconImagePath = imagePathStart + "ktm_icon.png";// Small Resolution Pixels KTM Icon
 const String ktmSmallIconImagePath = imagePathStart + "ktm_icon.png";
@@ -55,6 +55,12 @@ const String tvsLogoImagePath = imagePathStart + "tvs_logo.png";
 const String royalEnfieldLogoImagePath =
     imagePathStart + "royal_enfield_logo.png";
 
+//Social Media Logo
+const String instagramLogoImagePath = imagePathStart + "instagram_logo.png";
+const String facebookLogoImagePath = imagePathStart + "facebook_logo.png";
+const String whatsappLogoImagePath = imagePathStart + "whatsapp_logo.png";
+const String phoneLogoImagePath = imagePathStart + "phone_logo.png";
+const String emailLogoImagePath = imagePathStart + "email_logo.png";
 
 const String paytmLogoImagePath = imagePathStart + "paytm_logo.png";
 const String partnerIconsImagePath = imagePathStart + "partner_icons.png";
