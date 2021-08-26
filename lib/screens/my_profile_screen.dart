@@ -65,6 +65,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         ),
                       ),
                       myTextField(text: 'Name'),
+
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
@@ -107,7 +108,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                 ),
                                 SizedBox(
                                     width: MediaQuery.of(context).size.width /3,
-                                    child: myTextField(text: '01/01/1990'),
+                                    child: myTextField(text: '01/01/1990',keyboardType: TextInputType.number,),
                                   )
                               ],
                             ),

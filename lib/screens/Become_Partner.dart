@@ -125,6 +125,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                 ),
                  MyDropDown(
                     child: DropdownButton<String>(
+                      focusColor: NeumorphicColors.background,
                       isExpanded: true,
                       hint: Text(drop3),
                       underline: SizedBox(),
@@ -213,10 +214,7 @@ class _Become_PartnerState extends State<Become_Partner> {
 class MyDropDown extends StatefulWidget {
   const MyDropDown({Key? key, this.child}) : super(key: key);
 
-
   final child;
-
-
   @override
   _MyDropDownState createState() => _MyDropDownState();
 }

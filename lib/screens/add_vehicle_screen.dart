@@ -6,6 +6,7 @@ import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 
 import '../config.dart';
 import '../widgets.dart';
+import 'Choose_bike_brand.dart';
 import 'Sell Your Bike Screen.dart';
 
 class AddVehicleScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class AddVehicleScreen extends StatefulWidget {
 
 class _AddVehicleScreenState extends State<AddVehicleScreen> {
 
-  String selected = 'Choose Brand';
+  String selected = 'Choose Model';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,26 +50,17 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                         width: 300,
                         height: 60,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: DropdownButton<String>(
-                            underline: SizedBox(),
-                            dropdownColor: NeumorphicColors.background,
-                            icon: Icon(CupertinoIcons.forward),
-                            isExpanded: true,
-                            hint: Text(selected),
-                            items: <String>[ '   Honda', '  Suzuki', '  Yamaha', '  Kawasaki', ].map((String value) {
-                              return DropdownMenuItem<String>(
-                                onTap: (){
-                                  setState(() {
-                                    selected = value;
-                                  });
-                                },
-                                value: value,
-                                child: new Text(value),
-                              );
-                            }).toList(),
-                            onChanged: (_) {},
-                          ),
+                          padding: const EdgeInsets.all(0.0),
+                          child: ListTile(
+                            leading: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Choose Brand',style: TextStyle(fontSize: 17),),
+                            ),
+                            trailing: Icon(CupertinoIcons.forward),
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>Choose()));
+                            },
+                          )
                         ),
                       ),
                     ),
@@ -108,7 +100,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                   Padding(
                     padding: const EdgeInsets.only(top: 28.0),
                     child: Container( width: 300,
-                        child: myTextField(text: 'Year')),
+                        child: myTextField(text: 'Year', )),
                   ),
                   
                   Row(

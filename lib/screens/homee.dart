@@ -13,6 +13,7 @@ import 'Body_Work_Screen.dart';
 import 'Engine_Work_Screen.dart';
 import 'General_Service_Screen.dart';
 import 'Repair_Work_Screen.dart';
+import 'add_vehicle_screen.dart';
 import 'login_screen.dart';
 import 'my_profile_screen.dart';
 import 'mybooking_screen.dart';
@@ -45,24 +46,26 @@ class _HomeeState extends State<Homee> {
     // 'https://media.istockphoto.com/photos/summer-meadow-picture-id1125637203?s=612x612',
   ];
 
+  var contain = true;
+
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   Color _containerColor = Colors.blue;
+  int _current = 0;
+  final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _return,
       child: Scaffold(
         key: _key,
-        backgroundColor: Color(0xffe2e5ed),
+        backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
           actions: [
             Text('')
           ],
-
           elevation: 0,
           title: Text('',style: TextStyle(color: Colors.black),),
           backgroundColor: Color(0xffe2e5ed),
-
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -71,30 +74,75 @@ class _HomeeState extends State<Homee> {
               child: Column(
                 children: [
                   Neumorphic(
-                    style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.white),
+                    style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
                     child: Container(
                       width: 330,
                       height: 150,
-                      child: CarouselSlider(
+                      child:CarouselSlider(
+                        carouselController: _controller,
                         options: CarouselOptions(
-                          enlargeCenterPage: false,
-                          disableCenter: true,
-                          enableInfiniteScroll: true,
-                          autoPlay: true,
-                        ),
-                        items: images.map((e) => ClipRRect(
-                          borderRadius: BorderRadius.circular(2),
-                          child: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                              Image.network(e,
-                                width: 900,
-                                height: 350,
-                                fit: BoxFit.cover,)
-                            ],
-                          ),
-                        )).toList(),
 
+                            autoPlay: true,
+                            enlargeCenterPage: false,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                _current = index;
+                              });
+                            }),
+
+                        items: images.map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
+                                decoration: BoxDecoration(
+                                  // color: Colors.amber
+                                ),
+                                ///Add Images and Dots
+                                child: Stack(
+                                  alignment : AlignmentDirectional.bottomEnd,
+                                  children: [
+                                    Image.network(
+                                      i,
+                                      width: double.infinity,
+                                        height: 350,
+                                        fit: BoxFit.cover,
+                                    ),
+                                    ///For Dots Show in Picture
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: images.asMap().entries.map((entry) {
+                                        return GestureDetector(
+                                          onTap: () => _controller.animateToPage(entry.key),
+                                          child: Container(
+                                            width: 8.0,
+                                            height: 8.0,
+                                            margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0),
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+
+                                              color: (_current == entry.key
+                                                  ? Colors.red
+                                                  : Colors.white)
+                                                  .withOpacity(_current == entry.key ? 1 : 1),),
+
+                                            // color: (Theme.of(context).brightness == Brightness.dark
+                                            //     ? Colors.white
+                                            //     : Colors.red)
+                                            //     .withOpacity(_current == entry.key ? 0.9 : 0.4),),
+                                          ),
+                                        );
+                                      }).toList(),
+                                    ),
+                                  ],
+                                  //
+                                ),
+                                // Text('text $i', style: TextStyle(fontSize: 16.0),)
+                              );
+                            },
+                          );
+                        }).toList(),
                       ),
                     ),
                   ),
@@ -102,11 +150,14 @@ class _HomeeState extends State<Homee> {
                   Padding(
                     padding: const EdgeInsets.only(top: 28.0),
                     child: Neumorphic(
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
+
+                      style: NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,
+                          shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black ,
+                          shadowDarkColor: Colors.black ,shadowLightColor: Colors.transparent,border: NeumorphicBorder(color: Color(0xff548ed0))),
                       child: Container(
 
                         decoration: BoxDecoration(
-                            color: Color(0xff5194e2),
+                            color: Color(0xff548ed0),
                             borderRadius: BorderRadius.circular(0)
                         ),
                         width: 330,
@@ -166,20 +217,22 @@ class _HomeeState extends State<Homee> {
                   Padding(
                     padding: const EdgeInsets.only(top: 33.0),
                     child: Neumorphic(
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
-                      child: Column(
+                      style: NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black ,
+                          shadowDarkColor: Colors.black ,shadowLightColor: Colors.transparent,border: NeumorphicBorder(color: Colors.white)),
+                       child: Column(
                         children: [
                           Container(
+                            color: Color(0xffeaedf2),
                               width: 320,
-                              height: 100,
+                              height: 85,
                               child: Padding(
                                   padding: const EdgeInsets.only(top: 23.0),
                                   child: Row(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset('assets/icons/bike_image.png'),
+                                        padding: const EdgeInsets.only(left: 16.0),
+                                        child: Image.asset('assets/icons/bike_image.png',),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 28.0),
@@ -202,7 +255,9 @@ class _HomeeState extends State<Homee> {
                                               ),
                                             ),
                                           ),
-                                          IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.add_circled,size: 30,))
+                                          IconButton(onPressed: (){
+                                            Navigator.push(context, CupertinoPageRoute(builder: (context)=>AddVehicleScreen()));
+                                          }, icon: Icon(CupertinoIcons.add_circled,size: 30,))
                                         ],
                                       )
                                     ],
@@ -217,12 +272,13 @@ class _HomeeState extends State<Homee> {
                   Padding(
                     padding: const EdgeInsets.only(top: 40.0),
                     child: Neumorphic(
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
+                      style: NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black ,shadowLightColor: Colors.transparent),
                       child: Column(
                         children: [
                           Neumorphic(
-                            style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
+                            style: NeumorphicStyle(depth:10,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black38 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
                             child: Container(
+                                color: Color(0xffeaedf2),
                               height: 110,
                               width: 330,
                               child: Column(
@@ -236,7 +292,7 @@ class _HomeeState extends State<Homee> {
                                         GestureDetector(
 
                                             child: Card(
-                                              elevation: 10,
+                                              elevation: 5,
                                               shadowColor: Colors.white,
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                               color: NeumorphicColors.background,
@@ -259,7 +315,7 @@ class _HomeeState extends State<Homee> {
                                           child: Padding(
                                             padding: const EdgeInsets.only(left: 8.0),
                                             child: Card(
-                                              elevation: 10,
+                                              elevation: 5,
                                               shadowColor: Colors.white,
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                               color: NeumorphicColors.background,
@@ -277,7 +333,7 @@ class _HomeeState extends State<Homee> {
                                         ),
                                         GestureDetector(
                                           child: Card(
-                                            elevation: 10,
+                                            elevation: 5,
                                             shadowColor: Colors.white,
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                             color: NeumorphicColors.background,
@@ -291,7 +347,7 @@ class _HomeeState extends State<Homee> {
                                         ),
                                         GestureDetector(
                                           child: Card(
-                                            elevation: 10,
+                                            elevation: 5,
                                             shadowColor: Colors.white,
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                             color: NeumorphicColors.background,
@@ -338,48 +394,72 @@ class _HomeeState extends State<Homee> {
 
                   Column(
                     children: [
-                      Row(
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
 
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 25.0,top: 19),
-                            child: Neumorphic(
-                              style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: small,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 25.0,top: 19),
+                              child: Neumorphic(
+
+                                curve: Curves.bounceIn,
+                                drawSurfaceAboveChild: true,
+                                style: NeumorphicStyle(depth:10,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
+                                child: Container(
+
+                                  decoration: BoxDecoration(
+                                      color: small,
+
+                                  ),
+                                  width: 40,
+                                  height: 40,
+                                  child: Icon(FontAwesomeIcons.phone,color: Colors.white,),
                                 ),
-                                width: 40,
-                                height: 40,
-                                child: Icon(FontAwesomeIcons.phone,color: Colors.white,),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 16.0,top: 19),
-                            child: Neumorphic(
-                              style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
-                              child: Container(
-                              child: Container(
-                                width: 40,
-                                height: 40,
-                                child: Image.asset('assets/icons/what.png',scale: 29,width: 200,)
+                            Padding(
+                              padding: const EdgeInsets.only(left: 16.0,top: 19),
+                              child: Neumorphic(
+
+                                drawSurfaceAboveChild: true,
+                                style: NeumorphicStyle(depth:5,oppositeShadowLightSource:true,lightSource: LightSource.topLeft,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss:
+                                Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent,border: NeumorphicBorder(color: Colors.white,)),
+
+                                child: GestureDetector(
+                                  onTap: (){
+                                    setState(() {
+                                      contain = !contain;
+                                    });
+                                  },
+                                  child: AnimatedContainer(
+                                    width: 40,
+                                    curve: Curves.easeInCubic,
+                                    height: 40,
+                                    duration: Duration(seconds: 2),
+                                    child: Image.asset('assets/icons/what.png',scale: 29,width: 200,)
+                                  ),
+                                ),
                               ),
-                            ),
-                          )
-                              )
-                        ],
+                            )
+
+                          ],
+                        ),
                       )
                     ],
                   ),
 
+
                   Padding(
-                    padding: const EdgeInsets.only(top: 23.0),
+                    padding: const EdgeInsets.only(top: 20.0),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Neumorphic(
-                        style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
+                        drawSurfaceAboveChild: true,
+                        margin: EdgeInsets.only(bottom: 20),
+                        style: NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black ,shadowLightColor: Colors.transparent),
                         child: Container(
+                          color: Color(0xffeaedf2),
                           margin: EdgeInsets.only(bottom: 0),
                           height: 50,
                           width: 330,
@@ -497,7 +577,7 @@ class _HomeeState extends State<Homee> {
                     ),
 
                     SizedBox(
-                      height: 35,
+                      height: 45,
                       child: ListTile(
                         onTap: (){
                           Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyProfileScreen()));
@@ -508,11 +588,11 @@ class _HomeeState extends State<Homee> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(9.0),
+                      padding: const EdgeInsets.only(top: 9.0),
                       child: SizedBox(width:195,child: Divider(color: Colors.white,thickness: 3,)),
                     ),
                     SizedBox(
-                      height: 35,
+                      height: 45,
                       child: ListTile(
                         onTap: (){
                           Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyBookingScreen()));
@@ -523,20 +603,23 @@ class _HomeeState extends State<Homee> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(9.0),
+                      padding: const EdgeInsets.only(top: 9.0),
                       child: SizedBox(
                           width:195,child: Divider(color: Colors.white,thickness: 3,)),
                     ),
                     SizedBox(
-                      height: 35,
+                      height: 45,
                       child: ListTile(
-                        title: Text('Real Time Update',style: TextStyle(color: Colors.white,fontSize: 22),),
+                        title: Padding(
+                          padding: const EdgeInsets.only(right: 2.0),
+                          child: Text('Real Time Update',style: TextStyle(color: Colors.white,fontSize: 22),),
+                        ),
                         leading: Image.asset('assets/icons/update.png',scale: 18,),
                         hoverColor: Colors.blue,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(9.0),
+                      padding: const EdgeInsets.only(top: 9.0),
                       child: SizedBox(width:195,child: Divider(color: Colors.white,thickness: 3,)),
                     ),
                     SizedBox(
@@ -554,7 +637,7 @@ class _HomeeState extends State<Homee> {
                     ),
 
                     SizedBox(
-                      height: 35,
+                      height: 40,
                       child: ListTile(
                         onTap: (){
                           Navigator.push(context, CupertinoPageRoute(builder: (context)=>Become_Partner()));
@@ -565,13 +648,13 @@ class _HomeeState extends State<Homee> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(9.0),
+                      padding: const EdgeInsets.only(top: 9.0),
                       child: SizedBox(
                           width: 195,child: Divider(color: Colors.white,thickness: 3,)),
                     ),
 
                     SizedBox(
-                      height: 35,
+                      height: 44,
                       child: ListTile(
                         title: Text('Share',style: TextStyle(color: Colors.white,fontSize: 22),),
                         leading: Image.asset('assets/icons/share.png',scale: 18,),
@@ -579,12 +662,12 @@ class _HomeeState extends State<Homee> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(9.0),
+                      padding: const EdgeInsets.only(top: 9.0),
                       child: SizedBox(
                           width: 195,child: Divider(color: Colors.white,thickness: 3,)),
                     ),
                     SizedBox(
-                      height: 35,
+                      height: 44,
                       child: ListTile(
                         onTap: (){},
                         title: Text('About',style: TextStyle(color: Colors.white,fontSize: 22),),
@@ -593,12 +676,11 @@ class _HomeeState extends State<Homee> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(9.0),
-                      child: SizedBox(
-                          width: 195,child: Divider(color: Colors.white,thickness: 3,)),
+                      padding: const EdgeInsets.only(bottom: 6.0),
+                      child: SizedBox(width: 195,child: Divider(color: Colors.white,thickness: 3,)),
                     ),
                     SizedBox(
-                      height: 35,
+                      height: 49,
                       child: ListTile(
                         onTap: (){
                           Navigator.push(context, CupertinoPageRoute(builder: (context)=>LoginScreen()));
@@ -661,6 +743,30 @@ class _newpageState extends State<newpage> {
     );
   }
 }
+
+
+
+// CarouselSlider(
+// options: CarouselOptions(
+// enlargeCenterPage: false,
+// disableCenter: true,
+// enableInfiniteScroll: true,
+// autoPlay: true,
+// ),
+// items: images.map((e) => ClipRRect(
+// borderRadius: BorderRadius.circular(2),
+// child: Stack(
+// fit: StackFit.expand,
+// children: [
+// Image.network(e,
+// width: 900,
+// height: 350,
+// fit: BoxFit.cover,)
+// ],
+// ),
+// )).toList(),
+//
+// ),
 
 
 

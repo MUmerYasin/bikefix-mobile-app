@@ -13,3 +13,6 @@ Color small = Color(0xffe34d3d);
 Color custom = NeumorphicColors.background;
 
 
+Text OTP = Text('Please Enter OTP',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),);
+
+

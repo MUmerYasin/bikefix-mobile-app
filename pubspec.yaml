@@ -53,6 +53,8 @@ flutter:
   assets:
      - assets/icons/
      - image/
+     - bike/
+
 
 
 

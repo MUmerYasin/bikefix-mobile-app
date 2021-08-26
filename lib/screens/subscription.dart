@@ -37,8 +37,9 @@ class _subscripState extends State<subscrip> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Neumorphic(
+
                       margin: EdgeInsets.only(bottom: 20),
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black54,shadowLightColor: Colors.white),
+                      style: NeumorphicStyle(depth:6,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black54,shadowLightColor: Colors.white),
                       child: Container(
                         width: 310,
                         height: 510,
