@@ -157,8 +157,9 @@ class SmallRoundedCornerButton extends StatelessWidget {
 }
 
 class myTextField extends StatefulWidget {
-  const myTextField({Key? key, required this.text}) : super(key: key);
+  const myTextField({Key? key, required this.text, this.onchanged}) : super(key: key);
    final String? text;
+   final  onchanged;
 
   @override
   _myTextFieldState createState() => _myTextFieldState();
@@ -172,6 +173,7 @@ class _myTextFieldState extends State<myTextField> {
       child: Container(
         height: 50,
         child: TextField(
+          onChanged: widget.onchanged,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.only(left: 14,right: 14),
               border: InputBorder.none,
