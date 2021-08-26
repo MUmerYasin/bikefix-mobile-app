@@ -7,12 +7,12 @@ import 'package:two_wheel_vehicle/widgets.dart';
 
 import '../config.dart';
 
-class ServiceStatusScreen extends StatefulWidget {
+class CheckoutStatusScreen extends StatefulWidget {
   @override
-  _ServiceStatusScreenState createState() => _ServiceStatusScreenState();
+  _CheckoutStatusScreenState createState() => _CheckoutStatusScreenState();
 }
 
-class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
+class _CheckoutStatusScreenState extends State<CheckoutStatusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
           color: Colors.black,
         ),
         title: Text(
-          screenTitleStatusService,
+          screenTitleCheckout,
           style: TextStyle(
             fontFamily: textFontFamily,
             fontSize: 18,
@@ -39,7 +39,7 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Container(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.only(top: 0.0, bottom: 10,left: 15.0, right: 15.0,),
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -47,12 +47,31 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
 
+              ///Title Vehicle Details
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 10),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    vehicleDetailsText,
+                    style: TextStyle(
+                      fontFamily: textFontFamily,
+                      fontSize: 14,
+                      color: const Color(0xff575656),
+                      height: 1,
+                    ),
+                    textHeightBehavior:
+                    TextHeightBehavior(applyHeightToFirstAscent: false),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ),
+
               /// Show Bike Details, Name, Details, bike Image
               BikeTitleDetailsHeading(
                   currentBikeName: companyNameKTM,
                   currentBikeDetails: bikeDetailsHundredDuke,
                   bikeImages: bikeImageImagePath),
-
               // Padding(
               //   padding: const EdgeInsets.only(top: 8.0, bottom: 10),
               //   child: Neumorphic(
@@ -125,13 +144,13 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
               //   ),
               // ),
 
-              ///Title Order Details
+              ///Title Price Breakup
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, bottom: 10),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    orderDetailsText,
+                    PriceBreakUpText,
                     style: TextStyle(
                       fontFamily: textFontFamily,
                       fontSize: 14,
@@ -145,7 +164,7 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
                 ),
               ),
 
-              ///Order Details, Booking, Pickup and Delivery Date and Time
+              ///Checkout Details, {Service Cost, Additional Charges*, Discount Applied, Sub Total, GST ? Tax, Total}
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, bottom: 10),
                 child: Neumorphic(
@@ -198,57 +217,117 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
                         //     ),
                         //   ),
                         // ),
-                        SingleOrderDetailsProcess(
-                            titleDetails: bookingDateTimeText,
-                            timeAndDate: timeDateDescriptionText),
-                        DividerCustom(),
-                        SingleOrderDetailsProcess(
-                            titleDetails: pickupDateTimeText,
-                            timeAndDate: timeDateDescriptionText),
-                        DividerCustom(),
-                        SingleOrderDetailsProcess(
-                            titleDetails: deliveryDateTimeText,
-                            timeAndDate: timeDateDescriptionText),
+                        CheckoutOrderDetailsProcess(
+                            checkoutDetails: serviceCostText,
+                            checkoutPrice: priceInIndianCurrency,
+                        color: true,),
+                        CheckoutOrderDetailsProcess(
+                            checkoutDetails: additionalChargesText,
+                            checkoutPrice: priceInIndianCurrency,
+                          color: true,),
+                        CheckoutOrderDetailsProcess(
+                            checkoutDetails: discountAppliedText,
+                            checkoutPrice: priceInIndianCurrency,
+                          color: true,),
+
                         DividerCustom(),
 
-                        ///Total Price Show
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                PriceWithTitleAndValueText,
-                                style: TextStyle(
-                                  fontFamily: textFontFamily,
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ],
-                        )
+                        CheckoutOrderDetailsProcess(
+                            checkoutDetails: subTotalText,
+                            checkoutPrice: priceInIndianCurrency,
+                          color: true,),
+                        CheckoutOrderDetailsProcess(
+                            checkoutDetails: gSTTaxText,
+                            checkoutPrice: priceInIndianCurrency,
+                          color: true,),
+                        CheckoutOrderDetailsProcess(
+                            checkoutDetails: totalText,
+                            checkoutPrice: priceInIndianCurrency,
+                          color: true,),
+
+
                       ],
                     ),
                   ),
                 ),
               ),
 
-              ///FeedBack Button
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 10),
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: RoundedCornerButton(
-                    onPressed: () {
-                      gotoScreen(context: context, screen: LoginScreen());
-                    },
-                    child: buttonNameFeedback,
-                  ),
+              ///Total Saving (Including Cashback)
+              Container(
+                width: MediaQuery.of(context).size.width,
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0,),
+                      child: CheckoutOrderDetailsProcess(
+                        checkoutDetails: totalSavingText,
+                        checkoutPrice: priceInIndianCurrency,
+                        color: false,),
+                    ),
+
+                  ],
                 ),
               ),
 
+              DividerCustom(),
+
+              ///drop Down Menu Apply Coupon Code Text
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      applyCouponCodeText,
+                      style: TextStyle(
+                        fontFamily: textFontFamily,
+                        fontSize: 13,
+                        color: const Color(0xff000000),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                    Icon(Icons.arrow_forward_ios),
+                  ],
+                ),
+              ),
+
+              ///Pay Now, Pay Later, Button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 10),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: SmallRoundedCornerButton(
+                        color: true,
+                        onPressed: () {
+                          gotoScreen(context: context, screen: LoginScreen());
+                        },
+                        child: buttonNamePayNow,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 10),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: SmallRoundedCornerButton(
+                        color: false,
+                        onPressed: () {
+                          gotoScreen(context: context, screen: LoginScreen());
+                        },
+                        child: buttonNamePayLater,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -258,60 +337,54 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
 }
 
 
-
-
 ///Order Details, Booking, Pickup and Delivery Date and Time
-class SingleOrderDetailsProcess extends StatefulWidget {
-  // const SingleOrderDetailsProcess({Key? key}) : super(key: key);
-  final String titleDetails;
-  final String timeAndDate;
+class CheckoutOrderDetailsProcess extends StatefulWidget {
 
-  const SingleOrderDetailsProcess(
-      {Key? key, required this.titleDetails, required this.timeAndDate})
+  final String checkoutDetails;
+  final String checkoutPrice;
+  final bool color;
+
+   CheckoutOrderDetailsProcess(
+      {Key? key, required this.checkoutDetails, required this.checkoutPrice, required this.color})
       : super(key: key);
 
   @override
-  _SingleOrderDetailsProcessState createState() =>
-      _SingleOrderDetailsProcessState();
+  _CheckoutOrderDetailsProcessState createState() =>
+      _CheckoutOrderDetailsProcessState();
 }
 
-class _SingleOrderDetailsProcessState extends State<SingleOrderDetailsProcess> {
+class _CheckoutOrderDetailsProcessState extends State<CheckoutOrderDetailsProcess> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                ///Booking date & time
-                widget.titleDetails,
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0, left: 8.0, bottom: 4.0,),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                ///Checkout Details
+                widget.checkoutDetails,
                 style: TextStyle(
                   fontFamily: textFontFamily,
-                  fontSize: 14,
-                  color: const Color(0xff686868),
+                  fontSize: 12,
+                  color: widget.color ? const Color(0xff686868) : Colors.green,
+
                   height: 1,
                 ),
                 textHeightBehavior:
                     TextHeightBehavior(applyHeightToFirstAscent: false),
                 textAlign: TextAlign.left,
               ),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8, 2, 8, 16),
-              child: Text(
-                ///time and Date Description
-                widget.timeAndDate,
+
+              Text(
+                ///Checkout Price
+                widget.checkoutPrice,
                 style: TextStyle(
                   fontFamily: textFontFamily,
-                  fontSize: 14,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
                   color: const Color(0xff000000),
                   height: 1,
                 ),
@@ -319,8 +392,8 @@ class _SingleOrderDetailsProcessState extends State<SingleOrderDetailsProcess> {
                     TextHeightBehavior(applyHeightToFirstAscent: false),
                 textAlign: TextAlign.left,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );

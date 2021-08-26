@@ -16,6 +16,7 @@ const String screenTitleMyVehicle = "My Vehicle";
 const String screenTitleMyBookings = "My Bookings";
 const String screenTitleStatusService = "Status Service";
 const String screenTitleAddVehicle = "Add Vehicle";
+const String screenTitleCheckout = "Checkout";
 
 /// Text Font Family
 const String textFontFamily = "Roboto";
@@ -103,6 +104,8 @@ const String buttonNameFeedback = "Feedback";
 const String buttonNameOther = "Other";
 const String buttonNameTryAgain = "Try Again";
 const String buttonNameBuyNow = "Buy Now";
+const String buttonNamePayNow = "Pay Now";
+const String buttonNamePayLater = "Pay Later";
 
 /// Company names
 const String companyNameKTM = "KTM";
@@ -297,6 +300,19 @@ const String payLaterText = "Pay later";
 const String paymentConfirmedText = "Payment Confirmed";
 const String paymentUnsuccessfulText = "Payment Unsuccessful";
 const String priceInIndianCurrency = "₹499";
+
+const String orderDetailsText = "Order Details";
+const String vehicleDetailsText = "Vehicle Details";
+const String PriceBreakUpText = "Price Breakup";
+const String serviceCostText = "Service Cost";
+const String additionalChargesText = "Additional Charges*";
+const String discountAppliedText = "Discount Applied";
+const String subTotalText = "Sub Total";
+const String gSTTaxText = "GST ? Tax";
+const String totalText = "Total";
+const String totalSavingText = "Total Saving (Including Cashback)";
+const String applyCouponCodeText = "%Apply Coupon Code";
+
 
 /// Simple Text That use in all Screens
 

@@ -1,12 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
-import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
-import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
-import 'package:two_wheel_vehicle/screens/payment_successful_screen.dart';
-import 'package:two_wheel_vehicle/screens/payment_unsuccessful_screen.dart';
-import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
+import 'package:two_wheel_vehicle/screens/checkout_screen.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -42,7 +37,8 @@ class MyApp extends StatelessWidget {
       // home: PaymentUnsuccessfulScreen(), // Front End Final // Develop by Umer
       // home: PaymentSuccessfulScreen(), // Front End Final // Develop by Umer
       // home: SubscriptionScreen(), // Front End Final // Develop by Umer
-      home: HelpAndSupportScreen(), // Front End Final // Develop by Umer
+      // home: HelpAndSupportScreen(), // Front End Final // Develop by Umer
+      home: CheckoutStatusScreen(), // Front End Final // Develop by Umer
     );
   }
 }

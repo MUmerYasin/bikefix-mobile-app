@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:two_wheel_vehicle/config.dart';
-import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+// import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
 class HelpAndSupportScreen extends StatefulWidget {

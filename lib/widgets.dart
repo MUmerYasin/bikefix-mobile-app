@@ -411,3 +411,99 @@ class _CustomDropDownMenuState extends State<CustomDropDownMenu> {
   }
 // String
 }
+
+/// Show Bike Title Details, {Name, Details, bike Image}
+class BikeTitleDetailsHeading extends StatefulWidget {
+  // const BikeTitleDetailsHeading({Key? key}) : super(key: key);
+
+  final String currentBikeName;
+  final String currentBikeDetails;
+  final String bikeImages;
+
+  const BikeTitleDetailsHeading(
+      {Key? key,
+        required this.currentBikeName,
+        required this.currentBikeDetails,
+        required this.bikeImages})
+      : super(key: key);
+
+  @override
+  _BikeTitleDetailsHeadingState createState() =>
+      _BikeTitleDetailsHeadingState();
+}
+
+class _BikeTitleDetailsHeadingState extends State<BikeTitleDetailsHeading> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, bottom: 10),
+      child: Neumorphic(
+        style: NeumorphicStyle(
+          // shadowLightColorEmboss: Colors.white,
+          // shadowDarkColorEmboss: Colors.black,
+          // shadowDarkColor: Colors.black,
+          shadowDarkColor: Colors.black.withOpacity(0.6),
+          depth: 7,
+          shape: NeumorphicShape.flat,
+          // shadowDarkColor: Colors.black12,
+          shadowLightColor: Colors.white,
+          shadowDarkColorEmboss: Colors.black.withOpacity(0.8),
+        ),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 25.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5.0),
+            gradient: LinearGradient(
+              begin: Alignment(-1.0, -1.0),
+              end: Alignment(1.01, 1.0),
+              colors: [const Color(0xffeef0f5), const Color(0xffe6e9ef)],
+              stops: [0.0, 1.0],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xb2a6b4c8),
+                offset: Offset(10, 10),
+                blurRadius: 48,
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ///Bike Name, Details,
+              Text.rich(
+                TextSpan(
+                  style: TextStyle(
+                    fontFamily: textFontFamily,
+                    fontSize: 18,
+                    color: const Color(0xff000000),
+                  ),
+                  children: [
+                    /// Bike Name
+                    TextSpan(
+                      text: widget.currentBikeName + '\n',
+                    ),
+                    TextSpan(
+                      /// Bike Details
+                      text: widget.currentBikeDetails,
+                      style: TextStyle(
+                        color: buttonColor,
+                      ),
+                    ),
+                  ],
+                ),
+                textHeightBehavior:
+                TextHeightBehavior(applyHeightToFirstAscent: false),
+                textAlign: TextAlign.center,
+              ),
+
+              ///Bike Image
+              Image.asset(widget.bikeImages),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
