@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
+import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
@@ -17,10 +18,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   ///---------------------------------------------------
   ///Bottom Navigation Bar
 
   int _selectedIndex = 0;
+
   // static const TextStyle optionStyle =
   // TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   //
@@ -45,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       switch (index) {
         case 0:
           // builder = (BuildContext context) => HomeScreen();
+
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => HomeScreen()),
@@ -65,7 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
           );
           break;
         case 3:
-
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => SubscriptionScreen()),
@@ -73,13 +77,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
           break;
         case 4:
-          Scaffold.of(context).openEndDrawer();
+          // Scaffold.of(context).openEndDrawer();
+          _scaffoldKey.currentState!.openEndDrawer();
 
           break;
         default:
-          throw Exception('Invalid route: Exception');//${settings.name}
+          throw Exception('Invalid route: Exception'); //${settings.name}
       }
-
     });
   }
 
@@ -88,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: NeumorphicColors.background,
 
       appBar: AppBar(
@@ -106,99 +111,71 @@ class _HomeScreenState extends State<HomeScreen> {
         //For Hide Drawer Icon
         actions: <Widget>[Container()],
         automaticallyImplyLeading: false,
-
       ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              /// Carousel With Indicator
-              HomePageCarouselWithIndicator(),
+      body: SingleChildScrollView(
+        physics: ClampingScrollPhysics (),
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              children: [
+                /// Carousel With Indicator
+                HomePageCarouselWithIndicator(),
 
+                HomePageFirstMenu(),
 
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Neumorphic(
-                  style: NeumorphicStyle(
-                    depth: 8,
-                    shape: NeumorphicShape.flat,
-                    shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-                    // boxShape: NeumorphicBoxShape.circle(),
-                    shadowDarkColor: Colors.black.withOpacity(0.7),
-                    shadowLightColor: Colors.white,
-                    color: Colors.blue,
-                  ),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: 90,
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [],
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Neumorphic(
+                    style: NeumorphicStyle(
+                      depth: 8,
+                      shape: NeumorphicShape.flat,
+                      shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                      // boxShape: NeumorphicBoxShape.circle(),
+                      shadowDarkColor: Colors.black.withOpacity(0.7),
+                      shadowLightColor: Colors.white,
+                      color: Colors.white,
+                    ),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      height: 90,
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
 
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Neumorphic(
-                  style: NeumorphicStyle(
-                    depth: 8,
-                    shape: NeumorphicShape.flat,
-                    shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-                    // boxShape: NeumorphicBoxShape.circle(),
-                    shadowDarkColor: Colors.black.withOpacity(0.7),
-                    shadowLightColor: Colors.white,
-                    color: Colors.white,
-                  ),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: 90,
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [],
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Neumorphic(
+                    style: NeumorphicStyle(
+                      depth: 8,
+                      shape: NeumorphicShape.flat,
+                      shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                      // boxShape: NeumorphicBoxShape.circle(),
+                      shadowDarkColor: Colors.black.withOpacity(0.7),
+                      shadowLightColor: Colors.white,
+                      color: Colors.white,
+                    ),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      height: 90,
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-///run Bottom Navigation Bar
-//               SizedBox(
-//                 child: _widgetOptions.elementAt(_selectedIndex),
-//               ),
-
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Neumorphic(
-                  style: NeumorphicStyle(
-                    depth: 8,
-                    shape: NeumorphicShape.flat,
-                    shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-                    // boxShape: NeumorphicBoxShape.circle(),
-                    shadowDarkColor: Colors.black.withOpacity(0.7),
-                    shadowLightColor: Colors.white,
-                    color: Colors.white,
-                  ),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: 90,
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -206,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ///Drawer /// Right Side Menu
       endDrawer: SizedBox(
         width: MediaQuery.of(context).size.width * 0.55,
-        height: MediaQuery.of(context).size.height *0.75,
+        height: MediaQuery.of(context).size.height * 0.75,
         // height: 600,
         child: Drawer(
           elevation: 0.0,
@@ -225,11 +202,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Container(
             color: Colors.black,
             child: ListView(
-                // shrinkWrap:true,
+              // shrinkWrap:true,
               padding: EdgeInsets.zero,
 
               children: [
-
                 //Single Row Red
                 //Icon and text
                 //Home
@@ -391,7 +367,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     leading: Image.asset(
                       drawerRealTimeUpdateImagePath,
                       height: 30.0,
-
                     ),
                     title: const Text(
                       realTimeUpdateDrawer,
@@ -610,37 +585,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 //Divider
-
-
               ],
             ),
           ),
         ),
       ),
+
       ///Bottom Navigation Bar
       bottomNavigationBar: SizedBox(
         width: MediaQuery.of(context).size.width * 0.9,
-
         child: Padding(
-          padding: const EdgeInsets.only(left: 16.0,right: 16.0,bottom: 10.0),
+          padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 10.0),
           child: Neumorphic(
-              margin : const EdgeInsets.all(0),
-            padding : const EdgeInsets.all(0),
-            style: NeumorphicStyle(
-
-            ),
+            margin: const EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
+            style: NeumorphicStyle(),
             child: BottomNavigationBar(
-              elevation:0.0,
+              elevation: 0.0,
               showSelectedLabels: false,
               showUnselectedLabels: false,
               // type: BottomNavigationBarType.fixed,
-              items:  <BottomNavigationBarItem>[
+              items: <BottomNavigationBarItem>[
                 //oneBottomNavigationBarImagePath
                 BottomNavigationBarItem(
                   icon: Container(
                     child: Image(
                       image: AssetImage(
-
                         oneBottomNavigationBarImagePath,
                       ),
                       fit: BoxFit.contain,
@@ -714,7 +684,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: '',
                   // backgroundColor: Colors.green,
                 ),
-
               ],
               currentIndex: _selectedIndex,
               // selectedItemColor: Colors.amber[800],
@@ -723,12 +692,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-
     );
   }
 }
-
-
 
 /// Image Path Pictures of Carousel Slider
 final List<String> imgList = [
@@ -899,139 +865,151 @@ class _HomePageCarouselWithIndicatorState
   }
 }
 
-// final List<Widget> imageSliders = imgList
-//     .map((item) => Container(
-//   child: Container(
-//     margin: EdgeInsets.all(5.0),
-//     child: ClipRRect(
-//         borderRadius: BorderRadius.all(Radius.circular(5.0)),
-//         child: Stack(
-//           children: <Widget>[
-//             Image.asset(item, fit: BoxFit.cover, width: 150.0,),
-//             Positioned(
-//               bottom: 0.0,
-//               left: 0.0,
-//               right: 0.0,
-//               child: Container(
-//                 decoration: BoxDecoration(
-//                   gradient: LinearGradient(
-//                     colors: [
-//                       Color.fromARGB(200, 0, 0, 0),
-//                       Color.fromARGB(0, 0, 0, 0)
-//                     ],
-//                     begin: Alignment.bottomCenter,
-//                     end: Alignment.topCenter,
-//                   ),
-//                 ),
-//                 padding: EdgeInsets.symmetric(
-//                     vertical: 10.0, horizontal: 20.0),
-//                 child: Text(
-//                   '',
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 20.0,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ],
-//         )),
-//   ),
-// ))
-//     .toList();
-//
-// class CarouselWithIndicatorDemo extends StatefulWidget {
-//   @override
-//   State<StatefulWidget> createState() {
-//     return _CarouselWithIndicatorState();
-//   }
-// }
-//
-// class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
-//   int _current = 0;
-//   final CarouselController _controller = CarouselController();
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Carousel with indicator controller demo')),
-//       body: Column(children: [
-//         Expanded(
-//           child: CarouselSlider(
-//             items: imageSliders,
-//             carouselController: _controller,
-//             options: CarouselOptions(
-//                 autoPlay: true,
-//                 enlargeCenterPage: true,
-//                 aspectRatio: 2.0,
-//                 onPageChanged: (index, reason) {
-//                   setState(() {
-//                     _current = index;
-//                   });
-//                 }),
-//           ),
-//         ),
-//         Row(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: imgList.asMap().entries.map((entry) {
-//             return GestureDetector(
-//               onTap: () => _controller.animateToPage(entry.key),
-//               child: Container(
-//                 width: 12.0,
-//                 height: 12.0,
-//                 margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-//                 decoration: BoxDecoration(
-//                     shape: BoxShape.circle,
-//                     color: (Theme.of(context).brightness == Brightness.dark
-//                         ? Colors.white
-//                         : Colors.black)
-//                         .withOpacity(_current == entry.key ? 0.9 : 0.4)),
-//               ),
-//             );
-//           }).toList(),
-//         ),
-//       ]),
-//     );
-//   }
-// }
-//
 
+/// Home Page 1 Menu
+///Genuine Parts, Warranty, Affordable, Pick & Drop
 
-//
-// class DrawerSingleItemsCreate extends StatefulWidget {
-//   // const DrawerSingleItemsCreate({Key? key}) : super(key: key);
-//   bool? color;
-//   final String imagePathForDrawer;
-//   final String textPathForDrawer;
-//   final String navigationPathForDrawer;
-//
-//    DrawerSingleItemsCreate({Key? key, required this.imagePathForDrawer, required this.textPathForDrawer, required this.navigationPathForDrawer}) : super(key: key);
-//   @override
-//   _DrawerSingleItemsCreateState createState() => _DrawerSingleItemsCreateState();
-// }
-//
-// class _DrawerSingleItemsCreateState extends State<DrawerSingleItemsCreate> {
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       color: widget.color! ? buttonColor : Colors.black,
-//       child: ListTile(
-//         dense:true,
-//         horizontalTitleGap: 2.0,
-//         // minLeadingWidth: 2.0,
-//         leading: Image.asset(widget.imagePathForDrawer, height:30.0,),
-//         title: Text(widget.textPathForDrawer,style: TextStyle(color: Colors.white,fontFamily: textFontFamily,fontSize: 15.0),),
-//         onTap: () {
-//
-//           Navigator.push(
-//             context,
-//             MaterialPageRoute(builder: (context) => SecondRoute()),
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }
+class HomePageFirstMenu extends StatefulWidget {
+  const HomePageFirstMenu({Key? key}) : super(key: key);
+
+  @override
+  _HomePageFirstMenuState createState() => _HomePageFirstMenuState();
+}
+
+class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Neumorphic(
+        style: NeumorphicStyle(
+          depth: 8,
+          shape: NeumorphicShape.flat,
+          shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+          // boxShape: NeumorphicBoxShape.circle(),
+          shadowDarkColor: Colors.black.withOpacity(0.7),
+          shadowLightColor: Colors.white,
+          color: Colors.blue,
+        ),
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.9,
+          height: 90,
+          child: Expanded(
+            child: Row(
+              // mainAxisSize : MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => ChooseBikeBrand()));
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        genuinePartsHomePageIcon,
+                        width: 30.0,
+                        height: 30.0,
+                      ),
+                      Text(
+                        genuinePartsHomePageText,
+                        style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => ChooseBikeBrand()));
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        warrantyHomePageIcon,
+                        width: 30.0,
+                        height: 30.0,
+                      ),
+                      Text(
+                        warrantyHomePageText,
+                        style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => ChooseBikeBrand()));
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        affordableHomePageIcon,
+                        width: 30.0,
+                        height: 30.0,
+                      ),
+                      Text(
+                        affordableHomePageText,
+                        style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => ChooseBikeBrand()));
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        pickUpAndDropHomePageIcon,
+                        width: 30.0,
+                        height: 30.0,
+                      ),
+                      Text(
+                        pickDropHomePageText,
+                        style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 

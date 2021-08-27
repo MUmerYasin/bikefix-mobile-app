@@ -73,6 +73,12 @@ const String threeBottomNavigationBarImagePath = imagePathStart + "rel.png";
 const String fourBottomNavigationBarImagePath = imagePathStart + "king_black_logo.png";
 const String fiveBottomNavigationBarImagePath = imagePathStart + "drawer_logo_black.png";
 
+//Home Page Icon
+const String affordableHomePageIcon = imagePathStart + "affordable_icon.png";
+const String genuinePartsHomePageIcon = imagePathStart + "genuine_parts_icon.png";
+const String pickUpAndDropHomePageIcon = imagePathStart + "pickup_and_drop.png";
+const String warrantyHomePageIcon = imagePathStart + "warranty_icon.png";
+
 const String paytmLogoImagePath = imagePathStart + "paytm_logo.png";
 const String partnerIconsImagePath = imagePathStart + "partner_icons.png";
 const String paymentUnsuccessfulImagePath = imagePathStart + "payment_unsuccessful.png";
@@ -377,6 +383,12 @@ const String fuelTypeElectric = "Electric";
 const String fuelTypeDiesel = "Diesel";
 const String fuelTypePetrol = "Petrol";
 
+/// Home Page Text
+const String genuinePartsHomePageText = "Genuine Parts";
+const String warrantyHomePageText = "Warranty";
+const String affordableHomePageText = "Affordable";
+const String pickDropHomePageText = "Pick & Drop";
+
 /// Drawer String
 const String homeDrawer = "Home";
 const String profileDrawer = "Profile";
@@ -388,3 +400,4 @@ const String becomeAPartnerDrawer = "Become a Partner";
 const String shareDrawer = "Share";
 const String aboutDrawer = "About";
 const String logoutDrawer = "Log Out";
+
