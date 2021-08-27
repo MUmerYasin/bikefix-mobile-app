@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
+import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -14,12 +17,79 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // int _current = 0;
-  // final CarouselController _controller = CarouselController();
+  ///---------------------------------------------------
+  ///Bottom Navigation Bar
+
+  int _selectedIndex = 0;
+  // static const TextStyle optionStyle =
+  // TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  //
+  // static List<Widget> _widgetOptions = <Widget>[
+  //   Container(height: 0.0,
+  //   child: Row(
+  //     children: [
+  //       // Scaffold.of(context).openEndDrawer(),
+  //
+  //     ],
+  //   ),),
+  //   Container(height: 0.0,),
+  //   Container(height: 0.0,),
+  //   Container(height: 0.0,),
+  //   Container(height: 0.0,),
+  // ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      // _selectedIndex = index;
+
+      switch (index) {
+        case 0:
+          // builder = (BuildContext context) => HomeScreen();
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomeScreen()),
+          );
+          break;
+        case 1:
+          // builder = (BuildContext context) => LocationScreen();
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LocationScreen()),
+          );
+          break;
+        case 2:
+          // builder = (BuildContext context) => HelpAndSupportScreen();
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HelpAndSupportScreen()),
+          );
+          break;
+        case 3:
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SubscriptionScreen()),
+          );
+
+          break;
+        case 4:
+          Scaffold.of(context).openEndDrawer();
+
+          break;
+        default:
+          throw Exception('Invalid route: Exception');//${settings.name}
+      }
+
+    });
+  }
+
+  ///-----------------------------------
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: NeumorphicColors.background,
+
       appBar: AppBar(
         elevation: 0,
         backgroundColor: NeumorphicColors.background,
@@ -97,6 +167,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+///run Bottom Navigation Bar
+//               SizedBox(
+//                 child: _widgetOptions.elementAt(_selectedIndex),
+//               ),
 
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
@@ -129,6 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
+      ///Drawer /// Right Side Menu
       endDrawer: SizedBox(
         width: MediaQuery.of(context).size.width * 0.55,
         height: MediaQuery.of(context).size.height *0.75,
@@ -542,7 +617,112 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      ///Bottom Navigation Bar
+      bottomNavigationBar: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.9,
 
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16.0,right: 16.0,bottom: 10.0),
+          child: Neumorphic(
+              margin : const EdgeInsets.all(0),
+            padding : const EdgeInsets.all(0),
+            style: NeumorphicStyle(
+
+            ),
+            child: BottomNavigationBar(
+              elevation:0.0,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              // type: BottomNavigationBarType.fixed,
+              items:  <BottomNavigationBarItem>[
+                //oneBottomNavigationBarImagePath
+                BottomNavigationBarItem(
+                  icon: Container(
+                    child: Image(
+                      image: AssetImage(
+
+                        oneBottomNavigationBarImagePath,
+                      ),
+                      fit: BoxFit.contain,
+                    ),
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: '',
+                  // backgroundColor: Colors.green,
+                ),
+                //twoBottomNavigationBarImagePath
+                BottomNavigationBarItem(
+                  icon: Container(
+                    child: Image(
+                      image: AssetImage(
+                        twoBottomNavigationBarImagePath,
+                      ),
+                      fit: BoxFit.contain,
+                    ),
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: '',
+                  // backgroundColor: Colors.green,
+                ),
+
+                //ThreeBottomNavigationBarImagePath
+                BottomNavigationBarItem(
+                  icon: Container(
+                    child: Image(
+                      image: AssetImage(
+                        threeBottomNavigationBarImagePath,
+                      ),
+                      fit: BoxFit.contain,
+                    ),
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: '',
+                  // backgroundColor: Colors.green,
+                ),
+                //fourBottomNavigationBarImagePath
+                BottomNavigationBarItem(
+                  icon: Container(
+                    child: Image(
+                      image: AssetImage(
+                        fourBottomNavigationBarImagePath,
+                      ),
+                      fit: BoxFit.contain,
+                    ),
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: '',
+                  // backgroundColor: Colors.green,
+                ),
+
+                // fiveBottomNavigationBarImagePath,
+                BottomNavigationBarItem(
+                  icon: Container(
+                    child: Image(
+                      image: AssetImage(
+                        // "assets/icons/drawer_logo_black.png"
+                        fiveBottomNavigationBarImagePath,
+                      ),
+                      fit: BoxFit.contain,
+                    ),
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: '',
+                  // backgroundColor: Colors.green,
+                ),
+
+              ],
+              currentIndex: _selectedIndex,
+              // selectedItemColor: Colors.amber[800],
+              onTap: _onItemTapped,
+            ),
+          ),
+        ),
+      ),
 
     );
   }

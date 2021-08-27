@@ -44,6 +44,8 @@ const String drawerShareImagePath = imagePathStart + "drawer_share.png";
 
 const String subscriptionImagePath = imagePathStart + "subscription.png";
 
+//
+
 //All Pictures Carousel Slider
 const String mainPicCarouselSliderOneImagePath = imagePathStart + "main_pic_carousel_slider_one.png";
 
@@ -63,6 +65,13 @@ const String facebookLogoImagePath = imagePathStart + "facebook_logo.png";
 const String whatsappLogoImagePath = imagePathStart + "whatsapp_logo.png";
 const String phoneLogoImagePath = imagePathStart + "phone_logo.png";
 const String emailLogoImagePath = imagePathStart + "email_logo.png";
+
+//Bottom Navigation Bar Images
+const String oneBottomNavigationBarImagePath = imagePathStart + "home_icon.png";
+const String twoBottomNavigationBarImagePath = imagePathStart + "location_icon_dropdownmenu.png";
+const String threeBottomNavigationBarImagePath = imagePathStart + "rel.png";
+const String fourBottomNavigationBarImagePath = imagePathStart + "king_black_logo.png";
+const String fiveBottomNavigationBarImagePath = imagePathStart + "drawer_logo_black.png";
 
 const String paytmLogoImagePath = imagePathStart + "paytm_logo.png";
 const String partnerIconsImagePath = imagePathStart + "partner_icons.png";
