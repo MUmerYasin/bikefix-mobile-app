@@ -220,10 +220,11 @@ class CustomConatiner extends StatelessWidget {
 }
 
 class customTextField extends StatefulWidget {
-  const customTextField({Key? key, required this.text, this.onchanged, this.keyboardType, required this.icon, }) : super(key: key);
+  const customTextField({Key? key, required this.text, this.onchanged, this.keyboardType, required this.icon, this.validator, }) : super(key: key);
   final String? text;
   final  onchanged;
   final  keyboardType;
+  final validator;
   final IconData icon;
 
   @override
@@ -237,7 +238,8 @@ class _customTextFieldState extends State<customTextField> {
       style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
       child: Container(
         height: 50,
-        child: TextField(
+        child: TextFormField(
+          validator: (widget.validator),
           onChanged: widget.onchanged,
           keyboardType: widget.keyboardType,
           decoration: InputDecoration(

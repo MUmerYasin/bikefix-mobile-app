@@ -64,7 +64,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           ),
                         ),
                       ),
-                      myTextField(text: 'Name'),
+                      myTextField(text: 'Name',onchanged: (value){
+
+                      },),
 
                       Align(
                         alignment: Alignment.centerLeft,

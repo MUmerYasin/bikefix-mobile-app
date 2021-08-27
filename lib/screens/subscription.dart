@@ -42,7 +42,7 @@ class _subscripState extends State<subscrip> {
                       style: NeumorphicStyle(depth:6,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black54,shadowLightColor: Colors.white),
                       child: Container(
                         width: 310,
-                        height: 510,
+                        height: MediaQuery.of(context).size.height/1.5,
                         child: Column(
                           children: [
                             Padding(
