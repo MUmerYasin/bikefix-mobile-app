@@ -100,7 +100,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                   Padding(
                     padding: const EdgeInsets.only(top: 28.0),
                     child: Container( width: 300,
-                        child: myTextField(text: 'Year', )),
+                        child: myTextField(text: 'Year', validator: (value) {  }, )),
                   ),
                   
                   Row(

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/register_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
@@ -54,7 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
                    child: TextFormField(
                      validator: (value) {
                        if (value!.isEmpty){
-                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.red,content: Text('Phone Number is Required'),elevation: 10,));
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.orange,content:
+                         Text('Phone Number is Required',style: GoogleFonts.roboto(fontSize: 18,color: Colors.black),),elevation: 10,));
                        }
 
                      },
@@ -77,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                  ),
                ),
                Padding(
-                 padding: const EdgeInsets.only(top: 13.0),
+                 padding: const EdgeInsets.only(top: 20.0),
                  child: Text.rich(
                    TextSpan(
                      style: TextStyle(

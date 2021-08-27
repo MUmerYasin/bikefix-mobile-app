@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:two_wheel_vehicle/screens/otp_verify_screen.dart';
 
 import '../config.dart';
@@ -52,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   child: TextFormField(
                                     validator: (value){
                                       if (value!.isEmpty){
-                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.limeAccent,content: Text('This Field is Required for Next Step')));
+                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.limeAccent,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
                                       }
                                     },
                                     decoration: InputDecoration(
@@ -73,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   child: TextFormField(
                                     validator: (value){
                                       if (value!.isEmpty){
-                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.teal,content: Text('This Field is Required for Next Step')));
+                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.teal,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
                                       }
                                     },
                                     decoration: InputDecoration(
@@ -98,7 +99,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       child: TextFormField(
                                         validator: (value){
                                           if (value!.isEmpty){
-                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.purpleAccent,content: Text('This Field is Required for Next Step')));
+                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.purpleAccent,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
                                           }
                                         },
                                         decoration: InputDecoration(
@@ -121,7 +122,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       child: TextFormField(
                                         validator: (value){
                                           if (value!.isEmpty){
-                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.green,content: Text('This Field is Required for Next Step')));
+                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.green,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
                                           }
                                         },
                                         decoration: InputDecoration(
@@ -144,7 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   child: TextFormField(
                                     validator: (value){
                                       if (value!.isEmpty){
-                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.blue,content: Text('This Field is Required for Next Step')));
+                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.blue,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
                                       }
                                     },
                                     decoration: InputDecoration(
@@ -169,7 +170,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               child: 'Sign Up',
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(top: 18.0),
                               child: Text.rich(
                                 TextSpan(
                                   style: TextStyle(
@@ -179,7 +180,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: 'If already user,',
+                                      text: 'If already user,',style: TextStyle(fontSize: 20)
                                     ),
                                     TextSpan(
                                       text: ' Log In',recognizer: TapGestureRecognizer()..onTap = (){

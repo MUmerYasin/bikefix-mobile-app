@@ -157,9 +157,9 @@ class SmallRoundedCornerButton extends StatelessWidget {
 }
 
 class myTextField extends StatefulWidget {
-  const myTextField({Key? key, required this.text, this.onchanged, this.keyboardType,}) : super(key: key);
+  const myTextField({Key? key, required this.text, required this.validator, this.keyboardType,}) : super(key: key);
    final String? text;
-   final  onchanged;
+   final FormFieldValidator validator;
    final  keyboardType;
 
   @override
@@ -173,8 +173,8 @@ class _myTextFieldState extends State<myTextField> {
       style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
       child: Container(
         height: 50,
-        child: TextField(
-          onChanged: widget.onchanged,
+        child: TextFormField(
+        validator: widget.validator,
           keyboardType: widget.keyboardType,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.only(left: 14,right: 14),

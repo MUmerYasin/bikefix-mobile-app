@@ -83,15 +83,15 @@ class _LocationScreenState extends State<LocationScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: myTextField(text: 'Street'),
+                    child: myTextField(text: 'Street', validator: (value) {  },),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: myTextField(text: 'City'),
+                    child: myTextField(text: 'City', validator: (value) {  },),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: myTextField(text: 'Zip Code'),
+                    child: myTextField(text: 'Zip Code', validator: (value) {  },),
                   ),
 
                   Padding(

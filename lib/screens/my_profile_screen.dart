@@ -14,6 +14,18 @@ class MyProfileScreen extends StatefulWidget {
 }
 
 class _MyProfileScreenState extends State<MyProfileScreen> {
+
+ GlobalKey<FormState> key = GlobalKey<FormState>();
+
+ void confirm (){
+   if (key.currentState!.validate()){
+     print ('ok');
+   }else{
+     print('not');
+   }
+ }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,128 +49,133 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
               padding: EdgeInsets.all(15),
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.center,
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // CustomAppBar(title: 'My Profile',action: 'Edit',onTap: (){Navigator.pop(context);},),
-                    Expanded(child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-
+              child: Form(
+                key: key,
+                child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Name',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 18,
-                              color: const Color(0xff000000),
-                              height: 1,
+                      // CustomAppBar(title: 'My Profile',action: 'Edit',onTap: (){Navigator.pop(context);},),
+                      Expanded(child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Name',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 18,
+                                color: const Color(0xff000000),
+                                height: 1,
+                              ),
+                              textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
+                              textAlign: TextAlign.left,
                             ),
-                            textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
-                            textAlign: TextAlign.left,
                           ),
                         ),
-                      ),
-                      myTextField(text: 'Name',onchanged: (value){
+                        myTextField(text: 'Name', validator: (value) {  },),
 
-                      },),
-
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Email',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 18,
-                              color: const Color(0xff000000),
-                              height: 1,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Email',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 18,
+                                color: const Color(0xff000000),
+                                height: 1,
+                              ),
+                              textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
+                              textAlign: TextAlign.left,
                             ),
-                            textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
-                            textAlign: TextAlign.left,
                           ),
                         ),
-                      ),
-                      myTextField(text: 'Example@gmail.com'),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'DOB',
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 18,
-                                      color: const Color(0xff000000),
-                                      height: 1,
+                        myTextField(text: 'Example@gmail.com', validator: (value) { if (value!.isEmpty){
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.deepOrangeAccent,content: Text('This Field is Required')));
+                        }
+    },),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'DOB',
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 18,
+                                        color: const Color(0xff000000),
+                                        height: 1,
+                                      ),
+                                      textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
+                                      textAlign: TextAlign.left,
                                     ),
-                                    textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
-                                    textAlign: TextAlign.left,
                                   ),
-                                ),
-                                SizedBox(
-                                    width: MediaQuery.of(context).size.width /3,
-                                    child: myTextField(text: '01/01/1990',keyboardType: TextInputType.number,),
-                                  )
-                              ],
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Gender',
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 18,
-                                      color: const Color(0xff000000),
-                                      height: 1,
-                                    ),
-                                    textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: SizedBox(
+                                  SizedBox(
                                       width: MediaQuery.of(context).size.width /3,
-                                      child: myTextField(text: 'Male'),
+                                      child: myTextField(text: '01/01/1990',keyboardType: TextInputType.number, validator: (value) {  },),
+                                    )
+                                ],
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'Gender',
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 18,
+                                        color: const Color(0xff000000),
+                                        height: 1,
+                                      ),
+                                      textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
+                                      textAlign: TextAlign.left,
                                     ),
-                                )
-                              ],
-                            ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: SizedBox(
+                                        width: MediaQuery.of(context).size.width /3,
+                                        child: myTextField(text: 'Male', validator: (value) {  },),
+                                      ),
+                                  )
+                                ],
+                              ),
 
 
 
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      RoundedCornerButton(
-                        onPressed: () {
-                          gotoScreen(context: context,screen:LocationScreen());
+                        RoundedCornerButton(
+                          onPressed: () {
+                            confirm();
+                            // gotoScreen(context: context,screen:LocationScreen());
 
-                        },
-                        child: 'Save',
-                      ),
+                          },
+                          child: 'Save',
+                        ),
 
-                    ],))
+                      ],))
 
-                  ])),
+                    ]),
+              )),
         ));
   }
 }
