@@ -41,6 +41,7 @@ const String drawerOneImagePath = imagePathStart + "drawer_one.png";
 const String drawerProfileImagePath = imagePathStart + "drawer_profile.png";
 const String drawerRealTimeUpdateImagePath = imagePathStart + "drawer_real_time_update.png";
 const String drawerShareImagePath = imagePathStart + "drawer_share.png";
+
 const String subscriptionImagePath = imagePathStart + "subscription.png";
 
 //All Pictures Carousel Slider
@@ -366,3 +367,15 @@ const String fuelTypeText = "Fuel Type";
 const String fuelTypeElectric = "Electric";
 const String fuelTypeDiesel = "Diesel";
 const String fuelTypePetrol = "Petrol";
+
+/// Drawer String
+const String homeDrawer = "Home";
+const String profileDrawer = "Profile";
+const String myVehicleDrawer = "My Vehicle";
+const String myBookingDrawer = "My Booking";
+const String realTimeUpdateDrawer = "Real Time Update";
+const String HelpAndSupportDrawer = "Help & Support";
+const String becomeAPartnerDrawer = "Become a Partner";
+const String shareDrawer = "Share";
+const String aboutDrawer = "About";
+const String logoutDrawer = "Log Out";

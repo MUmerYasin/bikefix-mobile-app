@@ -6,14 +6,11 @@ import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() =>
-      _HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -35,167 +32,526 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.arrow_back_ios_outlined,
               color: Colors.black,
             )),
+
+        //For Hide Drawer Icon
+        actions: <Widget>[Container()],
+        automaticallyImplyLeading: false,
+
       ),
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              ///
-
-
+              /// Carousel With Indicator
               HomePageCarouselWithIndicator(),
-              // Neumorphic(
-              //   style: NeumorphicStyle(
-              //     depth: 8,
-              //     shape: NeumorphicShape.flat,
-              //     shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-              //     // boxShape: NeumorphicBoxShape.circle(),
-              //     shadowDarkColor: Colors.black.withOpacity(0.7),
-              //     shadowLightColor: Colors.white,
-              //   ),
-              //   child: Container(
-              //     width: MediaQuery.of(context).size.width*0.9,
-              //     height: 120,
-              //     child: Center(
-              //       child: Column(
-              //         mainAxisAlignment: MainAxisAlignment.center,
-              //         crossAxisAlignment: CrossAxisAlignment.center,
-              //         children: [
-              //
-              //
-              //           CarouselSlider(
-              //             carouselController: _controller,
-              //             options: CarouselOptions(
-              //                 height: 120.0,
-              //                 autoPlay: true,
-              //                 enlargeCenterPage: true,
-              //                 aspectRatio: 2.0,
-              //                 viewportFraction: 1.0,
-              //                 onPageChanged: (index, reason) {
-              //                   setState(() {
-              //                     _current = index;
-              //                   });
-              //                 }),
-              //
-              //             items: imgList.map((i) {
-              //               return Builder(
-              //                 builder: (BuildContext context) {
-              //                   return Container(
-              //                       width: MediaQuery.of(context).size.width,
-              //                       margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
-              //                       decoration: BoxDecoration(
-              //                           // color: Colors.amber
-              //                       ),
-              //                     child: Stack(
-              //                       alignment : AlignmentDirectional.bottomEnd,
-              //                       children: [
-              //                       Image.asset(
-              //                         i,
-              //                         height: double.infinity,
-              //                         width: double.infinity,
-              //                         fit: BoxFit.fill,
-              //                       ),
-              //                         Row(
-              //                           mainAxisAlignment: MainAxisAlignment.center,
-              //                           crossAxisAlignment: CrossAxisAlignment.end,
-              //                           children: imgList.asMap().entries.map((entry) {
-              //                             return GestureDetector(
-              //                               onTap: () => _controller.animateToPage(entry.key),
-              //                               child: Container(
-              //                                 width: 8.0,
-              //                                 height: 8.0,
-              //                                 margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0),
-              //                                 decoration: BoxDecoration(
-              //                                     shape: BoxShape.circle,
-              //
-              //                                     color: (_current == entry.key
-              //                                         ? Colors.red
-              //                                         : Colors.white)
-              //                                         .withOpacity(_current == entry.key ? 1 : 1),),
-              //
-              //                                     // color: (Theme.of(context).brightness == Brightness.dark
-              //                                     //     ? Colors.white
-              //                                     //     : Colors.red)
-              //                                     //     .withOpacity(_current == entry.key ? 0.9 : 0.4),),
-              //                               ),
-              //                             );
-              //                           }).toList(),
-              //                         ),
-              //                       ],
-              //                       //
-              //                     ),
-              //                       // Text('text $i', style: TextStyle(fontSize: 16.0),)
-              //                   );
-              //                 },
-              //               );
-              //             }).toList(),
-              //           ),
-              //
-              //           // Row(
-              //           //   mainAxisAlignment: MainAxisAlignment.center,
-              //           //   children: imgList.asMap().entries.map((entry) {
-              //           //     return GestureDetector(
-              //           //       onTap: () => _controller.animateToPage(entry.key),
-              //           //       child: Container(
-              //           //         width: 12.0,
-              //           //         height: 12.0,
-              //           //         margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-              //           //         decoration: BoxDecoration(
-              //           //             shape: BoxShape.circle,
-              //           //             color: (Theme.of(context).brightness == Brightness.dark
-              //           //                 ? Colors.white
-              //           //                 : Colors.black)
-              //           //                 .withOpacity(_current == entry.key ? 0.9 : 0.4)),
-              //           //       ),
-              //           //     );
-              //           //   }).toList(),
-              //           // ),
-              //
-              //           // Row(
-              //           //   mainAxisAlignment: MainAxisAlignment.center,
-              //           //   crossAxisAlignment: CrossAxisAlignment.center,
-              //           //   children: [
-              //           //     Padding(
-              //           //       padding: const EdgeInsets.only(top: 16.0,),
-              //           //       child: Image.asset(paymentUnsuccessfulImagePath, height:120.0,fit:BoxFit.cover ,),
-              //           //     ),
-              //           //   ],
-              //           // ),
-              //           // Row(
-              //           //   mainAxisAlignment: MainAxisAlignment.center,
-              //           //   crossAxisAlignment: CrossAxisAlignment.center,
-              //           //   children: [
-              //           //     Padding(
-              //           //       padding: const EdgeInsets.all(18.0),
-              //           //       child: Text(paymentUnsuccessfulText, style: TextStyle(
-              //           //         fontFamily: textFontFamily,
-              //           //         fontSize: 18,
-              //           //         color: Colors.black,
-              //           //         fontWeight: FontWeight.bold,
-              //           //       ),),
-              //           //     ),
-              //           //   ],
-              //           // ),
-              //         ],
-              //       ),
-              //     ),
-              //   ),
-              // ),
 
 
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    depth: 8,
+                    shape: NeumorphicShape.flat,
+                    shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                    // boxShape: NeumorphicBoxShape.circle(),
+                    shadowDarkColor: Colors.black.withOpacity(0.7),
+                    shadowLightColor: Colors.white,
+                    color: Colors.blue,
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 90,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
 
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    depth: 8,
+                    shape: NeumorphicShape.flat,
+                    shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                    // boxShape: NeumorphicBoxShape.circle(),
+                    shadowDarkColor: Colors.black.withOpacity(0.7),
+                    shadowLightColor: Colors.white,
+                    color: Colors.white,
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 90,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    depth: 8,
+                    shape: NeumorphicShape.flat,
+                    shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                    // boxShape: NeumorphicBoxShape.circle(),
+                    shadowDarkColor: Colors.black.withOpacity(0.7),
+                    shadowLightColor: Colors.white,
+                    color: Colors.white,
+                  ),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 90,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
 
             ],
           ),
         ),
       ),
+
+      endDrawer: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.55,
+        height: MediaQuery.of(context).size.height *0.75,
+        // height: 600,
+        child: Drawer(
+          elevation: 0.0,
+
+          //////--------------------------------
+          //icon for drawer
+          //Scaffold.of(context).openEndDrawer(),
+          // child: IconButton(
+          //                   icon: Icon(Icons.menu,
+          //                   size: 24,
+          //                   color: Colors.white,),
+          //                   onPressed: () => scaffoldKey.currentState.openDrawer(),
+          //                 ),
+          //------------------------------------
+
+          child: Container(
+            color: Colors.black,
+            child: ListView(
+                // shrinkWrap:true,
+              padding: EdgeInsets.zero,
+
+              children: [
+
+                //Single Row Red
+                //Icon and text
+                //Home
+                Container(
+                  color: buttonColor,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    // minLeadingWidth: 2.0,
+                    leading: Image.asset(
+                      drawerOneImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      homeDrawer,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: textFontFamily,
+                          fontSize: 15.0),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
+                    },
+                  ),
+                ),
+
+                //Single Row Black
+                //Icon and text
+                //profile
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerProfileImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      profileDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //myVehicleDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerMyVehicleImagePath,
+                      height: 30.0,
+                      width: 30.0,
+                    ),
+                    title: const Text(
+                      myVehicleDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //myBookingDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerMyBookingImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      myBookingDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //realTimeUpdateDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerRealTimeUpdateImagePath,
+                      height: 30.0,
+
+                    ),
+                    title: const Text(
+                      realTimeUpdateDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //HelpAndSupportDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerHelpImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      HelpAndSupportDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //becomeAPartnerDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerBecomeAPartnerImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      becomeAPartnerDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //shareDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerShareImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      shareDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //aboutDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerAboutImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      aboutDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+                Container(
+                  color: Colors.black,
+                  child: Divider(
+                    height: 3.0,
+                    thickness: 2.0,
+                    color: Colors.white,
+                    indent: 16.0,
+                    endIndent: 16.0,
+                  ),
+                ),
+
+                //Single Row
+                //Icon and text
+                //logoutDrawer
+                Container(
+                  color: Colors.black,
+                  child: ListTile(
+                    dense: true,
+                    horizontalTitleGap: 2.0,
+                    leading: Image.asset(
+                      drawerLogoutImagePath,
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      logoutDrawer,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: textFontFamily,
+                      ),
+                    ),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                //Divider
+
+
+              ],
+            ),
+          ),
+        ),
+      ),
+
+
     );
   }
 }
 
+
+
 /// Image Path Pictures of Carousel Slider
 final List<String> imgList = [
-  mainPicCarouselSliderOneImagePath,
   mainPicCarouselSliderOneImagePath,
   mainPicCarouselSliderOneImagePath,
   mainPicCarouselSliderOneImagePath,
@@ -207,10 +563,12 @@ class HomePageCarouselWithIndicator extends StatefulWidget {
   const HomePageCarouselWithIndicator({Key? key}) : super(key: key);
 
   @override
-  _HomePageCarouselWithIndicatorState createState() => _HomePageCarouselWithIndicatorState();
+  _HomePageCarouselWithIndicatorState createState() =>
+      _HomePageCarouselWithIndicatorState();
 }
 
-class _HomePageCarouselWithIndicatorState extends State<HomePageCarouselWithIndicator> {
+class _HomePageCarouselWithIndicatorState
+    extends State<HomePageCarouselWithIndicator> {
   int _current = 0;
   final CarouselController _controller = CarouselController();
 
@@ -226,15 +584,13 @@ class _HomePageCarouselWithIndicatorState extends State<HomePageCarouselWithIndi
         shadowLightColor: Colors.white,
       ),
       child: Container(
-        width: MediaQuery.of(context).size.width*0.9,
+        width: MediaQuery.of(context).size.width * 0.9,
         height: 120,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
-
               CarouselSlider(
                 carouselController: _controller,
                 options: CarouselOptions(
@@ -248,18 +604,20 @@ class _HomePageCarouselWithIndicatorState extends State<HomePageCarouselWithIndi
                         _current = index;
                       });
                     }),
-
                 items: imgList.map((i) {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
                         width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 0.0, vertical: 0.0),
                         decoration: BoxDecoration(
-                          // color: Colors.amber
-                        ),
+                            // color: Colors.amber
+                            ),
+
+                        ///Add Images and Dots
                         child: Stack(
-                          alignment : AlignmentDirectional.bottomEnd,
+                          alignment: AlignmentDirectional.bottomEnd,
                           children: [
                             Image.asset(
                               i,
@@ -267,23 +625,28 @@ class _HomePageCarouselWithIndicatorState extends State<HomePageCarouselWithIndi
                               width: double.infinity,
                               fit: BoxFit.fill,
                             ),
+
+                            ///For Dots Show in Picture
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: imgList.asMap().entries.map((entry) {
                                 return GestureDetector(
-                                  onTap: () => _controller.animateToPage(entry.key),
+                                  onTap: () =>
+                                      _controller.animateToPage(entry.key),
                                   child: Container(
                                     width: 8.0,
                                     height: 8.0,
-                                    margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0),
+                                    margin: EdgeInsets.symmetric(
+                                        vertical: 2.0, horizontal: 4.0),
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-
                                       color: (_current == entry.key
-                                          ? Colors.red
-                                          : Colors.white)
-                                          .withOpacity(_current == entry.key ? 1 : 1),),
+                                              ? Colors.red
+                                              : Colors.white)
+                                          .withOpacity(
+                                              _current == entry.key ? 1 : 1),
+                                    ),
 
                                     // color: (Theme.of(context).brightness == Brightness.dark
                                     //     ? Colors.white
@@ -355,7 +718,6 @@ class _HomePageCarouselWithIndicatorState extends State<HomePageCarouselWithIndi
     );
   }
 }
-
 
 // final List<Widget> imageSliders = imgList
 //     .map((item) => Container(
@@ -454,3 +816,42 @@ class _HomePageCarouselWithIndicatorState extends State<HomePageCarouselWithIndi
 //   }
 // }
 //
+
+
+//
+// class DrawerSingleItemsCreate extends StatefulWidget {
+//   // const DrawerSingleItemsCreate({Key? key}) : super(key: key);
+//   bool? color;
+//   final String imagePathForDrawer;
+//   final String textPathForDrawer;
+//   final String navigationPathForDrawer;
+//
+//    DrawerSingleItemsCreate({Key? key, required this.imagePathForDrawer, required this.textPathForDrawer, required this.navigationPathForDrawer}) : super(key: key);
+//   @override
+//   _DrawerSingleItemsCreateState createState() => _DrawerSingleItemsCreateState();
+// }
+//
+// class _DrawerSingleItemsCreateState extends State<DrawerSingleItemsCreate> {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       color: widget.color! ? buttonColor : Colors.black,
+//       child: ListTile(
+//         dense:true,
+//         horizontalTitleGap: 2.0,
+//         // minLeadingWidth: 2.0,
+//         leading: Image.asset(widget.imagePathForDrawer, height:30.0,),
+//         title: Text(widget.textPathForDrawer,style: TextStyle(color: Colors.white,fontFamily: textFontFamily,fontSize: 15.0),),
+//         onTap: () {
+//
+//           Navigator.push(
+//             context,
+//             MaterialPageRoute(builder: (context) => SecondRoute()),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
+
