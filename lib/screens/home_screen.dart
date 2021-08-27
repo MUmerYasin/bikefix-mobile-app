@@ -5,6 +5,7 @@ import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
 import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
+import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
@@ -139,11 +140,61 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: MediaQuery.of(context).size.width * 0.9,
                       height: 90,
                       child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [],
-                        ),
+                        child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+
+                          Image.asset(bikeImageImagePath, width: 60,),
+                          Text.rich(
+                            TextSpan(
+                              style: TextStyle(
+                                fontFamily: textFontFamily,
+                                fontSize: 14,
+                                color: const Color(0xff000000),
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: companyNameKTM + '\n',
+                                ),
+                                TextSpan(
+                                  text: bikeDetailsHundredDuke,
+                                  style: TextStyle(
+                                    color: const Color(0xffd33937),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            textHeightBehavior:
+                            TextHeightBehavior(applyHeightToFirstAscent: false),
+                            textAlign: TextAlign.center,
+                          ),
+
+                          SizedBox(
+                            height: 30,
+                            width: 70,
+                            child: RoundedCornerButton(
+                              child: buttonNameEdit,
+                              onPressed: (){},
+                            ),
+                          ),
+
+                          Neumorphic(
+                            style: NeumorphicStyle(
+                                shape: NeumorphicShape.flat,
+                                boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(50)),
+                              depth: 8,
+                              shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                              shadowDarkColor: Colors.black.withOpacity(0.7),
+                              shadowLightColor: Colors.white,
+                              color: Colors.white,
+                            ),
+                            child: IconButton(onPressed: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyVehicles()));
+                            }, icon: Icon(CupertinoIcons.add,size: 22,),),
+                          ),
+
+                        ],
+                      ),
                       ),
                     ),
                   ),

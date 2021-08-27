@@ -122,6 +122,7 @@ const String buttonNameTryAgain = "Try Again";
 const String buttonNameBuyNow = "Buy Now";
 const String buttonNamePayNow = "Pay Now";
 const String buttonNamePayLater = "Pay Later";
+const String buttonNameEdit = "Edit";
 
 /// Company names
 const String companyNameKTM = "KTM";
