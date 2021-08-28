@@ -4,17 +4,26 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
 import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
+import 'package:two_wheel_vehicle/screens/checkout_screen.dart';
 import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
+import 'package:two_wheel_vehicle/screens/login_screen.dart';
+import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
+import 'package:two_wheel_vehicle/screens/mybooking_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/screens/otp_verify_screen.dart';
+import 'package:two_wheel_vehicle/screens/payment_successful_screen.dart';
+import 'package:two_wheel_vehicle/screens/payment_unsuccessful_screen.dart';
+import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
+import 'package:two_wheel_vehicle/screens/register_screen.dart';
+import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -130,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 HomePageSecondMenu(),
 
-                ///
+                /// Two Social Icon
                 Padding(
                   padding: const EdgeInsets.only(top: 16.0,bottom: 16.0, left: 18.0,),
                   child: Row(
@@ -175,18 +184,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               // print("Pressed");
                             },
                           ),
-
-
                         ),
                       ),
-
-
-
-
                     ],
                   ),
                 ),
-
               ],
             ),
           ),
@@ -200,17 +202,6 @@ class _HomeScreenState extends State<HomeScreen> {
         // height: 600,
         child: Drawer(
           elevation: 0.0,
-
-          //////--------------------------------
-          //icon for drawer
-          //Scaffold.of(context).openEndDrawer(),
-          // child: IconButton(
-          //                   icon: Icon(Icons.menu,
-          //                   size: 24,
-          //                   color: Colors.white,),
-          //                   onPressed: () => scaffoldKey.currentState.openDrawer(),
-          //                 ),
-          //------------------------------------
 
           child: Container(
             color: Colors.black,
@@ -269,10 +260,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyProfileScreen()),
+                      );
                     },
                   ),
                 ),
@@ -310,10 +301,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyVehicles()),
+                      );
                     },
                   ),
                 ),
@@ -350,10 +341,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyBookingScreen()),
+                      );
                     },
                   ),
                 ),
@@ -390,10 +381,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CheckoutStatusScreen()),
+                      );
                     },
                   ),
                 ),
@@ -430,10 +421,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HelpAndSupportScreen()),
+                      );
                     },
                   ),
                 ),
@@ -470,10 +461,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterScreen()),
+                      );
                     },
                   ),
                 ),
@@ -510,10 +501,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LocationScreen()),
+                      );
                     },
                   ),
                 ),
@@ -550,10 +541,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ServiceStatusScreen()),
+                      );
                     },
                   ),
                 ),
@@ -590,10 +581,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
                     },
                   ),
                 ),
@@ -917,7 +908,7 @@ class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => ChooseBikeBrand()));
+                          builder: (context) => AddVehicleScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -969,7 +960,7 @@ class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => ChooseBikeBrand()));
+                          builder: (context) => OTPScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -995,7 +986,7 @@ class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => ChooseBikeBrand()));
+                          builder: (context) => PaymentSuccessfulScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1176,7 +1167,7 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => ChooseBikeBrand()));
+                          builder: (context) => PaymentUnsuccessfulScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1224,7 +1215,7 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => ChooseBikeBrand()));
+                          builder: (context) => PaymentMethodScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1265,7 +1256,7 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => ChooseBikeBrand()));
+                          builder: (context) => SubscriptionScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1341,7 +1332,6 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   ],
                 ),
               ),
-
 
             ],
           ),
