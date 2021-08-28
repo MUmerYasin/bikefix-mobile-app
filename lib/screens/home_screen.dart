@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
+import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
@@ -122,109 +123,70 @@ class _HomeScreenState extends State<HomeScreen> {
                 /// Carousel With Indicator
                 HomePageCarouselWithIndicator(),
 
+                /// Home Page First Menu
                 HomePageFirstMenu(),
 
+                HomePageSingleBikeDetailsList(),
+
+                HomePageSecondMenu(),
+
+                ///
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(
-                      depth: 8,
-                      shape: NeumorphicShape.flat,
-                      shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-                      // boxShape: NeumorphicBoxShape.circle(),
-                      shadowDarkColor: Colors.black.withOpacity(0.7),
-                      shadowLightColor: Colors.white,
-                      color: Colors.white,
-                    ),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      height: 90,
-                      child: Center(
-                        child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                  padding: const EdgeInsets.only(top: 16.0,bottom: 16.0, left: 18.0,),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      IconButton(
 
-                          Image.asset(bikeImageImagePath, width: 60,),
-                          Text.rich(
-                            TextSpan(
-                              style: TextStyle(
-                                fontFamily: textFontFamily,
-                                fontSize: 14,
-                                color: const Color(0xff000000),
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: companyNameKTM + '\n',
-                                ),
-                                TextSpan(
-                                  text: bikeDetailsHundredDuke,
-                                  style: TextStyle(
-                                    color: const Color(0xffd33937),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            textHeightBehavior:
-                            TextHeightBehavior(applyHeightToFirstAscent: false),
-                            textAlign: TextAlign.center,
+                        icon:
+                        new Image.asset(phoneLogoImagePath,),
+                        onPressed: () {
+                          // print("Pressed");
+                        },),
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Neumorphic(
+                          margin: const EdgeInsets.all(0),
+                          padding: const EdgeInsets.all(0),
+                          style: NeumorphicStyle(
+                            depth: 7,
+                            shape: NeumorphicShape.flat,
+                            shadowDarkColorEmboss:
+                            Colors.black.withOpacity(0.7),
+                            // boxShape: NeumorphicBoxShape.circle(),
+                            shadowDarkColor:
+                            Colors.black.withOpacity(0.5),
+                            shadowLightColor: Colors.grey,
+                            // boxShape: NeumorphicBoxShape.roundRect(
+                            //   BorderRadius.circular(8),
+                            // ),
+                            lightSource: LightSource.topLeft,
+                            color: Colors.white10,
                           ),
 
-                          SizedBox(
-                            height: 30,
-                            width: 70,
-                            child: RoundedCornerButton(
-                              child: buttonNameEdit,
-                              onPressed: (){},
-                            ),
+                          child:
+                          IconButton(
+                            // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                            icon:
+                            new Image.asset(whatsappLogoImagePath),
+                            onPressed: () {
+                              // print("Pressed");
+                            },
                           ),
 
-                          Neumorphic(
-                            style: NeumorphicStyle(
-                                shape: NeumorphicShape.flat,
-                                boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(50)),
-                              depth: 8,
-                              shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-                              shadowDarkColor: Colors.black.withOpacity(0.7),
-                              shadowLightColor: Colors.white,
-                              color: Colors.white,
-                            ),
-                            child: IconButton(onPressed: (){
-                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyVehicles()));
-                            }, icon: Icon(CupertinoIcons.add,size: 22,),),
-                          ),
 
-                        ],
-                      ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: Neumorphic(
-                    style: NeumorphicStyle(
-                      depth: 8,
-                      shape: NeumorphicShape.flat,
-                      shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
-                      // boxShape: NeumorphicBoxShape.circle(),
-                      shadowDarkColor: Colors.black.withOpacity(0.7),
-                      shadowLightColor: Colors.white,
-                      color: Colors.white,
-                    ),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      height: 90,
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [],
                         ),
                       ),
-                    ),
+
+
+
+
+                    ],
                   ),
                 ),
+
               ],
             ),
           ),
@@ -945,116 +907,227 @@ class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
         child: Container(
           width: MediaQuery.of(context).size.width * 0.9,
           height: 90,
-          child: Expanded(
+          child: Row(
+            // mainAxisSize : MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      genuinePartsHomePageIcon,
+                      width: 30.0,
+                      height: 30.0,
+                    ),
+                    Text(
+                      genuinePartsHomePageText,
+                      style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      warrantyHomePageIcon,
+                      width: 30.0,
+                      height: 30.0,
+                    ),
+                    Text(
+                      warrantyHomePageText,
+                      style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      affordableHomePageIcon,
+                      width: 30.0,
+                      height: 30.0,
+                    ),
+                    Text(
+                      affordableHomePageText,
+                      style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      pickUpAndDropHomePageIcon,
+                      width: 30.0,
+                      height: 30.0,
+                    ),
+                    Text(
+                      pickDropHomePageText,
+                      style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+///Home Page Single Bike Details List
+///Bike Name, Details, Icon, Edit button, add icon
+class HomePageSingleBikeDetailsList extends StatefulWidget {
+  const HomePageSingleBikeDetailsList({Key? key}) : super(key: key);
+
+  @override
+  _HomePageSingleBikeDetailsListState createState() => _HomePageSingleBikeDetailsListState();
+}
+
+class _HomePageSingleBikeDetailsListState extends State<HomePageSingleBikeDetailsList> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Neumorphic(
+        style: NeumorphicStyle(
+          depth: 8,
+          shape: NeumorphicShape.flat,
+          shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+          // boxShape: NeumorphicBoxShape.circle(),
+          shadowDarkColor: Colors.black.withOpacity(0.7),
+          shadowLightColor: Colors.white,
+          color: Colors.white,
+        ),
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.9,
+          height: 90,
+          child: Center(
             child: Row(
-              // mainAxisSize : MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              // crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => ChooseBikeBrand()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
+
+                Image.asset(bikeImageImagePath, width: 60,),
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                      fontFamily: textFontFamily,
+                      fontSize: 14,
+                      color: const Color(0xff000000),
+                    ),
                     children: [
-                      Image.asset(
-                        genuinePartsHomePageIcon,
-                        width: 30.0,
-                        height: 30.0,
+                      TextSpan(
+                        text: companyNameKTM + '\n',
                       ),
-                      Text(
-                        genuinePartsHomePageText,
+                      TextSpan(
+                        text: bikeDetailsHundredDuke,
                         style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500),
+                          color: const Color(0xffd33937),
+                        ),
                       ),
                     ],
                   ),
+                  textHeightBehavior:
+                  TextHeightBehavior(applyHeightToFirstAscent: false),
+                  textAlign: TextAlign.center,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => ChooseBikeBrand()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        warrantyHomePageIcon,
-                        width: 30.0,
-                        height: 30.0,
-                      ),
-                      Text(
-                        warrantyHomePageText,
-                        style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
+
+                SizedBox(
+                  height: 30,
+                  width: 70,
+                  child: RoundedCornerButton(
+                    child: buttonNameEdit,
+                    onPressed: (){
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyVehicles()));
+
+                    },
                   ),
                 ),
-                GestureDetector(
+
+                InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => ChooseBikeBrand()));
+                    gotoScreen(context: context, screen: AddVehicleScreen());
                   },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        affordableHomePageIcon,
-                        width: 30.0,
-                        height: 30.0,
-                      ),
-                      Text(
-                        affordableHomePageText,
-                        style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
+                  child: Neumorphic(
+                    style: NeumorphicStyle(
+                        boxShape: NeumorphicBoxShape.roundRect(
+                            BorderRadius.circular(50)),
+                        shadowLightColorEmboss: Colors.white,
+                        shadowDarkColorEmboss: Colors.black,
+                        shadowDarkColor: Colors.black),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.black,
+                      // color: Color(0xffEEF0F5),
+                    ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => ChooseBikeBrand()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        pickUpAndDropHomePageIcon,
-                        width: 30.0,
-                        height: 30.0,
-                      ),
-                      Text(
-                        pickDropHomePageText,
-                        style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                ),
+
+                // Neumorphic(
+                //   style: NeumorphicStyle(
+                //       shape: NeumorphicShape.flat,
+                //       boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(50)),
+                //     depth: 8,
+                //     shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+                //     shadowDarkColor: Colors.black.withOpacity(0.7),
+                //     shadowLightColor: Colors.white,
+                //     color: Colors.white,
+                //   ),
+                //   child: IconButton(onPressed: (){
+                //     Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyVehicles()));
+                //   }, icon: Icon(CupertinoIcons.add,size: 22,),),
+                // ),
+
               ],
             ),
           ),
@@ -1064,3 +1137,216 @@ class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
   }
 }
 
+
+///  Home Page 1 Menu
+///  General Service, Engine Work, Body Work, Repair Work
+
+class HomePageSecondMenu extends StatefulWidget {
+  const HomePageSecondMenu({Key? key}) : super(key: key);
+
+  @override
+  _HomePageSecondMenuState createState() => _HomePageSecondMenuState();
+}
+
+class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Neumorphic(
+        style: NeumorphicStyle(
+          depth: 8,
+          shape: NeumorphicShape.flat,
+          shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+          // boxShape: NeumorphicBoxShape.circle(),
+          shadowDarkColor: Colors.black.withOpacity(0.7),
+          shadowLightColor: Colors.white,
+          color: Colors.white,
+        ),
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.9,
+          height: 90,
+          child: Row(
+            // mainAxisSize : MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Neumorphic(
+                      style: NeumorphicStyle(
+                          boxShape: NeumorphicBoxShape.roundRect(
+                              BorderRadius.circular(50)),
+                          shadowLightColorEmboss: Colors.white,
+                          shadowDarkColorEmboss: Colors.black,
+                          shadowDarkColor: Colors.black),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Image.asset(
+                          generalServiceHomePageIcon,
+                          width: 30.0,
+                          height: 30.0,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+
+                    Text(
+                      generalServiceHomePageText,
+
+                      // maxLines: 2,
+                      // overflow: TextOverflow.ellipsis,
+                      // // textDirection: TextDirection.rtl,
+                      // textAlign: TextAlign.justify,
+
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Neumorphic(
+                      style: NeumorphicStyle(
+                          boxShape: NeumorphicBoxShape.roundRect(
+                              BorderRadius.circular(50)),
+                          shadowLightColorEmboss: Colors.white,
+                          shadowDarkColorEmboss: Colors.black,
+                          shadowDarkColor: Colors.black),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Image.asset(
+                          engineWorkHomePageIcon,
+                          width: 30.0,
+                          height: 30.0,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+
+                    Text(
+                      engineWorkHomePageText,
+                      style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Neumorphic(
+                      style: NeumorphicStyle(
+                          boxShape: NeumorphicBoxShape.roundRect(
+                              BorderRadius.circular(50)),
+                          shadowLightColorEmboss: Colors.white,
+                          shadowDarkColorEmboss: Colors.black,
+                          shadowDarkColor: Colors.black),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Image.asset(
+                          bodyWorkHomePageIcon,
+                          width: 30.0,
+                          height: 30.0,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+
+                    Text(
+
+                      bodyWorkHomePageText,
+                      softWrap:true,
+                      style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ChooseBikeBrand()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Neumorphic(
+                      style: NeumorphicStyle(
+                          boxShape: NeumorphicBoxShape.roundRect(
+                              BorderRadius.circular(50)),
+                          shadowLightColorEmboss: Colors.white,
+                          shadowDarkColorEmboss: Colors.black,
+                          shadowDarkColor: Colors.black),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Image.asset(
+                          repairWorkHomePageIcon,
+                          width: 30.0,
+                          height: 30.0,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+
+                    Text(
+                      repairWorkHomePageText,
+                      style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

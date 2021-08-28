@@ -78,6 +78,11 @@ const String affordableHomePageIcon = imagePathStart + "affordable_icon.png";
 const String genuinePartsHomePageIcon = imagePathStart + "genuine_parts_icon.png";
 const String pickUpAndDropHomePageIcon = imagePathStart + "pickup_and_drop.png";
 const String warrantyHomePageIcon = imagePathStart + "warranty_icon.png";
+const String bodyWorkHomePageIcon = imagePathStart + "body_work_icon.png";
+const String engineWorkHomePageIcon = imagePathStart + "engine_work_icon.png";
+const String generalServiceHomePageIcon = imagePathStart + "general_service_icon.png";
+const String repairWorkHomePageIcon = imagePathStart + "repair_work_icon.png";
+
 
 const String paytmLogoImagePath = imagePathStart + "paytm_logo.png";
 const String partnerIconsImagePath = imagePathStart + "partner_icons.png";
@@ -389,6 +394,13 @@ const String genuinePartsHomePageText = "Genuine Parts";
 const String warrantyHomePageText = "Warranty";
 const String affordableHomePageText = "Affordable";
 const String pickDropHomePageText = "Pick & Drop";
+
+
+const String generalServiceHomePageText = "General\nService";
+const String engineWorkHomePageText = "Engine\nWork";
+const String bodyWorkHomePageText = "Body\nWork";
+const String repairWorkHomePageText = "Repair\nWork";
+
 
 /// Drawer String
 const String homeDrawer = "Home";

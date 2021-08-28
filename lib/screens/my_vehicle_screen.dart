@@ -18,7 +18,29 @@ class _MyVehiclesState extends State<MyVehicles> {
       appBar: AppBar(
         backgroundColor: backgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: Icon(Icons.arrow_back_ios),
+        leading: InkWell(
+          onTap: () {
+            gotoScreen(context: context, screen: AddVehicleScreen());
+          },
+
+          child: Neumorphic(
+              margin: const EdgeInsets.all(0),
+            padding : const EdgeInsets.all(0),
+            style: NeumorphicStyle(
+                boxShape: NeumorphicBoxShape.roundRect(
+                    BorderRadius.circular(50)),
+                shadowLightColorEmboss: Colors.white,
+                shadowDarkColorEmboss: Colors.black,
+                shadowDarkColor: Colors.black
+            ),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+              // color: Color(0xffEEF0F5),
+            ),
+          ),
+        ),
+
         title: Text(
           screenTitleMyVehicle,
           style: TextStyle(
@@ -57,17 +79,23 @@ class _MyVehiclesState extends State<MyVehicles> {
                     textAlign: TextAlign.left,
                   ),
                   InkWell(
-                      onTap: () {
-                        gotoScreen(
-                            context: context, screen: AddVehicleScreen());
-                      },
-                      child: Neumorphic(
-                          style: NeumorphicStyle(
-                              shadowLightColorEmboss: Colors.white,
-                              shadowDarkColorEmboss: Colors.black,
-                              shadowDarkColor: Colors.black),
-                          child: Icon(Icons.add_circle,
-                              color: Color(0xffEEF0F5)))),
+                    onTap: () {
+                      gotoScreen(context: context, screen: AddVehicleScreen());
+                    },
+                    child: Neumorphic(
+                      style: NeumorphicStyle(
+                          boxShape: NeumorphicBoxShape.roundRect(
+                              BorderRadius.circular(50)),
+                          shadowLightColorEmboss: Colors.white,
+                          shadowDarkColorEmboss: Colors.black,
+                          shadowDarkColor: Colors.black),
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.black,
+                        // color: Color(0xffEEF0F5),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -81,7 +109,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                     shadowDarkColorEmboss: Colors.black,
                     shadowDarkColor: Colors.black),
                 child: Container(
-                  width: 320.0,
+                  width: MediaQuery.of(context).size.width*9,
                   height: 100.0,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -148,7 +176,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                     shadowDarkColorEmboss: Colors.black,
                     shadowDarkColor: Colors.black),
                 child: Container(
-                  width: 320.0,
+                  width: MediaQuery.of(context).size.width*9,
                   height: 100.0,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -213,7 +241,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                     shadowDarkColorEmboss: Colors.black,
                     shadowDarkColor: Colors.black),
                 child: Container(
-                  width: 320.0,
+                  width: MediaQuery.of(context).size.width*9,
                   height: 100.0,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
