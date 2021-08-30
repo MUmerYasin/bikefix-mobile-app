@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/checkout_screen.dart';
+import 'package:two_wheel_vehicle/screens/general_service_screen.dart';
 import 'package:two_wheel_vehicle/screens/home_screen.dart';
 
 void main() => runApp(
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
       // home: SubscriptionScreen(), // Front End Final // Develop by Umer
       // home: HelpAndSupportScreen(), // Front End Final // Develop by Umer
       // home: CheckoutStatusScreen(), // Front End Final // Develop by Umer
-      home: HomeScreen(), // Front End Final // Develop by Umer
+      // home: HomeScreen(), // Front End Final // Develop by Umer
+      home: GeneralServiceScreen(), // Front End Final // Develop by Umer
     );
   }
 }
