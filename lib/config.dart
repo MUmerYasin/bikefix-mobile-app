@@ -48,8 +48,6 @@ const String drawerShareImagePath = imagePathStart + "drawer_share.png";
 
 const String subscriptionImagePath = imagePathStart + "subscription.png";
 
-//
-
 //All Pictures Carousel Slider
 const String mainPicCarouselSliderOneImagePath = imagePathStart + "main_pic_carousel_slider_one.png";
 
@@ -97,6 +95,33 @@ const String otpIconImagePath = imagePathStart + "otp_icon.png";
 const String mapImagePath = imagePathStart + "map.png";
 const String petrolIconImagePath = imagePathStart + "petrol_icon.png";
 const String smallProfileVectorImagePath = imagePathStart + "small_profile_vector.png";
+
+// Custom Menu Images
+const String acceleratorIssueIconCustomMenuImagePath = imagePathStart + "accelerator_issue_icon.png";
+const String amIconCustomMenuImagePath = imagePathStart + "am_icon.png";
+const String batteryIssueIconCustomMenuImagePath = imagePathStart + "battery_issue_icon.png";
+const String breakIssueIconCustomMenuImagePath = imagePathStart + "break_issue_icon.png";
+const String centerStandReplacementIconCustomMenuImagePath = imagePathStart + "center_stand_replacement_icon.png";
+const String chainCoverReplacementIconCustomMenuImagePath = imagePathStart + "chain_cover_replacement_icon.png";
+const String chockeCableProblemIconCustomMenuImagePath = imagePathStart + "chocke_cable_problem_icon.png";
+const String clutchIssueIconCustomMenuImagePath = imagePathStart + "clutch_issue_icon.png";
+const String footRestReplacementIconCustomMenuImagePath = imagePathStart + "foot_rest_replacement_icon.png";
+const String handleBarReplacementIconCustomMenuImagePath = imagePathStart + "handle_bar_replacement_icon.png";
+const String headLightReplacementIconCustomMenuImagePath = imagePathStart + "head_light_replacement_icon.png";
+const String indicatorBulbReplacementIconCustomMenuImagePath = imagePathStart + "indicator_bulb_replacement_icon.png";
+const String leverProblemIconCustomMenuImagePath = imagePathStart + "lever_problem_icon.png";
+const String mirrorReplacementIconCustomMenuImagePath = imagePathStart + "mirror_replacement_icon.png";
+const String mudgaurdReplacementIconCustomMenuImagePath = imagePathStart + "mudgaurd_replacement_icon.png";
+const String parkingBulbReplacementIconCustomMenuImagePath = imagePathStart + "parking_bulb_replacement_icon.png";
+const String pmIconCustomMenuImagePath = imagePathStart + "pm_icon.png";
+const String shockerProblemIconCustomMenuImagePath = imagePathStart + "shocker_problem_icon.png";
+const String sideStandReplacementIconCustomMenuImagePath = imagePathStart + "side_stand_replacement_icon.png";
+const String sparkProblemIconCustomMenuImagePath = imagePathStart + "spark_problem_icon.png";
+const String specialRequestIconCustomMenuImagePath = imagePathStart + "special_request_icon.png";
+const String speedometerIssueIconCustomMenuImagePath = imagePathStart + "speedometer_issue_icon.png";
+const String switchProblemIconCustomMenuImagePath = imagePathStart + "switch_problem_icon.png";
+const String tailLightBulbReplacementIconCustomMenuImagePath = imagePathStart + "tail_light_bulb_replacement_icon.png";
+const String wiserRemovalIconCustomMenuImagePath = imagePathStart + "wiser_removal_icon.png";
 
 
 ///Text Field Titles of Choose Bike Brand.
