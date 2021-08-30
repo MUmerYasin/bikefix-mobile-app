@@ -17,6 +17,10 @@ const String screenTitleMyBookings = "My Bookings";
 const String screenTitleStatusService = "Status Service";
 const String screenTitleAddVehicle = "Add Vehicle";
 const String screenTitleCheckout = "Checkout";
+const String screenTitleGeneralService = "General Service";
+const String screenTitleBodyWork = "Body Work";
+const String screenTitleRepairWork = "Repair Work";
+const String screenTitleEngineWork = "Engine Work";
 
 /// Text Font Family
 const String textFontFamily = "Roboto";
@@ -128,6 +132,7 @@ const String buttonNameBuyNow = "Buy Now";
 const String buttonNamePayNow = "Pay Now";
 const String buttonNamePayLater = "Pay Later";
 const String buttonNameEdit = "Edit";
+const String buttonNameAdd = "Add";
 
 /// Company names
 const String companyNameKTM = "KTM";
@@ -225,7 +230,7 @@ const String dropDownMenuModel = "Model";
 const String dropDownMenuYear = "Year";
 const String dropDownMenuColor = "Color";
 
-/// All option in Drop Down Menu // List show in Drop Down Menu
+/// ------ All option in Drop Down Menu // List show in Drop Down Menu --------
 
 /// choose Brand List Drop Down Menu
 var chooseBrandListDropDownMenu = <String>[
@@ -413,4 +418,138 @@ const String becomeAPartnerDrawer = "Become a Partner";
 const String shareDrawer = "Share";
 const String aboutDrawer = "About";
 const String logoutDrawer = "Log Out";
+
+
+/// --------- Title, Question, Check List, Price, instruction or Guide line, --------------
+
+/// Title Menu
+
+const String titleMenuTextGeneralService = "General Service";
+const String titleMenuTextSpecialRequest = "Special Request";
+const String titleMenuTextCenterStandReplacement = "Center Stand Replacement";
+const String titleMenuTextSideStandReplacement = "Side Stand Replacement";
+const String titleMenuTextHandleBarReplacement = "Handle Bar Replacement";
+const String titleMenuTextMirrorReplacement = "Mirror Replacement";
+const String titleMenuTextFootRestReplacement = "Foot Rest Replacement";
+const String titleMenuTextMudguardReplacement = "Mudguard Replacement";
+const String titleMenuTextChainCoverReplacement = "Chain Cover Replacement";
+const String titleMenuTextForkBendRemoval = "Fork Bend Removal";
+const String titleMenuTextHeadLightReplacement = "Head Light Replacement";
+const String titleMenuTextTailLightBulbReplacement = "Tail Light Bulb Replacement";
+const String titleMenuTextIndicatorBulbReplacement = "Indicator Bulb Replacement";
+const String titleMenuTextParkingBulbReplacement = "Parking Bulb Replacement";
+const String titleMenuTextWiserRemoval = "Wiser Removal";
+const String titleMenuTextBreakIssue = "Break Issue";
+const String titleMenuTextClutchIssue = "Clutch Issue";
+const String titleMenuTextAcceleratorIssue = "Accelerator Issue";
+const String titleMenuTextSpeedometerIssue = "Speedometer Issue";
+const String titleMenuTextChokeCableProblem = "Choke Cable Problem";
+const String titleMenuTextLeverProblem = "Lever Problem";
+const String titleMenuTextSwitchProblem = "Switch Problem";
+const String titleMenuTextWiringIssue = "Wiring Issue";
+const String titleMenuTextMagnetIssue = "Magnet Issue";
+const String titleMenuTextBatteryIssue = "Battery Issue";
+const String titleMenuTextFuseIssue = "Fuse Issue";
+const String titleMenuTextSparkProblem = "Spark Problem";
+const String titleMenuTextShockerProblem = "Shocker Problem";
+const String titleMenuTextHalfEngine = "Half Engine";
+const String titleMenuTextFullEngine = "Full Engine";
+
+
+///instruction or Guide line in Menu
+const String instructionForMenuTextInspectionCharge = "(Inspection charge)";
+const String instructionForMenuTextOtherAdditionalProblems = "Any other additional problems will be reported post vehicle inspection";
+
+///Question
+const String questionMenuTextWhatServices = "what services we provide?";
+const String questionMenuTextWhenDoWe = "when do we require this?";
+
+/// Check List
+const String CheckListMenuTextEngineOil = "Engine Oil";
+const String CheckListMenuTextAirFilter = "Air Filter";
+const String CheckListMenuTextChainSpray = "Chain Spray";
+const String CheckListMenuTextNoiseCheck = "Noise Check";
+const String CheckListMenuTextTyrePressureCheck = "Tyre Pressure Check";
+const String CheckListMenuTextBreakShoeCheck = "Break Shoe Check";
+const String CheckListMenuTextClutchCheck = "Clutch Check";
+const String CheckListMenuTextAcceleratorCheck = "Accelerator Check";
+const String CheckListMenuTextWashing = "Washing";
+const String CheckListMenuTextPolish = "Polish";
+const String CheckListMenuTextLabourCharge = "Labour Charge";
+const String CheckListMenuTextStandByForALongGAP = "Stand by for a long gap";
+const String CheckListMenuTextBatteryNotWorking = "Battery not working";
+const String CheckListMenuTextMechanicalProblem = "Mechanical problem";
+const String CheckListMenuTextElectricProblem = "Electric problem";
+const String CheckListMenuTextForParkingTheBikeInAPaperManner = "For parking the bike in a paper manner.";
+const String CheckListMenuTextIfCenterStandGetsBroken= "If center stand gets broken";
+const String CheckListMenuTextForParkingWithoutLearning = "For parking without learning against another object ir the aid of a person.";
+const String CheckListMenuTextHandleBarGetsDamaged = "Handle bar gets damaged.";
+const String CheckListMenuTextHandleGetsTooOld = "Handle gets too old.";
+const String CheckListMenuTextMirrorBroken = "Mirror broken.";
+const String CheckListMenuTextImagesInTheMirrorGetBlurred = "Images in the mirror get blurred.";
+const String CheckListMenuTextFootrestBecomesLoose = "Footrest becomes loose.";
+const String CheckListMenuTextFootrestGetsBroken = "Footrest gets broken.";
+const String CheckListMenuTextFootrestGetsRusted = "Footrest gets rusted.";
+const String CheckListMenuTextMudguardBecomesLoose = "Mudguard becomes loose.";
+const String CheckListMenuTextMudguardGetsBroken = "Mudguard gets broken.";
+const String CheckListMenuTextMudguardGetsRusted = "Mudguard gets Rusted.";
+const String CheckListMenuTextChainCoverBecomesLoose = "Chain cover becomes loose.";
+const String CheckListMenuTextChainCoverGetsBroken = "Chain cover gets broken.";
+const String CheckListMenuTextChainCoverGetsRustedOrMisaligned = "Chain cover gets rusted or misaligned.";
+const String CheckListMenuTextForkBendBendsToItsAxis = "Fork bend Bends to its axis.";
+const String CheckListMenuTextForkBendIsCracked = "Fork bend is cracked.";
+const String CheckListMenuTextHeadLightIsNotWorkingProperly = "Head light is not working properly.";
+const String CheckListMenuTextHeadLightIsBroken = "Head light is broken.";
+const String CheckListMenuTextHeadLightIsNotProperlyAligned = "Head light is not properly aligned.";
+const String CheckListMenuTextBulbIsFused = "Bulb is fused.";
+// const String CheckListMenuTextForParkingTheBikeInAPaperManner = "For parking the bike in a paper manner.";  // All ready Declared in Top
+//const String CheckListMenuTextIfCenterStandGetsBroken = "If center stand gets broken.";  // All ready Declared in Top
+const String CheckListMenuTextWiserDamaged = "Wiser damaged.";
+const String CheckListMenuTextWiserIsLoose = "Wiser is loose.";
+const String CheckListMenuTextWiserGetsRusted = "Wiser gets rusted.";
+const String CheckListMenuTextSquealingOrRubbingNoises = "Squealing or rubbing noises";
+const String CheckListMenuTextPullingToOneSideDuringBreaking = "Pulling to one side during breaking";
+const String CheckListMenuTextBreakingPowerIsReduced = "Breaking power is reduced.";
+const String CheckListMenuTextIneffectiveParkingBreak = "Ineffective parking break.";
+const String CheckListMenuTextCableBreakage = "Cable breakage";
+const String CheckListMenuTextCableRusting = "Cable rusting";
+const String CheckListMenuTextDamagedLever = "Damaged lever";
+const String CheckListMenuTextLeverNotWorking = "Lever not working";
+const String CheckListMenuTextEngineNotCranking = "Engine not cranking";
+const String CheckListMenuTextAssemblyIsLoose = "Assembly is loose";
+const String CheckListMenuTextAssemblyIsDamaged = "Assembly is damaged";
+const String CheckListMenuTextAnyTypeOfSparking = "Any type of sparking";
+const String CheckListMenuTextAnyWiringIsDamaged = "Any wiring is damaged.";
+const String CheckListMenuTextElectricalSystemIsNotWorking = "Electrical system is not working.";
+const String CheckListMenuTextProblemOccursDuringTheStartingOfEngine = "Problem occurs during the starting of engine.";
+const String CheckListMenuTextIgnitionOfFuelIsNotProper = "Ignition of fuel is not proper.";
+const String CheckListMenuTextVehicleProducesLotsOfSmokeMisfires = "vehicle produces lots of smoke/misfires.";
+const String CheckListMenuTextBatteryGetsDischargedVeryQuickly = "Battery gets discharged very quickly";
+const String CheckListMenuTextBatteryStopsWorkingProperly = "Battery stops working properly.";
+const String CheckListMenuTextElectricCircuitIsNotWorkingProperly = "Electric circuit is not working properly.";
+const String CheckListMenuTextFuseIsBurned = "Fuse is burned.";
+const String CheckListMenuTextBikeIsNotTakingIgnition = "Bike is not taking ignition";
+const String CheckListMenuTextVehicleIsNotStarting = "Vehicle is not starting.";
+const String CheckListMenuTextReducedFuelEfficiency = "Reduced fuel efficiency.";
+const String CheckListMenuTextShockerDamaged = "Shocker damaged.";
+const String CheckListMenuTextShockerLeaked = "Shocker leaked.";
+const String CheckListMenuTextShockerSoft = "Shocker soft.";
+const String CheckListMenuTextPiston = "Piston";
+const String CheckListMenuTextValve = "Valve";
+const String CheckListMenuTextValveSeal = "Valve Seal";
+const String CheckListMenuTextBoar = "Boar";
+const String CheckListMenuTextHeadRepair = "Head Repair";
+const String CheckListMenuTextSparkPlug = "Spark Plug";
+const String CheckListMenuTextDCKit = "DC Kit";
+//const String CheckListMenuTextEngineOil = "Engine Oil";   // All ready Declared in Top
+// const String CheckListMenuTextPiston = "Piston";   // All ready Declared in Top
+const String CheckListMenuTextCrankAssembly  = "Crank Assembly ";
+const String CheckListMenuTextBearing = "Bearing";
+const String CheckListMenuTextSealKit = "Seal Kit";
+// const String CheckListMenuTextBoar = "Boar";    // All ready Declared in Top
+// const String CheckListMenuTextHeadRepair = "Head Repair";    // All ready Declared in Top
+// const String CheckListMenuTextSparkPlug = "Spark Plug";    // All ready Declared in Top
+// const String CheckListMenuTextDCKit = "DC Kit";   // All ready Declared in Top
+// const String CheckListMenuTextEngineOil = "Engine Oil";   // All ready Declared in Top
+
 

@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -20,10 +21,10 @@ import 'package:two_wheel_vehicle/screens/register_screen.dart';
 import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -124,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
         automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
-        physics: ClampingScrollPhysics (),
+        physics: ClampingScrollPhysics(),
         child: SafeArea(
           child: Center(
             child: Column(
@@ -141,19 +142,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 /// Two Social Icon
                 Padding(
-                  padding: const EdgeInsets.only(top: 16.0,bottom: 16.0, left: 18.0,),
+                  padding: const EdgeInsets.only(
+                    top: 16.0,
+                    bottom: 16.0,
+                    left: 18.0,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
-
-                        icon:
-                        new Image.asset(phoneLogoImagePath,),
+                        icon: new Image.asset(
+                          phoneLogoImagePath,
+                        ),
                         onPressed: () {
                           // print("Pressed");
-                        },),
-
+                        },
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0),
                         child: Neumorphic(
@@ -163,10 +168,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             depth: 7,
                             shape: NeumorphicShape.flat,
                             shadowDarkColorEmboss:
-                            Colors.black.withOpacity(0.7),
+                                Colors.black.withOpacity(0.7),
                             // boxShape: NeumorphicBoxShape.circle(),
-                            shadowDarkColor:
-                            Colors.black.withOpacity(0.5),
+                            shadowDarkColor: Colors.black.withOpacity(0.5),
                             shadowLightColor: Colors.grey,
                             // boxShape: NeumorphicBoxShape.roundRect(
                             //   BorderRadius.circular(8),
@@ -174,12 +178,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             lightSource: LightSource.topLeft,
                             color: Colors.white10,
                           ),
-
-                          child:
-                          IconButton(
+                          child: IconButton(
                             // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-                            icon:
-                            new Image.asset(whatsappLogoImagePath),
+                            icon: new Image.asset(whatsappLogoImagePath),
                             onPressed: () {
                               // print("Pressed");
                             },
@@ -202,7 +203,6 @@ class _HomeScreenState extends State<HomeScreen> {
         // height: 600,
         child: Drawer(
           elevation: 0.0,
-
           child: Container(
             color: Colors.black,
             child: ListView(
@@ -262,7 +262,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MyProfileScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => MyProfileScreen()),
                       );
                     },
                   ),
@@ -343,7 +344,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MyBookingScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => MyBookingScreen()),
                       );
                     },
                   ),
@@ -383,7 +385,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CheckoutStatusScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => CheckoutStatusScreen()),
                       );
                     },
                   ),
@@ -423,7 +426,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HelpAndSupportScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => HelpAndSupportScreen()),
                       );
                     },
                   ),
@@ -463,7 +467,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => RegisterScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => RegisterScreen()),
                       );
                     },
                   ),
@@ -503,7 +508,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LocationScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => LocationScreen()),
                       );
                     },
                   ),
@@ -543,7 +549,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ServiceStatusScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => ServiceStatusScreen()),
                       );
                     },
                   ),
@@ -869,7 +876,6 @@ class _HomePageCarouselWithIndicatorState
   }
 }
 
-
 /// Home Page 1 Menu
 ///Genuine Parts, Warranty, Affordable, Pick & Drop
 
@@ -883,7 +889,7 @@ class HomePageFirstMenu extends StatefulWidget {
 class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: Neumorphic(
         style: NeumorphicStyle(
@@ -957,10 +963,8 @@ class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                          builder: (context) => OTPScreen()));
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => OTPScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1015,17 +1019,18 @@ class _HomePageFirstMenuState extends State<HomePageFirstMenu> {
   }
 }
 
-
 ///Home Page Single Bike Details List
 ///Bike Name, Details, Icon, Edit button, add icon
 class HomePageSingleBikeDetailsList extends StatefulWidget {
   const HomePageSingleBikeDetailsList({Key? key}) : super(key: key);
 
   @override
-  _HomePageSingleBikeDetailsListState createState() => _HomePageSingleBikeDetailsListState();
+  _HomePageSingleBikeDetailsListState createState() =>
+      _HomePageSingleBikeDetailsListState();
 }
 
-class _HomePageSingleBikeDetailsListState extends State<HomePageSingleBikeDetailsList> {
+class _HomePageSingleBikeDetailsListState
+    extends State<HomePageSingleBikeDetailsList> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -1047,8 +1052,10 @@ class _HomePageSingleBikeDetailsListState extends State<HomePageSingleBikeDetail
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-
-                Image.asset(bikeImageImagePath, width: 60,),
+                Image.asset(
+                  bikeImageImagePath,
+                  width: 60,
+                ),
                 Text.rich(
                   TextSpan(
                     style: TextStyle(
@@ -1069,7 +1076,7 @@ class _HomePageSingleBikeDetailsListState extends State<HomePageSingleBikeDetail
                     ],
                   ),
                   textHeightBehavior:
-                  TextHeightBehavior(applyHeightToFirstAscent: false),
+                      TextHeightBehavior(applyHeightToFirstAscent: false),
                   textAlign: TextAlign.center,
                 ),
 
@@ -1078,9 +1085,11 @@ class _HomePageSingleBikeDetailsListState extends State<HomePageSingleBikeDetail
                   width: 70,
                   child: RoundedCornerButton(
                     child: buttonNameEdit,
-                    onPressed: (){
-                      Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyVehicles()));
-
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                              builder: (context) => MyVehicles()));
                     },
                   ),
                 ),
@@ -1118,7 +1127,6 @@ class _HomePageSingleBikeDetailsListState extends State<HomePageSingleBikeDetail
                 //     Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyVehicles()));
                 //   }, icon: Icon(CupertinoIcons.add,size: 22,),),
                 // ),
-
               ],
             ),
           ),
@@ -1127,7 +1135,6 @@ class _HomePageSingleBikeDetailsListState extends State<HomePageSingleBikeDetail
     );
   }
 }
-
 
 ///  Home Page 1 Menu
 ///  General Service, Engine Work, Body Work, Repair Work
@@ -1142,7 +1149,7 @@ class HomePageSecondMenu extends StatefulWidget {
 class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: Neumorphic(
         style: NeumorphicStyle(
@@ -1190,7 +1197,6 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                         ),
                       ),
                     ),
-
                     Text(
                       generalServiceHomePageText,
 
@@ -1203,13 +1209,11 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                         fontSize: 12.0,
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
-
                       ),
                     ),
                   ],
                 ),
               ),
-
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -1238,7 +1242,6 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                         ),
                       ),
                     ),
-
                     Text(
                       engineWorkHomePageText,
                       style: TextStyle(
@@ -1249,8 +1252,6 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   ],
                 ),
               ),
-
-
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -1279,11 +1280,9 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                         ),
                       ),
                     ),
-
                     Text(
-
                       bodyWorkHomePageText,
-                      softWrap:true,
+                      softWrap: true,
                       style: TextStyle(
                           fontSize: 12.0,
                           color: Colors.black,
@@ -1292,7 +1291,6 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   ],
                 ),
               ),
-
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -1321,7 +1319,6 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                         ),
                       ),
                     ),
-
                     Text(
                       repairWorkHomePageText,
                       style: TextStyle(
@@ -1332,7 +1329,6 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   ],
                 ),
               ),
-
             ],
           ),
         ),
