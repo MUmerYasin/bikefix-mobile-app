@@ -13,7 +13,7 @@ class PaymentMethodScreen extends StatefulWidget {
 
 class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
 
-  String Radiobutton = '';
+  String radioButtonItem = 'ONE';
   int id = 1;
 
   @override
@@ -88,10 +88,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           children: [
                             ListTile(
                               leading: Icon(FontAwesomeIcons.amazon,color: Colors.black,),
-                              trailing: Radio<int>(value: 1, groupValue: null, onChanged: (val){
+                              trailing: Radio<int>(value: 0, groupValue: id,activeColor: Colors.red, onChanged: (val){
                                 setState(() {
-                                  id = 1;
-                                  Radiobutton = '';
+                                  id = 0;
+                                  radioButtonItem = 'one';
                                 });
                               }),
                               title: Text("Amazon UPI",style: TextStyle(fontWeight: FontWeight.w500),),
@@ -107,10 +107,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             ),
                             ListTile(
                               leading: Icon(FontAwesomeIcons.rupeeSign,color: Colors.purpleAccent,),
-                              trailing: Radio<int>(value: 1, groupValue: null, onChanged: (val){
+                              trailing: Radio<int>(value: 1, groupValue: id,activeColor: Colors.red, onChanged: (val){
                                 setState(() {
                                   id = 1;
-                                  Radiobutton = '';
+                                  radioButtonItem = 'Two';
                                 });
                               }),
                               title: Text("Phonepe",style: TextStyle(fontWeight: FontWeight.w500),),
@@ -140,10 +140,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                         children: [
                           ListTile(
                             leading: Icon(FontAwesomeIcons.applePay,color: Colors.red,),
-                            trailing: Radio<int>(value: 1, groupValue: null, onChanged: (val){
+                            trailing: Radio<int>(value: 2, groupValue: id, activeColor: Colors.red, onChanged: (val){
                               setState(() {
-                                id = 1;
-                                Radiobutton = '';
+                                id = 2;
+                                radioButtonItem = 'three';
                               });
                             }),
                             title: Text("Paytm",style: TextStyle(fontWeight: FontWeight.w500),),
@@ -158,10 +158,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           ),
                           ListTile(
                             leading: Icon(FontAwesomeIcons.amazon,color: Colors.black,),
-                            trailing: Radio<int>(value: 1, groupValue: null, onChanged: (val){
+                            trailing: Radio<int>(value: 3, groupValue: id,activeColor: Colors.red, onChanged: (val){
                               setState(() {
-                                id = 1;
-                                Radiobutton = '';
+                                id = 3;
+                                radioButtonItem = 'Four';
                               });
                             }),
                             title: Text("Amazon UPI ",style: TextStyle(fontWeight: FontWeight.w500),),
@@ -177,10 +177,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           ),
                           ListTile(
                             leading: Icon(FontAwesomeIcons.rupeeSign,color: Colors.purpleAccent,),
-                            trailing: Radio<int>(value: 1, groupValue: null, onChanged: (val){
+                            trailing: Radio<int>(value: 4, groupValue: id,activeColor: Colors.red, onChanged: (val){
                               setState(() {
-                                id = 1;
-                                Radiobutton = '';
+                                id = 4;
+                                radioButtonItem = 'Five';
                               });
                             }),
                             title: Text("Phonepe",style: TextStyle(fontWeight: FontWeight.w500),),
@@ -210,10 +210,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 155.0),
-                            child: Radio(value: 1,hoverColor: Colors.red, activeColor: Colors.red, groupValue: id, onChanged: (val){
+                            child: Radio(value: 5,hoverColor: Colors.red, activeColor: Colors.red, groupValue: id, onChanged: (val){
                               setState(() {
-                                id = 1;
-                                Radiobutton = 'one';
+                                id = 5;
+                                radioButtonItem = 'Six';
                               });
                             }),
                           ),

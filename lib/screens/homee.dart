@@ -5,15 +5,17 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
+import 'package:two_wheel_vehicle/screens/service_screen.dart';
 import 'package:two_wheel_vehicle/screens/subscription.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
-
 import 'Become_Partner.dart';
 import 'Body_Work_Screen.dart';
 import 'Engine_Work_Screen.dart';
 import 'General_Service_Screen.dart';
+import 'Help&Support_screen.dart';
 import 'Repair_Work_Screen.dart';
 import 'add_vehicle_screen.dart';
+import 'location_screen.dart';
 import 'login_screen.dart';
 import 'my_profile_screen.dart';
 import 'mybooking_screen.dart';
@@ -28,22 +30,9 @@ class Homee extends StatefulWidget {
 class _HomeeState extends State<Homee> {
 
   final List<String> images = [
-    'https://beactivedecatur.com/wp-content/uploads/2021/04/istockphoto-1193475552-612x612-1.jpg',
-    'https://media.istockphoto.com/vectors/sport-motorbike-racer-riding-fast-vector-id1069905784?b=1&k=6&m=1069905784&s=612x612&w=0&h=Zv340i7n_yPYtD62g1leCQV-Ai0SkVKCR2peuU_8NO0=',
-    'http://partslo.pk/wp-content/uploads/2020/09/70cc-All-Parts.png'
-    // 'https://media.istockphoto.com/photos/green-leaf-with-dew-on-dark-nature-background-picture-id1050634172?s=612x612',
-    // 'https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?s=612x612',
-    // // 'https://www.istockphoto.com/en/photo/woman-standing-and-looking-at-lago-di-carezza-in-dolomites-gm1038870630-278083784',
-    // 'https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?s=612x612',
-    // 'https://media.istockphoto.com/photos/connection-with-nature-picture-id1174472274?s=612x612',
-    // 'https://media.istockphoto.com/photos/in-the-hands-of-trees-growing-seedlings-bokeh-green-background-female-picture-id1181366400',
-    // 'https://media.istockphoto.com/photos/winding-road-picture-id1173544006?s=612x612',
-    // 'https://media.istockphoto.com/photos/sunset-with-pebbles-on-beach-in-nice-france-picture-id1157205177?s=612x612',
-    // 'https://media.istockphoto.com/photos/waves-of-water-of-the-river-and-the-sea-meet-each-other-during-high-picture-id1166684037?s=612x612',
-    // 'https://media.istockphoto.com/photos/happy-family-mother-father-children-son-and-daughter-on-sunset-picture-id1159094800?s=612x612',
-    // 'https://media.istockphoto.com/photos/butterflies-picture-id1201252148?s=612x612',
-    // 'https://media.istockphoto.com/photos/beautiful-young-woman-blows-dandelion-in-a-wheat-field-in-the-summer-picture-id1203963917?s=612x612',
-    // 'https://media.istockphoto.com/photos/summer-meadow-picture-id1125637203?s=612x612',
+    'assets/icons/bikee.jpg',
+    'assets/icons/cycle.jpg',
+    'assets/icons/parts.png',
   ];
 
   var contain = true;
@@ -61,7 +50,7 @@ class _HomeeState extends State<Homee> {
         backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
           actions: [
-            Text('')
+            Text(''),
           ],
           elevation: 0,
           title: Text('',style: TextStyle(color: Colors.black),),
@@ -74,7 +63,9 @@ class _HomeeState extends State<Homee> {
               child: Column(
                 children: [
                   Neumorphic(
-                    style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+                    style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor:
+                    Colors.black45,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor:
+                    Colors.black54,color: NeumorphicColors.background),
                     child: Container(
                       width: 330,
                       height: 150,
@@ -90,7 +81,7 @@ class _HomeeState extends State<Homee> {
                               child: Stack(
                               fit: StackFit.expand,
                               children: [
-                              Image.network(e,
+                              Image.asset(e,
                               width: 900,
                               height: 350,
                               fit: BoxFit.cover,)
@@ -107,7 +98,7 @@ class _HomeeState extends State<Homee> {
                     child: Neumorphic(
                       style: NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,oppositeShadowLightSource: true,
                           shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white ,
-                          shadowDarkColor: Colors.white ,shadowLightColor: Colors.white,border: NeumorphicBorder(color: Colors.white)),
+                          shadowDarkColor: Colors.white ,shadowLightColor: Colors.black45,border: NeumorphicBorder(color: Colors.white)),
                       child: Container(
 
                         decoration: BoxDecoration(
@@ -173,7 +164,7 @@ class _HomeeState extends State<Homee> {
                     child: Neumorphic(
                       style:  NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,oppositeShadowLightSource: true,
                           shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white ,
-                          shadowDarkColor: Colors.white ,shadowLightColor: Colors.white,border: NeumorphicBorder(color: Colors.white)),
+                          shadowDarkColor: Colors.white ,shadowLightColor:Colors.black45,border: NeumorphicBorder(color: Colors.white)),
                       child: Column(
                         children: [
                           Container(
@@ -183,6 +174,7 @@ class _HomeeState extends State<Homee> {
                               child: Padding(
                                   padding: const EdgeInsets.only(top: 23.0),
                                   child: Row(
+
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       Padding(
@@ -206,7 +198,21 @@ class _HomeeState extends State<Homee> {
                                               height: 30,
 
                                               child: ElevatedButton(
-                                                onPressed: (){},style:ElevatedButton.styleFrom(primary: small ),child: Text('Edit'),
+                                                onPressed: (){
+                                                  showCupertinoDialog(context: context, builder: (context){
+                                                    return SimpleDialog(
+                                                      children: [
+                                                        SingleChildScrollView(
+                                                          child: Column(
+                                                            children: [
+
+                                                            ],
+                                                          ),
+                                                        )
+                                                      ],
+                                                    );
+                                                  });
+                                                },style:ElevatedButton.styleFrom(primary: small ),child: Text('Edit'),
                                               ),
                                             ),
                                           ),
@@ -229,13 +235,13 @@ class _HomeeState extends State<Homee> {
                     child: Neumorphic(
                       style:  NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,oppositeShadowLightSource: true,
                           shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white ,
-                          shadowDarkColor: Colors.white ,shadowLightColor: Colors.white,border: NeumorphicBorder(color: Colors.white),shape: NeumorphicShape.flat),
+                          shadowDarkColor: Colors.white ,shadowLightColor: Colors.black45,border: NeumorphicBorder(color: Colors.white),shape: NeumorphicShape.flat),
                       child: Column(
                         children: [
                           Neumorphic(
                             style: NeumorphicStyle(depth:10,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black38 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
                             child: Container(
-                                color: Color(0xffeaedf2),
+                                color: NeumorphicColors.background,
                               height: MediaQuery.of(context).size.height/6.3,
                               width: MediaQuery.of(context).size.width/1.1,
                               child: Column(
@@ -247,9 +253,8 @@ class _HomeeState extends State<Homee> {
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         GestureDetector(
-
                                             child: Card(
-                                              elevation: 5,
+                                              elevation: 19,
                                               shadowColor: Colors.white,
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                               color: NeumorphicColors.background,
@@ -257,6 +262,7 @@ class _HomeeState extends State<Homee> {
                                                 width: 50,
                                                 height: 50,
                                                 decoration: BoxDecoration(
+                                                  boxShadow: [BoxShadow(color: Colors.white,spreadRadius: 14,blurRadius: 109)],
                                                       borderRadius: BorderRadius.circular(30)
                                             ),
                                                 child: Image.asset('assets/icons/setting.png',scale: 6,color: small,),
@@ -272,11 +278,16 @@ class _HomeeState extends State<Homee> {
                                           child: Padding(
                                             padding: const EdgeInsets.only(left: 8.0),
                                             child: Card(
-                                              elevation: 5,
+                                              elevation: 19,
                                               shadowColor: Colors.white,
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                               color: NeumorphicColors.background,
+
                                               child: Container(
+                                                decoration: BoxDecoration(
+                                                    boxShadow: [BoxShadow(color: Colors.white,spreadRadius: 14,blurRadius: 179)],
+                                                    borderRadius: BorderRadius.circular(30)
+                                                ),
                                                 child:  Image.asset('assets/icons/engine.png',width: 20,color: small,scale: 6,),
                                                 width: 50,
                                                 height: 50,
@@ -290,11 +301,15 @@ class _HomeeState extends State<Homee> {
                                         ),
                                         GestureDetector(
                                           child: Card(
-                                            elevation: 5,
+                                            elevation: 39,
                                             shadowColor: Colors.white,
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                             color: NeumorphicColors.background,
                                             child: Container(
+                                              decoration: BoxDecoration(
+                                                  boxShadow: [BoxShadow(color: Colors.white,spreadRadius: 14,blurRadius: 179)],
+                                                  borderRadius: BorderRadius.circular(30)
+                                              ),
                                               child: Image.asset('assets/icons/body.png',height: 5,color:small,width: 6,scale: 6,),
                                               width: 50,
                                               height: 50,
@@ -304,11 +319,15 @@ class _HomeeState extends State<Homee> {
                                         ),
                                         GestureDetector(
                                           child: Card(
-                                            elevation: 5,
+                                            elevation: 39,
                                             shadowColor: Colors.white,
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
                                             color: NeumorphicColors.background,
                                             child: Container(
+                                              decoration: BoxDecoration(
+                                                  boxShadow: [BoxShadow(color: Colors.white,spreadRadius: 14,blurRadius: 179)],
+                                                  borderRadius: BorderRadius.circular(30)
+                                              ),
                                               child:  Image.asset('assets/icons/repair.png',color: small,width: 2,scale: 6,),
                                               width: 50,
                                               height: 50,
@@ -328,7 +347,7 @@ class _HomeeState extends State<Homee> {
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 6.0),
-                                        child: Text('Engine \nWork ',style: TextStyle(fontWeight: FontWeight.bold),),
+                                        child: Text('Engine \n Work ',style: TextStyle(fontWeight: FontWeight.bold),),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 0.0),
@@ -352,53 +371,16 @@ class _HomeeState extends State<Homee> {
                   Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(left: 45.0,top: 25),
                         child: Row(
-
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
+                           myWigets(image: 'assets/icons/calling.png'),
                             Padding(
-                              padding: const EdgeInsets.only(left: 25.0,top: 19),
-                              child: Neumorphic(
-
-                                curve: Curves.bounceIn,
-                                drawSurfaceAboveChild: true,
-                                style: NeumorphicStyle(depth:10,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
-                                child: Container(
-
-                                  decoration: BoxDecoration(
-                                      color: small,
-
-                                  ),
-                                  width: 40,
-                                  height: 40,
-                                  child: Icon(FontAwesomeIcons.phone,color: Colors.white,),
-                                ),
-                              ),
+                              padding: const EdgeInsets.only(left: 28.0),
+                              child: Wigets(image: 'assets/icons/what.png',),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 16.0,top: 19),
-                              child: Neumorphic(
-
-                                drawSurfaceAboveChild: true,
-                                style: NeumorphicStyle(depth:5,oppositeShadowLightSource:true,lightSource: LightSource.topLeft,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss:
-                                Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent,border: NeumorphicBorder(color: Colors.white,)),
-
-                                child: GestureDetector(
-                                  onTap: (){
-                                    setState(() {
-                                      contain = !contain;
-                                    });
-                                  },
-                                  child: AnimatedContainer(
-                                    width: 40,
-                                    curve: Curves.easeInCubic,
-                                    height: 40,
-                                    duration: Duration(seconds: 2),
-                                    child: Image.asset('assets/icons/what.png',scale: 29,width: 200,)
-                                  ),
-                                ),
-                              ),
-                            )
 
                           ],
                         ),
@@ -477,6 +459,9 @@ class _HomeeState extends State<Homee> {
                     SizedBox(
                       height: 35,
                       child: ListTile(
+                        onTap: (){
+                          Navigator.push(context, CupertinoPageRoute(builder: (context)=>help()));
+                        },
                         title: Text('Help & Support',style: TextStyle(color: Colors.white,fontSize: 22),),
                         leading: Image.asset('assets/icons/help.png',scale: 18,),
                         hoverColor: Colors.blue,
@@ -544,112 +529,99 @@ class _HomeeState extends State<Homee> {
                     ),
                   ],
                 ),
-
               ),
               width: 240,
             ),
           ),
         ),
-        bottomNavigationBar:  Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Neumorphic(
-              drawSurfaceAboveChild: true,
-              margin: EdgeInsets.only(bottom: 20),
-              style:  NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,oppositeShadowLightSource: true,
-                  shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45, shape: NeumorphicShape.flat,
-                  shadowDarkColor: Colors.white ,shadowLightColor: Colors.white,border: NeumorphicBorder(color: Colors.white)),
-              child: Container(
-                color: Color(0xffeaedf2),
-                margin: EdgeInsets.only(bottom: 0),
-                height: MediaQuery.of(context).size.height/14.5,
-                width: MediaQuery.of(context).size.width/1.1,
-                child: Column(
-                  children: [
+        bottomNavigationBar:   Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 22.0,right: 23),
+              child: Neumorphic(
+                drawSurfaceAboveChild: true,
+                margin: EdgeInsets.only(bottom: 20),
+                style:  NeumorphicStyle(lightSource: LightSource.topLeft,depth:4,oppositeShadowLightSource: true,
+                    shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45, shape: NeumorphicShape.flat,
+                    shadowDarkColor: Colors.white ,shadowLightColor: Colors.black,border: NeumorphicBorder(color: Colors.white)),
+                child: Container(
+                  color: Color(0xffeaedf2),
+                  margin: EdgeInsets.only(bottom: 0),
+                  height: MediaQuery.of(context).size.height/15,
+                  width: MediaQuery.of(context).size.width/15,
+                  child: Column(
+                    children: [
 
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3.0,left:0),
-                          child: Image.asset('assets/icons/home.png',scale: 11 ,),
+                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                             Padding(
+                               padding: const EdgeInsets.only(left: 8.0),
+                               child: Image.asset('assets/icons/homeee.png',width: 26 ,),
+                             ),
+
+                         Neumorphic(
+                                style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
+                                child: Container(
+                                  height: 50,
+                                  width: 2,
+                                ),
+                              ),
+
+                             GestureDetector(onTap:(){
+                                Navigator.push(context, CupertinoPageRoute(builder: (context) =>LocationScreen()));
+                              },child: Image.asset('assets/icons/location.png',width: 26 ,)),
+
+                            Neumorphic(
+                                style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
+                                child: Container(
+                                  height: 50,
+                                  width: 2,
+                                ),
+                              ),
+
+                             GestureDetector(child: Image.asset('assets/icons/kinggg.png',color: Colors.black,),onTap: (){
+                                Navigator.push(context, CupertinoPageRoute(builder: (context)=>subscrip()));
+                              },),
+
+                            Neumorphic(
+                                style: NeumorphicStyle(depth:19,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
+                                child: Container(
+                                  height: 50,
+                                  width: 2,
+                                ),
+                              ),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context)=>ServiceStatus()));
+                            },
+                              child: Image.asset('assets/icons/rel.png',scale: 3.6,)),
+
+                           Neumorphic(
+                                style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
+                                child: Container(
+                                  height: 50,
+                                  width: 2,
+                                ),
+                              ),
+
+                             InkWell(onTap: ()=> _key.currentState!.openEndDrawer(),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 8.0),
+                                    child: Icon(Icons.menu,size: 30,),
+                                  )),
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 17.0),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
-                            child: Container(
-                              height: 50,
-                              width: 2,
-                            ),
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3.0,left: 15),
-                          child: Image.asset('assets/icons/location.png',scale: 25 ,),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
-                            child: Container(
-                              height: 50,
-                              width: 2,
-                            ),
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3.0,left: 10),
-                          child: GestureDetector(child: Image.asset('assets/icons/king.png',scale: 50),onTap: (){
-                            Navigator.push(context, CupertinoPageRoute(builder: (context)=>subscrip()));
-                          },),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(depth:19,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45 ,shadowLightColor: Colors.transparent),
-                            child: Container(
-                              height: 50,
-                              width: 2,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3.0,left: 13),
-                          child: Image.asset('assets/icons/rel.png',scale: 3.6,),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.transparent),
-                            child: Container(
-                              height: 50,
-                              width: 2,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3.0,left:6),
-                          child: InkWell(onTap: ()=> _key.currentState!.openEndDrawer(),
-                              child: Icon(Icons.menu,size: 30,)),
-                        )
 
 
 
-
-                      ],
-                    ),
-
-
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-      ),
+        )
     );
   }
 

@@ -290,6 +290,98 @@ class _CustomCardState extends State<CustomCard> {
 }
 
 
+class Wigets extends StatefulWidget {
+  const Wigets({Key? key, required this.image}) : super(key: key);
+  
+  final String image;
+  
+
+  @override
+  _WigetsState createState() => _WigetsState();
+}
+
+class _WigetsState extends State<Wigets> {
+  @override
+  Widget build(BuildContext context) {
+    return Neumorphic(
+      margin: EdgeInsets.only(bottom: 20),
+        child: Container(
+
+          decoration: BoxDecoration(
+              color: NeumorphicColors.background,
+            borderRadius: BorderRadius.circular(9)
+          ),
+
+          width: 50,
+          height: 50,
+          child: Center(
+            child: Image.asset(widget.image,width: 40,),
+          )
+        ),
+    );
+  }
+}
+
+
+class myWigets extends StatefulWidget {
+  const myWigets({Key? key, required this.image}) : super(key: key);
+
+  final String image;
+
+
+  @override
+  _myWigetsState createState() => _myWigetsState();
+}
+
+class _myWigetsState extends State<myWigets> {
+  @override
+  Widget build(BuildContext context) {
+    return Neumorphic(
+      margin: EdgeInsets.only(bottom: 20),
+      child: Container(
+
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(color: Colors.red,spreadRadius: 80)
+            ],
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(9)
+          ),
+
+          width: 50,
+          height: 50,
+          child: Center(
+            child: Image.asset(widget.image,width: 27,color: Colors.white,),
+          )
+      ),
+    );
+  }
+}
+
+class appbarrr extends StatefulWidget {
+  const appbarrr({Key? key, }) : super(key: key);
+
+  @override
+  _appbarrrState createState() => _appbarrrState();
+}
+
+class _appbarrrState extends State<appbarrr> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: NeumorphicColors.background,
+        title: Text('Service Status'),
+        centerTitle: true,
+        elevation: 0,
+        leading: Icon(CupertinoIcons.back),
+      ),
+    );
+  }
+}
+
+
+
 
 
 

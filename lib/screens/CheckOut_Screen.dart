@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/payment_Screen.dart';
+import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
 
 class CheckOut extends StatefulWidget {
   const CheckOut({Key? key}) : super(key: key);
@@ -65,7 +67,6 @@ class _CheckOutState extends State<CheckOut> {
                               ]
                             )),
                           ),
-
                           Padding(
                             padding: const EdgeInsets.only(left: 128.0),
                             child: Image.asset('assets/icons/bike_image.png'),
@@ -75,17 +76,14 @@ class _CheckOutState extends State<CheckOut> {
                     ),
                   ),
                 ),
-                
                 Row(
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 14.0,top: 15),
                       child: Text('Price Breakup',style: TextStyle(fontSize: 17),),
                     ),
-
                   ],
                 ),
-
                 Center(
                   child: Column(
                     children: [
@@ -151,14 +149,11 @@ class _CheckOutState extends State<CheckOut> {
                                   title: Text('Total',style: TextStyle(fontWeight: FontWeight.w300),),
                                   trailing: Text(' ₹ 199',style: TextStyle(fontWeight: FontWeight.w700),),
                                 ),
-
                               ],
                             )
                           )
                         ),
                       ),
-
-
                     ],
                   ),
                 ),
@@ -204,12 +199,11 @@ class _CheckOutState extends State<CheckOut> {
                               ],
                               borderRadius: BorderRadius.circular(14)
                           ),
-
                           child: SizedBox(
                             height: 50,
                             child:  ElevatedButton(
                               onPressed: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckOut()));
+                                Navigator.push(context, CupertinoPageRoute(builder: (context)=>PaymentMethodScreen()));
                               },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text(' Pay Now',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                             ),
                           ),
@@ -234,7 +228,6 @@ class _CheckOutState extends State<CheckOut> {
                               padding: const EdgeInsets.only(left: 18.0),
                               child: ElevatedButton(
                                 onPressed: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckOut()));
                                 },style: ElevatedButton.styleFrom(primary: Colors.black),child: Text(' Pay Later',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                               ),
                             ),
