@@ -32,12 +32,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        canvasColor: Colors.black,
         primarySwatch: Colors.blue,
-        canvasColor: Colors.black
+        // canvasColor: Colors.black
+        // canvasColor: Colors.black
       ),
       // home: LoginScreen(),
       // home: PaymentMethodScreen(),
       home: Homee(),
+      // home:CheckBoxes(),
+      // home: CheckBoxes(),
+      // home: CheckboxWidget(),
       // home: RegisterScreen(),
       // home: OTPScreen(),
       // home: MyProfileScreen(),

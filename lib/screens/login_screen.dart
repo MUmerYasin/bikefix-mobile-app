@@ -53,6 +53,8 @@ class _LoginScreenState extends State<LoginScreen> {
                  child: Container(
                    height: 50,
                    child: TextFormField(
+                     autofocus: true,
+                     focusNode: FocusNode(),
                      validator: (value) {
                        if (value!.isEmpty){
                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.orange,content:

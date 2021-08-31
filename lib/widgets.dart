@@ -159,6 +159,7 @@ class SmallRoundedCornerButton extends StatelessWidget {
 class myTextField extends StatefulWidget {
   const myTextField({Key? key, required this.text, required this.validator, this.keyboardType,}) : super(key: key);
    final String? text;
+
    final FormFieldValidator validator;
    final  keyboardType;
 

@@ -51,6 +51,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Container(
                                   height: 50,
                                   child: TextFormField(
+                                    autofocus: true,
+                                    focusNode: FocusNode(canRequestFocus: true),
                                     validator: (value){
                                       if (value!.isEmpty){
                                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.limeAccent,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
@@ -72,6 +74,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Container(
                                   height: 50,
                                   child: TextFormField(
+                                    autofocus: true,
+                                    focusNode: FocusNode(canRequestFocus: true),
                                     validator: (value){
                                       if (value!.isEmpty){
                                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.teal,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
@@ -97,6 +101,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       height: 50,
                                       width: MediaQuery.of(context).size.width / 2.5,
                                       child: TextFormField(
+                                        autofocus: true,
+                                        focusNode: FocusNode(canRequestFocus: true),
                                         validator: (value){
                                           if (value!.isEmpty){
                                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.purpleAccent,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
@@ -120,6 +126,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       height: 50,
                                       width: MediaQuery.of(context).size.width / 2.5,
                                       child: TextFormField(
+                                        autofocus: true,
+                                        focusNode: FocusNode(canRequestFocus: true),
                                         validator: (value){
                                           if (value!.isEmpty){
                                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.green,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
@@ -143,6 +151,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Container(
                                   height: 50,
                                   child: TextFormField(
+                                    autofocus: true,
+                                    focusNode: FocusNode(canRequestFocus: true),
                                     validator: (value){
                                       if (value!.isEmpty){
                                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.blue,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
@@ -157,15 +167,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 ),
                               ),
                             ),
-
                             // width: MediaQuery.of(context).size.width / 3,
-
-
-
                             RoundedCornerButton(
                               onPressed: () {
                                 validated();
-
                               },
                               child: 'Sign Up',
                             ),
@@ -202,10 +207,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                           ],)),
-
-
-
-
                         ]),
                   )),
             )),

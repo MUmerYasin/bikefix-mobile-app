@@ -35,7 +35,7 @@ class _helpState extends State<help> {
                       shadowLightColor: Colors.white,lightSource: LightSource.topLeft,color: Color(0xffe7eaf1)),
                   child: Container(
                     width: MediaQuery.of(context).size.width/1.2,
-                    height: MediaQuery.of(context).size.height/3.4,
+                    height: MediaQuery.of(context).size.height/3.2,
                     child: Column(
                       children: [
                         Padding(

@@ -54,6 +54,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                     child: DropdownButton<String>(
                       underline: SizedBox(),
                       isExpanded: true,
+                      dropdownColor: NeumorphicColors.background,
                       hint: Text(selectOption),
                       items: <String>['     Male', '      Female'].map((String value) {
                         return DropdownMenuItem<String>(
@@ -79,12 +80,14 @@ class _Become_PartnerState extends State<Become_Partner> {
                     child: DropdownButton<String>(
                       isExpanded: true,
                       underline: SizedBox(),
+                      dropdownColor: NeumorphicColors.background,
                       hint: Text(drop1),
                       items: <String>['  Male', '   Female'].map((String value) {
                         return DropdownMenuItem<String>(
                           onTap: (){
                             setState(() {
                               drop1 = value;
+
                             });
                           },
                           value: value,
@@ -105,6 +108,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                       isExpanded: true,
                       hint: Text(drop2),
                       underline: SizedBox(),
+                      dropdownColor: NeumorphicColors.background,
                       items: <String>['  Male', '  Female'].map((String value) {
                         return DropdownMenuItem<String>(
                           onTap: (){
@@ -127,6 +131,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                     child: DropdownButton<String>(
                       focusColor: NeumorphicColors.background,
                       isExpanded: true,
+                      dropdownColor: NeumorphicColors.background,
                       hint: Text(drop3),
                       underline: SizedBox(),
                       items: <String>['  Male', '  Female'].map((String value) {
@@ -154,6 +159,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                       isExpanded: true,
                       hint: Text(drop4),
                       underline: SizedBox(),
+                      dropdownColor: NeumorphicColors.background,
                       items: <String>['   Male', '   Female'].map((String value) {
                         return DropdownMenuItem<String>(
                           onTap: (){
@@ -176,6 +182,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                         padding: const EdgeInsets.only(left: 0.0,top: 35),
                         child: InkWell(
                           highlightColor: Colors.blue.withOpacity(0.4),
+
                           splashColor: Colors.green.withOpacity(0.5),
                           child: Container(
                             margin: EdgeInsets.only(bottom: 10),
