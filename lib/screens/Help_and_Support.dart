@@ -36,6 +36,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
             color: Colors.black,
           ),
         ),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: Center(

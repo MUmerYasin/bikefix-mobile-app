@@ -614,7 +614,7 @@ class _InspectionCheckListMenuState extends State<InspectionCheckListMenu> {
                     children: widget.listDataOfCheckListMenu
                         .map(
                           (element) => SizedBox(
-                        height: 20.0,
+                        height: 30.0,
                         child: ListTile(
                           leading: Neumorphic(
                             style: NeumorphicStyle(
@@ -642,8 +642,8 @@ class _InspectionCheckListMenuState extends State<InspectionCheckListMenu> {
                               fontFamily: textFontFamily,
                               fontSize: 13,
                               color: Colors.black,
-                              // fontWeight: FontWeight.bold,
                             ),
+                            softWrap: true,
                           ),
                           dense: true,
                           minVerticalPadding: 0.0,
@@ -659,7 +659,7 @@ class _InspectionCheckListMenuState extends State<InspectionCheckListMenu> {
                 ///Text, other additional problems, //Any other additional problems will be reported post vehicle inspection
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 16.0, bottom: 16.0),
+                      top: 20.0, bottom: 16.0),
                   child: Text(
                     widget.instructionOfCheckListMenu,
                     style: TextStyle(

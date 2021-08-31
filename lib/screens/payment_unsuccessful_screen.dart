@@ -29,7 +29,8 @@ class _PaymentUnsuccessfulScreenState extends State<PaymentUnsuccessfulScreen> {
             child: Icon(
               Icons.arrow_back_ios_outlined,
               color: Colors.black,
-            )),
+            ),),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: Center(

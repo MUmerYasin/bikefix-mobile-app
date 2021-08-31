@@ -30,6 +30,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             color: Colors.black,
           ),
         ),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: Center(

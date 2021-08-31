@@ -32,7 +32,8 @@ class _GeneralServiceScreenState extends State<GeneralServiceScreen> {
             child: Icon(
               Icons.arrow_back_ios_outlined,
               color: Colors.black,
-            )),
+            ),),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -54,14 +55,17 @@ class _GeneralServiceScreenState extends State<GeneralServiceScreen> {
                 ),
 
                 /// Special Request
-                InspectionCheckListMenu(
-                  iconImagePath: specialRequestIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextSpecialRequest,
-                  questionOfCheckListMenu: questionMenuTextWhatServices,
-                  listDataOfCheckListMenu: specialRequestListData,
-                  instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
-                  priceOfCheckListMenu: priceInIndianCurrency,
-                  inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20.0),
+                  child: InspectionCheckListMenu(
+                    iconImagePath: specialRequestIconCustomMenuImagePath,
+                    titleOfCheckListMenu: titleMenuTextSpecialRequest,
+                    questionOfCheckListMenu: questionMenuTextWhatServices,
+                    listDataOfCheckListMenu: specialRequestListData,
+                    instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
+                    priceOfCheckListMenu: priceInIndianCurrency,
+                    inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
+                  ),
                 ),
 //                 Padding(
 //                   padding: const EdgeInsets.only(top: 25.0),

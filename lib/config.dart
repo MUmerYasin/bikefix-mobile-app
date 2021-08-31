@@ -483,6 +483,7 @@ const String logoutDrawer = "Log Out";
 
 const String titleMenuTextGeneralService = "General Service";
 const String titleMenuTextSpecialRequest = "Special Request";
+
 const String titleMenuTextCenterStandReplacement = "Center Stand Replacement";
 const String titleMenuTextSideStandReplacement = "Side Stand Replacement";
 const String titleMenuTextHandleBarReplacement = "Handle Bar Replacement";
@@ -547,7 +548,7 @@ const String CheckListMenuTextIfCenterStandGetsBroken =
     "If center stand gets broken.";
 
 const String CheckListMenuTextForParkingWithoutLearning =
-    "For parking without learning against another object ir the aid of a person.";
+    "For parking without learning against another object or the aid of a person.";
 
 const String CheckListMenuTextHandleBarGetsDamaged = "Handle bar gets damaged.";
 const String CheckListMenuTextHandleGetsTooOld = "Handle gets too old.";
