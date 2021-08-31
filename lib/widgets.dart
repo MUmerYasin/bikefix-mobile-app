@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/general_service_screen.dart';
+import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 
 /// Custom App Bar
 class CustomAppBar extends StatelessWidget {
@@ -506,4 +508,247 @@ class _BikeTitleDetailsHeadingState extends State<BikeTitleDetailsHeading> {
     );
   }
 }
+
+/// Inspection Check List Menu /// Use in Screen, General Service, Body Work, Repair Work, Engine Work
+class InspectionCheckListMenu extends StatefulWidget {
+  final String iconImagePath;
+  final String titleOfCheckListMenu;
+  final String questionOfCheckListMenu;
+  List listDataOfCheckListMenu =[];
+  final String instructionOfCheckListMenu;
+  final String priceOfCheckListMenu;
+  final String inspectionChargeCheckListMenu;
+
+  InspectionCheckListMenu({Key? key, required this.iconImagePath, required this.titleOfCheckListMenu, required this.questionOfCheckListMenu, required this.instructionOfCheckListMenu, required this.listDataOfCheckListMenu, required this.priceOfCheckListMenu, required this.inspectionChargeCheckListMenu}) : super(key: key);
+
+  @override
+  _InspectionCheckListMenuState createState() => _InspectionCheckListMenuState();
+}
+
+class _InspectionCheckListMenuState extends State<InspectionCheckListMenu> {
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.only(top: 25.0, bottom: 8.0,),
+      child: Neumorphic(
+        style: NeumorphicStyle(
+          depth: 8,
+          shape: NeumorphicShape.flat,
+          shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+          shadowDarkColor: Colors.black.withOpacity(0.7),
+          shadowLightColor: Colors.white,
+        ),
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.9,
+          // height: 200,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                ///  Image and Text, Icon and Title
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      widget.iconImagePath,
+                      width: 30.0,
+                      height: 30.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12.0),
+                      child: Text(
+                        widget.titleOfCheckListMenu,
+                        style: TextStyle(
+                          fontFamily: textFontFamily,
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                ///Divider Custom
+                Padding(
+                  padding:
+                  const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                  child: DividerCustom(),
+                ),
+
+                ///Text, Questions
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 12.0,
+                        bottom: 4.0,
+                      ),
+                      child: Text(
+                        widget.questionOfCheckListMenu,
+                        style: TextStyle(
+                          fontFamily: textFontFamily,
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                ///Text, Check List to be complete
+                SizedBox(
+                  child: ListView(
+                    padding: EdgeInsets.only(
+                      top: 0.0,
+                      left: 16.0,
+                      bottom: 0.0,
+                    ),
+                    // scrollDirection : Axis.vertical,
+                    shrinkWrap: true,
+                    physics: ClampingScrollPhysics(),
+                    children: widget.listDataOfCheckListMenu
+                        .map(
+                          (element) => SizedBox(
+                        height: 20.0,
+                        child: ListTile(
+                          leading: Neumorphic(
+                            style: NeumorphicStyle(
+                              boxShape:
+                              NeumorphicBoxShape.roundRect(
+                                  BorderRadius.circular(
+                                      50)),
+                              shadowLightColorEmboss:
+                              Colors.white,
+                              shadowDarkColorEmboss:
+                              buttonColor,
+                              shadowDarkColor: buttonColor,
+                              color: buttonColor,
+                            ),
+                            child: Icon(
+                              Icons.circle,
+                              color: buttonColor,
+                              size: 9.0,
+                              // color: Color(0xffEEF0F5),
+                            ),
+                          ),
+                          title: Text(
+                            element,
+                            style: TextStyle(
+                              fontFamily: textFontFamily,
+                              fontSize: 13,
+                              color: Colors.black,
+                              // fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          dense: true,
+                          minVerticalPadding: 0.0,
+                          horizontalTitleGap: 0.0,
+                          contentPadding: EdgeInsets.all(0.0),
+                        ),
+                      ),
+                    )
+                        .toList(),
+                  ),
+                ),
+
+                ///Text, other additional problems, //Any other additional problems will be reported post vehicle inspection
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 16.0, bottom: 16.0),
+                  child: Text(
+                    widget.instructionOfCheckListMenu,
+                    style: TextStyle(
+                      fontFamily: textFontFamily,
+                      fontSize: 12,
+                      color: Color(0xffDCBC15),
+                    ),
+                    textAlign: TextAlign.left,
+                    // overflow: TextOverflow.ellipsis,
+                    softWrap: true,
+                  ),
+                ),
+
+                ///Divider Custom
+                Padding(
+                  padding:
+                  const EdgeInsets.only(top: 0.0, bottom: 8.0),
+                  child: DividerCustom(),
+                ),
+
+                ///Price, Text  (Inspection Charge), Button Add
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ///Price For Inspection charge
+                    Text(
+                      widget.priceOfCheckListMenu,
+                      style: TextStyle(
+                        fontFamily: textFontFamily,
+                        fontSize: 18,
+                        color: buttonColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    ///Text  (Inspection Charge)
+                    Text(
+                      widget.inspectionChargeCheckListMenu,
+                      style: TextStyle(
+                        fontFamily: textFontFamily,
+                        fontSize: 16,
+                        color: Colors.black,
+                        // fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    ///Button Add
+                    SizedBox(
+                      height: 40,
+                      child: Neumorphic(
+                        style: NeumorphicStyle(
+                            depth: 8,
+                            shape: NeumorphicShape.flat,
+                            shadowDarkColor: Colors.red,
+                            shadowLightColor: Colors.white,
+                            shadowDarkColorEmboss:
+                            Colors.black.withOpacity(0.8)
+
+                          //  boxShape: NeumorphicBoxShape.circle(),
+                        ),
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: buttonColor,
+                                textStyle: TextStyle(
+                                  fontFamily: textFontFamily,
+                                  fontSize: 18,
+                                  color: const Color(0xffffffff),
+                                  fontWeight: FontWeight.w500,
+                                )),
+                            onPressed: () {
+                              gotoScreen(
+                                context: context,
+                                screen: GeneralServiceScreen(),
+                              );
+                            },
+                            child:
+                            Center(child: Text(buttonNameAdd))),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
