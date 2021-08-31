@@ -5,14 +5,14 @@ import 'package:two_wheel_vehicle/config.dart';
 // import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
-class BodyWorkScreen extends StatefulWidget {
-  const BodyWorkScreen({Key? key}) : super(key: key);
+class RepairWorkScreen extends StatefulWidget {
+  const RepairWorkScreen({Key? key}) : super(key: key);
 
   @override
-  _BodyWorkScreenState createState() => _BodyWorkScreenState();
+  _RepairWorkScreenState createState() => _RepairWorkScreenState();
 }
 
-class _BodyWorkScreenState extends State<BodyWorkScreen> {
+class _RepairWorkScreenState extends State<RepairWorkScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _BodyWorkScreenState extends State<BodyWorkScreen> {
         elevation: 0,
         backgroundColor: NeumorphicColors.background,
         title: Text(
-          screenTitleBodyWork,
+          screenTitleRepairWork,
           style: TextStyle(color: Colors.black),
         ),
         leading: GestureDetector(
@@ -42,146 +42,146 @@ class _BodyWorkScreenState extends State<BodyWorkScreen> {
               children: [
 
                 /// Custom Class for Design Check List in Different class
-                ///Center Stand Replacement
+                ///Break Issue
                 InspectionCheckListMenu(
-                  iconImagePath: centerStandReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextCenterStandReplacement,
+                  iconImagePath: breakIssueIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextBreakIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: centerStandReplacementListData,
+                  listDataOfCheckListMenu: breakIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                ///Side Stand Replacement
+                ///Clutch Issue
                 InspectionCheckListMenu(
-                  iconImagePath: sideStandReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextSideStandReplacement,
+                  iconImagePath: clutchIssueIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextClutchIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: sideStandReplacementListData,
+                  listDataOfCheckListMenu: clutchIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                /// Handle Bar Replacement
+                /// Accelerator Issue
                 InspectionCheckListMenu(
                   iconImagePath: handleBarReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextHandleBarReplacement,
+                  titleOfCheckListMenu: titleMenuTextAcceleratorIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: handleBarReplacementListData,
+                  listDataOfCheckListMenu: acceleratorIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                ///Mirror Replacement
+                ///Speedometer Issue
                 InspectionCheckListMenu(
-                  iconImagePath: mirrorReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextMirrorReplacement,
+                  iconImagePath: speedometerIssueIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextSpeedometerIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: mirrorReplacementListData,
+                  listDataOfCheckListMenu: speedometerIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                /// Foot Rest Replacement
+                /// Choke Cable Problem
                 InspectionCheckListMenu(
-                  iconImagePath: footRestReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextFootRestReplacement,
+                  iconImagePath: chockeCableProblemIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextChokeCableProblem,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: foodRestReplacementListData,
+                  listDataOfCheckListMenu: chokeCableIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                /// Mudguard Replacement
+                /// Lever Problem
                 InspectionCheckListMenu(
-                  iconImagePath: mudgaurdReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextMudguardReplacement,
+                  iconImagePath: leverProblemIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextLeverProblem,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: mudguardReplacementListData,
+                  listDataOfCheckListMenu: leverProblemListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                ///Chain Cover Replacement
+                ///Switch Problem
                 InspectionCheckListMenu(
-                  iconImagePath: chainCoverReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextChainCoverReplacement,
+                  iconImagePath: switchProblemIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextSwitchProblem,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: chainCoverReplacementListData,
+                  listDataOfCheckListMenu: switchProblemListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                /// Fork Bend Removal
+                /// Wiring Issue
                 InspectionCheckListMenu(
-                  iconImagePath: footRestReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextForkBendRemoval,
+                  iconImagePath: wiserRemovalIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextWiringIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: forkBendRemoveListData,
+                  listDataOfCheckListMenu: wiringIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                ///Head Light Replacement
+                /// Magnet Issue
                 InspectionCheckListMenu(
                   iconImagePath: headLightReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextHeadLightReplacement,
+                  titleOfCheckListMenu: titleMenuTextMagnetIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: headLightReplacementListData,
+                  listDataOfCheckListMenu: magnetIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                ///Tail Light Bulb Replacement
+                ///Battery Issue
                 InspectionCheckListMenu(
-                  iconImagePath: tailLightBulbReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextTailLightBulbReplacement,
+                  iconImagePath: batteryIssueIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextBatteryIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: tailLightBulbReplacementListData,
+                  listDataOfCheckListMenu: batteryIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                /// Indicator Bulb Replacement
+                /// Fuse Issue
                 InspectionCheckListMenu(
                   iconImagePath: indicatorBulbReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextIndicatorBulbReplacement,
+                  titleOfCheckListMenu: titleMenuTextFuseIssue,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: indicatorBulbReplacementListData,
+                  listDataOfCheckListMenu: fuseIssueListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                /// Parking Bulb Replacement
+                /// Spark Problem
                 InspectionCheckListMenu(
-                  iconImagePath: parkingBulbReplacementIconCustomMenuImagePath,
-                  titleOfCheckListMenu: titleMenuTextParkingBulbReplacement,
+                  iconImagePath: sparkProblemIconCustomMenuImagePath,
+                  titleOfCheckListMenu: titleMenuTextSparkProblem,
                   questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                  listDataOfCheckListMenu: parkingBulbReplacementListData,
+                  listDataOfCheckListMenu: sparkProblemListData,
                   instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                   priceOfCheckListMenu: priceInIndianCurrency,
                   inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
                 ),
 
-                /// Wiser Removal
+                /// Shocker Problem
                 Padding(
                   padding: const EdgeInsets.only(bottom: 20.0),
                   child: InspectionCheckListMenu(
-                    iconImagePath: wiserRemovalIconCustomMenuImagePath,
-                    titleOfCheckListMenu: titleMenuTextWiserRemoval,
+                    iconImagePath: shockerProblemIconCustomMenuImagePath,
+                    titleOfCheckListMenu: titleMenuTextShockerProblem,
                     questionOfCheckListMenu: questionMenuTextWhenDoWe,
-                    listDataOfCheckListMenu: wiserRemovalListData,
+                    listDataOfCheckListMenu: shockerProblemListData,
                     instructionOfCheckListMenu: instructionForMenuTextOtherAdditionalProblems,
                     priceOfCheckListMenu: priceInIndianCurrency,
                     inspectionChargeCheckListMenu: instructionForMenuTextInspectionCharge,
