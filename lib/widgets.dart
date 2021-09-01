@@ -359,27 +359,34 @@ class _myWigetsState extends State<myWigets> {
   }
 }
 
-class appbarrr extends StatefulWidget {
-  const appbarrr({Key? key, }) : super(key: key);
+class addd extends StatefulWidget {
+  const addd({Key? key}) : super(key: key);
 
   @override
-  _appbarrrState createState() => _appbarrrState();
+  _adddState createState() => _adddState();
 }
 
-class _appbarrrState extends State<appbarrr> {
+class _adddState extends State<addd> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: NeumorphicColors.background,
-        title: Text('Service Status'),
-        centerTitle: true,
-        elevation: 0,
-        leading: Icon(CupertinoIcons.back),
-      ),
+    return  Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30)
+        ),
+        width: 30,
+        height: 30,
+        child: Card(
+          elevation: 13,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          child: Icon(Icons.add,size: 15,),
+        )
+
     );
   }
 }
+
+
+
 
 
 

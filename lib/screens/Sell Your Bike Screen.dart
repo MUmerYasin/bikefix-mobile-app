@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
@@ -166,27 +167,27 @@ class _Sell_Your_BikeState extends State<Sell_Your_Bike> {
                 ),
               ),
 
-             Center(
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                 crossAxisAlignment: CrossAxisAlignment.center,
-                 children: [
-                   Expanded(child: Center(
-                     child: Padding(
-                       padding: const EdgeInsets.all(8.0),
-                       child: RichText(
-                         text: TextSpan(
-                           children: <TextSpan>[
-                             TextSpan(text: "By Clicking Value My Bike you agree to our ",style: TextStyle(color: Colors.black)),
-                             TextSpan(text: " \n                   Term & Conditions ",style: TextStyle(color: Colors.redAccent),)
-                           ]
-                         ),
+              Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   crossAxisAlignment: CrossAxisAlignment.center,
+                   children: [
+                     Padding(
+                         padding: const EdgeInsets.all(8.0),
+                         child: RichText(
+                           textAlign: TextAlign.center,
+                             text: TextSpan(
+                             children: <TextSpan>[
+                               TextSpan(text: 'By Clicking Value My Bike You agree tou our \n',style: TextStyle(color: Colors.black)),
+                               TextSpan(text: 'Terms & Conditions',style: TextStyle(color: Colors.red))
+
+
+                             ]
+                         )),
                        ),
-                     ),
-                   ))
-                 ],
-               ),
-             ),
+
+                   ],
+                 ),
+             
 
               Center(
                 child: Column(

@@ -26,191 +26,141 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
   }
 
+  String selectoption = '    Gender';
+  String initValue="Select your Birth Date";
+  bool isDateSelected= false;
+  late DateTime birthDate; // instance of DateTime
+  late String birthDateInString;
+
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
-        child: Scaffold(
-            backgroundColor: NeumorphicColors.background,
-            body: SingleChildScrollView(
-              child: Container(
-                  padding: EdgeInsets.all(15),
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  child: Form(
-                    key: thiskey,
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Expanded(child: Image.asset('assets/icons/logo.png',width: 200,height: 200,)),
-                          Expanded(child: Column(children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
-                                child: Container(
-                                  height: 50,
-                                  child: TextFormField(
-                                    autofocus: true,
-                                    focusNode: FocusNode(canRequestFocus: true),
-                                    validator: (value){
-                                      if (value!.isEmpty){
-                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.limeAccent,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
-                                      }
-                                    },
-                                    decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.only(left: 14,right: 14),
-                                        border: InputBorder.none,
-                                        hintText: "Name"
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
-                                child: Container(
-                                  height: 50,
-                                  child: TextFormField(
-                                    autofocus: true,
-                                    focusNode: FocusNode(canRequestFocus: true),
-                                    validator: (value){
-                                      if (value!.isEmpty){
-                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.teal,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
-                                      }
-                                    },
-                                    decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.only(left: 14,right: 14),
-                                        border: InputBorder.none,
-                                        hintText: "Email"
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Row(
+    return  Scaffold(
+      backgroundColor: NeumorphicColors.background,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: NeumorphicColors.background,
+        title: Text(''),
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Image.asset('assets/icons/logo.png',width: 120,height: 120),
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0,top: 15,left: 15,bottom: 15),
+                child: myTextField(text: 'Name', validator: (value){
+                }),
+              ),
 
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Neumorphic(
-                                    style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
-                                    child: Container(
-                                      height: 50,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      child: TextFormField(
-                                        autofocus: true,
-                                        focusNode: FocusNode(canRequestFocus: true),
-                                        validator: (value){
-                                          if (value!.isEmpty){
-                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.purpleAccent,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
-                                          }
-                                        },
-                                        decoration: InputDecoration(
-                                            contentPadding: EdgeInsets.only(left: 14,right: 14),
-                                            border: InputBorder.none,
-                                            hintText: "DOB"
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Spacer(),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Neumorphic(
-                                    style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
-                                    child: Container(
-                                      height: 50,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      child: TextFormField(
-                                        autofocus: true,
-                                        focusNode: FocusNode(canRequestFocus: true),
-                                        validator: (value){
-                                          if (value!.isEmpty){
-                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.green,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
-                                          }
-                                        },
-                                        decoration: InputDecoration(
-                                            contentPadding: EdgeInsets.only(left: 14,right: 14),
-                                            border: InputBorder.none,
-                                            hintText: "Gender"
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
-                                child: Container(
-                                  height: 50,
-                                  child: TextFormField(
-                                    autofocus: true,
-                                    focusNode: FocusNode(canRequestFocus: true),
-                                    validator: (value){
-                                      if (value!.isEmpty){
-                                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.blue,content: Text('This Field is Required for Next Step',style: GoogleFonts.roboto(fontSize: 19,color: Colors.black),)));
-                                      }
-                                    },
-                                    decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.only(left: 14,right: 14),
-                                        border: InputBorder.none,
-                                        hintText: "Phone Number"
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // width: MediaQuery.of(context).size.width / 3,
-                            RoundedCornerButton(
-                              onPressed: () {
-                                validated();
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0,top: 15,left: 15,bottom: 15),
+                child: myTextField(text: 'Email', validator: (value){
+                }),
+              ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width/2.3,
+                      child: InkWell(
+                        onTap: ()async{
+                          var datepick = await showDatePicker(context: context,
+                              initialDate: new DateTime.now(), firstDate: new DateTime(1900), lastDate: new DateTime(2100));
+                          if(datepick!=null && datepick!=birthDate){
+                            setState(() {
+                              birthDate = datepick;
+                              isDateSelected = true;
+                              birthDateInString = "${birthDate.month}/${birthDate.day}/${birthDate.year}";
+                            });
+
+                          }
+
+                        },
+                        child: myTextField(text: 'DOB', validator: (value){
+                        },keyboardType: TextInputType.number,),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width/2.3,
+                      child: Neumorphic(
+                        style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context)),
+                        child: DropdownButton<String>(
+                          underline: SizedBox(),
+                          isExpanded: true,
+                          dropdownColor: NeumorphicColors.background,
+                          hint: Text(selectoption),
+                          items: <String>['    Male', '    Female','    Other'].map((String value) {
+                            return DropdownMenuItem<String>(
+                              onTap: (){
+                                setState(() {
+                                  selectoption = value;
+                                });
                               },
-                              child: 'Sign Up',
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 18.0),
-                              child: Text.rich(
-                                TextSpan(
-                                  style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 14,
-                                    color: const Color(0xff000000),
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: 'If already user,',style: TextStyle(fontSize: 20)
-                                    ),
-                                    TextSpan(
-                                      text: ' Log In',recognizer: TapGestureRecognizer()..onTap = (){
-                                        setState(() {
-                                          Navigator.push(context, CupertinoPageRoute(builder: (context)=>OTPScreen()));
-                                        });
-                                    },
-                                      style: TextStyle(
-                                        color: const Color(0xffd33937),
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 20
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                textHeightBehavior:
-                                TextHeightBehavior(applyHeightToFirstAscent: false),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ],)),
-                        ]),
-                  )),
-            )),
-      
+                              value: value,
+                              child: new Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (_) {},
+                        ),
+                      ),
+                    ),
+                  ),
+
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0,top: 15,left: 15,bottom: 15),
+                child: myTextField(text: 'Phone Number', validator: (value){
+                }),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0,top: 15,left: 15,bottom: 15),
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 10),
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(color: Colors.redAccent, spreadRadius:3, blurRadius: 7)
+                      ],
+                      borderRadius: BorderRadius.circular(14)
+                  ),
+
+                  child: SizedBox(
+                    height: 50,
+                    child:  ElevatedButton(
+                      onPressed: (){
+                      },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text(' Signup ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                    ),
+                  ),
+                ),
+              ),
+
+              RichText(text: TextSpan(
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'If already user,',style: TextStyle(
+                    color: Colors.black,fontWeight: FontWeight.w700
+                  )
+                  ),
+                  TextSpan( text: ' Log In',style: TextStyle(color: Colors.red,fontWeight:
+                  FontWeight.w700),recognizer: TapGestureRecognizer()..onTap = (){
+                    setState(() {
+                      Navigator.push(context, CupertinoPageRoute(builder: (context)=>OTPScreen()));
+                    });
+                  })
+                ]
+              ))
+
+
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

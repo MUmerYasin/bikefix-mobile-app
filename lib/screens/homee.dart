@@ -10,7 +10,8 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
-import 'package:two_wheel_vehicle/screens/service_screen.dart';
+import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
+
 import 'package:two_wheel_vehicle/screens/subscription.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 import 'Become_Partner.dart';
@@ -254,7 +255,7 @@ class _HomeeState extends State<Homee> {
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                left: 28.0),
+                                                left: 40.0),
                                             child: RichText(text: TextSpan(
                                                 children: <TextSpan>[
                                                   TextSpan(text: '    KTM ',
@@ -379,18 +380,14 @@ class _HomeeState extends State<Homee> {
                                                 ),
 
                                               Padding(
-                                                padding: const EdgeInsets.only(left: 6.0,),
-                                                
-                                                child: IconButton(onPressed: () {
+                                                padding: const EdgeInsets.only(left: 14.0),
+                                                child: InkWell(onTap:(){
                                                   Navigator.push(context,
                                                       CupertinoPageRoute(
                                                           builder: (context) =>
                                                               AddVehicleScreen()));
-                                                },
-                                                    icon: Icon(
-                                                      CupertinoIcons.add_circled,
-                                                      size: 30,)),
-                                              )
+                                                },child: addd()),
+                                              ),
                                             ],
                                           )
                                         ],
@@ -428,7 +425,7 @@ class _HomeeState extends State<Homee> {
                                     height: MediaQuery
                                         .of(context)
                                         .size
-                                        .height / 6.3,
+                                        .height / 6,
                                     width: MediaQuery
                                         .of(context)
                                         .size
@@ -682,7 +679,7 @@ class _HomeeState extends State<Homee> {
                   height: MediaQuery
                       .of(context)
                       .size
-                      .height / 1.3,
+                      .height / 1.1,
                   child: Drawer(
                     child: Column(
                       children: [
@@ -870,7 +867,7 @@ class _HomeeState extends State<Homee> {
                     height: MediaQuery
                         .of(context)
                         .size
-                        .height / 15,
+                        .height /12.7,
                     width: MediaQuery
                         .of(context)
                         .size
@@ -939,7 +936,7 @@ class _HomeeState extends State<Homee> {
                             GestureDetector(
                                 onTap: () {
                                   Navigator.push(context, CupertinoPageRoute(
-                                      builder: (context) => ServiceStatus()));
+                                      builder: (context) => ServiceStatusScreen()));
                                 },
                                 child: Image.asset(
                                   'assets/icons/rel.png', scale: 3.6,)),
@@ -1047,126 +1044,126 @@ class _newpageState extends State<newpage> {
 // disableCenter: false,
 // pageSnapping: false,
 // enlargeCenterPage: false
-
-class CheckboxWidget extends StatefulWidget {
-  const CheckboxWidget({Key? key}) : super(key: key);
-
-  @override
-  _CheckboxWidgetState createState() => _CheckboxWidgetState();
-}
-
-class _CheckboxWidgetState extends State<CheckboxWidget> {
-  bool _irsLetterCheckBo = false;
-  bool _charityArticleCheckBox = false;
-  bool _byLawsCheckBox=false;
-  bool _copyLicenseCheckBox=false;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5.0,right: 5.0,top: 50.0),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Please Select Which Document",),
-              Row(
-                  children: [
-                    Checkbox(
-                      value: _irsLetterCheckBo,
-                      onChanged: (value) {
-                        setState(() {
-                           _charityArticleCheckBox = false;
-                           _byLawsCheckBox=false;
-                          _copyLicenseCheckBox=false;
-                          _irsLetterCheckBo = !_irsLetterCheckBo;
-                        });
-                      },
-                    ),
-                    InkWell(
-                        onTap: (){
-                          setState(() {
-                            _irsLetterCheckBo = !_irsLetterCheckBo;
-
-                          });
-                        },
-                        child: Text('IRS Letter')),
-                  ]
-              ),
-              Row(
-                  children: [
-                    Checkbox(
-                      value: _charityArticleCheckBox,
-                      onChanged: (value) {
-                        setState(() {
-                          _charityArticleCheckBox = !_charityArticleCheckBox;
-                        });
-                      },
-                    ),
-                    InkWell(
-                        onTap: (){
-                          setState(() {
-                             _charityArticleCheckBox = false;
-                            _byLawsCheckBox=false;
-
-                            _charityArticleCheckBox = !_charityArticleCheckBox;
-                          });
-                        },
-                        child: Text('Charity Article')),
-                  ]
-              ),
-              Row(
-                  children: [
-                    Checkbox(
-                      value: _byLawsCheckBox,
-                      onChanged: (value) {
-                        setState(() {
-                          _byLawsCheckBox = !_byLawsCheckBox;
-                        });
-                      },
-                    ),
-                    InkWell(
-                        onTap: (){
-                          setState(() {
-                            _charityArticleCheckBox = false;
-
-                            _copyLicenseCheckBox=false;
-                            _byLawsCheckBox = !_byLawsCheckBox;
-                          });
-                        },
-                        child: Text('By Laws')),
-                  ]
-              ),
-              Row(
-                  children: [
-                    Checkbox(
-                      value: _copyLicenseCheckBox,
-                      onChanged: (value) {
-                        setState(() {
-                          _copyLicenseCheckBox = !_copyLicenseCheckBox;
-                        });
-                      },
-                    ),
-                    InkWell(
-                        onTap: (){
-                          setState(() {
-                            _charityArticleCheckBox = false;
-                             _byLawsCheckBox=false;
-
-                            _copyLicenseCheckBox = !_copyLicenseCheckBox;
-                          });
-                        },
-                        child: Text('Copy/License')),
-                  ]
-              ),
-            ]
-        ),
-      ),
-    );
-  }
-}
+//
+// class CheckboxWidget extends StatefulWidget {
+//   const CheckboxWidget({Key? key}) : super(key: key);
+//
+//   @override
+//   _CheckboxWidgetState createState() => _CheckboxWidgetState();
+// }
+//
+// class _CheckboxWidgetState extends State<CheckboxWidget> {
+//   bool _irsLetterCheckBo = false;
+//   bool _charityArticleCheckBox = false;
+//   bool _byLawsCheckBox=false;
+//   bool _copyLicenseCheckBox=false;
+//
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Material(
+//       child: Padding(
+//         padding: const EdgeInsets.only(left: 5.0,right: 5.0,top: 50.0),
+//         child: Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Text("Please Select Which Document",),
+//               Row(
+//                   children: [
+//                     Checkbox(
+//                       value: _irsLetterCheckBo,
+//                       onChanged: (value) {
+//                         setState(() {
+//                            _charityArticleCheckBox = false;
+//                            _byLawsCheckBox=false;
+//                           _copyLicenseCheckBox=false;
+//                           _irsLetterCheckBo = !_irsLetterCheckBo;
+//                         });
+//                       },
+//                     ),
+//                     InkWell(
+//                         onTap: (){
+//                           setState(() {
+//                             _irsLetterCheckBo = !_irsLetterCheckBo;
+//
+//                           });
+//                         },
+//                         child: Text('IRS Letter')),
+//                   ]
+//               ),
+//               Row(
+//                   children: [
+//                     Checkbox(
+//                       value: _charityArticleCheckBox,
+//                       onChanged: (value) {
+//                         setState(() {
+//                           _charityArticleCheckBox = !_charityArticleCheckBox;
+//                         });
+//                       },
+//                     ),
+//                     InkWell(
+//                         onTap: (){
+//                           setState(() {
+//                              _charityArticleCheckBox = false;
+//                             _byLawsCheckBox=false;
+//
+//                             _charityArticleCheckBox = !_charityArticleCheckBox;
+//                           });
+//                         },
+//                         child: Text('Charity Article')),
+//                   ]
+//               ),
+//               Row(
+//                   children: [
+//                     Checkbox(
+//                       value: _byLawsCheckBox,
+//                       onChanged: (value) {
+//                         setState(() {
+//                           _byLawsCheckBox = !_byLawsCheckBox;
+//                         });
+//                       },
+//                     ),
+//                     InkWell(
+//                         onTap: (){
+//                           setState(() {
+//                             _charityArticleCheckBox = false;
+//
+//                             _copyLicenseCheckBox=false;
+//                             _byLawsCheckBox = !_byLawsCheckBox;
+//                           });
+//                         },
+//                         child: Text('By Laws')),
+//                   ]
+//               ),
+//               Row(
+//                   children: [
+//                     Checkbox(
+//                       value: _copyLicenseCheckBox,
+//                       onChanged: (value) {
+//                         setState(() {
+//                           _copyLicenseCheckBox = !_copyLicenseCheckBox;
+//                         });
+//                       },
+//                     ),
+//                     InkWell(
+//                         onTap: (){
+//                           setState(() {
+//                             _charityArticleCheckBox = false;
+//                              _byLawsCheckBox=false;
+//
+//                             _copyLicenseCheckBox = !_copyLicenseCheckBox;
+//                           });
+//                         },
+//                         child: Text('Copy/License')),
+//                   ]
+//               ),
+//             ]
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 
 
@@ -1253,68 +1250,68 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
 //   }
 // }
 
-class CheckBoxes extends StatefulWidget {
-  const CheckBoxes({Key? key}) : super(key: key);
-
-  @override
-  _CheckBoxesState createState() => _CheckBoxesState();
-}
-
-class _CheckBoxesState extends State<CheckBoxes> {
-  bool _irsCheckedValue=false;
-  bool _articleCheckedValue=false;
-  bool _byLaws=false;
-  String imagePath = '';
-  final picker = ImagePicker();
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.white,
-
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5.0,right: 5.0,top: 50.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Please Select which document"),
-               CheckboxListTile(
-                title: Text("IRS Letter"),
-                value: _irsCheckedValue,
-                onChanged: (newValue) {
-                  setState(() async {
-                    final pick = picker.pickImage(source: ImageSource.gallery);
-                    _irsCheckedValue = newValue!;
-                  });
-                },
-                controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
-              ),
-
-            CheckboxListTile(
-              title: Text("Charity Article"),
-              value: _articleCheckedValue,
-              onChanged: (newValue) {
-                setState(() {
-                  _articleCheckedValue = newValue!;
-                  final pick=picker.pickImage(source: ImageSource.gallery);
-                });
-              },
-              controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
-            ),
-            CheckboxListTile(
-              title: Text("By Laws"),
-              value: _byLaws,
-              onChanged: (newValue) {
-                setState(() {
-                  final pick=picker.pickImage(source: ImageSource.gallery);
-                  _byLaws = newValue!;
-                });
-              },
-              controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
-            ),
-
-          ],
-        ),
-    ));
-  }
-}
+// class CheckBoxes extends StatefulWidget {
+//   const CheckBoxes({Key? key}) : super(key: key);
+//
+//   @override
+//   _CheckBoxesState createState() => _CheckBoxesState();
+// }
+//
+// class _CheckBoxesState extends State<CheckBoxes> {
+//   bool _irsCheckedValue=false;
+//   bool _articleCheckedValue=false;
+//   bool _byLaws=false;
+//   String imagePath = '';
+//   final picker = ImagePicker();
+//   @override
+//   Widget build(BuildContext context) {
+//     return Material(
+//       color: Colors.white,
+//
+//       child: Padding(
+//         padding: const EdgeInsets.only(left: 5.0,right: 5.0,top: 50.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.start,
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Text("Please Select which document"),
+//                CheckboxListTile(
+//                 title: Text("IRS Letter"),
+//                 value: _irsCheckedValue,
+//                 onChanged: (newValue) {
+//                   setState(() async {
+//                     final pick = picker.pickImage(source: ImageSource.gallery);
+//                     _irsCheckedValue = newValue!;
+//                   });
+//                 },
+//                 controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+//               ),
+//
+//             CheckboxListTile(
+//               title: Text("Charity Article"),
+//               value: _articleCheckedValue,
+//               onChanged: (newValue) {
+//                 setState(() {
+//                   _articleCheckedValue = newValue!;
+//                   final pick=picker.pickImage(source: ImageSource.gallery);
+//                 });
+//               },
+//               controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+//             ),
+//             CheckboxListTile(
+//               title: Text("By Laws"),
+//               value: _byLaws,
+//               onChanged: (newValue) {
+//                 setState(() {
+//                   final pick=picker.pickImage(source: ImageSource.gallery);
+//                   _byLaws = newValue!;
+//                 });
+//               },
+//               controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+//             ),
+//
+//           ],
+//         ),
+//     ));
+//   }
+// }

@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(child: Image.asset('assets/icons/logo.png',width: 200,height: 200,)),
+              Expanded(child: Image.asset('assets/icons/logo.png',width: 150,height: 2150,)),
              Expanded(child: Column(
                mainAxisAlignment: MainAxisAlignment.center,
                crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
@@ -53,6 +54,7 @@ class _Become_PartnerState extends State<Become_Partner> {
                   child: MyDropDown(
                     child: DropdownButton<String>(
                       underline: SizedBox(),
+                      iconSize: 20,
                       isExpanded: true,
                       dropdownColor: NeumorphicColors.background,
                       hint: Text(selectOption),

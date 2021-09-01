@@ -171,7 +171,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                       height: 50,
                       child:  ElevatedButton(
                         onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Sell_Your_Bike()));
+                          Navigator.pop(context);
                         },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text(' Proceed ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
                       ),
                     ),
