@@ -22,6 +22,7 @@ const String screenTitleBodyWork = "Body Work";
 const String screenTitleRepairWork = "Repair Work";
 const String screenTitleEngineWork = "Engine Work";
 const String screenTitleSellYourVehicle = "Sell Your Vehicle";
+const String screenTitleBecomeAPartner = "Become a Partner";
 
 /// Text Font Family
 const String textFontFamily = "Roboto";
@@ -168,7 +169,7 @@ const String vehicleDroppedTrackOrderScreenImagePath = imagePathStart + "vehicle
 const String vehiclePickedUpTrackOrderScreenImagePath = imagePathStart + "vehicle_picked_up_track_order_icon.png";
 
 
-///Text Field Titles of Choose Bike Brand.
+///Text Field Titles.
 const String textFieldName = "Name";
 const String textFieldDOB = "DOB";
 const String textFieldGender = "Gender";
@@ -184,6 +185,12 @@ const String textFieldVehicleNumber = "Vehicle Number";
 const String textFieldKilometerDriven = "Kilometer Driven";
 const String textFieldEnterYourPhoneNumber = "Enter Your Phone Number";
 
+const String textFieldNameTimeFrameForBuyingAFranchise = "TIME FRAME FOR BUYING A FRANCHISE";
+const String textFieldNameBudgetForStartingAFranchise = "BUDGET FOR STARTING A FRANCHISE";
+const String textFieldNameLocationToLaunchABikeFixUp = "LOCATION TO LAUNCH A BIKE FIX UP";
+const String textFieldNameAreOrHaveYouBeenAMotorbikeMechanic = "ARE OR HAVE YOU BEEN A MOTORBIKE MECHANIC?";
+const String textFieldNameHowDidYouHereAboutUs = "HOW DID YOU HERE ABOUT US?";
+
 ///Buttons Name
 const String buttonNameHome = "Home";
 const String buttonNameLogIn = "Log In";
@@ -192,6 +199,7 @@ const String buttonNameConfirm = "Confirm";
 const String buttonNameCancel = "Cancel";
 const String buttonNameResend = "Resend";
 const String buttonNameSave = "Save";
+const String buttonNameSubmit = "Submit";
 const String buttonNameOffice = "Office";
 const String buttonNameSaveAddr = "Save Addr.";
 const String buttonNameNeedHelp = "Need Help ?";
@@ -222,7 +230,7 @@ const String companyNameYamahaMotors = "Yamaha Motors";
 
 ///------ Bike Model Names --------
 
-///Bike Model Names Hero
+//Bike Model Names Hero
 const String bikeModelNameHeroPassionProi3S = "Hero Passion Pro i3S";
 const String bikeModelNameHeroElectricOptima = "Hero Electric Optima";
 const String bikeModelNameHeroSplendorPlus = "Hero Splendor Plus";
@@ -231,13 +239,13 @@ const String bikeModelNameHeroPleasurePlus110 = "Hero Pleasure Plus 110";
 const String bikeModelNameHeroSuperSplendor = "Hero Super Splendor";
 const String bikeModelNameHeroGlamour125 = "Hero Glamour 125";
 
-///Bike Model Names Royal Enfield
+//Bike Model Names Royal Enfield
 const String bikeModelNameRoyalEnfieldHimalayan = "Royal Enfield Himalayan";
 const String bikeModelNameRoyalEnfieldClassic350 = "Royal Enfield Classic 350";
 const String bikeModelNameRoyalEnfieldBullet350 = "Royal Enfield Bullet 350";
 const String bikeModelNameRoyalEnfieldMeteor350 = "Royal Enfield Meteor 350";
 
-///Bike Model Names Honda
+//Bike Model Names Honda
 const String bikeModelNameHondaCBUnicorn160 = "Honda CB Unicorn 160";
 const String bikeModelNameHondaSP125 = "Honda SP 125";
 const String bikeModelNameHondaActiva6G = "Honda Activa 6G";
@@ -246,13 +254,13 @@ const String bikeModelNameHondaCB350RS = "Honda CB 350 RS";
 const String bikeModelNameHondaCBShine = "Honda CB Shine";
 const String bikeModelNameHondaDio = "Honda Dio";
 
-///Bike Model Names Jawa
+//Bike Model Names Jawa
 const String bikeModelNameJawaFortyTwo = "Jawa Forty Two";
 const String bikeModelNameJawa42 = "Jawa 42";
 const String bikeModelNameJawaPerak = "Jawa Perak";
 const String bikeModelNameJawaStandard = "Jawa Standard";
 
-///Bike Model Names Bajaj
+//Bike Model Names Bajaj
 const String bikeModelNameBajajCT100 = "Bajaj CT 100";
 const String bikeModelNameBajajPulsar125 = "Bajaj Pulsar 125";
 const String bikeModelNameBajajPulsarNS125 = "Bajaj Pulsar NS 125";
@@ -261,7 +269,7 @@ const String bikeModelNameBajajPlatina100 = "Bajaj Platina 100";
 const String bikeModelNameBajajPulsarNS200 = "Bajaj Pulsar NS200";
 const String bikeModelNameBajajPulsar150 = "Bajaj Pulsar 150";
 
-///Bike Model TVS
+//Bike Model TVS
 const String bikeModelNameTVSNtorq125 = "TVS Ntorq 125";
 const String bikeModelNameTVSXL100 = "TVS XL100";
 const String bikeModelNameTVSSport = "TVS Sport";
@@ -270,7 +278,7 @@ const String bikeModelNameTVSApacheRTR160 = "TVS Apache RTR 160";
 const String bikeModelNameTVSVictor = "TVS Victor";
 const String bikeModelNameTVSRadeon = "TVS Radeon";
 
-///Bike Model Yamaha
+//Bike Model Yamaha
 const String bikeModelNameYamahaFZX = "Yamaha FZ-X";
 const String bikeModelNameYamahaMT15 = "Yamaha MT-15";
 const String bikeModelNameYamahaFZSV30FI = "Yamaha FZ S V3.0 FI";
@@ -278,14 +286,14 @@ const String bikeModelNameYamahaFZ25 = "Yamaha FZ25";
 const String bikeModelNameYamahaR15V30 = "Yamaha R15 V3.0";
 const String bikeModelNameYamahaMT09 = "Yamaha MT-09";
 
-///Bike Model KTM
+//Bike Model KTM
 const String bikeModelNameKTMRC200 = "KTM RC 200";
 const String bikeModelNameKTMRC125 = "KTM RC 125";
 const String bikeModelNameKTMRC390 = "KTM RC 390";
 const String bikeModelNameKTM200Duke = "KTM 200 Duke";
 const String bikeModelNameKTM390Duke = "KTM 390 Duke";
 
-///Bike Model Suzuki
+//Bike Model Suzuki
 const String bikeModelNameSuzukiGixxerSF = "Suzuki Gixxer SF";
 const String bikeModelNameSuzukiAccess125SE = "Suzuki Access 125 SE";
 const String bikeModelNameSuzukiBurgmanStreet125 = "Suzuki Burgman Street 125";
@@ -345,6 +353,82 @@ const String bikeColorsCandyPharaohYellow = "Candy Pharaoh Yellow";
 const String bikeColorsPearlPaleBlue = "PEARL PALE BLUE";
 const String bikeColorsSilverMetallic = "Silver Metallic";
 
+///------ Time Frame For Buying A Franchise --------
+const String timeFrameForBuyingAFranchiseWithInMonth1 = "01 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth2 = "02 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth3 = "03 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth4 = "04 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth5 = "05 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth6 = "06 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth7 = "07 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth8 = "08 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth9 = "09 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth10 = "10 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth11 = "11 Month";
+const String timeFrameForBuyingAFranchiseWithInMonth12 = "12 Month";
+const String timeFrameForBuyingAFranchiseWithInYear1 = "1 Year";
+const String timeFrameForBuyingAFranchiseWithInYear2 = "2 Year";
+
+///------ Budget For Starting A Franchise --------
+const String budgetForStartingAFranchiseIs500000 = "₹5,00,000";
+const String budgetForStartingAFranchiseIs1000000 = "₹10,00,000";
+const String budgetForStartingAFranchiseIs1500000 = "₹15,00,000";
+const String budgetForStartingAFranchiseIs2000000 = "₹20,00,000";
+const String budgetForStartingAFranchiseIs2500000 = "₹25,00,000";
+const String budgetForStartingAFranchiseIs3000000 = "₹30,00,000";
+const String budgetForStartingAFranchiseIs3500000 = "₹35,00,000";
+const String budgetForStartingAFranchiseIs4000000 = "₹40,00,000";
+const String budgetForStartingAFranchiseIs4500000 = "₹45,00,000";
+const String budgetForStartingAFranchiseIs5000000 = "₹50,00,000";
+const String budgetForStartingAFranchiseIs5500000 = "₹55,00,000";
+const String budgetForStartingAFranchiseIs6000000 = "₹60,00,000";
+const String budgetForStartingAFranchiseIs6500000 = "₹65,00,000";
+const String budgetForStartingAFranchiseIs7000000 = "₹70,00,000";
+const String budgetForStartingAFranchiseIs7500000 = "₹75,00,000";
+const String budgetForStartingAFranchiseIs8000000 = "₹80,00,000";
+const String budgetForStartingAFranchiseIs8500000 = "₹85,00,000";
+const String budgetForStartingAFranchiseIs9000000 = "₹90,00,000";
+const String budgetForStartingAFranchiseIs10000000 = "₹1,00,00,000";
+
+
+///------ Location To Launch A Bike fix up --------
+const String locationToLaunchABikeFixUpCityNameMumbai = "Mumbai";
+const String locationToLaunchABikeFixUpCityNameDelhi = "Delhi";
+const String locationToLaunchABikeFixUpCityNameKolkata = "Kolkata";
+const String locationToLaunchABikeFixUpCityNameChennai = "Chennai";
+const String locationToLaunchABikeFixUpCityNameBangalore = "Bangalore";
+const String locationToLaunchABikeFixUpCityNameHyderabad = "Hyderabad";
+const String locationToLaunchABikeFixUpCityNameAhmedabad = "Ahmedabad";
+const String locationToLaunchABikeFixUpCityNamePune = "Pune";
+const String locationToLaunchABikeFixUpCityNameSurat = "Surat";
+const String locationToLaunchABikeFixUpCityNameJaipur = "Jaipur";
+const String locationToLaunchABikeFixUpCityNameKanpur = "Kanpur";
+const String locationToLaunchABikeFixUpCityNameLucknow = "Lucknow";
+const String locationToLaunchABikeFixUpCityNameNagpur = "Nagpur";
+const String locationToLaunchABikeFixUpCityNameIndore = "Indore";
+const String locationToLaunchABikeFixUpCityNamePatna = "Patna";
+const String locationToLaunchABikeFixUpCityNameBhopal = "Bhopal";
+const String locationToLaunchABikeFixUpCityNameThane = "Thane";
+const String locationToLaunchABikeFixUpCityNameVadodara = "Vadodara";
+const String locationToLaunchABikeFixUpCityNameVisakhapatnam = "Visakhapatnam";
+const String locationToLaunchABikeFixUpCityNamePimpriChinchwad = "Pimpri-Chinchwad";
+
+
+///------ Are Or Have You Been A Motorbike Mechanic? --------
+const String MotorbikeMechanicYES = "YES";
+const String MotorbikeMechanicNO = "NO";
+const String MotorbikeMechanicArrange = "We arrange Mechanic as soon as possible";
+
+
+///------ How Did You Here About Us? --------
+const String howDidYouHereAboutUsReadAnArticle = "Read an Article";
+const String howDidYouHereAboutUsColleagueOrFriend = "colleague or friend";
+const String howDidYouHereAboutUsNews = "News";
+const String howDidYouHereAboutUsOurWebsite = "Website";
+const String howDidYouHereAboutUsSocialMedia = "social media (Facebook,Twitter)";
+const String howDidYouHereAboutUsEmail = "Email";
+const String howDidYouHereAboutUsTV = "TV";
+const String howDidYouHereAboutUsNewspaper = "Newspaper";
 
 ///----Drop Down Menu----
 
@@ -359,210 +443,19 @@ const String dropDownMenuModel = "Model";
 const String dropDownMenuYear = "Year";
 const String dropDownMenuColor = "Color";
 
-/// ------ All option in Drop Down Menu // List show in Drop Down Menu --------
-
-/// choose Brand List Drop Down Menu
-var chooseBrandListDropDownMenu = <String>[
-  dropDownMenuChooseBrand,
-  companyNameKTM,
-  companyNameTVS,
-  companyNameBajaj,
-  companyNameRoyalEnfield,
-  companyNameHero,
-  // companyNameMahindra,
-  companyNameJawaMoto,
-  companyNameHonda,
-  companyNameSuzuki,
-  companyNameYamahaMotors
-];
-
-/// Brand List Drop Down Menu
-var brandListDropDownMenu = <String>[
-  dropDownMenuBrand,
-  companyNameKTM,
-  companyNameTVS,
-  companyNameBajaj,
-  companyNameRoyalEnfield,
-  companyNameHero,
-  // companyNameMahindra,
-  companyNameJawaMoto,
-  companyNameHonda,
-  companyNameSuzuki,
-  companyNameYamahaMotors
-];
-
-///choose Bike Model List Drop Down Menu
-var chooseModelListDropDownMenu = <String>[
-  dropDownMenuChooseModel,
-  bikeModelNameHeroPassionProi3S,
-  bikeModelNameHeroElectricOptima,
-  bikeModelNameHeroSplendorPlus,
-  bikeModelNameHeroHFDeluxe,
-  bikeModelNameHeroPleasurePlus110,
-  bikeModelNameHeroSuperSplendor,
-  bikeModelNameHeroGlamour125,
-  bikeModelNameRoyalEnfieldHimalayan,
-  bikeModelNameRoyalEnfieldClassic350,
-  bikeModelNameRoyalEnfieldBullet350,
-  bikeModelNameRoyalEnfieldMeteor350,
-  bikeModelNameHondaCBUnicorn160,
-  bikeModelNameHondaSP125,
-  bikeModelNameHondaActiva6G,
-  bikeModelNameHondaLivo,
-  bikeModelNameHondaCB350RS,
-  bikeModelNameHondaCBShine,
-  bikeModelNameHondaDio,
-  bikeModelNameJawaFortyTwo,
-  bikeModelNameJawa42,
-  bikeModelNameJawaPerak,
-  bikeModelNameJawaStandard,
-  bikeModelNameBajajCT100,
-  bikeModelNameBajajPulsar125,
-  bikeModelNameBajajPulsarNS125,
-  bikeModelNameBajajPlatina110,
-  bikeModelNameBajajPlatina100,
-  bikeModelNameBajajPulsarNS200,
-  bikeModelNameBajajPulsar150,
-  bikeModelNameTVSNtorq125,
-  bikeModelNameTVSXL100,
-  bikeModelNameTVSSport,
-  bikeModelNameTVSJupiter,
-  bikeModelNameTVSApacheRTR160,
-  bikeModelNameTVSVictor,
-  bikeModelNameTVSRadeon,
-  bikeModelNameYamahaFZX,
-  bikeModelNameYamahaMT15,
-  bikeModelNameYamahaFZSV30FI,
-  bikeModelNameYamahaFZ25,
-  bikeModelNameYamahaR15V30,
-  bikeModelNameYamahaMT09,
-  bikeModelNameKTMRC200,
-  bikeModelNameKTMRC125,
-  bikeModelNameKTMRC390,
-  bikeModelNameKTM200Duke,
-  bikeModelNameKTM390Duke,
-  bikeModelNameSuzukiGixxerSF,
-  bikeModelNameSuzukiAccess125SE,
-  bikeModelNameSuzukiBurgmanStreet125,
-  bikeModelNameSuzukiHayabusa,
-  bikeModelNameSuzukiIntruder,
-];
 
 
-///choose Bike Model List Drop Down Menu
-var modelListDropDownMenu = <String>[
-  dropDownMenuModel,
-  bikeModelNameHeroPassionProi3S,
-  bikeModelNameHeroElectricOptima,
-  bikeModelNameHeroSplendorPlus,
-  bikeModelNameHeroHFDeluxe,
-  bikeModelNameHeroPleasurePlus110,
-  bikeModelNameHeroSuperSplendor,
-  bikeModelNameHeroGlamour125,
-  bikeModelNameRoyalEnfieldHimalayan,
-  bikeModelNameRoyalEnfieldClassic350,
-  bikeModelNameRoyalEnfieldBullet350,
-  bikeModelNameRoyalEnfieldMeteor350,
-  bikeModelNameHondaCBUnicorn160,
-  bikeModelNameHondaSP125,
-  bikeModelNameHondaActiva6G,
-  bikeModelNameHondaLivo,
-  bikeModelNameHondaCB350RS,
-  bikeModelNameHondaCBShine,
-  bikeModelNameHondaDio,
-  bikeModelNameJawaFortyTwo,
-  bikeModelNameJawa42,
-  bikeModelNameJawaPerak,
-  bikeModelNameJawaStandard,
-  bikeModelNameBajajCT100,
-  bikeModelNameBajajPulsar125,
-  bikeModelNameBajajPulsarNS125,
-  bikeModelNameBajajPlatina110,
-  bikeModelNameBajajPlatina100,
-  bikeModelNameBajajPulsarNS200,
-  bikeModelNameBajajPulsar150,
-  bikeModelNameTVSNtorq125,
-  bikeModelNameTVSXL100,
-  bikeModelNameTVSSport,
-  bikeModelNameTVSJupiter,
-  bikeModelNameTVSApacheRTR160,
-  bikeModelNameTVSVictor,
-  bikeModelNameTVSRadeon,
-  bikeModelNameYamahaFZX,
-  bikeModelNameYamahaMT15,
-  bikeModelNameYamahaFZSV30FI,
-  bikeModelNameYamahaFZ25,
-  bikeModelNameYamahaR15V30,
-  bikeModelNameYamahaMT09,
-  bikeModelNameKTMRC200,
-  bikeModelNameKTMRC125,
-  bikeModelNameKTMRC390,
-  bikeModelNameKTM200Duke,
-  bikeModelNameKTM390Duke,
-  bikeModelNameSuzukiGixxerSF,
-  bikeModelNameSuzukiAccess125SE,
-  bikeModelNameSuzukiBurgmanStreet125,
-  bikeModelNameSuzukiHayabusa,
-  bikeModelNameSuzukiIntruder,
-];
-
-///choose Bike Manufacturing Years List Drop Down Menu
-var bikeManufacturingYearsDropDownMenu = <String>[
-  dropDownMenuYear,
-  bikeManufacturingYear2021,
-  bikeManufacturingYear2020,
-  bikeManufacturingYear2019,
-  bikeManufacturingYear2018,
-  bikeManufacturingYear2017,
-  bikeManufacturingYear2016,
-  bikeManufacturingYear2015,
-  bikeManufacturingYear2014,
-  bikeManufacturingYear2013,
-  bikeManufacturingYear2012,
-  bikeManufacturingYear2011,
-  bikeManufacturingYear2010,
-  bikeManufacturingYear2009,
-  bikeManufacturingYear2008,
-  bikeManufacturingYear2007,
-  bikeManufacturingYear2006,
-  bikeManufacturingYear2005,
-  bikeManufacturingYear2004,
-  bikeManufacturingYear2003,
-  bikeManufacturingYear2002,
-  bikeManufacturingYear2001,
-  bikeManufacturingYear2000,
-  bikeManufacturingYear1999,
-  bikeManufacturingYear1998,
-  bikeManufacturingYear1997,
-  bikeManufacturingYear1996,
-  bikeManufacturingYear1995,
-  bikeManufacturingYear1994,
-  bikeManufacturingYear1993,
-  bikeManufacturingYear1992,
-  bikeManufacturingYear1991,
-];
-
-/// choose Bike Colors List Drop Down Menu
-var bikeColorsDropDownMenu = <String>[
-  dropDownMenuColor,
-  bikeColorsBlue,
-  bikeColorsBrown,
-  bikeColorsBlack,
-  bikeColorsRed,
-  bikeColorsAromaBlue,
-  bikeColorsAmberBrownCandy,
-  bikeColorsAtlanticBlue,
-  bikeColorsAdriaticCandyBlue,
-  bikeColorsAdrianBlue,
-  bikeColorsAmberGold,
-  bikeColorsAromaGreen,
-  bikeColorsAlmondBrown,
-  bikeColorsAnthonyGray,
-  bikeColorsPureWhite,
-  bikeColorsGrasSplashWhite,
-  bikeColorsCandyPharaohYellow,
-  bikeColorsPearlPaleBlue,
-  bikeColorsSilverMetallic
+///  List Drop Down Menu
+var howDidYouHereAboutUsListDropDownMenu = <String>[
+  dropDownMenuSelect,
+howDidYouHereAboutUsReadAnArticle,
+howDidYouHereAboutUsColleagueOrFriend,
+howDidYouHereAboutUsNews,
+howDidYouHereAboutUsOurWebsite,
+howDidYouHereAboutUsSocialMedia,
+howDidYouHereAboutUsEmail,
+howDidYouHereAboutUsTV,
+howDidYouHereAboutUsNewspaper
 ];
 
 ///All Texts in GridView of Choose Bike Brand.
@@ -875,8 +768,8 @@ const String CheckListMenuTextSealKit = "Seal Kit";
 // const String CheckListMenuTextEngineOil = "Engine Oil";   // All ready Declared in Top
 
 /// String List, Custom Check List
-
 // General Service // String List, Custom Check List
+
 final List generalServiceListData = [
   CheckListMenuTextEngineOil,
   CheckListMenuTextAirFilter,
@@ -1094,4 +987,292 @@ final List fullEngineListData = [
   CheckListMenuTextCrankAssembly,
   CheckListMenuTextBearing,
   CheckListMenuTextSealKit
+];
+
+
+/// ------ All option in Drop Down Menu // List show in Drop Down Menu --------
+
+/// choose Brand List Drop Down Menu
+var chooseBrandListDropDownMenu = <String>[
+  dropDownMenuChooseBrand,
+  companyNameKTM,
+  companyNameTVS,
+  companyNameBajaj,
+  companyNameRoyalEnfield,
+  companyNameHero,
+  // companyNameMahindra,
+  companyNameJawaMoto,
+  companyNameHonda,
+  companyNameSuzuki,
+  companyNameYamahaMotors
+];
+
+/// Brand List Drop Down Menu
+var brandListDropDownMenu = <String>[
+  dropDownMenuBrand,
+  companyNameKTM,
+  companyNameTVS,
+  companyNameBajaj,
+  companyNameRoyalEnfield,
+  companyNameHero,
+  // companyNameMahindra,
+  companyNameJawaMoto,
+  companyNameHonda,
+  companyNameSuzuki,
+  companyNameYamahaMotors
+];
+
+///choose Bike Model List Drop Down Menu
+var chooseModelListDropDownMenu = <String>[
+  dropDownMenuChooseModel,
+  bikeModelNameHeroPassionProi3S,
+  bikeModelNameHeroElectricOptima,
+  bikeModelNameHeroSplendorPlus,
+  bikeModelNameHeroHFDeluxe,
+  bikeModelNameHeroPleasurePlus110,
+  bikeModelNameHeroSuperSplendor,
+  bikeModelNameHeroGlamour125,
+  bikeModelNameRoyalEnfieldHimalayan,
+  bikeModelNameRoyalEnfieldClassic350,
+  bikeModelNameRoyalEnfieldBullet350,
+  bikeModelNameRoyalEnfieldMeteor350,
+  bikeModelNameHondaCBUnicorn160,
+  bikeModelNameHondaSP125,
+  bikeModelNameHondaActiva6G,
+  bikeModelNameHondaLivo,
+  bikeModelNameHondaCB350RS,
+  bikeModelNameHondaCBShine,
+  bikeModelNameHondaDio,
+  bikeModelNameJawaFortyTwo,
+  bikeModelNameJawa42,
+  bikeModelNameJawaPerak,
+  bikeModelNameJawaStandard,
+  bikeModelNameBajajCT100,
+  bikeModelNameBajajPulsar125,
+  bikeModelNameBajajPulsarNS125,
+  bikeModelNameBajajPlatina110,
+  bikeModelNameBajajPlatina100,
+  bikeModelNameBajajPulsarNS200,
+  bikeModelNameBajajPulsar150,
+  bikeModelNameTVSNtorq125,
+  bikeModelNameTVSXL100,
+  bikeModelNameTVSSport,
+  bikeModelNameTVSJupiter,
+  bikeModelNameTVSApacheRTR160,
+  bikeModelNameTVSVictor,
+  bikeModelNameTVSRadeon,
+  bikeModelNameYamahaFZX,
+  bikeModelNameYamahaMT15,
+  bikeModelNameYamahaFZSV30FI,
+  bikeModelNameYamahaFZ25,
+  bikeModelNameYamahaR15V30,
+  bikeModelNameYamahaMT09,
+  bikeModelNameKTMRC200,
+  bikeModelNameKTMRC125,
+  bikeModelNameKTMRC390,
+  bikeModelNameKTM200Duke,
+  bikeModelNameKTM390Duke,
+  bikeModelNameSuzukiGixxerSF,
+  bikeModelNameSuzukiAccess125SE,
+  bikeModelNameSuzukiBurgmanStreet125,
+  bikeModelNameSuzukiHayabusa,
+  bikeModelNameSuzukiIntruder,
+];
+
+
+///choose Bike Model List Drop Down Menu
+var modelListDropDownMenu = <String>[
+  dropDownMenuModel,
+  bikeModelNameHeroPassionProi3S,
+  bikeModelNameHeroElectricOptima,
+  bikeModelNameHeroSplendorPlus,
+  bikeModelNameHeroHFDeluxe,
+  bikeModelNameHeroPleasurePlus110,
+  bikeModelNameHeroSuperSplendor,
+  bikeModelNameHeroGlamour125,
+  bikeModelNameRoyalEnfieldHimalayan,
+  bikeModelNameRoyalEnfieldClassic350,
+  bikeModelNameRoyalEnfieldBullet350,
+  bikeModelNameRoyalEnfieldMeteor350,
+  bikeModelNameHondaCBUnicorn160,
+  bikeModelNameHondaSP125,
+  bikeModelNameHondaActiva6G,
+  bikeModelNameHondaLivo,
+  bikeModelNameHondaCB350RS,
+  bikeModelNameHondaCBShine,
+  bikeModelNameHondaDio,
+  bikeModelNameJawaFortyTwo,
+  bikeModelNameJawa42,
+  bikeModelNameJawaPerak,
+  bikeModelNameJawaStandard,
+  bikeModelNameBajajCT100,
+  bikeModelNameBajajPulsar125,
+  bikeModelNameBajajPulsarNS125,
+  bikeModelNameBajajPlatina110,
+  bikeModelNameBajajPlatina100,
+  bikeModelNameBajajPulsarNS200,
+  bikeModelNameBajajPulsar150,
+  bikeModelNameTVSNtorq125,
+  bikeModelNameTVSXL100,
+  bikeModelNameTVSSport,
+  bikeModelNameTVSJupiter,
+  bikeModelNameTVSApacheRTR160,
+  bikeModelNameTVSVictor,
+  bikeModelNameTVSRadeon,
+  bikeModelNameYamahaFZX,
+  bikeModelNameYamahaMT15,
+  bikeModelNameYamahaFZSV30FI,
+  bikeModelNameYamahaFZ25,
+  bikeModelNameYamahaR15V30,
+  bikeModelNameYamahaMT09,
+  bikeModelNameKTMRC200,
+  bikeModelNameKTMRC125,
+  bikeModelNameKTMRC390,
+  bikeModelNameKTM200Duke,
+  bikeModelNameKTM390Duke,
+  bikeModelNameSuzukiGixxerSF,
+  bikeModelNameSuzukiAccess125SE,
+  bikeModelNameSuzukiBurgmanStreet125,
+  bikeModelNameSuzukiHayabusa,
+  bikeModelNameSuzukiIntruder,
+];
+
+///choose Bike Manufacturing Years List Drop Down Menu
+var bikeManufacturingYearsDropDownMenu = <String>[
+  dropDownMenuYear,
+  bikeManufacturingYear2021,
+  bikeManufacturingYear2020,
+  bikeManufacturingYear2019,
+  bikeManufacturingYear2018,
+  bikeManufacturingYear2017,
+  bikeManufacturingYear2016,
+  bikeManufacturingYear2015,
+  bikeManufacturingYear2014,
+  bikeManufacturingYear2013,
+  bikeManufacturingYear2012,
+  bikeManufacturingYear2011,
+  bikeManufacturingYear2010,
+  bikeManufacturingYear2009,
+  bikeManufacturingYear2008,
+  bikeManufacturingYear2007,
+  bikeManufacturingYear2006,
+  bikeManufacturingYear2005,
+  bikeManufacturingYear2004,
+  bikeManufacturingYear2003,
+  bikeManufacturingYear2002,
+  bikeManufacturingYear2001,
+  bikeManufacturingYear2000,
+  bikeManufacturingYear1999,
+  bikeManufacturingYear1998,
+  bikeManufacturingYear1997,
+  bikeManufacturingYear1996,
+  bikeManufacturingYear1995,
+  bikeManufacturingYear1994,
+  bikeManufacturingYear1993,
+  bikeManufacturingYear1992,
+  bikeManufacturingYear1991,
+];
+
+
+///  Location To Launch A Bike fix up List Drop Down Menu
+var locationToLaunchABikeFixUpCityNameListDropDownMenu = <String>[
+  dropDownMenuSelectLocation,
+  locationToLaunchABikeFixUpCityNameMumbai,
+  locationToLaunchABikeFixUpCityNameDelhi,
+  locationToLaunchABikeFixUpCityNameKolkata,
+  locationToLaunchABikeFixUpCityNameChennai,
+  locationToLaunchABikeFixUpCityNameBangalore,
+  locationToLaunchABikeFixUpCityNameHyderabad,
+  locationToLaunchABikeFixUpCityNameAhmedabad,
+  locationToLaunchABikeFixUpCityNamePune,
+  locationToLaunchABikeFixUpCityNameSurat,
+  locationToLaunchABikeFixUpCityNameJaipur,
+  locationToLaunchABikeFixUpCityNameKanpur,
+  locationToLaunchABikeFixUpCityNameLucknow,
+  locationToLaunchABikeFixUpCityNameNagpur,
+  locationToLaunchABikeFixUpCityNameIndore,
+  locationToLaunchABikeFixUpCityNamePatna,
+  locationToLaunchABikeFixUpCityNameBhopal,
+  locationToLaunchABikeFixUpCityNameThane,
+  locationToLaunchABikeFixUpCityNameVadodara,
+  locationToLaunchABikeFixUpCityNameVisakhapatnam,
+  locationToLaunchABikeFixUpCityNamePimpriChinchwad,
+];
+
+
+/// choose Bike Colors List Drop Down Menu
+var bikeColorsDropDownMenu = <String>[
+  dropDownMenuColor,
+  bikeColorsBlue,
+  bikeColorsBrown,
+  bikeColorsBlack,
+  bikeColorsRed,
+  bikeColorsAromaBlue,
+  bikeColorsAmberBrownCandy,
+  bikeColorsAtlanticBlue,
+  bikeColorsAdriaticCandyBlue,
+  bikeColorsAdrianBlue,
+  bikeColorsAmberGold,
+  bikeColorsAromaGreen,
+  bikeColorsAlmondBrown,
+  bikeColorsAnthonyGray,
+  bikeColorsPureWhite,
+  bikeColorsGrasSplashWhite,
+  bikeColorsCandyPharaohYellow,
+  bikeColorsPearlPaleBlue,
+  bikeColorsSilverMetallic
+];
+
+/// Time Frame For Buying A Franchise List Drop Down Menu
+var timeFrameForBuyingAFranchiseListDropDownMenu = <String>[
+  dropDownMenuSelect,
+  timeFrameForBuyingAFranchiseWithInMonth1,
+  timeFrameForBuyingAFranchiseWithInMonth2,
+  timeFrameForBuyingAFranchiseWithInMonth3,
+  timeFrameForBuyingAFranchiseWithInMonth4,
+  timeFrameForBuyingAFranchiseWithInMonth5,
+  timeFrameForBuyingAFranchiseWithInMonth6,
+  timeFrameForBuyingAFranchiseWithInMonth7,
+  timeFrameForBuyingAFranchiseWithInMonth8,
+  timeFrameForBuyingAFranchiseWithInMonth9,
+  timeFrameForBuyingAFranchiseWithInMonth10,
+  timeFrameForBuyingAFranchiseWithInMonth11,
+  timeFrameForBuyingAFranchiseWithInMonth12,
+  timeFrameForBuyingAFranchiseWithInYear1,
+  timeFrameForBuyingAFranchiseWithInYear2
+
+];
+
+/// Budget For Starting A Franchise List Drop Down Menu
+var budgetForStartingAFranchiseListDropDownMenu = <String>[
+  dropDownMenuSelectBudget,
+  budgetForStartingAFranchiseIs500000,
+  budgetForStartingAFranchiseIs1000000,
+  budgetForStartingAFranchiseIs1500000,
+  budgetForStartingAFranchiseIs2000000,
+  budgetForStartingAFranchiseIs2500000,
+  budgetForStartingAFranchiseIs3000000,
+  budgetForStartingAFranchiseIs3500000,
+  budgetForStartingAFranchiseIs4000000,
+  budgetForStartingAFranchiseIs4500000,
+  budgetForStartingAFranchiseIs5000000,
+  budgetForStartingAFranchiseIs5500000,
+  budgetForStartingAFranchiseIs6000000,
+  budgetForStartingAFranchiseIs6500000,
+  budgetForStartingAFranchiseIs7000000,
+  budgetForStartingAFranchiseIs7500000,
+  budgetForStartingAFranchiseIs8000000,
+  budgetForStartingAFranchiseIs8500000,
+  budgetForStartingAFranchiseIs9000000,
+  budgetForStartingAFranchiseIs10000000
+];
+
+
+///  Are Or Have You Been A Motorbike Mechanic? List Drop Down Menu
+var motorbikeMechanicListDropDownMenu = <String>[
+  dropDownMenuSelect,
+  MotorbikeMechanicYES,
+  MotorbikeMechanicNO,
+  MotorbikeMechanicArrange,
+
 ];

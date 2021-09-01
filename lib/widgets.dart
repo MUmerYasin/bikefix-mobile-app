@@ -334,17 +334,6 @@ class CustomDropDownMenu extends StatefulWidget {
   String customDropDownValue;
   var bikeDetailsData = <String>[];
 
-  // var countryList = [
-  //   "Albania",
-  //   "Afghanistan",
-  //   "Algeria",
-  //   "New Zealand",
-  //   "Samoa",
-  //   "San Marino",
-  //   "Satellite",
-  //   "Zambia",
-  //   "Zimbabwe"
-  // ];
   String getCustomDropDownValue() {
     return customDropDownValue;
   }
@@ -356,21 +345,18 @@ class CustomDropDownMenu extends StatefulWidget {
 class _CustomDropDownMenuState extends State<CustomDropDownMenu> {
   @override
   Widget build(BuildContext context) {
-    return
-
-
-        SizedBox(
+    return SizedBox(
       height: 65,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Neumorphic(
           style: NeumorphicStyle(
-            depth: 8,
+            depth: -8,
             shape: NeumorphicShape.flat,
-            shadowDarkColorEmboss: Colors.black.withOpacity(0.7),
+            shadowDarkColorEmboss: Colors.black.withOpacity(0.8),
             // boxShape: NeumorphicBoxShape.circle(),
 
-            shadowDarkColor: Colors.black.withOpacity(0.7),
+            shadowDarkColor: Colors.black.withOpacity(0.8),
             shadowLightColor: Colors.white,
           ),
           child: Padding(

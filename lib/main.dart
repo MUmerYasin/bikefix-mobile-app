@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/become_a_partner_screen.dart';
 import 'package:two_wheel_vehicle/screens/sell_your_vehicle_screen.dart';
 
 void main() => runApp(
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
       // home: RepairWorkScreen(), // Front End Final // Develop by Umer
       // home: EngineWorkScreen(), // Front End Final // Develop by Umer
       // home: GeneralServiceScreen(), // Front End Final // Develop by Umer
-      home: SellYourVehicleScreen(), // Front End Final // Develop by Umer
+      // home: SellYourVehicleScreen(), // Front End Final // Develop by Umer
+      home: BecomeAPartnerScreen(), // Front End Final // Develop by Umer
     );
   }
 }
