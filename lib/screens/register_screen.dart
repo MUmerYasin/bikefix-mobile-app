@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:two_wheel_vehicle/screens/login_screen.dart';
 import 'package:two_wheel_vehicle/screens/otp_verify_screen.dart';
 
 import '../config.dart';
@@ -119,6 +121,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 color: const Color(0xffd33937),
                                 fontWeight: FontWeight.w500,
                               ),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () { gotoScreen(context: context, screen: LoginScreen());
+                                },
                             ),
                           ],
                         ),

@@ -75,7 +75,8 @@ class CustomTextField extends StatelessWidget {
                 labelStyle: TextStyle(
                   fontFamily: textFontFamily,
                   fontSize: 14,
-                  color: const Color(0xff828284),
+                  color: Colors.black,
+                  // color: const Color(0xff828284),
                 ),
               ),
             ),
@@ -102,7 +103,8 @@ class SmallRoundedCornerButton extends StatelessWidget {
         style: NeumorphicStyle(
             depth: 10,
             shape: NeumorphicShape.flat,
-            shadowDarkColor: Colors.black12,
+            // shadowDarkColor: Colors.black12,
+            shadowDarkColor: Colors.red,
             shadowLightColor: Colors.white,
             shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 

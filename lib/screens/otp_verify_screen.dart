@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:two_wheel_vehicle/screens/home_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
 
 import '../config.dart';
@@ -16,96 +18,115 @@ class _OTPScreenState extends State<OTPScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Container(
-        padding: EdgeInsets.all(16),
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Image.asset(
-                otpIconImagePath,
-                width: 200,
-                height: 200,
+      body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: Container(
+          padding: EdgeInsets.all(16),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ///Image
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: Image.asset(
+                  otpIconImagePath,
+                  width: 200,
+                  height: 200,
+                ),
               ),
-            ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              /// please Enter OTP Description Text
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  pleaseEnterOTPDescriptionText,
+                  style: TextStyle(
+                    fontFamily: textFontFamily,
+                    fontSize: 18,
+                    color: const Color(0xff000000),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+
+              /// 5 Text Fields
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    pleaseEnterOTPDescriptionText,
-                    style: TextStyle(
-                      fontFamily: textFontFamily,
-                      fontSize: 18,
-                      color: const Color(0xff000000),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 6,
+                    child: CustomTextField(
+                      text: '1',
                     ),
-                    textAlign: TextAlign.left,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        child: CustomTextField(
-                          text: '',
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        child: CustomTextField(
-                          text: '',
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        child: CustomTextField(
-                          text: '',
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        child: CustomTextField(
-                          text: '',
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        child: CustomTextField(
-                          text: '',
-                        ),
-                      ),
-                    ],
-                  ),
-                  RoundedCornerButton(
-                    onPressed: () {
-                      gotoScreen(context: context, screen: MyProfileScreen());
-                    },
-                    child: buttonNameConfirm,
-                  ),
-                  Text.rich(
-                    TextSpan(
-                      style: TextStyle(
-                        fontFamily: textFontFamily,
-                        fontSize: 14,
-                        color: const Color(0xff000000),
-                      ),
-                      children: [
-                        TextSpan(
-                          text: buttonNameResend,
-                        ),
-                      ],
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 6,
+                    child: CustomTextField(
+                      text: '1',
                     ),
-                    textHeightBehavior:
-                        TextHeightBehavior(applyHeightToFirstAscent: false),
-                    textAlign: TextAlign.left,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 6,
+                    child: CustomTextField(
+                      text: '1',
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 6,
+                    child: CustomTextField(
+                      text: '1',
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 6,
+                    child: CustomTextField(
+                      text: '1',
+                    ),
                   ),
                 ],
               ),
-            ),
-          ],
+
+              ///button Confirm
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: RoundedCornerButton(
+                  onPressed: () {
+                    gotoScreen(context: context, screen: HomeScreen());
+                  },
+                  child: buttonNameConfirm,
+                ),
+              ),
+
+              ///Link(Text) Resend
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                      fontFamily: textFontFamily,
+                      fontSize: 14,
+                      color: const Color(0xff000000),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: buttonNameResend,
+                        recognizer: new TapGestureRecognizer()
+                          ..onTap = () {
+                            gotoScreen(context: context, screen: OTPScreen());
+                          },
+                      ),
+                    ],
+                  ),
+                  textHeightBehavior:
+                      TextHeightBehavior(applyHeightToFirstAscent: false),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

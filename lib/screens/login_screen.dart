@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/otp_verify_screen.dart';
 import 'package:two_wheel_vehicle/screens/register_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
@@ -44,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: RoundedCornerButton(
                       onPressed: () {
-                        gotoScreen(context: context, screen: RegisterScreen());
+                        gotoScreen(context: context, screen: OTPScreen());
                       },
                       child: buttonNameLogIn,
                     ),
@@ -68,6 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: buttonColor,
                               fontWeight: FontWeight.w500,
                             ),
+                            recognizer: new TapGestureRecognizer()
+                              ..onTap = () { gotoScreen(context: context, screen: RegisterScreen());
+                              },
                           ),
                         ],
                       ),

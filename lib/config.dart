@@ -21,6 +21,7 @@ const String screenTitleGeneralService = "General Service";
 const String screenTitleBodyWork = "Body Work";
 const String screenTitleRepairWork = "Repair Work";
 const String screenTitleEngineWork = "Engine Work";
+const String screenTitleSellYourVehicle = "Sell Your Vehicle";
 
 /// Text Font Family
 const String textFontFamily = "Roboto";
@@ -158,6 +159,15 @@ const String tailLightBulbReplacementIconCustomMenuImagePath =
 const String wiserRemovalIconCustomMenuImagePath =
     imagePathStart + "wiser_removal_icon.png";
 
+//Track Order Screen Images path
+const String pickYourVehicleTrackOrderScreenImagePath = imagePathStart + "pick_your_vehicle_track_order_icon.png";
+const String servicingTrackOrderScreenImagePath = imagePathStart + "servicing_track_order_icon.png";
+const String tickSecondTrackOrderScreenImagePath = imagePathStart + "tick_second_track_order_icon.png";
+const String tickTrackOrderScreenImagePath = imagePathStart + "tick_track_order_icon.png";
+const String vehicleDroppedTrackOrderScreenImagePath = imagePathStart + "vehicle_dropped_track_order_icon.png";
+const String vehiclePickedUpTrackOrderScreenImagePath = imagePathStart + "vehicle_picked_up_track_order_icon.png";
+
+
 ///Text Field Titles of Choose Bike Brand.
 const String textFieldName = "Name";
 const String textFieldDOB = "DOB";
@@ -170,6 +180,9 @@ const String textFieldStreet = "Street";
 const String textFieldCity = "City";
 const String textFieldZipCode = "Zip Code";
 const String textFieldYear = "Year";
+const String textFieldVehicleNumber = "Vehicle Number";
+const String textFieldKilometerDriven = "Kilometer Driven";
+const String textFieldEnterYourPhoneNumber = "Enter Your Phone Number";
 
 ///Buttons Name
 const String buttonNameHome = "Home";
@@ -192,6 +205,8 @@ const String buttonNamePayNow = "Pay Now";
 const String buttonNamePayLater = "Pay Later";
 const String buttonNameEdit = "Edit";
 const String buttonNameAdd = "Add";
+const String buttonNameValueMyBike = "Value My Bike";
+const String buttonNameTermAndCondition = "Term & Condition";
 
 /// Company names
 const String companyNameKTM = "KTM";
@@ -206,6 +221,7 @@ const String companyNameSuzuki = "Suzuki";
 const String companyNameYamahaMotors = "Yamaha Motors";
 
 ///------ Bike Model Names --------
+
 ///Bike Model Names Hero
 const String bikeModelNameHeroPassionProi3S = "Hero Passion Pro i3S";
 const String bikeModelNameHeroElectricOptima = "Hero Electric Optima";
@@ -276,6 +292,60 @@ const String bikeModelNameSuzukiBurgmanStreet125 = "Suzuki Burgman Street 125";
 const String bikeModelNameSuzukiHayabusa = "Suzuki Hayabusa";
 const String bikeModelNameSuzukiIntruder = "Suzuki Intruder";
 
+///------ Bike Manufacturing Years --------
+const String bikeManufacturingYear2021 = "2021";
+const String bikeManufacturingYear2020 = "2020";
+const String bikeManufacturingYear2019 = "2019";
+const String bikeManufacturingYear2018 = "2018";
+const String bikeManufacturingYear2017 = "2017";
+const String bikeManufacturingYear2016 = "2016";
+const String bikeManufacturingYear2015 = "2015";
+const String bikeManufacturingYear2014 = "2014";
+const String bikeManufacturingYear2013 = "2013";
+const String bikeManufacturingYear2012 = "2012";
+const String bikeManufacturingYear2011 = "2011";
+const String bikeManufacturingYear2010 = "2010";
+const String bikeManufacturingYear2009 = "2009";
+const String bikeManufacturingYear2008 = "2008";
+const String bikeManufacturingYear2007 = "2007";
+const String bikeManufacturingYear2006 = "2006";
+const String bikeManufacturingYear2005 = "2005";
+const String bikeManufacturingYear2004 = "2004";
+const String bikeManufacturingYear2003 = "2003";
+const String bikeManufacturingYear2002 = "2002";
+const String bikeManufacturingYear2001 = "2001";
+const String bikeManufacturingYear2000 = "2000";
+const String bikeManufacturingYear1999 = "1999";
+const String bikeManufacturingYear1998 = "1998";
+const String bikeManufacturingYear1997 = "1997";
+const String bikeManufacturingYear1996 = "1996";
+const String bikeManufacturingYear1995 = "1995";
+const String bikeManufacturingYear1994 = "1994";
+const String bikeManufacturingYear1993 = "1993";
+const String bikeManufacturingYear1992 = "1992";
+const String bikeManufacturingYear1991 = "1991";
+
+///------ Bike Colors --------
+const String bikeColorsBlue = "Blue";
+const String bikeColorsBrown = "Brown";
+const String bikeColorsBlack = "Black";
+const String bikeColorsRed = "Red";
+const String bikeColorsAromaBlue = "Aroma Blue";
+const String bikeColorsAmberBrownCandy = "Amber Brown Candy";
+const String bikeColorsAtlanticBlue = "Atlantic Blue";
+const String bikeColorsAdriaticCandyBlue = "Adriatic Candy Blue";
+const String bikeColorsAdrianBlue = "Adrian Blue";
+const String bikeColorsAmberGold = "Amber Gold";
+const String bikeColorsAromaGreen = "Aroma Green";
+const String bikeColorsAlmondBrown = "Almond Brown";
+const String bikeColorsAnthonyGray = "Anthony Gray";
+const String bikeColorsPureWhite = "Pure White";
+const String bikeColorsGrasSplashWhite = "Gras Splash White";
+const String bikeColorsCandyPharaohYellow = "Candy Pharaoh Yellow";
+const String bikeColorsPearlPaleBlue = "PEARL PALE BLUE";
+const String bikeColorsSilverMetallic = "Silver Metallic";
+
+
 ///----Drop Down Menu----
 
 ///First option In Drop Down Menu
@@ -294,6 +364,21 @@ const String dropDownMenuColor = "Color";
 /// choose Brand List Drop Down Menu
 var chooseBrandListDropDownMenu = <String>[
   dropDownMenuChooseBrand,
+  companyNameKTM,
+  companyNameTVS,
+  companyNameBajaj,
+  companyNameRoyalEnfield,
+  companyNameHero,
+  // companyNameMahindra,
+  companyNameJawaMoto,
+  companyNameHonda,
+  companyNameSuzuki,
+  companyNameYamahaMotors
+];
+
+/// Brand List Drop Down Menu
+var brandListDropDownMenu = <String>[
+  dropDownMenuBrand,
   companyNameKTM,
   companyNameTVS,
   companyNameBajaj,
@@ -363,6 +448,123 @@ var chooseModelListDropDownMenu = <String>[
   bikeModelNameSuzukiIntruder,
 ];
 
+
+///choose Bike Model List Drop Down Menu
+var modelListDropDownMenu = <String>[
+  dropDownMenuModel,
+  bikeModelNameHeroPassionProi3S,
+  bikeModelNameHeroElectricOptima,
+  bikeModelNameHeroSplendorPlus,
+  bikeModelNameHeroHFDeluxe,
+  bikeModelNameHeroPleasurePlus110,
+  bikeModelNameHeroSuperSplendor,
+  bikeModelNameHeroGlamour125,
+  bikeModelNameRoyalEnfieldHimalayan,
+  bikeModelNameRoyalEnfieldClassic350,
+  bikeModelNameRoyalEnfieldBullet350,
+  bikeModelNameRoyalEnfieldMeteor350,
+  bikeModelNameHondaCBUnicorn160,
+  bikeModelNameHondaSP125,
+  bikeModelNameHondaActiva6G,
+  bikeModelNameHondaLivo,
+  bikeModelNameHondaCB350RS,
+  bikeModelNameHondaCBShine,
+  bikeModelNameHondaDio,
+  bikeModelNameJawaFortyTwo,
+  bikeModelNameJawa42,
+  bikeModelNameJawaPerak,
+  bikeModelNameJawaStandard,
+  bikeModelNameBajajCT100,
+  bikeModelNameBajajPulsar125,
+  bikeModelNameBajajPulsarNS125,
+  bikeModelNameBajajPlatina110,
+  bikeModelNameBajajPlatina100,
+  bikeModelNameBajajPulsarNS200,
+  bikeModelNameBajajPulsar150,
+  bikeModelNameTVSNtorq125,
+  bikeModelNameTVSXL100,
+  bikeModelNameTVSSport,
+  bikeModelNameTVSJupiter,
+  bikeModelNameTVSApacheRTR160,
+  bikeModelNameTVSVictor,
+  bikeModelNameTVSRadeon,
+  bikeModelNameYamahaFZX,
+  bikeModelNameYamahaMT15,
+  bikeModelNameYamahaFZSV30FI,
+  bikeModelNameYamahaFZ25,
+  bikeModelNameYamahaR15V30,
+  bikeModelNameYamahaMT09,
+  bikeModelNameKTMRC200,
+  bikeModelNameKTMRC125,
+  bikeModelNameKTMRC390,
+  bikeModelNameKTM200Duke,
+  bikeModelNameKTM390Duke,
+  bikeModelNameSuzukiGixxerSF,
+  bikeModelNameSuzukiAccess125SE,
+  bikeModelNameSuzukiBurgmanStreet125,
+  bikeModelNameSuzukiHayabusa,
+  bikeModelNameSuzukiIntruder,
+];
+
+///choose Bike Manufacturing Years List Drop Down Menu
+var bikeManufacturingYearsDropDownMenu = <String>[
+  dropDownMenuYear,
+  bikeManufacturingYear2021,
+  bikeManufacturingYear2020,
+  bikeManufacturingYear2019,
+  bikeManufacturingYear2018,
+  bikeManufacturingYear2017,
+  bikeManufacturingYear2016,
+  bikeManufacturingYear2015,
+  bikeManufacturingYear2014,
+  bikeManufacturingYear2013,
+  bikeManufacturingYear2012,
+  bikeManufacturingYear2011,
+  bikeManufacturingYear2010,
+  bikeManufacturingYear2009,
+  bikeManufacturingYear2008,
+  bikeManufacturingYear2007,
+  bikeManufacturingYear2006,
+  bikeManufacturingYear2005,
+  bikeManufacturingYear2004,
+  bikeManufacturingYear2003,
+  bikeManufacturingYear2002,
+  bikeManufacturingYear2001,
+  bikeManufacturingYear2000,
+  bikeManufacturingYear1999,
+  bikeManufacturingYear1998,
+  bikeManufacturingYear1997,
+  bikeManufacturingYear1996,
+  bikeManufacturingYear1995,
+  bikeManufacturingYear1994,
+  bikeManufacturingYear1993,
+  bikeManufacturingYear1992,
+  bikeManufacturingYear1991,
+];
+
+/// choose Bike Colors List Drop Down Menu
+var bikeColorsDropDownMenu = <String>[
+  dropDownMenuColor,
+  bikeColorsBlue,
+  bikeColorsBrown,
+  bikeColorsBlack,
+  bikeColorsRed,
+  bikeColorsAromaBlue,
+  bikeColorsAmberBrownCandy,
+  bikeColorsAtlanticBlue,
+  bikeColorsAdriaticCandyBlue,
+  bikeColorsAdrianBlue,
+  bikeColorsAmberGold,
+  bikeColorsAromaGreen,
+  bikeColorsAlmondBrown,
+  bikeColorsAnthonyGray,
+  bikeColorsPureWhite,
+  bikeColorsGrasSplashWhite,
+  bikeColorsCandyPharaohYellow,
+  bikeColorsPearlPaleBlue,
+  bikeColorsSilverMetallic
+];
+
 ///All Texts in GridView of Choose Bike Brand.
 const String gridViewChooseBikeBrandText1 = companyNameKTM;
 const String gridViewChooseBikeBrandText2 = companyNameTVS;
@@ -403,6 +605,7 @@ const String applyCouponCodeText = "%Apply Coupon Code";
 
 const String bikeFixUpText = "Bike Fix Up";
 const String signUpDescriptionText = "Don’t Have account? ";
+const String TermsAndConditionsDescriptionText = "By clicking \"Value My Bike\" you agree to our\n";
 const String logInDescriptionText = "If already user, ";
 const String pleaseEnterOTPDescriptionText = "Please enter OTP";
 const String mailDescriptionText = "mail@mail.com";

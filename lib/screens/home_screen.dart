@@ -5,8 +5,11 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
 import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
+import 'package:two_wheel_vehicle/screens/body_work_screen.dart';
 import 'package:two_wheel_vehicle/screens/checkout_screen.dart';
 import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
+import 'package:two_wheel_vehicle/screens/engine_work_screen.dart';
+import 'package:two_wheel_vehicle/screens/general_service_screen.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/login_screen.dart';
 import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
@@ -18,6 +21,7 @@ import 'package:two_wheel_vehicle/screens/payment_successful_screen.dart';
 import 'package:two_wheel_vehicle/screens/payment_unsuccessful_screen.dart';
 import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
 import 'package:two_wheel_vehicle/screens/register_screen.dart';
+import 'package:two_wheel_vehicle/screens/repair_work_screen.dart';
 import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
@@ -36,23 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
   ///Bottom Navigation Bar
 
   int _selectedIndex = 0;
-
-  // static const TextStyle optionStyle =
-  // TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  //
-  // static List<Widget> _widgetOptions = <Widget>[
-  //   Container(height: 0.0,
-  //   child: Row(
-  //     children: [
-  //       // Scaffold.of(context).openEndDrawer(),
-  //
-  //     ],
-  //   ),),
-  //   Container(height: 0.0,),
-  //   Container(height: 0.0,),
-  //   Container(height: 0.0,),
-  //   Container(height: 0.0,),
-  // ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -1169,12 +1156,13 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              ///GeneralServiceScreen
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => PaymentUnsuccessfulScreen()));
+                          builder: (context) => GeneralServiceScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1214,12 +1202,13 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   ],
                 ),
               ),
+              ///EngineWorkScreen
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => PaymentMethodScreen()));
+                          builder: (context) => EngineWorkScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1252,12 +1241,13 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   ],
                 ),
               ),
+              ///BodyWorkScreen
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => SubscriptionScreen()));
+                          builder: (context) => BodyWorkScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1291,12 +1281,13 @@ class _HomePageSecondMenuState extends State<HomePageSecondMenu> {
                   ],
                 ),
               ),
+              ///RepairWorkScreen
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                          builder: (context) => ChooseBikeBrand()));
+                          builder: (context) => RepairWorkScreen()));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
