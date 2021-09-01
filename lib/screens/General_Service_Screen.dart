@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:two_wheel_vehicle/config.dart';
 
+import '../widgets.dart';
 import 'Body_Work_Screen.dart';
 import 'Track_Screen.dart';
 
@@ -23,10 +24,13 @@ class _General_ServiceState extends State<General_Service> {
         elevation: 0,
         title: Text('General Service',style: TextStyle(color: Colors.black),),
         backgroundColor: NeumorphicColors.background,
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },icon: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+            appsign()
+            ],
+          ),
         ),
         centerTitle: true,
       ),

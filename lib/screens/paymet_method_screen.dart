@@ -24,10 +24,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
         elevation: 0,
         title: Text('Payment Method',style: TextStyle(color: Colors.black),),
         backgroundColor: NeumorphicColors.background,
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },icon: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              appsign()
+            ],
+          ),
         ),
         centerTitle: true,
       ),

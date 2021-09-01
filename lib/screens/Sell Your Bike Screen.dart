@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 
+import '../widgets.dart';
 import 'CheckOut_Screen.dart';
 
 class Sell_Your_Bike extends StatefulWidget {
@@ -27,10 +28,13 @@ class _Sell_Your_BikeState extends State<Sell_Your_Bike> {
         elevation: 0,
         title: Text('Sell Your Vehicle',style: TextStyle(color: Colors.black),),
         backgroundColor: NeumorphicColors.background,
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },icon: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              appsign()
+            ],
+          ),
         ),
         centerTitle: true,
       ),
@@ -187,7 +191,6 @@ class _Sell_Your_BikeState extends State<Sell_Your_Bike> {
 
                    ],
                  ),
-             
 
               Center(
                 child: Column(

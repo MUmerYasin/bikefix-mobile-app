@@ -23,10 +23,13 @@ class _ChooseState extends State<Choose> {
         backgroundColor: NeumorphicColors.background,
         elevation: 0,
         title: Text('Choose Bike Brand',style: TextStyle(color: Colors.black),),
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },icon: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              appsign()
+            ],
+          ),
         ),
         centerTitle: true,
       ),

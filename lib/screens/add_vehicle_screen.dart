@@ -24,7 +24,14 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
         appBar: AppBar(
           backgroundColor: NeumorphicColors.background,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-          leading: Icon(Icons.arrow_back_ios),
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 18.0),
+            child: Row(
+              children: [
+                appsign()
+              ],
+            ),
+          ),
           title: Text(
             'Add Vehicle',
             style: TextStyle(

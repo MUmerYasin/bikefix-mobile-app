@@ -5,6 +5,8 @@ import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/payment_Screen.dart';
 import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
 
+import '../widgets.dart';
+
 class CheckOut extends StatefulWidget {
   const CheckOut({Key? key}) : super(key: key);
 
@@ -22,10 +24,13 @@ class _CheckOutState extends State<CheckOut> {
         elevation: 0,
         title: Text(' Checkout',style: TextStyle(color: Colors.black),),
         backgroundColor: NeumorphicColors.background,
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },icon: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              appsign()
+            ],
+          ),
         ),
         centerTitle: true,
       ),

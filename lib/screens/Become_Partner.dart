@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 
+import '../widgets.dart';
 import 'Sell Your Bike Screen.dart';
 import 'Time_Screen.dart';
 
@@ -29,10 +30,13 @@ class _Become_PartnerState extends State<Become_Partner> {
         elevation: 0,
         title: Text('Become a Partner',style: TextStyle(color: Colors.black),),
         backgroundColor: NeumorphicColors.background,
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },icon: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              appsign()
+            ],
+          ),
         ),
         centerTitle: true,
       ),

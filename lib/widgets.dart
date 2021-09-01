@@ -387,11 +387,31 @@ class _adddState extends State<addd> {
 
 
 
+class appsign extends StatefulWidget {
+  const appsign({Key? key}) : super(key: key);
 
+  @override
+  _appsignState createState() => _appsignState();
+}
 
-
-
-
+class _appsignState extends State<appsign> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: (){Navigator.pop(context);},
+      child: Container(
+        width: 30,
+        height: 30,
+        child: Card(
+          color: NeumorphicColors.background,
+          elevation: 11,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+          child: Icon(CupertinoIcons.back,size: 17,color: Colors.black,),
+        ),
+      ),
+    );
+  }
+}
 
 
 

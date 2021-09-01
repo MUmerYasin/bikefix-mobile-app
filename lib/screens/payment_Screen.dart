@@ -3,6 +3,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../widgets.dart';
 import 'Payment_Success.dart';
 
 class Payment_Unseccussfull_Screen extends StatefulWidget {
@@ -21,10 +22,14 @@ class _Payment_Unseccussfull_ScreenState extends State<Payment_Unseccussfull_Scr
         elevation: 0,
         backgroundColor: NeumorphicColors.background,
         title: Text(''),
-        leading: GestureDetector( onTap: (){
-          Navigator.pop(context);
-        },
-            child: Icon(Icons.arrow_back_ios_outlined,color: Colors.black,)),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              appsign()
+            ],
+          ),
+        ),
       ),
       body: SafeArea(
        child: Center(

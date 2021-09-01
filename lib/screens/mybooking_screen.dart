@@ -19,10 +19,14 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
         appBar: AppBar(
           backgroundColor: backgroundColor,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-          leading: InkWell( onTap: (){
-            Navigator.pop(context);
-          },
-              child: Icon(Icons.arrow_back_ios)),
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 18.0),
+            child: Row(
+              children: [
+                appsign()
+              ],
+            ),
+          ),
           title: Text(
             'My Bookings',
             style: TextStyle(

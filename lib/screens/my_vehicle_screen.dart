@@ -4,6 +4,7 @@ import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 
 import '../config.dart';
+import '../widgets.dart';
 
 class MyVehicles extends StatefulWidget {
   @override
@@ -18,7 +19,14 @@ class _MyVehiclesState extends State<MyVehicles> {
         appBar: AppBar(
           backgroundColor: backgroundColor,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-          leading: Icon(Icons.arrow_back_ios),
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 18.0),
+            child: Row(
+              children: [
+                appsign()
+              ],
+            ),
+          ),
           title: Text(
             'My Vehicle',
             style: TextStyle(
