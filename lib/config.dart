@@ -5,6 +5,8 @@ import 'dart:ui';
 Color backgroundColor = Color(0xffc4c4c4);
 Color buttonColor = Color(0xffE34D3D);
 
+// Color buttonColor = Color(0xff2DAC0066);
+
 //backgroundColor: NeumorphicColors.background,
 
 /// Screen Title of All Screen
@@ -23,6 +25,7 @@ const String screenTitleRepairWork = "Repair Work";
 const String screenTitleEngineWork = "Engine Work";
 const String screenTitleSellYourVehicle = "Sell Your Vehicle";
 const String screenTitleBecomeAPartner = "Become a Partner";
+const String screenTitleTrackOrder = "Track Order";
 
 /// Text Font Family
 const String textFontFamily = "Roboto";
@@ -445,19 +448,6 @@ const String dropDownMenuColor = "Color";
 
 
 
-///  List Drop Down Menu
-var howDidYouHereAboutUsListDropDownMenu = <String>[
-  dropDownMenuSelect,
-howDidYouHereAboutUsReadAnArticle,
-howDidYouHereAboutUsColleagueOrFriend,
-howDidYouHereAboutUsNews,
-howDidYouHereAboutUsOurWebsite,
-howDidYouHereAboutUsSocialMedia,
-howDidYouHereAboutUsEmail,
-howDidYouHereAboutUsTV,
-howDidYouHereAboutUsNewspaper
-];
-
 ///All Texts in GridView of Choose Bike Brand.
 const String gridViewChooseBikeBrandText1 = companyNameKTM;
 const String gridViewChooseBikeBrandText2 = companyNameTVS;
@@ -766,6 +756,28 @@ const String CheckListMenuTextSealKit = "Seal Kit";
 // const String CheckListMenuTextSparkPlug = "Spark Plug";    // All ready Declared in Top
 // const String CheckListMenuTextDCKit = "DC Kit";   // All ready Declared in Top
 // const String CheckListMenuTextEngineOil = "Engine Oil";   // All ready Declared in Top
+
+
+/// Track Order Screen String
+const String trackOrderScreenOrderID = "Order ID";
+const String trackOrderScreenOrderIDValue = "645238";
+const String trackOrderScreenServiceCenter = "Service Center";
+const String trackOrderScreenServiceCenterValue = "Bikefixup Workshop #1";
+const String trackOrderScreenRequirePickup = "Require Pickup";
+const String trackOrderScreenTrackDetails = "Track Details";
+const String trackOrderScreenTime = "03:10pm";
+const String trackOrderScreenDate = "05/04/2022";
+const String trackOrderScreenTimeLineText1 = "Your order has been received";
+const String trackOrderScreenTimeLineText2 = "Your order had been confirmed";
+const String trackOrderScreenTimeLineText3 = "We are on the way to pickup your vehicle";
+const String trackOrderScreenTimeLineText4 = "Vehicle picked up";
+const String trackOrderScreenTimeLineText5 = "Vehicle servicing in progress";
+const String trackOrderScreenTimeLineText6 = "Servicing of your vehicle is complete";
+const String trackOrderScreenTimeLineText7 = "Vehicle dropped";
+const String trackOrderScreenTimeLineText8 = "Thanks for visiting";
+
+
+
 
 /// String List, Custom Check List
 // General Service // String List, Custom Check List
@@ -1275,4 +1287,18 @@ var motorbikeMechanicListDropDownMenu = <String>[
   MotorbikeMechanicNO,
   MotorbikeMechanicArrange,
 
+];
+
+
+///  List Drop Down Menu
+var howDidYouHereAboutUsListDropDownMenu = <String>[
+  dropDownMenuSelect,
+  howDidYouHereAboutUsReadAnArticle,
+  howDidYouHereAboutUsColleagueOrFriend,
+  howDidYouHereAboutUsNews,
+  howDidYouHereAboutUsOurWebsite,
+  howDidYouHereAboutUsSocialMedia,
+  howDidYouHereAboutUsEmail,
+  howDidYouHereAboutUsTV,
+  howDidYouHereAboutUsNewspaper
 ];
