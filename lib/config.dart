@@ -213,6 +213,7 @@ const String buttonNameOther = "Other";
 const String buttonNameTryAgain = "Try Again";
 const String buttonNameBuyNow = "Buy Now";
 const String buttonNamePayNow = "Pay Now";
+const String buttonNameBookNow = "Book Now";
 const String buttonNamePayLater = "Pay Later";
 const String buttonNameEdit = "Edit";
 const String buttonNameAdd = "Add";
@@ -517,6 +518,22 @@ const String timeInAMText = "10am";
 const String timeInPMText = "7pm";
 const String TimingSupportText =
     "Timing " + timeInAMText + " - " + timeInPMText;
+
+// Time And Date Class Screen
+
+const String selectTimeText = "Select Time";
+const String amText = " AM";
+const String pmText = " PM";
+const String timeBetweenText12 = "12-01";
+const String timeBetweenText1 = "01-02";
+const String timeBetweenText2= "02-03";
+const String timeBetweenText3 = "03-04";
+const String timeBetweenText4 = "04-05";
+const String timeBetweenText5 = "05-06";
+const String timeBetweenText6 = "06-07";
+const String timeBetweenText7 = "07-08";
+
+const String RequirePickUpTimeText = "Require Pickup";
 
 const String termsConditionsHelpSupportText =
     "Terms & Conditions | Privacy Policy";

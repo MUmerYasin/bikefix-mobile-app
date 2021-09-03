@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/become_a_partner_screen.dart';
+import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/sell_your_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
+import 'package:two_wheel_vehicle/screens/time_and_date_screen.dart';
 import 'package:two_wheel_vehicle/screens/track_order_screen.dart';
 
 void main() => runApp(
@@ -50,7 +52,8 @@ class MyApp extends StatelessWidget {
       // home: GeneralServiceScreen(), // Front End Final // Develop by Umer
       // home: SellYourVehicleScreen(), // Front End Final // Develop by Umer
       // home: BecomeAPartnerScreen(), // Front End Final // Develop by Umer
-      home: TrackOrderScreen(), // Front End Final // Develop by Umer
+      // home: TrackOrderScreen(), // Front End Final // Develop by Umer
+      home: TimeAndDateScreen(), // Front End Final // Develop by Umer
     );
   }
 }

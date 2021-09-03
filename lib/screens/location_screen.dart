@@ -21,9 +21,10 @@ class _LocationScreenState extends State<LocationScreen> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: backgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: Icon(Icons.arrow_back_ios),
+        leading: Icon(Icons.arrow_back_ios, color: Colors.black,),
         title: Text(
           screenTitleLocation,
           style: TextStyle(
@@ -52,13 +53,12 @@ class _LocationScreenState extends State<LocationScreen> {
               ///images map images
               Neumorphic(
                 style: NeumorphicStyle(
-                    depth: 8,
-                    shape: NeumorphicShape.flat,
-                    shadowDarkColor: Colors.black12,
-                    shadowLightColor: Colors.white,
-                    shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
-
-                    //  boxShape: NeumorphicBoxShape.circle(),
+                  shadowDarkColor: Colors.black.withOpacity(0.6),
+                  depth: 8,
+                  shape: NeumorphicShape.flat,
+                  // shadowDarkColor: Colors.black12,
+                  shadowLightColor: Colors.white,
+                  shadowDarkColorEmboss: Colors.black.withOpacity(0.8),
                     ),
                 child: Container(
                   // height: 200,
@@ -108,6 +108,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 text: textFieldZipCode,
               ),
 
+              /// Button Home, Office, Other
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(

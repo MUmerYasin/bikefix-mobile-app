@@ -33,6 +33,9 @@ dependencies:
   device_preview: ^0.7.4
   carousel_slider: ^4.0.0
   timeline_tile: ^2.0.0
+  table_calendar: ^3.0.2
+
+
 
 dev_dependencies:
   flutter_test:

@@ -104,7 +104,7 @@ class SmallRoundedCornerButton extends StatelessWidget {
             depth: 10,
             shape: NeumorphicShape.flat,
             // shadowDarkColor: Colors.black12,
-            shadowDarkColor: Colors.red,
+            shadowDarkColor: color! ? buttonColor : Colors.black,
             shadowLightColor: Colors.white,
             shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 
