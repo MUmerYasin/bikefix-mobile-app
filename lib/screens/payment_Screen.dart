@@ -45,14 +45,15 @@ class _Payment_Unseccussfull_ScreenState extends State<Payment_Unseccussfull_Scr
                    height: 160,
                    child: Column(
                      children: [
-                       Icon(FontAwesomeIcons.windowClose,size: 110,color: Colors.redAccent,),
+                       Padding(
+                         padding: const EdgeInsets.only(top: 8.0),
+                         child: Image.asset('assets/icons/unse.png'),
+                       ),
                        Padding(
                          padding: const EdgeInsets.only(top: 15.0),
                          child: Text("Payment Unsuccessful",style: GoogleFonts.roboto(fontSize: 19, fontWeight: FontWeight.w500),),
                        ),
-
                      ],
-
                    ),
                  ),
                ),

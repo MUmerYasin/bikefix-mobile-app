@@ -139,7 +139,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       onPressed: () {
                         gotoScreen(context: context, screen: MyVehicles());
                       },
-                      child: 'Save Addr.',
+                      child: 'Save Address.',
                     ),
                   ),
                 ])));

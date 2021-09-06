@@ -15,9 +15,11 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
-          backgroundColor: backgroundColor,
+
+          elevation: 0,
+          backgroundColor: NeumorphicColors.background,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
           leading: Padding(
             padding: const EdgeInsets.only(left: 18.0),
@@ -117,7 +119,7 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset('assets/icons/ktm_icon.png'),
+                                Image.asset('bike/ktm_logo.png'),
                                 Column(
                                   children: [
                                     Text(
@@ -278,7 +280,7 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset('assets/icons/ktm_icon.png'),
+                                Image.asset('bike/ktm_logo.png'),
                                 Column(
                                   children: [
                                     Text(
@@ -439,7 +441,7 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset('assets/icons/ktm_icon.png'),
+                                Image.asset('bike/ktm_logo.png'),
                                 Column(
                                   children: [
                                     Text(
@@ -600,7 +602,7 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset('assets/icons/ktm_icon.png'),
+                                Image.asset('bike/ktm_logo.png'),
                                 Column(
                                   children: [
                                     Text(
@@ -761,7 +763,7 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset('assets/icons/ktm_icon.png'),
+                                Image.asset('bike/ktm_logo.png'),
                                 Column(
                                   children: [
                                     Text(
@@ -922,7 +924,7 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset('assets/icons/ktm_icon.png'),
+                                Image.asset('bike/ktm_logo.png'),
                                 Column(
                                   children: [
                                     Text(
@@ -1083,7 +1085,7 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset('assets/icons/ktm_icon.png'),
+                                Image.asset('bike/ktm_logo.png'),
                                 Column(
                                   children: [
                                     Text(

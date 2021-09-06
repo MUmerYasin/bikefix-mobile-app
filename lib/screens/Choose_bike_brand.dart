@@ -19,63 +19,84 @@ class _ChooseState extends State<Choose> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: NeumorphicColors.background,
-      appBar:AppBar(
+      appBar: AppBar(
         backgroundColor: NeumorphicColors.background,
         elevation: 0,
-        title: Text('Choose Bike Brand',style: TextStyle(color: Colors.black),),
+        title: Text(
+          'Choose Bike Brand',
+          style: TextStyle(color: Colors.black),
+        ),
         leading: Padding(
           padding: const EdgeInsets.only(left: 18.0),
           child: Row(
-            children: [
-              appsign()
-            ],
+            children: [appsign()],
           ),
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: customTextField(text: 'Find', icon: CupertinoIcons.search),
-            ),
+          child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: customTextField(text: 'Find', icon: CupertinoIcons.search),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 18.0),
+            child: Container(
+              margin: EdgeInsets.all(15),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
 
-            Padding(
-              padding: const EdgeInsets.only(top: 18.0),
-              child: SizedBox(
-                height: 400,
-                width: 330,
-                child: GridView.count(crossAxisCount: 3,crossAxisSpacing:15,mainAxisSpacing:25,children: [
-                  CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png'),
-                  CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
-                  CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png'),
-                  CustomCard(text: 'Royal enfield', imagepath: 'bike/royal_enfield_logo.png'),
-                  CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png'),
-                  CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
-                  CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
-                  CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png'),
-                  CustomCard(text: 'Royal enfield', imagepath: 'bike/royal_enfield_logo.png')
-                ],),
-              ),
-            ),
-
-            SingleChildScrollView(
-              child: SizedBox(
-                height: 50,
-                child:  ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Sell_Your_Bike()));
-                  },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child: Text(' Proceed ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                  height: 400,
+                  width: MediaQuery.of(context).size.width,
+                  child: GridView.count(
+                    physics: NeverScrollableScrollPhysics(),
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 25,
+                    children: [
+                      CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png'),
+                      CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
+                      CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png'),
+                      CustomCard(
+                          text: 'Royal enfield',
+                          imagepath: 'bike/royal_enfield_logo.png'),
+                      CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png'),
+                      CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
+                      CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
+                      CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png'),
+                      CustomCard(
+                          text: 'Royal enfield',
+                          imagepath: 'bike/royal_enfield_logo.png')
+                    ],
+                  ),
                 ),
               ),
             ),
-
-
-          ],
-        )
-      ),
+          ),
+          SingleChildScrollView(
+            child: SizedBox(
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Sell_Your_Bike()));
+                },
+                style: ElevatedButton.styleFrom(
+                    shadowColor: Color(0xfff93527), primary: small),
+                child: Text(
+                  ' Proceed ',
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 19),
+                ),
+              ),
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
-

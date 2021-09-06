@@ -199,7 +199,7 @@ class CustomConatiner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: 30,
       child: Neumorphic(
         style: NeumorphicStyle(
           //  boxShape: NeumorphicBoxShape.circle(),
@@ -214,7 +214,7 @@ class CustomConatiner extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 )),
             onPressed: onPressed,
-            child: Center(child: Text(child ?? ''))),
+            child: Center(child: Text(child ?? '',style: TextStyle(color: color! ? Colors.white : Colors.black,),))),
       ),
     );
   }
@@ -236,7 +236,10 @@ class _customTextFieldState extends State<customTextField> {
   @override
   Widget build(BuildContext context) {
     return Neumorphic(
-      style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+      style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor:
+      Colors.white,shadowDarkColorEmboss: Colors.black54,
+          shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color:
+          NeumorphicColors.background),
       child: Container(
         height: 50,
         child: TextFormField(
@@ -369,17 +372,19 @@ class addd extends StatefulWidget {
 class _adddState extends State<addd> {
   @override
   Widget build(BuildContext context) {
-    return  Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30)
-        ),
-        width: 30,
-        height: 30,
-        child: Card(
-          elevation: 13,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-          child: Icon(Icons.add,size: 15,),
-        )
+    return   Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30)
+          ),
+          width: 35,
+          height: 35,
+          child: Card(
+            color: NeumorphicColors.background,
+            elevation: 13,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            child: Icon(Icons.add,size: 15,),
+          )
+
 
     );
   }
@@ -412,6 +417,151 @@ class _appsignState extends State<appsign> {
     );
   }
 }
+
+class smallicons extends StatefulWidget {
+  const smallicons({Key? key, required this.imagee, this.color}) : super(key: key);
+
+  final String imagee;
+  final color;
+
+  @override
+  _smalliconsState createState() => _smalliconsState();
+}
+
+class _smalliconsState extends State<smallicons> {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(side: BorderSide(color: Colors.green,),borderRadius: BorderRadius.circular(20)),
+      child: Container(
+        width: 39,
+        height: 39,
+
+        decoration: BoxDecoration(
+            color: widget.color,
+          image: DecorationImage(
+            image: AssetImage(widget.imagee)
+
+          ) ,
+          borderRadius: BorderRadius.circular(40)
+        ),
+      ),
+    );
+  }
+}
+
+
+class linee extends StatefulWidget {
+  const linee({Key? key}) : super(key: key);
+
+  @override
+  _lineeState createState() => _lineeState();
+}
+
+class _lineeState extends State<linee> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 2,
+      height: 30,
+      decoration: BoxDecoration(
+        color: Colors.green
+      ),
+    );
+  }
+}
+
+class shape extends StatefulWidget {
+  const shape({Key? key}) : super(key: key);
+
+  @override
+  _shapeState createState() => _shapeState();
+}
+
+class _shapeState extends State<shape> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 6,
+      width: MediaQuery.of(context).size.width,
+      child: Neumorphic(
+        margin: EdgeInsets.only(right: 10,left: 10),
+        style:  NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor:
+        Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,
+            shadowDarkColor: Colors.white,border:
+          NeumorphicBorder(width: .1,color: Colors.white70,isEnabled: true),
+            color:Colors.white,
+            ),
+        )
+
+    );
+  }
+}
+
+
+class highButton extends StatelessWidget {
+  Function()? onPressed;
+  String? child;
+  bool? color;
+
+  highButton({this.onPressed, this.child, this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 40,
+      child: Neumorphic(
+        style: NeumorphicStyle(
+            shadowDarkColor: Colors.black12,
+            shadowLightColor: Colors.white,
+            shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
+
+          //  boxShape: NeumorphicBoxShape.circle(),
+        ),
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: color! ? buttonColor : Colors.red,
+                textStyle: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 18,
+                  color: const Color(0xffffffff),
+                  fontWeight: FontWeight.w500,
+                )),
+            onPressed: onPressed,
+            child: Center(child: Text(child ?? ''))),
+      ),
+    );
+  }
+}
+
+class contain extends StatefulWidget {
+  const contain({Key? key, required this.image}) : super(key: key);
+  final String image;
+
+  @override
+  _containState createState() => _containState();
+}
+
+class _containState extends State<contain> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 20,
+      width: 10,
+      child: Image.asset(widget.image,width: 1,height: 0.2,),
+      decoration: BoxDecoration(
+        color: NeumorphicColors.background,
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.green)
+      ),
+    );
+  }
+}
+
+
+
+
+
 
 
 

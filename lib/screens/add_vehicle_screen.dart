@@ -22,6 +22,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
     return Scaffold(
         backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: NeumorphicColors.background,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
           leading: Padding(
@@ -51,12 +52,9 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                   Padding(
                     padding: const EdgeInsets.only(top: 18.0),
                     child: Neumorphic(
-
+                      margin: EdgeInsets.all(10),
                       style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
-                      child: Container(
-                        width: 300,
-                        height: 60,
-                        child: Padding(
+                      child: Padding(
                           padding: const EdgeInsets.all(0.0),
                           child: ListTile(
                             leading: Padding(
@@ -71,15 +69,12 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                         ),
                       ),
                     ),
-                  ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 22.0),
+                    padding: const EdgeInsets.only(top: 10.0),
                     child: Neumorphic(
+                      margin: EdgeInsets.all(10),
                       style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
-                      child: Container(
-                        width: 300,
-                        height: 60,
-                        child: Padding(
+                      child:  Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: DropdownButton<String>(
                             underline: SizedBox(),
@@ -103,7 +98,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                         ),
                       ),
                     ),
-                  ),
+                  
                   Padding(
                     padding: const EdgeInsets.only(top: 28.0),
                     child: Container( width: 300,

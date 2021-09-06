@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,6 +17,9 @@ class RepairWork extends StatefulWidget {
 }
 
 class _BodyWorkState extends State<RepairWork> {
+
+  final fix = EdgeInsets.only(bottom: 8);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,10 +47,9 @@ class _BodyWorkState extends State<RepairWork> {
                           Padding(
                               padding: const EdgeInsets.only(top: 18.0),
                               child: Neumorphic(
+                                  margin: EdgeInsets.all(15),
                                   style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                  child: Container(
-                                      width: 300,
-                                      height: 295,
+
                                       child: Column(
                                           children: [
                                             Padding(
@@ -56,18 +59,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                 title: Text('Break Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                               ),
                                             ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(right: 18.0),
-                                              child: Neumorphic(
-                                                style: NeumorphicStyle(
-                                                    shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                child: Container(
-                                                  width: 240,
-                                                  height: 3,
-                                                  color: Colors.white,
-                                                ),
-                                              ),
-                                            ),
+                                           shape(),
                                             Row(
                                               children: [
                                                 Padding(
@@ -185,32 +177,26 @@ class _BodyWorkState extends State<RepairWork> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                              child: Neumorphic(
-                                                style: NeumorphicStyle(
-                                                    shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                child: Container(
-                                                  width: 240,
-                                                  height: 3,
-                                                  color: Colors.white,
-                                                ),
-                                              ),
+                                              padding: const EdgeInsets.only(top: 8.0),
+                                              child: shape(),
                                             ),
                                             Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
                                                 Padding(
                                                   padding: const EdgeInsets.only(top: 14.0),
                                                   child: RichText(text: TextSpan(
                                                       children: <TextSpan>[
-                                                        TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                        TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                         TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                       ]
                                                   )),
                                                 ),
 
                                                 Padding(
-                                                  padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                  child: SizedBox(
+                                                  padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                  child: Container(
+                                                    margin: fix,
                                                     width: 80,
                                                     height: 35,
                                                     child:  ElevatedButton(
@@ -229,18 +215,15 @@ class _BodyWorkState extends State<RepairWork> {
                                           ]
                                       )
                                   )
-                              )
-                          ),Center(
+                              ),
+                          Center(
                               child: Column(
                                   children: [
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                              margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -250,18 +233,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Clutch Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -331,32 +303,26 @@ class _BodyWorkState extends State<RepairWork> {
                                                         ],
                                                       ),
                                                       Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
+                                                        padding: const EdgeInsets.only(top: 8.0),
+                                                        child: shape(),
                                                       ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -374,16 +340,13 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
-                                    ),
+                                        ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
+
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -396,18 +359,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Accelerator Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                    shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -477,32 +429,26 @@ class _BodyWorkState extends State<RepairWork> {
                                                         ],
                                                       ),
                                                       Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
+                                                        padding: const EdgeInsets.only(top: 8.0),
+                                                        child: shape(),
                                                       ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -520,16 +466,12 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
-                                    ),
+                                        ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -542,18 +484,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Speedometer Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -623,32 +554,26 @@ class _BodyWorkState extends State<RepairWork> {
                                                         ],
                                                       ),
                                                       Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
+                                                        padding: const EdgeInsets.only(top: 8.0),
+                                                        child: shape(),
                                                       ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -666,16 +591,14 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
-                                    ),
+                                        ),
+
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
+
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -685,18 +608,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Choke Cable Problem',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                     shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -765,33 +677,27 @@ class _BodyWorkState extends State<RepairWork> {
                                                           ),
                                                         ],
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                     Padding(
+                                                       padding: const EdgeInsets.only(top: 8.0),
+                                                       child: shape(),
+                                                     ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -809,16 +715,12 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
                                     ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -828,18 +730,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Lever Problem',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -909,32 +800,26 @@ class _BodyWorkState extends State<RepairWork> {
                                                         ],
                                                       ),
                                                       Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
+                                                        padding: const EdgeInsets.only(top: 8.0),
+                                                        child: shape(),
                                                       ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -952,16 +837,13 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
-                                    ),
+                                        ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
+
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -974,18 +856,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Switch Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                     shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -1054,33 +925,27 @@ class _BodyWorkState extends State<RepairWork> {
                                                           ),
                                                         ],
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(top: 8.0),
+                                                      child: shape(),
+                                                    ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -1097,17 +962,13 @@ class _BodyWorkState extends State<RepairWork> {
 
                                                     ]
                                                 )
-                                            )
-                                        )
+                                                  )
                                     ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -1117,18 +978,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Wiring Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -1198,32 +1048,26 @@ class _BodyWorkState extends State<RepairWork> {
                                                         ],
                                                       ),
                                                       Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
+                                                        padding: const EdgeInsets.only(top: 8.0),
+                                                        child: shape(),
                                                       ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -1241,16 +1085,12 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
-                                    ),
+                                        ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -1260,18 +1100,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Magnet Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -1341,32 +1170,26 @@ class _BodyWorkState extends State<RepairWork> {
                                                         ],
                                                       ),
                                                       Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
+                                                        padding: const EdgeInsets.only(top: 8.0),
+                                                        child: shape(),
                                                       ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -1384,16 +1207,12 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
                                     ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -1403,18 +1222,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Battery Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                     shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -1483,33 +1291,24 @@ class _BodyWorkState extends State<RepairWork> {
                                                           ),
                                                         ],
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -1527,17 +1326,13 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
                                     ),
 
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -1550,18 +1345,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Fuse Issue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -1631,32 +1415,26 @@ class _BodyWorkState extends State<RepairWork> {
                                                         ],
                                                       ),
                                                       Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
+                                                        padding: const EdgeInsets.only(top: 8.0),
+                                                        child: shape(),
                                                       ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -1674,16 +1452,12 @@ class _BodyWorkState extends State<RepairWork> {
                                                     ]
                                                 )
                                             )
-                                        )
                                     ),
                                     Padding(
                                         padding: const EdgeInsets.only(top: 18.0),
                                         child: Neumorphic(
+                                            margin: EdgeInsets.all(15),
                                             style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                                            child: Container(
-                                                margin: EdgeInsets.only(bottom: 20),
-                                                width: 300,
-                                                height: 225,
                                                 child: Column(
                                                     children: [
                                                       Padding(
@@ -1693,18 +1467,7 @@ class _BodyWorkState extends State<RepairWork> {
                                                           title: Text(' Spark Problem',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                      shape(),
                                                       Row(
                                                         children: [
                                                           Padding(
@@ -1773,33 +1536,27 @@ class _BodyWorkState extends State<RepairWork> {
                                                           ),
                                                         ],
                                                       ),
-                                                      Padding(
-                                                        padding: const EdgeInsets.only(right: 18.0,top: 10),
-                                                        child: Neumorphic(
-                                                          style: NeumorphicStyle(
-                                                              shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                                                          child: Container(
-                                                            width: 240,
-                                                            height: 3,
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                     Padding(
+                                                       padding: const EdgeInsets.only(top: 8.0),
+                                                       child: shape(),
+                                                     ),
                                                       Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           Padding(
                                                             padding: const EdgeInsets.only(top: 14.0),
                                                             child: RichText(text: TextSpan(
                                                                 children: <TextSpan>[
-                                                                  TextSpan(text: "  € 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
+                                                                  TextSpan(text: "  ₹ 199",style: TextStyle(color: Colors.redAccent,fontSize: 17,fontWeight: FontWeight.bold)),
                                                                   TextSpan(text: "    ( Inspection Charge)",style: TextStyle(color: Colors.black)),
                                                                 ]
                                                             )),
                                                           ),
 
                                                           Padding(
-                                                            padding: const EdgeInsets.only(left: 16.0,top: 15),
-                                                            child: SizedBox(
+                                                            padding: const EdgeInsets.only(right: 16.0,top: 15),
+                                                            child: Container(
+                                                              margin: fix,
                                                               width: 80,
                                                               height: 35,
                                                               child:  ElevatedButton(
@@ -1812,19 +1569,18 @@ class _BodyWorkState extends State<RepairWork> {
 
                                                         ],
                                                       )
-
-
                                                     ]
                                                 )
                                             )
-                                        )
-                                    )
-
+                                        ),
                                   ]
                               ))
 
                         ]
-                    ))))
+                    )
+                )
+            )
+        )
     );
   }
 }

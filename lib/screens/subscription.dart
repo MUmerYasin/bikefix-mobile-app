@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../widgets.dart';
 import 'CheckOut_Screen.dart';
 
 class subscrip extends StatefulWidget {
@@ -38,12 +39,9 @@ class _subscripState extends State<subscrip> {
                     padding: const EdgeInsets.all(8.0),
                     child: Neumorphic(
 
-                      margin: EdgeInsets.only(bottom: 20),
+                      margin: EdgeInsets.only(bottom: 10,left: 20,right: 20),
                       style: NeumorphicStyle(depth:6,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black54,shadowLightColor: Colors.white),
-                      child: Container(
-                        width: 310,
-                        height: MediaQuery.of(context).size.height/1.5,
-                        child: Column(
+                      child: Column(
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -64,57 +62,33 @@ class _subscripState extends State<subscrip> {
                               child: Text('3 Pickup and drop free',style: TextStyle(fontSize: 15),),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 14.0),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(depth: -10,shadowDarkColor: Colors.white,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black38,shadowLightColor: Colors.white),
-                                child: Container(
-                                  width: 300,
-                                  height: 5,
-                                ),
-                              ),
+                              padding: const EdgeInsets.all(8.0),
+                              child: shape(),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
                               child: Text('10% discount (upto 200 on each invoice)',style: TextStyle(fontSize: 15),),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 18.0),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(depth: -10,shadowDarkColor: Colors.white,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black38,shadowLightColor: Colors.white),
-                                child: Container(
-                                  width: 300,
-                                  height: 5,
-                                ),
-                              ),
+                              padding: const EdgeInsets.all(8.0),
+                              child: shape(),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
                               child: Text('Free consultation',style: TextStyle(fontSize: 17),),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15.0),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(depth: -10,shadowDarkColor: Colors.white,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black38,shadowLightColor: Colors.white),
-                                child: Container(
-                                  width: 300,
-                                  height: 5,
-                                ),
-                              ),
-                            ),
+                           Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: shape(),
+                           ),
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
                               child: Text('7 Days after service warranty',style: TextStyle(fontSize: 17),),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15.0),
-                              child: Neumorphic(
-                                style: NeumorphicStyle(depth: -10,shadowDarkColor: Colors.white,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black38,shadowLightColor: Colors.white),
-                                child: Container(
-                                  width: 300,
-                                  height: 5,
-                                ),
-                              ),
-                            ),
+                           Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: shape(),
+                           ),
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
                               child: Text('Priority customer support',style: TextStyle(fontSize: 17),),
@@ -175,7 +149,7 @@ class _subscripState extends State<subscrip> {
                       ),
                     ),
                   ),
-                )
+
               ],
             ),
           ),

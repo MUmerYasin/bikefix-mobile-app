@@ -15,9 +15,10 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
-          backgroundColor: backgroundColor,
+          elevation: 0,
+          backgroundColor: NeumorphicColors.background,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
           leading: Padding(
             padding: const EdgeInsets.only(left: 18.0),
@@ -50,7 +51,8 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
 
                     padding: const EdgeInsets.only(top: 8.0,bottom: 10),
                     child: Neumorphic(
-                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
+                      style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black ,
+                          shadowDarkColor: Colors.black),
                       child: Container(
                         padding: EdgeInsets.all(15),
                         decoration: BoxDecoration(
@@ -180,13 +182,8 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
                                 textAlign: TextAlign.left,
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-                                child: Container(
-                                  height: 5,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffffffff),
-                                  ),
-                                ),
+                                padding: const EdgeInsets.all(8.0),
+                                child: shape(),
                               ),
                               Text(
                                 'Booking date & time',
@@ -213,14 +210,8 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
                                 textAlign: TextAlign.left,
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-
-                                child: Container(
-                                  height: 5,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffffffff),
-                                  ),
-                                ),
+                                padding: const EdgeInsets.all(8.0),
+                                child: shape(),
                               ),
                               Text(
                                 'Booking date & time',
@@ -247,13 +238,8 @@ class _ServiceStatusScreenState extends State<ServiceStatusScreen> {
                                 textAlign: TextAlign.left,
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 8.0,bottom: 10),
-                                child: Container(
-                                  height: 5,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffffffff),
-                                  ),
-                                ),
+                                padding: const EdgeInsets.all(8.0),
+                                child: shape(),
                               ),
                               Text(
                                 'Price: ₹ 2,500',

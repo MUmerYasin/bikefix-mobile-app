@@ -48,6 +48,15 @@ class _HomeeState extends State<Homee> {
   int _current = 0;
   final CarouselController _controller = CarouselController();
 
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  toggleDrawer() async {
+    if (_scaffoldKey.currentState!.isDrawerOpen) {
+      _scaffoldKey.currentState!.openDrawer();
+    } else {
+      _scaffoldKey.currentState!.openEndDrawer();
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,15 +67,23 @@ class _HomeeState extends State<Homee> {
             FocusScope.of(context).requestFocus(new FocusNode());
           },
           child: Scaffold(
+
             key: _key,
             backgroundColor: NeumorphicColors.background,
             appBar: AppBar(
+              leading: Padding(
+                padding: const EdgeInsets.only(left: 18.0),
+                child: Row(
+                  children: [appsign()],
+                ),
+              ),
+
               actions: [
                 Text(''),
               ],
               elevation: 0,
               title: Text('', style: TextStyle(color: Colors.black),),
-              backgroundColor: Color(0xffe2e5ed),
+              backgroundColor: NeumorphicColors.background,
               centerTitle: true,
             ),
             body: SingleChildScrollView(
@@ -74,71 +91,64 @@ class _HomeeState extends State<Homee> {
                 child: Center(
                   child: Column(
                     children: [
-                      Neumorphic(
-                        style: NeumorphicStyle(
-                            depth: NeumorphicTheme.embossDepth(context),
-                            shadowLightColor:
-                            Colors.black45,
-                            shadowDarkColorEmboss: Colors.black54,
-                            shadowLightColorEmboss: Colors.white,
-                            shadowDarkColor:
-                            Colors.black54,
-                            color: NeumorphicColors.background),
-                        child: Container(
-                          width: 330,
-                          height: 150,
-                          child: CarouselSlider(
-                            options: CarouselOptions(
-                              enlargeCenterPage: false,
-                              disableCenter: true,
-                              enableInfiniteScroll: true,
-                              autoPlay: true,
-                            ),
-                            items: images.map((e) =>
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(2),
-                                  child: Stack(
-                                    fit: StackFit.expand,
-                                    children: [
-                                      Image.asset(e,
-                                        width: 900,
-                                        height: 350,
-                                        fit: BoxFit.cover,)
-                                    ],
+                       Padding(
+                         padding: const EdgeInsets.only(top:8.0),
+                         child: Neumorphic(
+                           margin: EdgeInsets.all(8),
+                            style: NeumorphicStyle(
+                                depth: NeumorphicTheme.embossDepth(context),
+                                shadowLightColor:
+                                Colors.black45,
+                                shadowDarkColorEmboss: Colors.black54,
+                                shadowLightColorEmboss: Colors.white,
+                                shadowDarkColor:
+                                Colors.black54,
+                                color: NeumorphicColors.background),
+                              child: SizedBox(
+                                height: MediaQuery.of(context).size.height/5,
+                                width: MediaQuery.of(context).size.width,
+                                child: CarouselSlider(
+                                  options: CarouselOptions(
+                                    enlargeCenterPage: false,
+                                    disableCenter: true,
+                                    enableInfiniteScroll: true,
+                                    autoPlay: true,
                                   ),
-                                )).toList(),
+                                  items: images.map((e) =>
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(2),
+                                        child: Stack(
+                                          fit: StackFit.expand,
+                                          children: [
+                                            Image.asset(e,
+                                              width: 900,
+                                              height: 350,
+                                              fit: BoxFit.cover,)
+                                          ],
+                                        ),
+                                      )).toList(),
 
-                          ),
-                        ),
-                      ),
+                                ),
+                              ),
+                            ),
+                       ),
+
 
                       Padding(
-                        padding: const EdgeInsets.only(top: 28.0),
+                        padding: const EdgeInsets.only(top: 18.0),
                         child: Neumorphic(
-                          style: NeumorphicStyle(lightSource: LightSource
-                              .topLeft,
+                          margin: EdgeInsets.all(10),
+                          style: NeumorphicStyle(lightSource: LightSource.topLeft,
                               depth: 4,
                               oppositeShadowLightSource: true,
                               shadowLightColorEmboss: Colors.white,
-                              shadowDarkColorEmboss: Colors.white,
+                              shadowDarkColorEmboss: Colors.black45,
+                              shape: NeumorphicShape.flat,
+                              color: Colors.blue,
                               shadowDarkColor: Colors.white,
-                              shadowLightColor: Colors.black45,
+                              shadowLightColor: Colors.black,
                               border: NeumorphicBorder(color: Colors.white)),
-                          child: Container(
-
-                            decoration: BoxDecoration(
-                                color: Color(0xff548ed0),
-                                borderRadius: BorderRadius.circular(0)
-                            ),
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width / 1.1,
-                            height: MediaQuery
-                                .of(context)
-                                .size
-                                .height / 10,
-                            child: Column(
+                          child:  Column(
                               children: [
 
                                 Row(
@@ -181,31 +191,43 @@ class _HomeeState extends State<Homee> {
                                     Padding(
                                       padding: const EdgeInsets.only(
                                           left: 5.0, top: 5),
-                                      child: Text('Genuine Parts',
-                                        style: TextStyle(color: Colors.white,
-                                            fontWeight: FontWeight.w500),),
+                                      child: Container(
+                                        margin: EdgeInsets.only(bottom: 12),
+                                        child: Text('Genuine Parts',
+                                          style: TextStyle(color: Colors.white,
+                                              fontWeight: FontWeight.w500),),
+                                      ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 4.0, top: 4),
-                                      child: Text('Warranty', style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500),),
+                                          left: 4.0, top: 5),
+                                      child: Container(
+                                        margin: EdgeInsets.only(bottom: 12),
+                                        child: Text('Warranty', style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500),),
+                                      ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 9.0, top: 4),
-                                      child: Text('Affordable',
-                                        style: TextStyle(color: Colors.white,
-                                            fontWeight: FontWeight.w500),),
+                                          left: 9.0, top: 5),
+                                      child: Container(
+                                        margin: EdgeInsets.only(bottom: 12),
+                                        child: Text('Affordable',
+                                          style: TextStyle(color: Colors.white,
+                                              fontWeight: FontWeight.w500),),
+                                      ),
                                     ),
 
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          right: 12.0, top: 4),
-                                      child: Text('Pick & Drop',
-                                        style: TextStyle(color: Colors.white,
-                                            fontWeight: FontWeight.w500),),
+                                          right: 12.0, top: 5),
+                                      child: Container(
+                                        margin: EdgeInsets.only(bottom: 12),
+                                        child: Text('Pick & Drop',
+                                          style: TextStyle(color: Colors.white,
+                                              fontWeight: FontWeight.w500),),
+                                      ),
                                     ),
 
                                   ],
@@ -214,48 +236,40 @@ class _HomeeState extends State<Homee> {
                             ),
                           ),
                         ),
-                      ),
+
                       Padding(
-                        padding: const EdgeInsets.only(top: 33.0),
+                        padding: const EdgeInsets.only(top: 10.0),
                         child: Neumorphic(
-                          style: NeumorphicStyle(lightSource: LightSource
-                              .topLeft,
+                          margin: EdgeInsets.all(10),
+                          style: NeumorphicStyle(lightSource: LightSource.topLeft,
                               depth: 4,
                               oppositeShadowLightSource: true,
                               shadowLightColorEmboss: Colors.white,
-                              shadowDarkColorEmboss: Colors.white,
+                              shadowDarkColorEmboss: Colors.black45,
+                              shape: NeumorphicShape.flat,
                               shadowDarkColor: Colors.white,
-                              shadowLightColor: Colors.black45,
+                              shadowLightColor: Colors.black,
                               border: NeumorphicBorder(color: Colors.white)),
                           child: Column(
                             children: [
-                              Container(
 
-                                  color: Color(0xffeaedf2),
-                                  width: MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width / 1.1,
-                                  height: MediaQuery
-                                      .of(context)
-                                      .size
-                                      .height / 9.5,
-                                  child: Padding(
+                                  Padding(
                                       padding: const EdgeInsets.only(top: 23.0,bottom: 15,left: 10),
                                       child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                                         crossAxisAlignment: CrossAxisAlignment
                                             .center,
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                left: 16.0),
+                                                left: 15.0),
                                             child: Image.asset(
                                               'assets/icons/bike_image.png',),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                left: 40.0),
+                                                left: 20.0),
                                             child: RichText(text: TextSpan(
                                                 children: <TextSpan>[
                                                   TextSpan(text: '    KTM ',
@@ -272,11 +286,10 @@ class _HomeeState extends State<Homee> {
                                                 ]
                                             )),
                                           ),
-                                          Row(
-                                            children: [
+
                                               Padding(
                                                 padding: const EdgeInsets.only(
-                                                    left: 29.0),
+                                                    left: 0.0),
                                                 child: Container(
                                                   decoration: BoxDecoration(
                                                     borderRadius: BorderRadius.circular(100)
@@ -362,16 +375,19 @@ class _HomeeState extends State<Homee> {
                                                             );
                                                           });
                                                     },
+                                                    
 
                                                     style: ElevatedButton
                                                         .styleFrom(
-                                                        primary: small),
+                                                        primary: small,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9))),
+                                                    
                                                     child:
                                                        Padding(
-                                                         padding: const EdgeInsets.only(top: 0.0,),
+                                                         padding: const EdgeInsets.only(left: 0.0,),
                                                          child: Row(
                                                            children: [
-                                                             Text('Edit',style: TextStyle(fontSize: 9,fontWeight: FontWeight.bold),textAlign: TextAlign.left,),
+                                                             Text('Edit',style: TextStyle(fontSize: 9,fontWeight: FontWeight.bold),
+                                                               textAlign: TextAlign.left,),
                                                            ],
                                                          ),
                                                        ),
@@ -380,7 +396,7 @@ class _HomeeState extends State<Homee> {
                                                 ),
 
                                               Padding(
-                                                padding: const EdgeInsets.only(left: 14.0),
+                                                padding: const EdgeInsets.only(right: 10.0),
                                                 child: InkWell(onTap:(){
                                                   Navigator.push(context,
                                                       CupertinoPageRoute(
@@ -388,49 +404,43 @@ class _HomeeState extends State<Homee> {
                                                               AddVehicleScreen()));
                                                 },child: addd()),
                                               ),
-                                            ],
-                                          )
+
+
                                         ],
                                       )
                                   )
-                              )
+                              
                             ],
                           ),
                         ),
                       ),
 
                       Padding(
-                        padding: const EdgeInsets.only(top: 40.0),
+                        padding: const EdgeInsets.only(top: 20.0),
                         child: Neumorphic(
-                          style: NeumorphicStyle(lightSource: LightSource
-                              .topLeft,
+                          margin: EdgeInsets.all(10),
+                          style: NeumorphicStyle(lightSource: LightSource.topLeft,
                               depth: 4,
                               oppositeShadowLightSource: true,
                               shadowLightColorEmboss: Colors.white,
-                              shadowDarkColorEmboss: Colors.white,
+                              shadowDarkColorEmboss: Colors.black45,
+                              shape: NeumorphicShape.flat,
                               shadowDarkColor: Colors.white,
-                              shadowLightColor: Colors.black45,
-                              border: NeumorphicBorder(color: Colors.white),
-                              shape: NeumorphicShape.flat),
+                              shadowLightColor: Colors.black,
+                              border: NeumorphicBorder(color: Colors.white)),
                           child: Column(
                             children: [
                               Neumorphic(
-                                style: NeumorphicStyle(depth: 10,
+                                style: NeumorphicStyle(lightSource: LightSource.topLeft,
+                                    depth: 4,
+                                    oppositeShadowLightSource: true,
                                     shadowLightColorEmboss: Colors.white,
-                                    shadowDarkColorEmboss: Colors.black38,
-                                    shadowDarkColor: Colors.black45,
-                                    shadowLightColor: Colors.transparent),
-                                child: Container(
-                                    color: NeumorphicColors.background,
-                                    height: MediaQuery
-                                        .of(context)
-                                        .size
-                                        .height / 6,
-                                    width: MediaQuery
-                                        .of(context)
-                                        .size
-                                        .width / 1.1,
-                                    child: Column(
+                                    shadowDarkColorEmboss: Colors.black45,
+                                    shape: NeumorphicShape.flat,
+                                    shadowDarkColor: Colors.white,
+                                    shadowLightColor: Colors.black,
+                                    border: NeumorphicBorder(color: Colors.white)),
+                                child:  Column(
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
@@ -606,41 +616,52 @@ class _HomeeState extends State<Homee> {
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   left: 15.0),
-                                              child: Text('General \nService ',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight
-                                                        .bold),),
+                                              child: Container(
+                                                margin: EdgeInsets.only(bottom: 12),
+                                                child: Text('General \nService ',
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight
+                                                          .bold),),
+                                              ),
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   left: 6.0),
-                                              child: Text('Engine \n Work ',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight
-                                                        .bold),),
+                                              child: Container(
+                                                margin: EdgeInsets.only(bottom: 12),
+                                                child: Text('Engine \n Work ',
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight
+                                                          .bold),),
+                                              ),
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   left: 0.0),
-                                              child: Text('Body \nWork ',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight
-                                                        .bold),),
+                                              child: Container(
+                                                margin: EdgeInsets.only(bottom: 12),
+                                                child: Text('Body \nWork ',
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight
+                                                          .bold),),
+                                              ),
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   right: 16.0),
-                                              child: Text('Repair \nWork ',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight
-                                                        .bold),),
+                                              child: Container(
+                                                margin: EdgeInsets.only(bottom: 12),
+                                                child: Text('Repair \nWork ',
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight
+                                                          .bold),),
+                                              ),
                                             )
                                           ],
                                         )
                                       ],
                                     )
                                 ),
-                              ),
                             ],
                           ),
                         ),
@@ -672,24 +693,30 @@ class _HomeeState extends State<Homee> {
                 ),
               ),
             ),
+
+
+
             endDrawer: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.only(top: 50.0),
                 child: Container(
+                  margin: EdgeInsets.only(bottom: 12),
                   height: MediaQuery
                       .of(context)
                       .size
                       .height / 1.1,
                   child: Drawer(
+
                     child: Column(
                       children: [
-                        SizedBox(
+                        Container(
+                          margin: EdgeInsets.only(top: 0),
                           height: 55,
                           child: ListTile(
                             tileColor: Colors.red,
                             title: Text('Home', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
-                            leading: Image.asset('assets/icons/drawer_one.png'),
+                                color: Colors.white, fontSize: 18),),
+                            leading: Image.asset('assets/icons/drawer_one.png',scale: 1.5,),
                           ),
                         ),
 
@@ -701,9 +728,9 @@ class _HomeeState extends State<Homee> {
                                   builder: (context) => MyProfileScreen()));
                             },
                             title: Text('Profile', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
+                                color: Colors.white, fontSize: 18),),
                             leading: Image.asset(
-                              'assets/icons/profile.png', scale: 29,),
+                              'assets/icons/profile.png', width: 29,),
                             hoverColor: Colors.red,
                           ),
                         ),
@@ -720,9 +747,9 @@ class _HomeeState extends State<Homee> {
                                   builder: (context) => MyBookingScreen()));
                             },
                             title: Text('My Booking', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
+                                color: Colors.white, fontSize: 18),),
                             leading: Image.asset(
-                              'assets/icons/book.png', scale: 18,),
+                              'assets/icons/book.png', width: 28,),
                             hoverColor: Colors.red,
                           ),
                         ),
@@ -738,10 +765,10 @@ class _HomeeState extends State<Homee> {
                             title: Padding(
                               padding: const EdgeInsets.only(right: 2.0),
                               child: Text('Real Time Update', style: TextStyle(
-                                  color: Colors.white, fontSize: 22),),
+                                  color: Colors.white, fontSize: 18),),
                             ),
                             leading: Image.asset(
-                              'assets/icons/update.png', scale: 18,),
+                              'assets/icons/update.png', width: 28,),
                             hoverColor: Colors.blue,
                           ),
                         ),
@@ -758,9 +785,12 @@ class _HomeeState extends State<Homee> {
                                   builder: (context) => help()));
                             },
                             title: Text('Help & Support', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
-                            leading: Image.asset(
-                              'assets/icons/help.png', scale: 18,),
+                                color: Colors.white, fontSize: 18),),
+                            leading: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                'assets/icons/help.png', width: 16,),
+                            ),
                             hoverColor: Colors.blue,
                           ),
                         ),
@@ -775,13 +805,14 @@ class _HomeeState extends State<Homee> {
                           height: 40,
                           child: ListTile(
                             onTap: () {
+                              Navigator.of(context).pop(true);
                               Navigator.push(context, CupertinoPageRoute(
                                   builder: (context) => Become_Partner()));
                             },
                             title: Text('Become Partner', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
+                                color: Colors.white, fontSize: 18),),
                             leading: Image.asset(
-                              'assets/icons/partner.png', scale: 18,),
+                              'assets/icons/partner.png', width: 28,),
                             hoverColor: Colors.blue,
                           ),
                         ),
@@ -796,7 +827,7 @@ class _HomeeState extends State<Homee> {
                           height: 44,
                           child: ListTile(
                             title: Text('Share', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
+                                color: Colors.white, fontSize: 18),),
                             leading: Image.asset(
                               'assets/icons/share.png', scale: 18,),
                             hoverColor: Colors.blue,
@@ -813,7 +844,7 @@ class _HomeeState extends State<Homee> {
                           child: ListTile(
                             onTap: () {},
                             title: Text('About', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
+                                color: Colors.white, fontSize: 18),),
                             leading: Image.asset(
                               'assets/icons/about.png', scale: 18,),
                             hoverColor: Colors.blue,
@@ -832,9 +863,9 @@ class _HomeeState extends State<Homee> {
                                   builder: (context) => LoginScreen()));
                             },
                             title: Text('Log Out', style: TextStyle(
-                                color: Colors.white, fontSize: 22),),
+                                color: Colors.white, fontSize: 18),),
                             leading: Image.asset(
-                              'assets/icons/logout.png', scale: 18,),
+                              'assets/icons/logout.png', width: 18,),
                             hoverColor: Colors.blue,
                           ),
                         ),
@@ -848,7 +879,7 @@ class _HomeeState extends State<Homee> {
             bottomNavigationBar: Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: Padding(
-                padding: const EdgeInsets.only(left: 22.0, right: 23),
+                padding: const EdgeInsets.only(left: 15.0, right: 15),
                 child: Neumorphic(
                   drawSurfaceAboveChild: true,
                   margin: EdgeInsets.only(bottom: 20),
@@ -861,19 +892,7 @@ class _HomeeState extends State<Homee> {
                       shadowDarkColor: Colors.white,
                       shadowLightColor: Colors.black,
                       border: NeumorphicBorder(color: Colors.white)),
-                  child: Container(
-                    color: Color(0xffeaedf2),
-                    margin: EdgeInsets.only(bottom: 0),
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height /12.7,
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width / 15,
-                    child: Column(
-                      children: [
+                  child:
 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -901,7 +920,7 @@ class _HomeeState extends State<Homee> {
                                   builder: (context) => LocationScreen()));
                             },
                                 child: Image.asset(
-                                  'assets/icons/location.png', width: 26,)),
+                                  'assets/icons/location.png', width: 20,)),
 
                             Neumorphic(
                               style: NeumorphicStyle(
@@ -914,9 +933,8 @@ class _HomeeState extends State<Homee> {
                                 width: 2,
                               ),
                             ),
-
                             GestureDetector(child: Image.asset(
-                              'assets/icons/kinggg.png', color: Colors.black,),
+                              'assets/icons/kinggg.png', color: Colors.black,scale: 1.5,),
                               onTap: () {
                                 Navigator.push(context, CupertinoPageRoute(
                                     builder: (context) => subscrip()));
@@ -939,7 +957,7 @@ class _HomeeState extends State<Homee> {
                                       builder: (context) => ServiceStatusScreen()));
                                 },
                                 child: Image.asset(
-                                  'assets/icons/rel.png', scale: 3.6,)),
+                                  'assets/icons/rel.png', scale: 5,)),
 
                             Neumorphic(
                               style: NeumorphicStyle(
@@ -957,23 +975,19 @@ class _HomeeState extends State<Homee> {
                                 _key.currentState!.openEndDrawer(),
                                 child: Padding(
                                   padding: const EdgeInsets.only(right: 8.0),
-                                  child: Icon(Icons.menu, size: 30,),
+                                  child: Icon(Icons.menu, size: 25,),
                                 )),
                           ],
                         ),
 
 
-                      ],
+
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-        )
-    );
+    ));
   }
-
   Future<bool> _return() async {
     return await showCupertinoDialog(context: context, builder: (context) =>
         CupertinoAlertDialog(

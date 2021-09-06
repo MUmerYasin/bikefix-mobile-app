@@ -131,15 +131,17 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                      width: MediaQuery.of(context).size.width /3,
+                                      width: MediaQuery.of(context).size.width /2.4,
                                       child: myTextField(text: '01/01/1990',keyboardType: TextInputType.number, validator: (value) {  },),
                                     )
                                 ],
                               ),
+                              Spacer(),
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children:[
+
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
@@ -158,7 +160,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: SizedBox(
-                                        width: MediaQuery.of(context).size.width /3,
+                                        width: MediaQuery.of(context).size.width /2.5,
                                         child: myTextField(text: 'Male', validator: (value) {  },),
                                       ),
                                   )

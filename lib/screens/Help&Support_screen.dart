@@ -23,128 +23,113 @@ class _helpState extends State<help> {
         centerTitle: true,
         backgroundColor: NeumorphicColors.background,
       ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 18.0),
-                child: Neumorphic(
-                  style: NeumorphicStyle(shadowDarkColor: Colors.black26,shadowDarkColorEmboss:
-                  Colors.black,shadowLightColorEmboss: Colors.black26,
-                      shadowLightColor: Colors.white,lightSource: LightSource.topLeft,color: Color(0xffe7eaf1)),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width/1.2,
-                    height: MediaQuery.of(context).size.height/3.2,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            children: [
-                              Image.asset('assets/icons/call_photo.png'),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 22.0),
-                                child: Text('966 325 4568',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 23),),
-                              )
-                            ],
-                          ),
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(depth: -19,shadowLightColor: Colors.black26,shadowLightColorEmboss:
-                            Colors.white,shadowDarkColorEmboss: Colors.black26,shadowDarkColor: Colors.white,color: Colors.white),
-                            child: Divider(
-                              thickness: 5,
-                              height: 5,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 18.0),
+                  child: Neumorphic(
+                    margin: EdgeInsets.all(15),
+                    style: NeumorphicStyle(shadowDarkColor: Colors.black26,shadowDarkColorEmboss:
+                    Colors.black,shadowLightColorEmboss: Colors.black,
+                        shadowLightColor: Colors.black,lightSource: LightSource.bottomRight,color: NeumorphicColors.background),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0,left: 20),
+                            child: Row(
+                              children: [
+                                Image.asset('assets/icons/call_photo.png'),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 22.0),
+                                  child: Text('966 325 4568',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+                                )
+                              ],
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
 
-                            children: [
-                              Image.asset('assets/icons/mailing.png'),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 22.0),
-                                child: Text('example@mail.com',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),),
-                              ),
-                              
-                            ],
-                          ),
-                        ),
+                         Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: shape(),
+                         ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0,left: 20),
+                            child: Row(
 
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Neumorphic(
-                            style: NeumorphicStyle(depth: -19,shadowLightColor: Colors.black26,shadowLightColorEmboss:
-                            Colors.white,shadowDarkColorEmboss: Colors.black26,shadowDarkColor: Colors.white,color: Colors.white),
-                            child: Divider(
-                              thickness: 5,
-                              height: 5,
+                              children: [
+                                Image.asset('assets/icons/mailing.png'),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 22.0),
+                                  child: Text('example@mail.com',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                                ),
+                                
+                              ],
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Wigets(image: 'assets/icons/what.png',),
-                              Wigets(image: 'assets/icons/facebook.png'),
-                              Wigets(image: 'assets/icons/instagram.png'),
 
-
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: shape(),
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Wigets(image: 'assets/icons/what.png',),
+                                Wigets(image: 'assets/icons/facebook.png'),
+                                Wigets(image: 'assets/icons/instagram.png'),
 
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 28.0),
-                  child: Text('Timing 10am - 7pm',style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
-                ),
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 38.0),
-                    child: Neumorphic(
-                      style: NeumorphicStyle(shadowDarkColor: Colors.black26,shadowDarkColorEmboss:
-                      Colors.black,shadowLightColorEmboss: Colors.black26,
-                          shadowLightColor: Colors.white,lightSource: LightSource.topLeft,color: Color(0xffeaebf2)),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width/1.2,
-                        height: MediaQuery.of(context).size.height/6.5,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Center(
-                              child: Text(Term,style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),),
+
+                              ],
                             ),
-                            Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('APP version : 1.0.1',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                              ),
-                            )
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
-                  )
-                ],
-              )
-            ],
+                  ),
+
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 28.0),
+                    child: Text('Timing 10am - 7pm',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                  ),
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 18.0),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height/6,
+                        child: Neumorphic(
+                          margin: EdgeInsets.all(15),
+                          style: NeumorphicStyle(shadowDarkColor: Colors.black26,shadowDarkColorEmboss:
+                          Colors.black,shadowLightColorEmboss: Colors.black,
+                              shadowLightColor: Colors.black,lightSource: LightSource.bottomRight,color: NeumorphicColors.background),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(
+                                  child: Text(Term,style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
+                                ),
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 12.0),
+                                    child: Text('APP version : 1.0.1',style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                      ),
+                      ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

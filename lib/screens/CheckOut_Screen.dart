@@ -47,40 +47,32 @@ class _CheckOutState extends State<CheckOut> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Neumorphic(
+                 Neumorphic(
+                    margin: EdgeInsets.all(10),
                     style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.white , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.white, blurRadius: 220
-                          )
-                        ]
-                      ),
-                      width: 320,
-                      height: 100,
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: RichText(text: TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(text: "     KTM",style: TextStyle(color: Colors.black)),
-                                TextSpan(text: " \n 200 DUKE", style: TextStyle(color: Colors.red)),
-                              ]
-                            )),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 128.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: RichText(text: TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(text: "     KTM",style: TextStyle(color: Colors.black)),
+                              TextSpan(text: " \n 200 DUKE", style: TextStyle(color: Colors.red)),
+                            ]
+                          )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 128.0),
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0,right: 18,top: 08),
                             child: Image.asset('assets/icons/bike_image.png'),
-                          )
-                        ],
-                      ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                ),
+
                 Row(
                   children: [
                     Padding(
@@ -93,18 +85,16 @@ class _CheckOutState extends State<CheckOut> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 28.0),
+                        padding: const EdgeInsets.only(top: 0.0),
                         child: Neumorphic(
+                          margin: EdgeInsets.all(20),
                           style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,shadowLightColor: Colors.white),
-                          child: Container(
-                            width: 320,
-                            height: 240,
-                            child: Column(
+                          child: Column(
                               children: [
                                 SizedBox(
                                   height: 29,
                                   child: ListTile(
-                                    title: Text('Service Cost',style: TextStyle(fontWeight: FontWeight.w300),),
+                                    title: Text('Service Cost',style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15),),
                                     trailing: Text(' ₹ 199',style: TextStyle(fontWeight: FontWeight.w700),),
                                   ),
                                 ),
@@ -119,23 +109,7 @@ class _CheckOutState extends State<CheckOut> {
                                   title: Text('Discount Applied',style: TextStyle(fontWeight: FontWeight.w300),),
                                   trailing: Text(' ₹ 0',style: TextStyle(fontWeight: FontWeight.w700),),
                                 ),
-                                Neumorphic(
-                                  style: NeumorphicStyle(
-                                    depth: NeumorphicTheme.embossDepth(context), shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.white,spreadRadius: 20,
-                                          )
-                                        ]
-                                    ),
-                                    width: 280,
-                                    height: 3,
-
-                                  ),
-                                ),
+                                shape(),
                                 SizedBox(
                                   height: 29,
                                   child: ListTile(
@@ -158,7 +132,7 @@ class _CheckOutState extends State<CheckOut> {
                             )
                           )
                         ),
-                      ),
+
                     ],
                   ),
                 ),
@@ -170,15 +144,7 @@ class _CheckOutState extends State<CheckOut> {
                   ),
                 ),
 
-                Neumorphic(
-                  style: NeumorphicStyle(
-                    depth: NeumorphicTheme.embossDepth(context), shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,),
-                  child: Container(
-                    width: 300,
-                    height: 3,
-                    color: Colors.white,
-                  ),
-                ),
+                shape(),
                 SizedBox(
                   height: 40,
                   child: ListTile(

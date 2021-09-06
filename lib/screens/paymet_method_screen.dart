@@ -40,15 +40,14 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 38.0),
+                  padding: const EdgeInsets.only(top: 8.0),
                   child: Neumorphic(
+                    margin: EdgeInsets.all(15),
                     style: NeumorphicStyle(
                         shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black
                     ),
-                      child: Container(
-                        width: 300,
-                        height: 50,
-                        child: Row(
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(left: 28.0),
@@ -57,7 +56,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               ),),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 115.0),
+                              padding: const EdgeInsets.only(right: 15.0),
                               child: Radio<int>(value: 1, groupValue: null, onChanged: (val){
                                 setState(() {
 
@@ -68,7 +67,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                         ),
                       ),
                     ),
-                ),
+
                 Row(
                   children: [
                     Padding(
@@ -79,15 +78,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
+                  padding: const EdgeInsets.only(top: 0.0),
                   child: Neumorphic(
+                    margin: EdgeInsets.all(15),
                     style: NeumorphicStyle(
                         shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
 
-                    child: Container(
-                      width: 300,
-                      height: 115,
-                      child:  Column(
+                    child: Column(
                           children: [
                             ListTile(
                               leading: Icon(FontAwesomeIcons.amazon,color: Colors.black,),
@@ -97,17 +94,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                   radioButtonItem = 'one';
                                 });
                               }),
-                              title: Text("Amazon UPI",style: TextStyle(fontWeight: FontWeight.w500),),
+                              title: Text("Amazon UPI",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
                             ),
-                            Neumorphic(
-                              style: NeumorphicStyle(
-                                  depth: NeumorphicTheme.embossDepth(context), shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black,),
-                              child: Container(
-                                width: 240,
-                                height: 3,
-                                color: Colors.white,
-                              ),
-                            ),
+                            shape(),
                             ListTile(
                               leading: Icon(FontAwesomeIcons.rupeeSign,color: Colors.purpleAccent,),
                               trailing: Radio<int>(value: 1, groupValue: id,activeColor: Colors.red, onChanged: (val){
@@ -122,24 +111,23 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                         ),
                       ),
                     ),
-                  ),
+
                 Row(
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 60.0,top: 10),
-                      child: Text('Wallets',style: TextStyle(fontSize: 16),),
+                      child: Text('Wallets',style: TextStyle(fontSize: 15),),
                     )
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
+                  padding: const EdgeInsets.only(top: 0.0),
                   child: Neumorphic(
+                    margin: EdgeInsets.all(15),
                     style: NeumorphicStyle(
-                     shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                    child: Container(
-                      width: 300,
-                      height: 175,
-                      child:  Column(
+                     shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black ,
+                        shadowDarkColor: Colors.black),
+                    child:   Column(
                         children: [
                           ListTile(
                             leading: Icon(FontAwesomeIcons.applePay,color: Colors.red,),
@@ -149,16 +137,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 radioButtonItem = 'three';
                               });
                             }),
-                            title: Text("Paytm",style: TextStyle(fontWeight: FontWeight.w500),),
+                            title: Text("Paytm",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
                           ),
-                          Neumorphic(
-                            style: NeumorphicStyle(shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                            child: Container(
-                              width: 220,
-                              height: 3,
-                              color: Colors.white,
-                            ),
-                          ),
+                          shape(),
                           ListTile(
                             leading: Icon(FontAwesomeIcons.amazon,color: Colors.black,),
                             trailing: Radio<int>(value: 3, groupValue: id,activeColor: Colors.red, onChanged: (val){
@@ -167,17 +148,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 radioButtonItem = 'Four';
                               });
                             }),
-                            title: Text("Amazon UPI ",style: TextStyle(fontWeight: FontWeight.w500),),
+                            title: Text("Amazon UPI ",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
                           ),
-                          Neumorphic(
-                            style: NeumorphicStyle(
-                                shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                            child: Container(
-                              width: 220,
-                              height: 3,
-                              color: Colors.white,
-                            ),
-                          ),
+                          shape(),
                           ListTile(
                             leading: Icon(FontAwesomeIcons.rupeeSign,color: Colors.purpleAccent,),
                             trailing: Radio<int>(value: 4, groupValue: id,activeColor: Colors.red, onChanged: (val){
@@ -186,33 +159,31 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 radioButtonItem = 'Five';
                               });
                             }),
-                            title: Text("Phonepe",style: TextStyle(fontWeight: FontWeight.w500),),
+                            title: Text("Phonepe",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
                           ),
                         ],
                       ),
                     ),
                   ),
-                ),
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 28.0),
+                  padding: const EdgeInsets.only(top: 0.0),
                   child: Neumorphic(
+                    margin: EdgeInsets.all(15),
                     style: NeumorphicStyle(
                    shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black , shadowDarkColor: Colors.black),
-                    child: Container(
-                      width: 300,
-                      height: 50,
-                      decoration: BoxDecoration(
-                      ),
+
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 28.0),
                             child: Text('Pay later',style: TextStyle(
-                                color: Colors.black,fontWeight: FontWeight.w500
+                                color: Colors.black,fontWeight: FontWeight.w500,fontSize: 15
                             ),),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 155.0),
+                            padding: const EdgeInsets.only(right: 15.0),
                             child: Radio(value: 5,hoverColor: Colors.red, activeColor: Colors.red, groupValue: id, onChanged: (val){
                               setState(() {
                                 id = 5;
@@ -224,16 +195,16 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       ),
                     ),
                   ),
-                ),
+
                 Center(
                   child:  Padding(
-                    padding: const EdgeInsets.only(top: 18.0),
+                    padding: const EdgeInsets.only(top: 10.0),
                     child: Card(
                       elevation: 20,
                         shadowColor: Color(0xfff93527),
                         child: SizedBox(
                           width: 140,
-                          height: 55,
+                          height: 40,
                           child: ElevatedButton(
                             onPressed: (){
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_Unseccussfull_Screen()));
