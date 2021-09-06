@@ -522,8 +522,8 @@ const String TimingSupportText =
 // Time And Date Class Screen
 
 const String selectTimeText = "Select Time";
-const String amText = " AM";
-const String pmText = " PM";
+const String amText = "  AM";
+const String pmText = "  PM";
 const String timeBetweenText12 = "12-01";
 const String timeBetweenText1 = "01-02";
 const String timeBetweenText2= "02-03";

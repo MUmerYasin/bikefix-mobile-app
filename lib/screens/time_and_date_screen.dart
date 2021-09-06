@@ -2,10 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
-import 'package:timeline_tile/timeline_tile.dart';
-import 'package:timeline_tile/timeline_tile.dart' as prefix;
 import '../config.dart';
-import 'package:intl/intl.dart' show DateFormat;
+// import 'package:intl/intl.dart' show DateFormat;
 import 'package:table_calendar/table_calendar.dart';
 
 
@@ -24,6 +22,8 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
   void initState() {
     super.initState();
   }
+  DateTime? _selectedDay;
+  DateTime? _focusedDay;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
 
               ///
               Padding(
-                padding: const EdgeInsets.only(top: 4.0, bottom: 10, ),
+                padding: const EdgeInsets.only(top: 0.0, bottom: 10, ),
                 child: Neumorphic(
                   style: NeumorphicStyle(
                     shadowDarkColor: Colors.black.withOpacity(0.6),
@@ -75,7 +75,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                     width: MediaQuery.of(context).size.width,
                     // height: 160,
                     padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+                    EdgeInsets.only(left: 10, right: 10, top: 0, bottom: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.0),
                       gradient: LinearGradient(
@@ -101,32 +101,149 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                       children: [
 
 
+                        TableCalendar(
+                          focusedDay: DateTime.now(),
+                          firstDay: DateTime.utc(2021,01,01),
+                          lastDay: DateTime.utc(2050,12,30),
+                          calendarStyle: CalendarStyle(
+
+                              // markerSize: 20,
+                              // markersAnchor: 10,
+                              isTodayHighlighted: false,
+                              // rangeHighlightColor: Colors.red,
+                            todayDecoration :  BoxDecoration(
+                                color: Colors.transparent,
+                                shape: BoxShape.circle,
+                            ),
+                            selectedDecoration : BoxDecoration(
+                              color: buttonColor,
+                              shape: BoxShape.circle,
+                              border: Border.symmetric(
+                                vertical : BorderSide.none,
+                                horizontal: BorderSide.none,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: buttonColor,
+                                  offset: Offset(2, 2),
+                                  blurRadius: 10,
+                                ),
+                              ],
+                            ),
+
+                              rowDecoration: BoxDecoration(
+                                // border: Border.symmetric(
+                                //   vertical : BorderSide.none,
+                                //   horizontal: BorderSide(width: 2.0, color: Color(0xffeef0f5),
+                                //
+                                //   ),
+                                // ),
+
+                                border: Border(
+                                  top: BorderSide( //                   <--- top side
+                                    color: Colors.white,
+                                    width: 3.0,
+                                  ),
+                                ),
+
+                                // boxShadow: [
+                                //   BoxShadow(
+                                //     color: Colors.grey.withOpacity(0.5),
+                                //     spreadRadius: 0.1,
+                                //     blurRadius: 0.1,
+                                //     offset: Offset(-1, -1), // changes position of shadow
+                                //   ),
+                                // ],
+
+                                // borderRadius: BorderRadius.circular(5.0),
+
+                                // gradient: LinearGradient(
+                                //   begin: Alignment(-1.0, -1.0),
+                                //   end: Alignment(1.01, 1.0),
+                                //   colors: [
+                                //     const Color(0xffeef0f5),
+                                //     const Color(0xffe6e9ef)
+                                //   ],
+                                //   stops: [0.0, 1.0],
+                                // ),
+
+                                // boxShadow: [
+                                //   BoxShadow(
+                                //     color: const Color(0xb2a6b4c8),
+                                //     offset: Offset(1, 1),
+                                //     blurRadius: 0.1,
+                                //       spreadRadius : 0.1,
+                                //   ),
+                                // ],
+
+                                // borderRadius: const BorderRadius.only(
+                                //   bottomLeft: const Radius.circular(50.0),
+                                // ),
+
+                                // gradient: LinearGradient(
+                                //     colors: [Colors.red, Colors.cyan],
+                                //     begin: Alignment.centerRight,
+                                //     end: Alignment.centerLeft
+                                // ),
+                          ),
+
+                              markerDecoration: BoxDecoration(
+                                color: Colors.red,
+                                shape: BoxShape.circle,
+                              ),
+                              outsideDaysVisible: true,
+                              markersAutoAligned: true,
+                              rangeStartDecoration: BoxDecoration(color: Colors.red,),
+                            // weekendTextStyle : const TextStyle(color: Colors.black,
+                            // fontWeight: FontWeight.bold,),
+                            // weekendDecoration :  BoxDecoration(shape: BoxShape.circle, color: Colors.red,),
+
+                          ),
+
+                          headerVisible: true,
+                          daysOfWeekVisible: true,
+                          availableGestures: AvailableGestures.all,
 
 
-                        TableCalendar(focusedDay: DateTime.now(), firstDay:
-                        DateTime.utc(2010,10,16), lastDay: DateTime.utc(2030,3,4),calendarStyle:
-                        CalendarStyle(markerSize: 10,markersAnchor: 10,isTodayHighlighted: true,
-                            rangeHighlightColor: Colors.red,markerDecoration:
-                            BoxDecoration(color: Colors.red,),outsideDaysVisible: true,
-                            markersAutoAligned: true,rangeStartDecoration: BoxDecoration(color: Colors.red) ),
-                          headerVisible: true,daysOfWeekVisible: true,availableGestures: AvailableGestures.all,
-                          daysOfWeekStyle: DaysOfWeekStyle(weekdayStyle: TextStyle(color: Colors.black),),
-                          daysOfWeekHeight: 10,pageJumpingEnabled: true,
+                          daysOfWeekStyle: DaysOfWeekStyle(
+                            weekdayStyle: TextStyle(
+                              color: Colors.black,
+                                fontWeight:FontWeight.bold,
+                            ),
+                            weekendStyle: TextStyle(
+                              color: Colors.black,
+                              fontWeight:FontWeight.bold,
+                            ),
+                          ),
+
+                          daysOfWeekHeight: 40,
+                          pageJumpingEnabled: true,
                           calendarFormat: CalendarFormat.month,
                           startingDayOfWeek: StartingDayOfWeek.monday,
+
                           headerStyle: HeaderStyle(
-                            formatButtonVisible: false,
+                              titleCentered:true,
+                            // headerMargin : const EdgeInsets.all(10.0),
+                              formatButtonVisible: false,
                           ),
+
                           pageAnimationCurve: Curves.fastLinearToSlowEaseIn,
 
-                        )
+                          /// Function For Change focused day to current selected Day
+                          selectedDayPredicate: (day) {
 
+                            return isSameDay(_selectedDay, day);
+                          },
+                          onDaySelected: (selectedDay, focusedDay) {
+                            setState(() {
+                              _selectedDay = selectedDay;
+                              _focusedDay = focusedDay; // update `_focusedDay` here as well
+                            });
+                          },
 
+                        ),
 
                         // DividerCustom(),
-
-
-
                       ],
                     ),
                   ),
@@ -168,7 +285,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           ///Button AM
-                          amAndPmButton(
+                          AmAndPmButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -185,7 +302,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                           ///Button  PM
                           Padding(
                             padding: const EdgeInsets.only(left: 16.0),
-                            child: amAndPmButton(
+                            child: AmAndPmButton(
                                 onPressed: () {
                                   setState(
                                         () {
@@ -208,7 +325,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ///Button 12-01
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -221,7 +338,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                               color: timeSelected == 1 ? true : false),
 
                           ///Button 01-02
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -234,7 +351,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                               color: timeSelected == 2 ? true : false),
 
                           ///button 02-03
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -248,7 +365,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
 
 
                           ///button 03-04
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -270,7 +387,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ///Button 04-05
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -283,7 +400,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                               color: timeSelected == 5 ? true : false),
 
                           ///Button 05-06
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -296,7 +413,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                               color: timeSelected == 6 ? true : false),
 
                           ///button 06-07
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -310,7 +427,7 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
 
 
                           ///button 07-08
-                          timeRoundedCornerButton(
+                          TimeRoundedCornerButton(
                               onPressed: () {
                                 setState(
                                       () {
@@ -441,13 +558,13 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
   }
 }
 
-class timeRoundedCornerButton extends StatelessWidget {
+class TimeRoundedCornerButton extends StatelessWidget {
   Function()? onPressed;
   String? child;
   bool? color;
   bool? images;
 
-  timeRoundedCornerButton({this.onPressed, this.child, this.color, this.images});
+  TimeRoundedCornerButton({this.onPressed, this.child, this.color, this.images});
 
   @override
   Widget build(BuildContext context) {
@@ -494,14 +611,14 @@ class timeRoundedCornerButton extends StatelessWidget {
 }
 
 
-class amAndPmButton extends StatelessWidget {
+class AmAndPmButton extends StatelessWidget {
   Function()? onPressed;
   String? child;
   bool? color;
   bool? images;
   bool? checkAM;
 
-  amAndPmButton({this.onPressed, this.child, this.color, this.images, this.checkAM});
+  AmAndPmButton({this.onPressed, this.child, this.color, this.images, this.checkAM});
 
   @override
   Widget build(BuildContext context) {
