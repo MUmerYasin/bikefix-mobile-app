@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
+import 'package:two_wheel_vehicle/screens/home_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
@@ -15,11 +17,18 @@ class _MyBookingScreenState extends State<MyBookingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
-        backgroundColor: backgroundColor,
+        backgroundColor: ScreenBackgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: Icon(Icons.arrow_back_ios),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
+          ),
+        ),
         title: Text(
           screenTitleMyBookings,
           style: TextStyle(
@@ -1251,7 +1260,7 @@ class _SingleItemOfServiceCompleteInMyBookingState
             /// Button Need Help
             RoundedCornerButton(
               onPressed: () {
-                gotoScreen(context: context, screen: ServiceStatusScreen());
+                gotoScreen(context: context, screen: HelpAndSupportScreen());
               },
               child: buttonNameNeedHelp,
             ),
@@ -1484,7 +1493,7 @@ class _SingleItemOfAwaitingConfirmationInMyBookingState
                   SmallRoundedCornerButton(
                     onPressed: () {
                       gotoScreen(
-                          context: context, screen: ServiceStatusScreen());
+                          context: context, screen: HomeScreen());
                     },
                     child: buttonNameCancel,
                     color: false,

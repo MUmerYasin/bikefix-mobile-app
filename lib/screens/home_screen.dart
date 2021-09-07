@@ -5,8 +5,8 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/Help_and_Support.dart';
 import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
+import 'package:two_wheel_vehicle/screens/become_a_partner_screen.dart';
 import 'package:two_wheel_vehicle/screens/body_work_screen.dart';
-import 'package:two_wheel_vehicle/screens/checkout_screen.dart';
 import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/engine_work_screen.dart';
 import 'package:two_wheel_vehicle/screens/general_service_screen.dart';
@@ -18,12 +18,11 @@ import 'package:two_wheel_vehicle/screens/mybooking_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/screens/otp_verify_screen.dart';
 import 'package:two_wheel_vehicle/screens/payment_successful_screen.dart';
-import 'package:two_wheel_vehicle/screens/payment_unsuccessful_screen.dart';
-import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
 import 'package:two_wheel_vehicle/screens/register_screen.dart';
 import 'package:two_wheel_vehicle/screens/repair_work_screen.dart';
-import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
+import 'package:two_wheel_vehicle/screens/sell_your_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/subscription_screen.dart';
+import 'package:two_wheel_vehicle/screens/track_order_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -65,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // builder = (BuildContext context) => HelpAndSupportScreen();
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => HelpAndSupportScreen()),
+            MaterialPageRoute(builder: (context) => SellYourVehicleScreen()),
           );
           break;
         case 3:
@@ -92,20 +91,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      backgroundColor: NeumorphicColors.background,
+      // backgroundColor: NeumorphicColors.background,
+      backgroundColor: ScreenBackgroundColor,
 
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: NeumorphicColors.background,
+        // backgroundColor: NeumorphicColors.background,
+        backgroundColor: ScreenBackgroundColor,
         title: Text(''),
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios_outlined,
-              color: Colors.black,
-            )),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
+          ),
+        ),
 
         //For Hide Drawer Icon
         actions: <Widget>[Container()],
@@ -373,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CheckoutStatusScreen()),
+                            builder: (context) => TrackOrderScreen()),
                       );
                     },
                   ),
@@ -455,7 +456,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => RegisterScreen()),
+                            builder: (context) => BecomeAPartnerScreen()),
                       );
                     },
                   ),
@@ -496,7 +497,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LocationScreen()),
+                            builder: (context) => HelpAndSupportScreen()),
                       );
                     },
                   ),
@@ -537,7 +538,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ServiceStatusScreen()),
+                            builder: (context) => HelpAndSupportScreen()),
                       );
                     },
                   ),

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:two_wheel_vehicle/config.dart';
-// import 'package:two_wheel_vehicle/widgets.dart';
+import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
+import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/widgets.dart';
 
 class ChooseBikeBrand extends StatefulWidget {
   const ChooseBikeBrand({Key? key}) : super(key: key);
@@ -17,19 +19,18 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: true,
         elevation: 0.0,
-        backgroundColor: backgroundColor,
+        backgroundColor: ScreenBackgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios_outlined,
-            color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
           ),
         ),
         title: Text(
@@ -188,7 +189,10 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
                             )),
-                        onPressed: () {},
+                        onPressed: () {
+                          gotoScreen(context: context, screen: AddVehicleScreen());
+
+                        },
                         child: SizedBox(
                             width: 130,
                             child: Center(child: Text(buttonNameProceed)))),

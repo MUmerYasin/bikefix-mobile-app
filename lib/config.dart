@@ -3,6 +3,7 @@ import 'dart:ui';
 /// Colors in Project
 
 Color backgroundColor = Color(0xffc4c4c4);
+Color ScreenBackgroundColor = Color(0xffE5E5E5);
 Color buttonColor = Color(0xffE34D3D);
 
 // Color buttonColor = Color(0xff2DAC0066);
@@ -36,7 +37,7 @@ const String imagePathStart = "assets/icons/";
 
 const String BackIconImagePath = imagePathStart + "back_icon.png";
 const String bajajLogoImagePath = imagePathStart + "bajaj_logo.png";
-const String BatteryIconImagePath = imagePathStart + "battery_icon.png";
+
 const String bikeImageImagePath = imagePathStart + "bike_image.png";
 
 //Drawer Or Menu Appear From Left Side Images Path
@@ -109,7 +110,7 @@ const String paymentSuccessfulImagePath =
 const String phonePeLogoImagePath = imagePathStart + "phonepe_logo.png";
 const String otpIconImagePath = imagePathStart + "otp_icon.png";
 const String mapImagePath = imagePathStart + "map.png";
-const String petrolIconImagePath = imagePathStart + "petrol_icon.png";
+
 const String smallProfileVectorImagePath =
     imagePathStart + "small_profile_vector.png";
 
@@ -117,10 +118,13 @@ const String smallProfileVectorImagePath =
 const String acceleratorIssueIconCustomMenuImagePath =
     imagePathStart + "accelerator_issue_icon.png";
 const String amIconCustomMenuImagePath = imagePathStart + "am_icon.png";
-const String batteryIssueIconCustomMenuImagePath =
-    imagePathStart + "battery_issue_icon.png";
-const String breakIssueIconCustomMenuImagePath =
-    imagePathStart + "break_issue_icon.png";
+
+const String batteryRedIconImagePath = imagePathStart + "battery_issue_icon.png";
+const String batteryBlackIconImagePath = imagePathStart + "battery_icon.png";
+const String petrolRedIconImagePath = imagePathStart + "petrol_icon.png";
+const String petrolBlackIconImagePath = imagePathStart + "petrol_red_icon.png";
+
+const String breakIssueIconCustomMenuImagePath = imagePathStart + "break_issue_icon.png";
 const String centerStandReplacementIconCustomMenuImagePath =
     imagePathStart + "center_stand_replacement_icon.png";
 const String chainCoverReplacementIconCustomMenuImagePath =
@@ -215,6 +219,7 @@ const String buttonNameBuyNow = "Buy Now";
 const String buttonNamePayNow = "Pay Now";
 const String buttonNameBookNow = "Book Now";
 const String buttonNamePayLater = "Pay Later";
+const String buttonNameTrackOrder = "Track Order";
 const String buttonNameEdit = "Edit";
 const String buttonNameAdd = "Add";
 const String buttonNameValueMyBike = "Value My Bike";

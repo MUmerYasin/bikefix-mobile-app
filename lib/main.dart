@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/become_a_partner_screen.dart';
+import 'package:two_wheel_vehicle/screens/home_screen.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
+import 'package:two_wheel_vehicle/screens/login_screen.dart';
 import 'package:two_wheel_vehicle/screens/sell_your_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/service_status_screen.dart';
 import 'package:two_wheel_vehicle/screens/time_and_date_screen.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: LoginScreen(), // Front End Final
+      home: LoginScreen(), // Front End Final
       // home: PaymentMethodScreen(), // Front End Final
       // home: RegisterScreen(), // Front End Final
       // home: OTPScreen(),  // Front End Final
@@ -53,7 +55,7 @@ class MyApp extends StatelessWidget {
       // home: SellYourVehicleScreen(), // Front End Final // Develop by Umer
       // home: BecomeAPartnerScreen(), // Front End Final // Develop by Umer
       // home: TrackOrderScreen(), // Front End Final // Develop by Umer
-      home: TimeAndDateScreen(), // Front End Final // Develop by Umer
+      // home: TimeAndDateScreen(), // Front End Final // Develop by Umer
     );
   }
 }

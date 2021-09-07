@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/screens/add_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/widgets.dart';
 
 import '../config.dart';
 
@@ -11,36 +12,46 @@ class MyVehicles extends StatefulWidget {
 }
 
 class _MyVehiclesState extends State<MyVehicles> {
+  String radioButton = '';
+  int id = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
-        backgroundColor: backgroundColor,
+        backgroundColor: ScreenBackgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: InkWell(
-          onTap: () {
-            gotoScreen(context: context, screen: AddVehicleScreen());
-          },
-
-          child: Neumorphic(
-              margin: const EdgeInsets.all(0),
-            padding : const EdgeInsets.all(0),
-            style: NeumorphicStyle(
-                boxShape: NeumorphicBoxShape.roundRect(
-                    BorderRadius.circular(50)),
-                shadowLightColorEmboss: Colors.white,
-                shadowDarkColorEmboss: Colors.black,
-                shadowDarkColor: Colors.black
-            ),
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              // color: Color(0xffEEF0F5),
-            ),
+        // leading: InkWell(
+        //   onTap: () {
+        //     gotoScreen(context: context, screen: AddVehicleScreen());
+        //   },
+        //
+        //   child: Neumorphic(
+        //       margin: const EdgeInsets.all(0),
+        //     padding : const EdgeInsets.all(0),
+        //     style: NeumorphicStyle(
+        //         boxShape: NeumorphicBoxShape.roundRect(
+        //             BorderRadius.circular(50)),
+        //         shadowLightColorEmboss: Colors.white,
+        //         shadowDarkColorEmboss: Colors.black,
+        //         shadowDarkColor: Colors.black
+        //     ),
+        //     child: Icon(
+        //       Icons.arrow_back_ios,
+        //       color: Colors.black,
+        //       // color: Color(0xffEEF0F5),
+        //     ),
+        //   ),
+        // ),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
           ),
         ),
-
         title: Text(
           screenTitleMyVehicle,
           style: TextStyle(
@@ -134,7 +145,22 @@ class _MyVehiclesState extends State<MyVehicles> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Icons.circle, color: buttonColor),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 6.0),
+                        child: Radio<int>(
+                          value: 1,
+                          groupValue: id,
+                          hoverColor: Colors.red,
+                          activeColor: Colors.red,
+                          onChanged: (val) {
+                            setState(() {
+                              id = 1;
+                              radioButton = '';
+                            },
+                            );
+                          },
+                        ),
+                      ),
 
                       ///bike image
                       Image.asset(bikeImageImagePath),
@@ -166,7 +192,6 @@ class _MyVehiclesState extends State<MyVehicles> {
                 ),
               ),
             ),
-
             ///List 2
             Padding(
               padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
@@ -201,7 +226,24 @@ class _MyVehiclesState extends State<MyVehicles> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Icons.radio_button_unchecked, color: Colors.black),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 6.0),
+                        child: Radio<int>(
+                          value: 2,
+                          groupValue: id,
+                          hoverColor: Colors.red,
+                          activeColor: Colors.red,
+                          onChanged: (val) {
+                            setState(() {
+                              id = 2;
+                              radioButton = '';
+                            },
+                            );
+                          },
+                        ),
+                      ),
+
+                      ///bike image
                       Image.asset(bikeImageImagePath),
                       Text.rich(
                         TextSpan(
@@ -223,7 +265,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                           ],
                         ),
                         textHeightBehavior:
-                            TextHeightBehavior(applyHeightToFirstAscent: false),
+                        TextHeightBehavior(applyHeightToFirstAscent: false),
                         textAlign: TextAlign.center,
                       )
                     ],
@@ -231,7 +273,6 @@ class _MyVehiclesState extends State<MyVehicles> {
                 ),
               ),
             ),
-
             ///List 3
             Padding(
               padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
@@ -266,7 +307,24 @@ class _MyVehiclesState extends State<MyVehicles> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Icons.radio_button_unchecked, color: Colors.black),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 6.0),
+                        child: Radio<int>(
+                          value: 3,
+                          groupValue: id,
+                          hoverColor: Colors.red,
+                          activeColor: Colors.red,
+                          onChanged: (val) {
+                            setState(() {
+                              id = 3;
+                              radioButton = '';
+                            },
+                            );
+                          },
+                        ),
+                      ),
+
+                      ///bike image
                       Image.asset(bikeImageImagePath),
                       Text.rich(
                         TextSpan(
@@ -288,7 +346,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                           ],
                         ),
                         textHeightBehavior:
-                            TextHeightBehavior(applyHeightToFirstAscent: false),
+                        TextHeightBehavior(applyHeightToFirstAscent: false),
                         textAlign: TextAlign.center,
                       )
                     ],
@@ -296,6 +354,9 @@ class _MyVehiclesState extends State<MyVehicles> {
                 ),
               ),
             ),
+
+
+
           ],
         ),
       ),

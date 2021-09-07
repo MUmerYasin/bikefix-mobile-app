@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/screens/payment_unsuccessful_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
@@ -19,7 +20,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: NeumorphicColors.background,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: true,
         elevation: 0,
@@ -27,14 +28,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
           screenTitlePaymentMethod,
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: NeumorphicColors.background,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios_outlined,
-            color: Colors.black,
+        backgroundColor: ScreenBackgroundColor,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
           ),
         ),
         centerTitle: true,
@@ -60,9 +60,11 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       width: 300,
                       height: 50,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+
                           Padding(
-                            padding: const EdgeInsets.only(left: 20.0),
+                            padding: const EdgeInsets.only(left: 28.0),
                             child: Text(
                               creditDebitCardText,
                               style: TextStyle(
@@ -71,14 +73,21 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 90.0),
+                            padding: const EdgeInsets.only(right: 6.0),
                             child: Radio<int>(
-                                value: 1,
-                                groupValue: null,
-                                onChanged: (val) {
-                                  setState(() {});
-                                }),
-                          )
+                              value: 1,
+                              groupValue: id,
+                              hoverColor: Colors.red,
+                              activeColor: Colors.red,
+                              onChanged: (val) {
+                                setState(() {
+                                  id = 1;
+                                  radioButton = '';
+                                });
+                              },
+
+                                ),
+                          ),
                         ],
                       ),
                     ),
@@ -123,14 +132,18 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               color: Colors.black,
                             ),
                             trailing: Radio<int>(
-                                value: 1,
-                                groupValue: null,
-                                onChanged: (val) {
-                                  setState(() {
-                                    id = 1;
-                                    radioButton = '';
-                                  });
-                                }),
+                              value: 2,
+                              groupValue: id,
+                              hoverColor: Colors.red,
+                              activeColor: Colors.red,
+                              onChanged: (val) {
+                                setState(() {
+                                  id = 2;
+                                  radioButton = '';
+                                });
+                              },
+
+                            ),
                             title: Text(
                               amazonUPIText,
                               style: TextStyle(fontWeight: FontWeight.w500),
@@ -169,14 +182,17 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               color: Colors.deepPurple,
                             ),
                             trailing: Radio<int>(
-                                value: 1,
-                                groupValue: null,
-                                onChanged: (val) {
-                                  setState(() {
-                                    id = 1;
-                                    radioButton = '';
-                                  });
-                                }),
+                              value: 3,
+                              groupValue: id,
+                              hoverColor: Colors.red,
+                              activeColor: Colors.red,
+                              onChanged: (val) {
+                                setState(() {
+                                  id = 3;
+                                  radioButton = '';
+                                });
+                              },
+                                ),
                             title: Text(
                               phonePeText,
                               style: TextStyle(fontWeight: FontWeight.w500),
@@ -227,14 +243,17 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               // color: Colors.deepPurple,
                             ),
                             trailing: Radio<int>(
-                                value: 1,
-                                groupValue: null,
-                                onChanged: (val) {
-                                  setState(() {
-                                    id = 1;
-                                    radioButton = '';
-                                  });
-                                }),
+                              value: 4,
+                              groupValue: id,
+                              hoverColor: Colors.red,
+                              activeColor: Colors.red,
+                              onChanged: (val) {
+                                setState(() {
+                                  id = 4;
+                                  radioButton = '';
+                                });
+                              },
+                                ),
                             title: Text(
                               paytmText,
                               style: TextStyle(fontWeight: FontWeight.w500),
@@ -264,14 +283,17 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               color: Colors.black,
                             ),
                             trailing: Radio<int>(
-                                value: 1,
-                                groupValue: null,
-                                onChanged: (val) {
-                                  setState(() {
-                                    id = 1;
-                                    radioButton = '';
-                                  });
-                                }),
+                              value: 5,
+                              groupValue: id,
+                              hoverColor: Colors.red,
+                              activeColor: Colors.red,
+                              onChanged: (val) {
+                                setState(() {
+                                  id = 5;
+                                  radioButton = '';
+                                });
+                              },
+                                ),
                             title: Text(
                               amazonUPIText,
                               style: TextStyle(fontWeight: FontWeight.w500),
@@ -302,14 +324,17 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             ),
                             // leading: Icon(FontAwesomeIcons.rupeeSign,color: Colors.purpleAccent,),
                             trailing: Radio<int>(
-                                value: 1,
-                                groupValue: null,
+                                value: 6,
+                                groupValue: id,
+                              hoverColor: Colors.red,
+                              activeColor: Colors.red,
                                 onChanged: (val) {
                                   setState(() {
-                                    id = 1;
+                                    id = 6;
                                     radioButton = '';
                                   });
-                                }),
+                                },
+                            ),
                             title: Text(
                               phonePeText,
                               style: TextStyle(fontWeight: FontWeight.w500),
@@ -337,6 +362,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       height: 50,
                       decoration: BoxDecoration(),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 28.0),
@@ -348,18 +374,19 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 147.0),
+                            padding: const EdgeInsets.only(right: 6.0),
                             child: Radio(
-                                value: 1,
+                                value: 7,
                                 hoverColor: Colors.red,
                                 activeColor: Colors.red,
                                 groupValue: id,
                                 onChanged: (val) {
                                   setState(() {
-                                    id = 1;
-                                    radioButton = 'one';
+                                    id = 7;
+                                    radioButton = 'later';
                                   });
-                                }),
+                                },
+                                ),
                           ),
                         ],
                       ),
@@ -396,7 +423,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                 // ),
 
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
                   child: SizedBox(
                     height: 50,
                     child: Neumorphic(
@@ -418,13 +445,18 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500,
                               )),
+
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        PaymentUnsuccessfulScreen()));
+                            gotoScreen(context: context, screen: PaymentUnsuccessfulScreen());
                           },
+
+                          // onPressed: () {
+                          //   Navigator.push(
+                          //       context,
+                          //       MaterialPageRoute(
+                          //           builder: (context) =>
+                          //               PaymentUnsuccessfulScreen()));
+                          // },
                           child: SizedBox(
                               width: 130,
                               child: Center(child: Text(buttonNameProceed)))),

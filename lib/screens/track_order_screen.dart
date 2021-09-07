@@ -16,14 +16,18 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: backgroundColor,
+        backgroundColor: ScreenBackgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
+          ),
         ),
         title: Text(
           screenTitleTrackOrder,

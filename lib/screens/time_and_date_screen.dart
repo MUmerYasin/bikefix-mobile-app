@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:two_wheel_vehicle/screens/checkout_screen.dart';
+import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 import '../config.dart';
 // import 'package:intl/intl.dart' show DateFormat;
@@ -28,10 +30,10 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: backgroundColor,
+        backgroundColor: ScreenBackgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
         leading: Icon(
           Icons.arrow_back_ios,
@@ -541,7 +543,10 @@ class _TimeAndDateScreenState extends State<TimeAndDateScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: RoundedCornerButton(
                       onPressed:(){
-
+                        gotoScreen(
+                          context: context,
+                          screen: CheckoutStatusScreen(),
+                        );
                     },
                         child: buttonNameBookNow,
                     ),
@@ -637,29 +642,28 @@ class AmAndPmButton extends StatelessWidget {
           //  boxShape: NeumorphicBoxShape.circle(),
         ),
         child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: color! ? buttonColor : Colors.white.withOpacity(0.8),
-              textStyle: TextStyle(
-                fontFamily: textFontFamily,
-                fontSize: 14,
-                color: const Color(0xffffffff),
-
-                fontWeight: FontWeight.w500,
-              ),
+          style: ElevatedButton.styleFrom(
+            primary: color! ? buttonColor : Colors.white.withOpacity(0.8),
+            textStyle: TextStyle(
+              fontFamily: textFontFamily,
+              fontSize: 14,
+              color: const Color(0xffffffff),
+              fontWeight: FontWeight.w500,
             ),
-            onPressed: onPressed,
-            child: Center(child: Row(
-              children: [
-                if (images! && checkAM!) Image.asset(amIconCustomMenuImagePath, height: 20 ,)
-                else Image.asset(pmIconCustomMenuImagePath, height: 20 ,),
-
-
-                Text(child ?? '',style: TextStyle(
-                  color:color! ? Colors.white : Colors.black,
-                ),
-                ),
-              ],
-            ))),
+          ),
+          onPressed: onPressed,
+          child: Center(child: Row(
+            children: [
+              if (images! && checkAM!) Image.asset(amIconCustomMenuImagePath, height: 20 ,)
+              else Image.asset(pmIconCustomMenuImagePath, height: 20 ,),
+              Text(child ?? '',style: TextStyle(
+                color:color! ? Colors.white : Colors.black,
+              ),
+              ),
+            ],
+          ),
+          ),
+        ),
       ),
     );
   }

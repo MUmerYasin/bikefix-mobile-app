@@ -4,7 +4,6 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/mybooking_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
-
 import '../config.dart';
 import '../widgets.dart';
 
@@ -16,18 +15,31 @@ class AddVehicleScreen extends StatefulWidget {
 class _AddVehicleScreenState extends State<AddVehicleScreen> {
 
   int fuelTypeChoice = 0;
+  String petrolType = petrolBlackIconImagePath;
+  String electricType = batteryBlackIconImagePath;
+
+  @override
+  void initState() {
+    super.initState();
+    petrolType = petrolBlackIconImagePath;
+    electricType = batteryBlackIconImagePath;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: backgroundColor,
+        backgroundColor: ScreenBackgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
+          ),
         ),
         title: Text(
           screenTitleAddVehicle,
@@ -278,7 +290,11 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
 
                     child: GestureDetector(
                       onTap: () {
-                        fuelTypeChoice = 1;
+                        setState(() {
+                          fuelTypeChoice = 1;
+                          petrolType = petrolRedIconImagePath;
+                          electricType = batteryBlackIconImagePath;
+                        });
                       },
 
                       child: Container(
@@ -307,7 +323,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset(petrolIconImagePath),
+                            Image.asset(petrolType),
                             Text(
                               fuelTypePetrol,
                               style: TextStyle(
@@ -322,6 +338,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                       ),
                     ),
                   ),
+
                   Neumorphic(
                     style: NeumorphicStyle(
                       shadowDarkColor: Colors.black.withOpacity(0.6),
@@ -333,7 +350,11 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
 
                     child: GestureDetector(
                       onTap: () {
-                        fuelTypeChoice = 2;
+                        setState(() {
+                          fuelTypeChoice = 2;
+                          petrolType = petrolBlackIconImagePath;
+                          electricType = batteryRedIconImagePath;
+                        });
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.42,
@@ -360,7 +381,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset(BatteryIconImagePath),
+                            Image.asset(electricType),
                             Text(
                               fuelTypeElectric,
                               style: TextStyle(

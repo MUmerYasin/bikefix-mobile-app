@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:two_wheel_vehicle/screens/home_screen.dart';
-import 'package:two_wheel_vehicle/screens/my_profile_screen.dart';
-
 import '../config.dart';
 import '../widgets.dart';
 import 'navigator_helper.dart';
@@ -17,7 +15,7 @@ class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Container(

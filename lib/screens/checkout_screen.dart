@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:two_wheel_vehicle/screens/login_screen.dart';
+import 'package:two_wheel_vehicle/screens/home_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/screens/paymet_method_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
 import '../config.dart';
@@ -16,14 +17,18 @@ class _CheckoutStatusScreenState extends State<CheckoutStatusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: backgroundColor,
+        backgroundColor: ScreenBackgroundColor,
         // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
+          ),
         ),
         title: Text(
           screenTitleCheckout,
@@ -309,7 +314,7 @@ class _CheckoutStatusScreenState extends State<CheckoutStatusScreen> {
                       child: SmallRoundedCornerButton(
                         color: true,
                         onPressed: () {
-                          gotoScreen(context: context, screen: LoginScreen());
+                          gotoScreen(context: context, screen: PaymentMethodScreen());
                         },
                         child: buttonNamePayNow,
                       ),
@@ -322,7 +327,7 @@ class _CheckoutStatusScreenState extends State<CheckoutStatusScreen> {
                       child: SmallRoundedCornerButton(
                         color: false,
                         onPressed: () {
-                          gotoScreen(context: context, screen: LoginScreen());
+                          gotoScreen(context: context, screen: HomeScreen());
                         },
                         child: buttonNamePayLater,
                       ),

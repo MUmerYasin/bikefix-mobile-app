@@ -4,6 +4,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/general_service_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/screens/time_and_date_screen.dart';
 
 /// Custom App Bar
 class CustomAppBar extends StatelessWidget {
@@ -63,15 +64,15 @@ class CustomTextField extends StatelessWidget {
               depth: -8,
               shape: NeumorphicShape.flat,
               shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
-              //  boxShape: NeumorphicBoxShape.circle(),
-              ),
+            //  boxShape: NeumorphicBoxShape.circle(),
+          ),
           child: Padding(
-            padding: const EdgeInsets.all(17.0),
-            child: TextField(
+            padding: const EdgeInsets.only(left: 17.0),
+            child: TextFormField(
               decoration: InputDecoration(
                 // border: OutlineInputBorder(),
                 border: InputBorder.none,
-                labelText: text,
+                hintText: text,
                 labelStyle: TextStyle(
                   fontFamily: textFontFamily,
                   fontSize: 14,
@@ -108,8 +109,8 @@ class SmallRoundedCornerButton extends StatelessWidget {
             shadowLightColor: Colors.white,
             shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 
-            //  boxShape: NeumorphicBoxShape.circle(),
-            ),
+          //  boxShape: NeumorphicBoxShape.circle(),
+        ),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 primary: color! ? buttonColor : Colors.black,
@@ -144,8 +145,8 @@ class RoundedCornerButton extends StatelessWidget {
             shadowLightColor: Colors.white,
             shadowDarkColorEmboss: Colors.black.withOpacity(0.8)
 
-            //  boxShape: NeumorphicBoxShape.circle(),
-            ),
+          //  boxShape: NeumorphicBoxShape.circle(),
+        ),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 primary: buttonColor,
@@ -157,7 +158,7 @@ class RoundedCornerButton extends StatelessWidget {
                 )),
             onPressed: onPressed,
             child:
-                SizedBox(width: 100, child: Center(child: Text(child ?? '')))),
+            SizedBox(width: 100, child: Center(child: Text(child ?? '')))),
       ),
     );
   }
@@ -327,8 +328,8 @@ class _DividerCustomState extends State<DividerCustom> {
 class CustomDropDownMenu extends StatefulWidget {
   CustomDropDownMenu(
       {Key? key,
-      required this.customDropDownValue,
-      required this.bikeDetailsData})
+        required this.customDropDownValue,
+        required this.bikeDetailsData})
       : super(key: key);
 
   String customDropDownValue;
@@ -721,7 +722,7 @@ class _InspectionCheckListMenuState extends State<InspectionCheckListMenu> {
                             onPressed: () {
                               gotoScreen(
                                 context: context,
-                                screen: GeneralServiceScreen(),
+                                screen: TimeAndDateScreen(),
                               );
                             },
                             child:
@@ -732,6 +733,39 @@ class _InspectionCheckListMenuState extends State<InspectionCheckListMenu> {
                 ),
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Back button on app bar
+class BackButtonOnAppBar extends StatefulWidget {
+  const BackButtonOnAppBar({Key? key}) : super(key: key);
+
+  @override
+  _BackButtonOnAppBarState createState() => _BackButtonOnAppBarState();
+}
+
+class _BackButtonOnAppBarState extends State<BackButtonOnAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: (){Navigator.pop(context);},
+      child: Container(
+        width: 30,
+        height: 30,
+        child: Card(
+          color: NeumorphicColors.background,
+          elevation: 12,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+          child: Icon(
+            CupertinoIcons.back,
+            size: 17,
+            color: Colors.black,
           ),
         ),
       ),

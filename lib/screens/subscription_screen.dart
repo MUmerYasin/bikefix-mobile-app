@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
+import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
@@ -16,18 +17,17 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: NeumorphicColors.background,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: NeumorphicColors.background,
+        backgroundColor: ScreenBackgroundColor,
         title: Text(''),
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back_ios_outlined,
-            color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
           ),
         ),
         centerTitle: true,
@@ -252,12 +252,17 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 SmallRoundedCornerButton(
-                                    onPressed: () {
-                                      setState(
-                                            () {
-                                        },
-                                      );
-                                    },
+                                    // onPressed: () {
+                                      //ChooseBikeBrand
+                                      // setState(
+                                      //       () {
+                                      //   },
+                                      // );
+
+                                      onPressed: () {
+                                        gotoScreen(context: context, screen: ChooseBikeBrand());
+                                      },
+                                    // },
                                     child: buttonNameBuyNow,
                                     color: false),
                               ],

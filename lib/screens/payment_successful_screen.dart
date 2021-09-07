@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
+import 'package:two_wheel_vehicle/screens/track_order_screen.dart';
 import 'package:two_wheel_vehicle/widgets.dart';
 
 class PaymentSuccessfulScreen extends StatefulWidget {
@@ -17,19 +18,19 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: NeumorphicColors.background,
+      backgroundColor: ScreenBackgroundColor,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: NeumorphicColors.background,
         title: Text(''),
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios_outlined,
-              color: Colors.black,
-            ),),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Row(
+            children: [
+              BackButtonOnAppBar(),
+            ],
+          ),
+        ),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -95,9 +96,9 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen> {
                 padding: const EdgeInsets.only(top: 30.0, ),
                 child: RoundedCornerButton(
                   onPressed: () {
-                    gotoScreen(context: context, screen: PaymentSuccessfulScreen());
+                    gotoScreen(context: context, screen: TrackOrderScreen());
                   },
-                  child: buttonNameTryAgain,
+                  child: buttonNameTrackOrder,
                 ),
               ),
             ],
