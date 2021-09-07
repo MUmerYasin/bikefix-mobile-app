@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:two_wheel_vehicle/config.dart';
 import 'package:two_wheel_vehicle/screens/become_a_partner_screen.dart';
+import 'package:two_wheel_vehicle/screens/choose_bike_brand.dart';
 import 'package:two_wheel_vehicle/screens/home_screen.dart';
 import 'package:two_wheel_vehicle/screens/location_screen.dart';
 import 'package:two_wheel_vehicle/screens/login_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(), // Front End Final
+      // home: LoginScreen(), // Front End Final
       // home: PaymentMethodScreen(), // Front End Final
       // home: RegisterScreen(), // Front End Final
       // home: OTPScreen(),  // Front End Final
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       // home: MyBookingScreen(),// Front End Final // Develop by Umer
       // home: ServiceStatusScreen(),// Front End Final // Develop by Umer
       // home: AddVehicleScreen(),// Front End Final // Develop by Umer
-      // home: ChooseBikeBrand(), // Front End Final // Develop by Umer
+      home: ChooseBikeBrand(), // Front End Final // Develop by Umer
       // home: PaymentUnsuccessfulScreen(), // Front End Final // Develop by Umer
       // home: PaymentSuccessfulScreen(), // Front End Final // Develop by Umer
       // home: SubscriptionScreen(), // Front End Final // Develop by Umer

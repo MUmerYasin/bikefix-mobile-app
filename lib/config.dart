@@ -121,6 +121,7 @@ const String amIconCustomMenuImagePath = imagePathStart + "am_icon.png";
 
 const String batteryRedIconImagePath = imagePathStart + "battery_issue_icon.png";
 const String batteryBlackIconImagePath = imagePathStart + "battery_icon.png";
+
 const String petrolRedIconImagePath = imagePathStart + "petrol_icon.png";
 const String petrolBlackIconImagePath = imagePathStart + "petrol_red_icon.png";
 

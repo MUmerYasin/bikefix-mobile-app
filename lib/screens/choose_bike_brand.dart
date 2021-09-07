@@ -96,20 +96,46 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
               /// GridView of Choose Bike Brand.
               SizedBox(
                 height: MediaQuery.of(context).size.height / 1.8,
+                child: GestureDetector(
+                  // onTap: () {
+                  //   setState((
+                  //       ) {
+                  //
+                  //     showDialog(
+                  //       context: context,
+                  //       builder: (a) => AlertDialog(
+                  //         title: Text(a.toString(),),
+                  //         content: Text(context.toString(),),
+                  //         actions: <Widget>[
+                  //           ElevatedButton(
+                  //               onPressed: () {
+                  //                 Navigator.of(context).pop();
+                  //               },
+                  //               child: Text('Close'),),
+                  //         ],
+                  //       ),
+                  //     );
+                  //
+                  //   },
+                  //   );
+                  // },
                 child: GridView.count(
                   // primary: false,
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
 
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                   crossAxisCount: 3,
+
                   children: <Widget>[
+
+
                     GridViewOfChooseBikeBrandSingleItems(
                         textShowData: gridViewChooseBikeBrandText1,
                         imagePaths: ktmLogoImagePath),
+
                     GridViewOfChooseBikeBrandSingleItems(
                         textShowData: gridViewChooseBikeBrandText2,
                         imagePaths: tvsLogoImagePath),
@@ -162,6 +188,7 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
                         textShowData: gridViewChooseBikeBrandText4,
                         imagePaths: royalEnfieldLogoImagePath),
                   ],
+                ),
                 ),
               ),
 
@@ -225,24 +252,79 @@ class GridViewOfChooseBikeBrandSingleItems extends StatefulWidget {
 
 class _GridViewOfChooseBikeBrandSingleItemsState
     extends State<GridViewOfChooseBikeBrandSingleItems> {
+
+  Color buttonColors = Colors.black;
+
+  @override
+  dispose(){
+    super.dispose();
+
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    buttonColors = Colors.black;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Neumorphic(
       padding: const EdgeInsets.all(8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-              child: Image(
-            image: AssetImage(widget.imagePaths),
-          )),
-          Text(
-            widget.textShowData,
-            style: TextStyle(fontSize: 11.0),
-          ),
-        ],
+
+      style: NeumorphicStyle(
+        shadowDarkColor: buttonColors.withOpacity(0.8),
+        depth: 7,
+        shape: NeumorphicShape.flat,
+        shadowLightColor: Colors.white.withOpacity(0.6),
+        shadowDarkColorEmboss: buttonColors.withOpacity(0.8),
       ),
+
+      child: GestureDetector(
+
+        onTap: () {
+          setState((
+              ) {
+
+            if(buttonColors==Colors.black){
+              buttonColors = Color(0xffE34D3D);
+            }
+            else{
+              buttonColors = Colors.black;
+            }
+
+
+          },
+          );
+        },
+
+        // onSecondaryTapCancel: () {
+        //   setState((
+        //       ) {
+        //     super.dispose();
+        //     buttonColors = Color(0xffE5E5E5);
+        //   },
+        //   );
+        // },
+
+
+
+       child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+         crossAxisAlignment: CrossAxisAlignment.center,
+         children: [
+           Expanded(
+             child: Image(
+               image: AssetImage(widget.imagePaths),
+             ),
+           ),
+           Text(
+             widget.textShowData,
+             style: TextStyle(fontSize: 11.0,),
+           ),
+         ],
+       ),
+        ),
     );
   }
 }
