@@ -859,6 +859,7 @@ class _HomeeState extends State<Homee> {
                           height: 49,
                           child: ListTile(
                             onTap: () {
+                              Navigator.of(context).pop(true);
                               Navigator.push(context, CupertinoPageRoute(
                                   builder: (context) => LoginScreen()));
                             },

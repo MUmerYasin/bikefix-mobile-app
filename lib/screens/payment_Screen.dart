@@ -66,7 +66,7 @@ class _Payment_Unseccussfull_ScreenState extends State<Payment_Unseccussfull_Scr
                    shadowColor: Color(0xfff93527),
                    child: SizedBox(
                      width: 140,
-                     height: 55,
+                     height: 40,
                      child: ElevatedButton(
                        onPressed: (){
                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_Seccussfull_Screen()));

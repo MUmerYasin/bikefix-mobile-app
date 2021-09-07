@@ -35,6 +35,11 @@ const String serviceProgress = ('Vehicle service in progress');
 const String complete = ('Service of your Vehicle is complete');
 const String dropped = ('Vehicle dropped');
 const String visit = ('Thanks Visiting');
+const String redpetrol =  ('image/petrol.png');
+const String blackbettry =  ('image/battery.png');
+const String blackpetrol = ('assets/icons/petrol_red_icon.png');
+const String redbattery = ('assets/icons/battery_issue_icon.png');
+
 
 
 

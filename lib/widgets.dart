@@ -157,11 +157,15 @@ class SmallRoundedCornerButton extends StatelessWidget {
 }
 
 class myTextField extends StatefulWidget {
-  const myTextField({Key? key, required this.text, required this.validator, this.keyboardType,}) : super(key: key);
+
+  const myTextField({Key? key, required this.text, required this.validator, this.keyboardType, this.onTap, this.controller,required this.read }) : super(key: key);
    final String? text;
+   final onTap;
 
    final FormFieldValidator validator;
    final  keyboardType;
+   final controller;
+   final bool read;
 
   @override
   _myTextFieldState createState() => _myTextFieldState();
@@ -171,11 +175,15 @@ class _myTextFieldState extends State<myTextField> {
   @override
   Widget build(BuildContext context) {
     return Neumorphic(
+      margin: EdgeInsets.all(15),
       style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
       child: Container(
         height: 50,
         child: TextFormField(
+          readOnly: widget.read,
         validator: widget.validator,
+          controller: widget.controller,
+          onTap: (widget.onTap),
           keyboardType: widget.keyboardType,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.only(left: 14,right: 14),
@@ -258,11 +266,11 @@ class _customTextFieldState extends State<customTextField> {
 }
 
 class CustomCard extends StatefulWidget {
-  const CustomCard({Key? key, required this.text, required this.imagepath,}) : super(key: key);
+  const CustomCard({Key? key, required this.text, required this.imagepath, required this.color,}) : super(key: key);
 
   final String text;
   final String imagepath;
-
+  final bool color;
 
   @override
   _CustomCardState createState() => _CustomCardState();
@@ -272,11 +280,14 @@ class _CustomCardState extends State<CustomCard> {
   @override
   Widget build(BuildContext context) {
     return Neumorphic(
+      margin: EdgeInsets.all(8),
 
-      style: NeumorphicStyle(depth:10,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.white),
+      style: NeumorphicStyle(depth:10,shadowLightColorEmboss: Colors.white,shadowDarkColorEmboss: 
+      Colors.black45 , shadowDarkColor: Colors.black45,shadowLightColor: Colors.white),
       child: Container(
-        width: 210,
-        height: 120,
+        color:  widget.color ? buttonColor : custom,
+        width: 260,
+        height: 290,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -15,6 +15,10 @@ class Choose extends StatefulWidget {
 }
 
 class _ChooseState extends State<Choose> {
+
+
+  int selectvalue = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,48 +46,97 @@ class _ChooseState extends State<Choose> {
             child: customTextField(text: 'Find', icon: CupertinoIcons.search),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 18.0),
-            child: Container(
-              margin: EdgeInsets.all(15),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
+            padding: const EdgeInsets.only(top: 18.0,left: 5,right: 5),
+            child: SizedBox(
 
-                  height: 400,
+                  height: MediaQuery.of(context).size.height/2,
                   width: MediaQuery.of(context).size.width,
                   child: GridView.count(
                     physics: NeverScrollableScrollPhysics(),
                     crossAxisCount: 3,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 25,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5,
+
                     children: [
-                      CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png'),
-                      CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
-                      CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png'),
-                      CustomCard(
-                          text: 'Royal enfield',
-                          imagepath: 'bike/royal_enfield_logo.png'),
-                      CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png'),
-                      CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
-                      CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png'),
-                      CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png'),
-                      CustomCard(
-                          text: 'Royal enfield',
-                          imagepath: 'bike/royal_enfield_logo.png')
+                      GestureDetector(onTap: (){
+                        setState(() {
+                          selectvalue = 1;
+                        });
+
+                      },
+                          child: CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png',color: selectvalue == 1 ? true : false)),
+                      GestureDetector(onTap: (){
+                        setState(() {
+                          selectvalue = 2;
+                        });
+                      },
+                          child: CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png', color: selectvalue == 2 ? true : false,)),
+                      GestureDetector( onTap: (){
+                        setState(() {
+                          selectvalue = 3;
+
+                        });
+                      },
+                          child: CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png', color: selectvalue == 3 ? true : false,)),
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            selectvalue = 4;
+                          });
+                        },
+                        child: CustomCard(
+                            text: 'Royal enfield',
+                            imagepath: 'bike/royal_enfield_logo.png', color: selectvalue == 4 ? true : false,),
+                      ),
+                      GestureDetector( onTap: (){
+                        setState(() {
+                          selectvalue = 5;
+                        });
+                      },
+                          child: CustomCard(text: 'KTM', imagepath: 'bike/ktm_logo.png', color: selectvalue == 5 ? true : false,)),
+                      GestureDetector( onTap: (){
+                        setState(() {
+                          selectvalue = 6;
+                        });
+                      },
+                          child: CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png', color: selectvalue == 6 ? true : false,)),
+                      GestureDetector(onTap: (){
+                        setState(() {
+                          selectvalue =7;
+                        });
+                      },
+                          child: CustomCard(text: 'TVS', imagepath: 'bike/tvs_logo.png',color: selectvalue == 7 ? true : false,)),
+                      GestureDetector(
+                          onTap:(){
+                            setState(() {
+                              selectvalue =8;
+                            });
+                          },child: CustomCard(text: 'Bajaj', imagepath: 'bike/bajaj_logo.png', color: selectvalue == 8 ? true : false,)),
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            selectvalue =9;
+                          });
+
+
+                        },
+                        child: CustomCard(
+                            text: 'Royal enfield',
+                            imagepath: 'bike/royal_enfield_logo.png', color: selectvalue == 9 ? true : false,),
+                      )
                     ],
                   ),
                 ),
               ),
-            ),
-          ),
-          SingleChildScrollView(
-            child: SizedBox(
+
+
+            SizedBox(
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      CupertinoPageRoute(
                           builder: (context) => Sell_Your_Bike()));
                 },
                 style: ElevatedButton.styleFrom(
@@ -94,7 +147,7 @@ class _ChooseState extends State<Choose> {
                 ),
               ),
             ),
-          ),
+
         ],
       )),
     );

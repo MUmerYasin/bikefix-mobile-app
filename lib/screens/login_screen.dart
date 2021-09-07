@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:two_wheel_vehicle/config.dart';
@@ -40,8 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Form(
           key: _key,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(child: Image.asset('assets/icons/logo.png',width: 150,height: 2150,)),
              Expanded(child: Column(
@@ -49,12 +50,17 @@ class _LoginScreenState extends State<LoginScreen> {
                crossAxisAlignment: CrossAxisAlignment.center,
                children: [
                Neumorphic(
-                 style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss: Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
+                 style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),
+                     shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss:
+                     Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
                  child: Container(
                    height: 50,
                    child: TextFormField(
+                     inputFormatters: [
+                       LengthLimitingTextInputFormatter(12),
+                     ],
+                     keyboardType: TextInputType.phone,
                      autofocus: true,
-                     focusNode: FocusNode(),
                      validator: (value) {
                        if (value!.isEmpty){
                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.orange,content:

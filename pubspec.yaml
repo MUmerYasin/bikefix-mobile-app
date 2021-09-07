@@ -37,6 +37,7 @@ dependencies:
   image_cropper: ^1.4.1
   timeline_tile: ^2.0.0
   table_calendar: ^3.0.2
+  intl: ^0.17.0
 
 
 

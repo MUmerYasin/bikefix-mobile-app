@@ -69,11 +69,12 @@ class _Payment_Unseccussfull_ScreenState extends State<Payment_Seccussfull_Scree
                     shadowColor: Color(0xfff93527),
                     child: SizedBox(
                       width: 140,
-                      height: 55,
+                      height: 40,
                       child: ElevatedButton(
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Track_Order_Screen()));
-                        },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child: Text('Track Order',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+                        },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: Colors.red),child:
+                      Text('Track Order',style: TextStyle(fontSize: 19),),
                       ),
                     ),
                   ),

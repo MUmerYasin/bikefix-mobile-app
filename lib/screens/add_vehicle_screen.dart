@@ -16,7 +16,22 @@ class AddVehicleScreen extends StatefulWidget {
 
 class _AddVehicleScreenState extends State<AddVehicleScreen> {
 
+  int select = 0;
+
+  String blackpatroll = blackpetrol;
+  String blackbattaryyy = blackbettry;
+  String redpatroll = redpetrol;
+  String redbattaryy = redbattery;
+
   String selected = 'Choose Model';
+
+  @override
+  void initState() {
+    blackpatroll = blackpetrol;
+    blackbattaryyy = blackbettry;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,15 +65,16 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 18.0),
+                    padding: const EdgeInsets.only(top: 0.0),
                     child: Neumorphic(
-                      margin: EdgeInsets.all(10),
-                      style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
+                      margin: EdgeInsets.all(20),
+                      style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,
+                          shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
                       child: Padding(
                           padding: const EdgeInsets.all(0.0),
                           child: ListTile(
                             leading: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(7.0),
                               child: Text('Choose Brand',style: TextStyle(fontSize: 17),),
                             ),
                             trailing: Icon(CupertinoIcons.forward),
@@ -70,12 +86,12 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                       ),
                     ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
+                    padding: const EdgeInsets.only(top: 0.0),
                     child: Neumorphic(
-                      margin: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(20),
                       style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
                       child:  Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(7.0),
                           child: DropdownButton<String>(
                             underline: SizedBox(),
                             dropdownColor: NeumorphicColors.background,
@@ -100,15 +116,16 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                     ),
                   
                   Padding(
-                    padding: const EdgeInsets.only(top: 28.0),
-                    child: Container( width: 300,
-                        child: myTextField(text: 'Year', validator: (value) {  }, )),
-                  ),
+                    padding: const EdgeInsets.only(top: 0.0),
+                    child:  myTextField(text: 'Year', validator: (value) {
+
+                    }, read: false, )),
+
                   
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 28.0, left: 38),
+                        padding: const EdgeInsets.only(top: 8.0, left: 45),
                         child: Text('Fuel Type',style: TextStyle(
                           fontSize: 18,fontWeight: FontWeight.bold
                         ),),
@@ -125,50 +142,75 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
                           padding: const EdgeInsets.all(8.0),
                           child: Neumorphic(
                             style: NeumorphicStyle(shadowLightColor:Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black),
-                            child: Container(
-                              width: 130,
-                              height: 100,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset('image/petrol.png'),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('Petrol',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600),),
-                                  ),
-                                ],
+                            child:  Container(
+                                width: 150,
+                                height: 100,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    GestureDetector(
+                                        onTap:(){
+                                          setState(() {
+                                            select = 1;
+                                            redbattaryy = blackbettry;
+                                            redpatroll = redpetrol;
+
+                                          });
+                                        },
+
+                                        child: Image.asset(redpatroll)),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text('Petrol',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600),),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
+
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Neumorphic(
                             style: NeumorphicStyle(
-                              shadowLightColor: Colors.white,shadowLightColorEmboss: Colors.black,shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black
+                              shadowLightColor: Colors.white,shadowLightColorEmboss: Colors.black,
+                                shadowDarkColorEmboss: Colors.black38,shadowDarkColor: Colors.black
                             ),
-                            child: Container(
-                              width: 130,
-                              height: 100,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset('image/battery.png'),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('Electric',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600),),
-                                  ),
-                                ],
+                            child:
+
+                              Container(
+                                width: 150,
+                                height: 100,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                     GestureDetector(
+                                         onTap: (){
+                                           setState(() {
+                                             select = 2;
+                                             redpatroll = blackpetrol;
+                                             redbattaryy = redbattery;
+
+                                           });
+
+                                         },
+                                         child: Image.asset(redbattaryy )),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text('Electric',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600),),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        )
+
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(top: 28.0),
                     child: SizedBox(
                       height: 50,
                       child:  ElevatedButton(
