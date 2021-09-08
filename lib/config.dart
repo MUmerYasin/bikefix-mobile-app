@@ -7,7 +7,6 @@ Color ScreenBackgroundColor = Color(0xffE5E5E5);
 Color buttonColor = Color(0xffE34D3D);
 
 // Color buttonColor = Color(0xff2DAC0066);
-
 //backgroundColor: NeumorphicColors.background,
 
 /// Screen Title of All Screen

@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -123,7 +125,6 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
                   // primary: false,
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
-
                   padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
@@ -131,11 +132,9 @@ class _ChooseBikeBrandState extends State<ChooseBikeBrand> {
 
                   children: <Widget>[
 
-
                     GridViewOfChooseBikeBrandSingleItems(
                         textShowData: gridViewChooseBikeBrandText1,
                         imagePaths: ktmLogoImagePath),
-
                     GridViewOfChooseBikeBrandSingleItems(
                         textShowData: gridViewChooseBikeBrandText2,
                         imagePaths: tvsLogoImagePath),
@@ -254,17 +253,26 @@ class _GridViewOfChooseBikeBrandSingleItemsState
     extends State<GridViewOfChooseBikeBrandSingleItems> {
 
   Color buttonColors = Colors.black;
-
-  @override
-  dispose(){
-    super.dispose();
-
-  }
-
+  static late String bikeName;
+  // static late int counter ;
+int currentCounterValue = 0;
   @override
   void initState() {
     super.initState();
     buttonColors = Colors.black;
+    // counter++;
+    // currentCounterValue= counter;
+    // bikeName =  widget.textShowData;
+  }
+
+  static String message(){
+    return bikeName;
+  }
+
+  @override
+  dispose(){
+
+    super.dispose();
   }
 
   @override
@@ -281,18 +289,31 @@ class _GridViewOfChooseBikeBrandSingleItemsState
       ),
 
       child: GestureDetector(
-
         onTap: () {
           setState((
               ) {
+            // if(buttonColors==Colors.black && bikeName == widget.textShowData){
+            bikeName =  widget.textShowData;
 
-            if(buttonColors==Colors.black){
+            if(buttonColors==Colors.black ){
               buttonColors = Color(0xffE34D3D);
             }
+            // if( buttonColors == Color(0xffE34D3D)){
+            //   buttonColors=Colors.black;
+            // }
             else{
               buttonColors = Colors.black;
             }
 
+            // if(bikeName ==  widget.textShowData){
+            //   // buttonColors = Colors.black;
+            //   buttonColors = Color(0xffE34D3D);
+            // }
+
+            // if(counter == currentCounterValue){
+            //   // buttonColors = Colors.black;
+            //   buttonColors = Colors.black;
+            // }
 
           },
           );
