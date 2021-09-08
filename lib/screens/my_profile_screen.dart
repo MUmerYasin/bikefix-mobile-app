@@ -162,23 +162,29 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                           onTap: (){
                                             setState(() async {
 
+
                                               DateTime? pickedDate = await showDatePicker(
                                                   context: context, initialDate: DateTime.now(),
-                                                  firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
-                                                  lastDate: DateTime(2101)
+                                                  firstDate: DateTime(2000), //DateTime.now()// - not to allow to choose before today.
+                                                  lastDate: DateTime(2101),
+
                                               );
 
                                               if(pickedDate != null ){
                                                 print(pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+
                                                 String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
                                                 print(formattedDate); //formatted date output using intl package =>  2021-03-16
 //you can implement different kind of Date Format here according to your requirement
 
+
                                                 setState(() {
                                                   dateinput.text = formattedDate; //set output date to TextField value.
                                                 });
+
                                               }else{
                                                 print("Date is not selected");
+
                                               }
                                             },
                                             );
@@ -220,15 +226,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
 
                           Padding(
                             padding: const EdgeInsets.only(top: 28.0),
-                            child: RoundedCornerButton(
-                              onPressed: () {
-
-                                confirm();
-                                // gotoScreen(context: context,screen:LocationScreen());
-
-                              },
-                              child: 'Save',
-                            ),
+                            child: mybutton(onpress: (){},text: 'Save',)
                           ),
 
                         ],))

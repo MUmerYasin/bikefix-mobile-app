@@ -570,6 +570,41 @@ class _containState extends State<contain> {
 }
 
 
+class mybutton extends StatefulWidget {
+  const mybutton({Key? key, required this.text, this.onpress}) : super(key: key);
+
+  final String text;
+  final onpress;
+
+  @override
+  _mybuttonState createState() => _mybuttonState();
+}
+
+class _mybuttonState extends State<mybutton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(color: Colors.redAccent, spreadRadius:3, blurRadius: 7)
+          ],
+          borderRadius: BorderRadius.circular(14)
+      ),
+
+      child: SizedBox(
+        height: 40,
+        width: 140,
+        child:  ElevatedButton(
+          onPressed: (widget.onpress),style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child:
+        Text(widget.text,style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
+        ),
+      ),
+    );
+  }
+}
+
+
 
 
 

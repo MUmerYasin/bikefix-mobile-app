@@ -88,7 +88,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: InkWell(
                           onTap: ()async{
                             var datepick = await showDatePicker(context: context,
-                                initialDate: new DateTime.now(), firstDate: new DateTime(1900), lastDate: new DateTime(2100));
+                                initialDate: new DateTime.now(), firstDate: new DateTime(1900), lastDate: new DateTime(2100),
+
+                              
+                            );
                             if(datepick!=null && datepick!=birthDate){
                               setState(() {
                                 birthDate = datepick;
@@ -97,6 +100,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               });
 
                             }
+
+
 
                           },
                           child: myTextField(text: 'DOB', validator: (value){
@@ -172,26 +177,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 15.0,top: 15,left: 15,bottom: 15),
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 10),
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(color: Colors.redAccent, spreadRadius:3, blurRadius: 7)
-                        ],
-                        borderRadius: BorderRadius.circular(14)
-                    ),
-
-                    child: SizedBox(
-                      height: 50,
-                      width: 170,
-                      child:  ElevatedButton(
-                        onPressed: (){
-                          validated();
-                        },style: ElevatedButton.styleFrom(shadowColor: Color(0xfff93527),primary: small),child:
-                      Text(' Sign up ',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 19),),
-                      ),
-                    ),
-                  ),
+                  child: mybutton(onpress: (){
+                    validated();
+                  },text: 'Sign up',)
                 ),
 
                 RichText(text: TextSpan(

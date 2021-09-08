@@ -34,11 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: NeumorphicColors.background,
-      body: Container(
-        padding: EdgeInsets.all(15),
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Form(
+      body:  Form(
           key: _key,
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
@@ -46,10 +42,11 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Expanded(child: Image.asset('assets/icons/logo.png',width: 150,height: 2150,)),
              Expanded(child: Column(
-               mainAxisAlignment: MainAxisAlignment.center,
-               crossAxisAlignment: CrossAxisAlignment.center,
+               // mainAxisAlignment: MainAxisAlignment.center,
+               // crossAxisAlignment: CrossAxisAlignment.center,
                children: [
                Neumorphic(
+                 margin: EdgeInsets.all(15),
                  style: NeumorphicStyle(depth: NeumorphicTheme.embossDepth(context),
                      shadowLightColor: Colors.white,shadowDarkColorEmboss: Colors.black54, shadowLightColorEmboss:
                      Colors.white,shadowDarkColor: Colors.black54,color: NeumorphicColors.background),
@@ -57,19 +54,21 @@ class _LoginScreenState extends State<LoginScreen> {
                    height: 50,
                    child: TextFormField(
                      inputFormatters: [
-                       LengthLimitingTextInputFormatter(12),
+                       LengthLimitingTextInputFormatter(9),
                      ],
                      keyboardType: TextInputType.phone,
                      autofocus: true,
                      validator: (value) {
-                       if (value!.isEmpty){
-                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Colors.orange,content:
-                         Text('Phone Number is Required',style: GoogleFonts.roboto(fontSize: 18,color: Colors.black),),elevation: 10,));
+                       if (value!.length<9){
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(behavior:SnackBarBehavior.floating,backgroundColor:Color(0xffC7F587),content:
+                         Text('Phone Number is less than Nine Digits ',style: GoogleFonts.roboto(fontSize: 18,color: Colors.black),),elevation: 10,));
                        }
 
                      },
                      decoration: InputDecoration(
-                       contentPadding: EdgeInsets.only(left: 14,right: 14),
+
+                       contentPadding: EdgeInsets.all(15),
+                       // contentPadding: EdgeInsets.only(left: 14,right: 14),
                        border: InputBorder.none,
                        hintText: "Phone Number"
                      ),
@@ -78,13 +77,9 @@ class _LoginScreenState extends State<LoginScreen> {
                ),
                Padding(
                  padding: const EdgeInsets.only(top: 18.0),
-                 child: RoundedCornerButton(
-                   onPressed: () {
-                     validate();
-                     // gotoScreen(context: context,screen:RegisterScreen());
-                   },
-                   child: 'Log In',
-                 ),
+                 child: mybutton(onpress: (){
+                   validate();
+                 },text: 'Log In',)
                ),
                Padding(
                  padding: const EdgeInsets.only(top: 20.0),
@@ -123,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ),
-      ),
+
     );
   }
 }

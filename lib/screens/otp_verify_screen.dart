@@ -201,13 +201,9 @@ class _OTPScreenState extends State<OTPScreen> {
                           ),
                         ],
                       ),
-                      RoundedCornerButton(
-                        onPressed: () {
-                          gotoScreen(context: context,screen:MyProfileScreen());
-
-                        },
-                        child: 'Confirm',
-                      ),
+                      mybutton(text: 'Confirm',onpress: (){
+                        Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyProfileScreen()));
+                      }),
                       Text.rich(
                         TextSpan(
                           style: TextStyle(
